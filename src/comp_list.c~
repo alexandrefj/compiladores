@@ -11,7 +11,7 @@ List* list_insert(List *list, int data) {
   List *new = malloc(sizeof(List));
   List *aux;
   
-  new->node = data;
+  new.node = data;
   new->next = NULL;
 
   if (list == NULL) {

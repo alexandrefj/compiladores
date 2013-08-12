@@ -13,6 +13,6 @@ typedef struct comp_list_t
 List;
 
  List* list_create();
- List* list_insert(List *list, int data);
+ List* list_insert(List *list, int *data);
 
 #endif
