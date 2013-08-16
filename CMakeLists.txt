@@ -23,3 +23,11 @@ ADD_EXECUTABLE(lists_teste
 ADD_EXECUTABLE(dict_test
 	tests/dict_test.c
 	src/comp_dict.c)
+
+ADD_EXECUTABLE(tree_test
+	tests/tree_test.c
+	src/comp_tree.c)
+
+ADD_EXECUTABLE(graph_test
+	tests/graph_test.c
+	src/comp_graph.c)
