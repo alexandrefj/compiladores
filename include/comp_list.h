@@ -12,7 +12,11 @@ typedef struct comp_list_t
 } 
 List;
 
- List* list_create();
- List* list_insert(List *list, int data);
+List* list_init(void);
+List* list_insert(List* list, int value);
+void list_print(List* list);
+List* list_lookup(List* list,int value);
+List* list_remove(List* list,int value);
+
 
 #endif
