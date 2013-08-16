@@ -19,3 +19,7 @@ TARGET_LINK_LIBRARIES(main ${FLEX_LIBRARIES})
 ADD_EXECUTABLE(lists_teste
 	tests/lists_test.c
 	src/comp_list.c)
+
+ADD_EXECUTABLE(arvore_teste
+	tests/tree_test.c
+	src/comp_tree.c)

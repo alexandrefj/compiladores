@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "comp_tree.h"
+
 TreeNode* createTree() {
 	return NULL;
 }
 
-TreeNode* freeTree(TreeNode* root) {
+void freeTree(TreeNode* root) {
 	if (root) {
 		freeTree(root->left);
 		freeTree(root->right);
@@ -13,7 +15,7 @@ TreeNode* freeTree(TreeNode* root) {
 	}
 }
 
-TreeNode* insertTree(TreeNode** root, int data) {
+void insertTree(TreeNode** root, int data) {
 	if (*root == NULL) {
 		*root = (TreeNode*) malloc(sizeof(TreeNode));
 		(*root)->left = NULL;
@@ -46,4 +48,3 @@ TreeNode* searchNode(TreeNode** root, int data) {
 	else if (data == (*root)->data)
 		return *root;
 }
-
