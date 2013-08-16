@@ -5,12 +5,6 @@
 #include "comp_graph.h"
 #include "tokens.h"
 
-/*
-int getLineNumber (void)
-{
-  return 0;
-}
-*/
 
 int main (int argc, char **argv)
 {
