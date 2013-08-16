@@ -20,6 +20,6 @@ ADD_EXECUTABLE(lists_teste
 	tests/lists_test.c
 	src/comp_list.c)
 
-ADD_EXECUTABLE(arvore_teste
-	tests/tree_test.c
-	src/comp_tree.c)
+ADD_EXECUTABLE(dict_test
+	tests/dict_test.c
+	src/comp_dict.c)
