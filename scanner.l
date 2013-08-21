@@ -44,7 +44,7 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 
 " "                                
 
-. { return TOKEN_ERRO; }
+
 
 {SPECIAL}		        return yytext[0];
 
@@ -64,5 +64,8 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 <comment>"\n"						++numerodelinhas;
 <comment>.						
 <comment>"*/"						BEGIN(INITIAL);
+
+. { return TOKEN_ERRO; }
+
 					
 %%
