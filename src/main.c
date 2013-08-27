@@ -1,20 +1,18 @@
-#include <stdio.h>
-#include "comp_dict.h"
-#include "comp_list.h"
-#include "comp_tree.h"
-#include "comp_graph.h"
-#include "tokens.h"
+/*
+   main.c
 
+   Arquivo principal do analisador sintático.
+*/
+#include "main.h"
+
+void yyerror (char const *mensagem)
+{
+  fprintf (stderr, "%s\n", mensagem);
+}
 
 int main (int argc, char **argv)
 {
-  int token = TOKEN_ERRO;
-  DICT *dict;
-  while (token = yylex()){
-    printf ("token <%d> at %d\n", token, getLineNumber());
-    dict = get_dict(); 
-    dict_print(dict);
-  }
-
-  return 0;
+  int resultado = yyparse();
+  return resultado;
 }
+
