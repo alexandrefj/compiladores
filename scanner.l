@@ -4,12 +4,13 @@
 #include "string.h"
 #include "stdlib.h"
 int numerodelinhas = 1;
-char destino[20];
-
-
+DICT* dictionary;
+void init_me(void);
 int getLineNumber(void){ return numerodelinhas;}
-
+DICT* get_dict(void){return dictionary;}
 %}
+
+
 
 INTEGER		[0-9]
 HEXA		[a-fA-F]
@@ -34,13 +35,13 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 "output"   return TK_PR_OUTPUT; 
 "return"   return TK_PR_RETURN; 
 
-{CHAR}({CHAR}|{INTEGER})*       { sprintf(destino, "%d",numerodelinhas); dict_insert(yytext, destino); return TK_IDENTIFICADOR; }
--?[0-9]+                        { sprintf(destino, "%d",numerodelinhas); dict_insert(yytext, destino); return TK_LIT_INT; }
-'(\\.|[^\\'])+'                 { sprintf(destino, "%d",numerodelinhas); dict_insert(yytext, destino); return TK_LIT_CHAR; }
-\"(\\.|[^\\"])*\"               { sprintf(destino, "%d",numerodelinhas); dict_insert(yytext, destino); return TK_LIT_STRING; }
-"true"                          { sprintf(destino, "%d",numerodelinhas); dict_insert(yytext, destino); return TK_LIT_TRUE; }
-"false"                         { sprintf(destino, "%d",numerodelinhas); dict_insert(yytext, destino); return TK_LIT_FALSE; }     
--?[0-9]*\.[0-9]+                { sprintf(destino, "%d",numerodelinhas); dict_insert(yytext, destino); return TK_LIT_FLOAT; }
+{CHAR}({CHAR}|{INTEGER})*       { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_IDENTIFICADOR;}
+-?[0-9]+                        { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_INT;}
+'(\\.|[^\\'])+'                 { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_CHAR;}
+\"(\\.|[^\\"])*\"               { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_STRING;}
+"true"                          { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_TRUE;}
+"false"                         { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_FALSE;}     
+-?[0-9]*\.[0-9]+                { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_FLOAT;}
 
 " "                                
 
@@ -65,7 +66,11 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 <comment>.						
 <comment>"*/"						BEGIN(INITIAL);
 
-. { return TOKEN_ERRO; }
+. {return TOKEN_ERRO; }
 
 					
 %%
+
+void init_me() {
+    dictionary = dict_init();
+    }

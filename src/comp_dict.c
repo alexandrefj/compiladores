@@ -3,20 +3,23 @@
 #include "comp_dict.h"
 #include <string.h>
 
-DICT* dictionary;
 
-void dict_init()
+
+DICT* dict_init()
 {
-	dictionary = malloc(sizeof(DICT*));
+	DICT* dictionary = malloc(sizeof(DICT*));
 	dictionary = NULL;
+	return dictionary;
 }
 
-void dict_insert(char* key_in, char* value_in)
+DICT* dict_insert(DICT* dictionary,int key_in, char* value_in)
 {
 
 	DICT* new = malloc(sizeof(DICT*));
+	char* value_new = malloc(sizeof(char*));
+	strcpy(value_new,value_in);
 	new->key = key_in;
-	new->value = value_in;
+	new->value = value_new;//value_new;
 	new->next = NULL;
 
 	if(dictionary == NULL)
@@ -30,11 +33,12 @@ void dict_insert(char* key_in, char* value_in)
 
 		aux->next = new;
 	}	
-
+	
+	return dictionary;
 
 }
 
-void dict_print(void)
+void dict_print(DICT* dictionary)
 {
 	DICT* aux = dictionary;
 	
@@ -42,7 +46,7 @@ void dict_print(void)
 	{
 		while(aux != NULL)
 		{
-			printf(" key = %s - value = %s\n", aux->key, aux->value);
+			printf(" key = %d - value = %s\n", aux->key, aux->value);
 			aux = aux->next;
 		}
 	}
@@ -51,7 +55,7 @@ void dict_print(void)
 
 }
 
-char* dict_lookup(char* key_in)
+char* dict_lookup(DICT* dictionary,int key_in)
 {
 
 	if(dictionary == NULL)
@@ -62,7 +66,7 @@ char* dict_lookup(char* key_in)
 
 		while(aux != NULL)
 		{	
-			if(strcmp(aux->key,key_in) == 0)
+			if(aux->key == key_in)
 				return aux->value;
 
 			aux = aux->next;
@@ -75,7 +79,7 @@ char* dict_lookup(char* key_in)
 
 }
 
-void dict_remove(char* key_in)
+DICT* dict_remove(DICT* dictionary,int key_in)
 {
 	int found =0;
 
@@ -86,7 +90,7 @@ void dict_remove(char* key_in)
 
 		while(aux != NULL && !found)
 		{	
-			if(strcmp(aux->key,key_in) == 0)
+			if(dictionary->key == key_in)
 			{
 				found = 1;
 
@@ -124,10 +128,10 @@ void dict_remove(char* key_in)
 
 	}	
 
-
+	return dictionary;
 }
 
-void dict_replace(char* key_in,char* value_in)
+DICT* dict_replace(DICT* dictionary,int key_in,char* value_in)
 {
 	int found = 0;
 
@@ -139,7 +143,7 @@ void dict_replace(char* key_in,char* value_in)
 
 		while(aux != NULL && !found)
 		{	
-			if(strcmp(aux->key,key_in) == 0){
+			if(aux->key==key_in){
 				aux->value = value_in;
 				found = 1;}
 
@@ -150,5 +154,5 @@ void dict_replace(char* key_in,char* value_in)
 
 	}	
 
-
+	return dictionary;
 }

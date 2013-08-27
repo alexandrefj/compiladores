@@ -13,7 +13,7 @@ int main (int argc, char **argv)
   while (token = yylex()){
     printf ("token <%d> at %d\n", token, getLineNumber());
     dict = get_dict(); 
-    dict_print(dict);
+      dict_print(dict);
   }
 
   return 0;
