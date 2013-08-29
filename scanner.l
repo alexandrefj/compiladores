@@ -1,8 +1,8 @@
 %{
 #include "tokens.h"
-#include "comp_dict.h"
 #include "string.h"
 #include "stdlib.h"
+#include "main.h"
 int numerodelinhas = 1;
 DICT* dictionary;
 void init_me(void);
@@ -35,13 +35,26 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 "output"   return TK_PR_OUTPUT; 
 "return"   return TK_PR_RETURN; 
 
-{CHAR}({CHAR}|{INTEGER})*       { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_IDENTIFICADOR;}
--?[0-9]+                        { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_INT;}
-'(\\.|[^\\'])+'                 { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_CHAR;}
-\"(\\.|[^\\"])*\"               { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_STRING;}
-"true"                          { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_TRUE;}
-"false"                         { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_FALSE;}     
--?[0-9]*\.[0-9]+                { dictionary = dict_insert(dictionary,numerodelinhas,yytext); return TK_LIT_FLOAT;}
+{CHAR}({CHAR}|{INTEGER})*        {if(dictionary == NULL) dictionary = dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_INDEFINIDO);
+				 else dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_INDEFINIDO); return TK_IDENTIFICADOR;}
+
+-?[0-9]+                         {if(dictionary == NULL) dictionary = dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_INT);
+				 else dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_INT); return TK_LIT_INT;}
+
+'(\\.|[^\\'])+'                  {if(dictionary == NULL) dictionary = dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_CHAR);
+				 else dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_CHAR); return TK_LIT_CHAR;}
+
+\"(\\.|[^\\"])*\"                {if(dictionary == NULL) dictionary = dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_STRING);
+				 else dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_STRING); return TK_LIT_STRING;}
+
+"true"                           {if(dictionary == NULL) dictionary = dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_BOOL);
+				 else dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_BOOL); return TK_LIT_TRUE;}
+
+"false"                          {if(dictionary == NULL) dictionary = dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_BOOL);
+				 else dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_BOOL); return TK_LIT_FALSE;}
+     
+-?[0-9]*\.[0-9]+                 {if(dictionary == NULL) dictionary = dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_FLOAT);
+				 else dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_FLOAT); return TK_LIT_FLOAT;}
 
 " "                                
 

@@ -1,15 +1,14 @@
 typedef struct comp_dict
 {
-	int key;	//line
-	char* value;	// token
-	int type;	//	
+	int key;
+	char* value;
 	struct comp_dict* next;
 }DICT;
 
 
 DICT* dict_init(void); // Initializes The dictionary
 
-DICT* dict_insert(DICT* dictionary,int key_in, char* value_in, int type);
+DICT* dict_insert(DICT* dictionary,int key_in, char* value_in);
 
 void dict_print(DICT* dictionary);
 
