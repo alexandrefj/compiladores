@@ -99,7 +99,7 @@ block			: simple_command block
 
 
 
-global_var_decl		: type ':' TK_IDENTIFICADOR';'
+global_var_decl		: type ':' TK_IDENTIFICADOR '=' TK_LIT_INT ';'		//TK_LIT_INT 'is' zero
 			| type TK_IDENTIFICADOR '['TK_LIT_INT']'';'
 			;
 
