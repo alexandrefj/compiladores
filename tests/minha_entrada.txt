@@ -1,0 +1,45 @@
+int var[50];
+float var[50];
+
+int:func()
+	int: var1;
+	float: var2;
+	string: str;
+	bool: true_or_false;
+{
+	input str;
+	return 0;
+}
+
+float:func2(int:var1)
+{
+	output 5+7+9, str1,str2,(7*59*9);
+	vetor[5] = 35.98;
+	vet[(6*9)] = 65;
+	return 3.555;
+}
+
+string:func3(int:var1,float:var2,bool:var3){
+	if((10)) then 
+		vtor5[10] = 6.87;
+
+	if(9<8 && 10>8) then
+		vector6[(5 - 20)] = 98.6666;
+	else
+		var_aux = 20;
+
+	input str5;
+
+
+	while((10 + 14) < 7 || 5>10) do
+		var = 10;
+
+	do
+		var = 1;
+	while(100==100)
+
+	return "HELLO WORLD";
+
+}
+
+
