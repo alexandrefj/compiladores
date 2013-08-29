@@ -63,7 +63,7 @@ int main()
 	// ELEMENTS INSERTION
 	// prototype:  dict_insert(key, value);
 
-	dictionary = dict_insert(dictionary,0,"null",2);
+	dict_insert(dictionary,0,"null",2);
 	dict_insert(dictionary,1,"eins",2);
 	dict_insert(dictionary,2,"zwei",2);
 	dict_insert(dictionary,3,"drei",2);
