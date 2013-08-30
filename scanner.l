@@ -56,7 +56,7 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 -?[0-9]*\.[0-9]+                 {if(dictionary == NULL) dictionary = dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_FLOAT);
 				 else dict_insert(dictionary,numerodelinhas,yytext,IKS_SIMBOLO_LITERAL_FLOAT); return TK_LIT_FLOAT;}
 
-" "                                
+\s                        
 
 
 
