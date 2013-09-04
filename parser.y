@@ -1,55 +1,21 @@
 %{
 #include <stdio.h>
 #include<stdlib.h>
+#include "comp_dict.h"
 %}
 
-//%union {int a_number;}
-//%type <a_number> type
-//%start type
-/* Declaração dos tokens da gramática da Linguagem K */
-
-//#define TK_PR_INT         256   /* int       */
-//#define TK_PR_FLOAT       257   /* float     */
-//#define TK_PR_BOOL        258   /* bool      */
-//#define TK_PR_CHAR        259   /* char      */
-//#define TK_PR_STRING      260   /* string    */
-//#define TK_PR_IF          261   /* if        */
-//#define TK_PR_THEN        262   /* then      */
-//#define TK_PR_ELSE        263   /* else      */
-//#define TK_PR_WHILE       264   /* while     */
-//#define TK_PR_DO          265   /* do        */
-//#define TK_PR_INPUT       266   /* input     */
-//#define TK_PR_OUTPUT      267   /* output    */
-//#define TK_PR_RETURN      268   /* return    */
-/* Operadores Compostos (OC) */
-
-//#define TK_OC_LE    270   /* <=        */
-//#define TK_OC_GE    271   /* >=        */
-//#define TK_OC_EQ    272   /* ==        */
-//#define TK_OC_NE    273   /* !=        */
-//#define TK_OC_AND   274   /* &&        */
-//#define TK_OC_OR    275   /* ||        */
-
-/* Literais (LIT) */
-//#define TK_LIT_INT        281
-//#define TK_LIT_FLOAT      282
-//#define TK_LIT_FALSE      283
-//#define TK_LIT_TRUE       284
-//#define TK_LIT_CHAR       285
-//#define TK_LIT_STRING     286
-
-/* Indentificador */
-//#define TK_IDENTIFICADOR  290
-
-/* Erro */
-//#define TOKEN_ERRO        291
-
+%union
+{
+struct nome_interno *symbol;
+int type;
+}
 
 %token TK_PR_INT	256
 %token TK_PR_FLOAT	257
 %token TK_PR_BOOL	258
 %token TK_PR_CHAR	259
 %token TK_PR_STRING	260
+
 %token TK_PR_IF		261
 %token TK_PR_THEN	262
 %token TK_PR_ELSE	263
@@ -64,6 +30,7 @@
 %token TK_OC_NE		273
 %token TK_OC_AND	274
 %token TK_OC_OR		275
+
 %token TK_LIT_INT	281
 %token TK_LIT_FLOAT	282
 %token TK_LIT_FALSE	283
@@ -71,20 +38,41 @@
 %token TK_LIT_CHAR	285
 %token TK_LIT_STRING	286
 %token TK_IDENTIFICADOR	290
+
 %token TOKEN_ERRO	291
 
-%%
- /* Regras (e ações) da gramática da Linguagem K */
 
-//Um programa na linguagem IKS é composto por um conjunto opcional de declarações de variáveis globais e um
-//conjunto opcional de funções, que podem aparecer intercaladamente e em qualquer ordem.
+%type<type> constant
+
+/*
+%token<symbol> TK_LIT_INT   	1
+%token<symbol> TK_LIT_FLOAT 	2
+%token<symbol> TK_LIT_CHAR     	3
+%token<symbol> TK_LIT_STRING   	4
+%token<symbol> TK_LIT_BOOL   	5
+%token<symbol> TK_IDENTIFICADOR	6
+*/
+
+%left TK_OC_LE TK_OC_GE TK_OC_EQ TK_OC_NE '=' '<' '>'
+%left TK_OC_AND TK_OC_OR
+%left '-' '+'
+%left '*' '/'
+
+%nonassoc TK_PR_THEN
+%nonassoc TK_PR_ELSE
+
+%%
+
+/*******************************************************************************************
+----------------------REGRAS DA LINGUAGEM IKS---------------------------------------------**
+*******************************************************************************************/
 
 program 		:global_var_decl program
 			|function program
 			|
 			;
 
-function		:type ':' TK_IDENTIFICADOR '('param_list')' local_var_decl '{'block'}';
+function		:type ':' TK_IDENTIFICADOR '('param_list')' local_var_decl '{' block'}' ;
 
 
 local_var_decl		:type ':' TK_IDENTIFICADOR';'
@@ -94,48 +82,73 @@ local_var_decl		:type ':' TK_IDENTIFICADOR';'
 
 block			: simple_command block
 			| control_flow_command block
+			| '{'simple_command block'}'
 			|
 			;
 
+flow_block		: simple_command_function
+			| '{' simple_command flow_block '}' ';'
+			|
+			;
+
+simple_command_function: TK_PR_INPUT TK_IDENTIFICADOR ';'
+			|TK_IDENTIFICADOR '=' exp';'	
+			|TK_IDENTIFICADOR'['exp']' '=' exp';' 	
+			|TK_PR_OUTPUT output ';' 
+			|TK_PR_RETURN return ';'
+			|TK_IDENTIFICADOR '=' exp	
+			|TK_IDENTIFICADOR'['exp']' '=' exp
+			|TK_PR_OUTPUT output 
+			|TK_PR_RETURN return
+			|';'
+			;
 
 
-global_var_decl		: type ':' TK_IDENTIFICADOR';'		//TK_LIT_INT 'is' zero
+global_var_decl		: type ':' TK_IDENTIFICADOR';'		
 			| type ':' TK_IDENTIFICADOR '['TK_LIT_INT']'';'
 			;
 
 
-simple_command		:TK_PR_INPUT TK_IDENTIFICADOR ';' simple_command
-			|TK_IDENTIFICADOR '=' exp';' simple_command		//represents attribution
-			|TK_IDENTIFICADOR'['exp']' '=' exp';' simple_command	//either
-			|TK_PR_OUTPUT output ';' simple_command
-			|TK_PR_RETURN return ';' simple_command
+simple_command		:TK_PR_INPUT TK_IDENTIFICADOR ';'
+			|TK_IDENTIFICADOR '=' exp';'	
+			|TK_IDENTIFICADOR'['exp']' '=' exp';' 	
+			|TK_PR_OUTPUT output ';' 
+			|TK_PR_RETURN return ';'
+			|';'
 			|
 			;
 
-control_flow_command	:TK_PR_IF '('exp')'TK_PR_THEN simple_command
-			|TK_PR_IF '('exp')'TK_PR_THEN simple_command TK_PR_ELSE simple_command
-			|TK_PR_WHILE '('exp')'TK_PR_DO simple_command	
-			|TK_PR_DO simple_command TK_PR_WHILE'('exp')'
+control_flow_command	:TK_PR_IF '('exp')'TK_PR_THEN flow_block 
+			|TK_PR_IF '('exp')'TK_PR_THEN flow_block TK_PR_ELSE flow_block 
+			|TK_PR_WHILE '('exp')'TK_PR_DO flow_block 
+			|TK_PR_DO flow_block TK_PR_WHILE'('exp')'
 			;
 
 return			: exp
 			| TK_IDENTIFICADOR;
 
 
-param_list		:type ':'TK_IDENTIFICADOR
-			|type ':'TK_IDENTIFICADOR ',' param_list
+param_list		:type ':'TK_IDENTIFICADOR param_list
+			|',' type ':'TK_IDENTIFICADOR param_list
+			|
+			;
+
+call_param_list		: constant call_param_list
+			| TK_IDENTIFICADOR'['exp']' call_param_list 
+			| ',' constant call_param_list
+			| ',' TK_IDENTIFICADOR'['exp']' call_param_list
 			|
 			;
 
 exp			: constant
-			| TK_IDENTIFICADOR '=' TK_IDENTIFICADOR '('param_list')'
+			| TK_IDENTIFICADOR
 			| '(' exp ')'
         		| '&'exp
         		| '*'exp
 			| exp '*' exp
 			| exp '/' exp
-			| exp '+' exp
-			| exp '-' exp
+			| exp '+' exp	
+			| exp '-' exp	
 			| exp TK_OC_LE exp
 			| exp TK_OC_GE exp
 			| exp TK_OC_EQ exp
@@ -144,21 +157,28 @@ exp			: constant
 			| exp '<' exp
 			| exp TK_OC_AND exp
 			| exp TK_OC_OR exp
-			| '!' exp
+			| TK_IDENTIFICADOR '[' exp ']'
+			| TK_IDENTIFICADOR '('call_param_list')'
         		;
 
-constant		: TK_LIT_INT
-			| TK_LIT_FLOAT
-			| TK_LIT_TRUE
-			| TK_LIT_FALSE
-			| TK_LIT_CHAR
-			| TK_LIT_STRING
+/* 	Tentei definir os tipos, porém não
+	sei ao certo se foi isso que foi 
+	pedido na especificação		*/
+
+
+constant		: TK_LIT_INT		{$$ = 1;}
+			| '-'TK_LIT_INT 	{$$ = 1;}
+			| TK_LIT_FLOAT		{$$ = 2;}
+			| '-'TK_LIT_FLOAT	{$$ = 2;}
+			| TK_LIT_STRING		{$$ = 3;}
+			| TK_LIT_CHAR		{$$ = 4;}
+			| TK_LIT_TRUE		{$$ = 5;}
+			| TK_LIT_FALSE		{$$ = 5;}
 			;
 
-output			:TK_IDENTIFICADOR
-			|exp
-			|TK_IDENTIFICADOR ',' output
+output			:exp
 			|exp ',' output
+			|
 			;
  
 type			:TK_PR_INT
@@ -168,9 +188,6 @@ type			:TK_PR_INT
 			|TK_PR_CHAR
 			;
 
-
-
 %%
-
 
 
