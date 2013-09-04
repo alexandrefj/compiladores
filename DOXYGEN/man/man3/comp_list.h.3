@@ -1,0 +1,60 @@
+.TH "include/comp_list.h" 3 "Wed Sep 4 2013" "Compiladores 2013/2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/comp_list.h \- 
+.SH SYNOPSIS
+.br
+.PP
+\fC#include <stdio\&.h>\fP
+.br
+\fC#include <stdlib\&.h>\fP
+.br
+
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBcomp_list_t\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBcomp_list_t\fP \fBList\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBList\fP * \fBlist_init\fP (void)"
+.br
+.ti -1c
+.RI "\fBList\fP * \fBlist_insert\fP (\fBList\fP *list, int value)"
+.br
+.ti -1c
+.RI "void \fBlist_print\fP (\fBList\fP *list)"
+.br
+.ti -1c
+.RI "\fBList\fP * \fBlist_lookup\fP (\fBList\fP *list, int value)"
+.br
+.ti -1c
+.RI "\fBList\fP * \fBlist_remove\fP (\fBList\fP *list, int value)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBcomp_list_t\fP 
+ \fBList\fP"
+.SH "Function Documentation"
+.PP 
+.SS "\fBList\fP* \fBlist_init\fP (void)"
+.SS "\fBList\fP* \fBlist_insert\fP (\fBList\fP *list, intvalue)"
+.SS "\fBList\fP* \fBlist_lookup\fP (\fBList\fP *list, intvalue)"
+.SS "void \fBlist_print\fP (\fBList\fP *list)"
+.SS "\fBList\fP* \fBlist_remove\fP (\fBList\fP *list, intvalue)"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Compiladores 2013/2 from the source code\&.

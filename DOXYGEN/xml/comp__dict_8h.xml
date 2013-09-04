@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="comp__dict_8h" kind="file">
+    <compoundname>comp_dict.h</compoundname>
+    <includedby refid="parser_8y" local="yes">parser.y</includedby>
+    <includedby refid="main_8h" local="yes">include/main.h</includedby>
+    <invincdepgraph>
+      <node id="3">
+        <label>include/main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/comp_dict.h</label>
+        <link refid="comp_dict.h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>parser.y</label>
+        <link refid="parser_8y"/>
+      </node>
+      <node id="4">
+        <label>scanner.l</label>
+        <link refid="scanner_8l"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structnome__interno" prot="public">nome_interno</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="comp__dict_8h_1ac348236d656b195cf77833516032bbd0" prot="public" static="no">
+        <name>DICT_SIZE</name>
+        <initializer>997</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="1" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" bodystart="1" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="comp__dict_8h_1a0107a3e78da45cfc020a4a81dc240e33" prot="public" static="no">
+        <type>struct <ref refid="structnome__interno" kindref="compound">nome_interno</ref></type>
+        <definition>typedef struct nome_interno DICT_NODE</definition>
+        <argsstring></argsstring>
+        <name>DICT_NODE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="comp__dict_8h_1a047c7e1b181bcd0caed7d4b66d641626" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dict_init</definition>
+        <argsstring>(void)</argsstring>
+        <name>dict_init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="12"/>
+      </memberdef>
+      <memberdef kind="function" id="comp__dict_8h_1a3934f281b4616f7ff8b70c23c03693de" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int dict_address</definition>
+        <argsstring>(char *text)</argsstring>
+        <name>dict_address</name>
+        <param>
+          <type>char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="13"/>
+      </memberdef>
+      <memberdef kind="function" id="comp__dict_8h_1a05f018c1e044836bd2ea47b5f4401add" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="comp__dict_8h_1a0107a3e78da45cfc020a4a81dc240e33" kindref="member">DICT_NODE</ref> *</type>
+        <definition>DICT_NODE* dict_find</definition>
+        <argsstring>(char *text)</argsstring>
+        <name>dict_find</name>
+        <param>
+          <type>char *</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="14"/>
+      </memberdef>
+      <memberdef kind="function" id="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="comp__dict_8h_1a0107a3e78da45cfc020a4a81dc240e33" kindref="member">DICT_NODE</ref> *</type>
+        <definition>DICT_NODE* dict_insert</definition>
+        <argsstring>(char *text, int type)</argsstring>
+        <name>dict_insert</name>
+        <param>
+          <type>char *</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="15"/>
+      </memberdef>
+      <memberdef kind="function" id="comp__dict_8h_1a45cfc9b533034a56272e65a52fb5960a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void dict_print</definition>
+        <argsstring>(void)</argsstring>
+        <name>dict_print</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="16"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1" refid="comp__dict_8h_1ac348236d656b195cf77833516032bbd0" refkind="member"><highlight class="preprocessor">#define<sp/>DICT_SIZE<sp/>997</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="structnome__interno" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnome__interno" kindref="compound">nome_interno</ref>{</highlight></codeline>
+<codeline lineno="4" refid="structnome__interno_1a5633b1433389cec21ade3811bbe9ca5b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structnome__interno_1a5633b1433389cec21ade3811bbe9ca5b" kindref="member">text</ref>;</highlight></codeline>
+<codeline lineno="5" refid="structnome__interno_1ac765329451135abec74c45e1897abf26" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structnome__interno_1ac765329451135abec74c45e1897abf26" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="6" refid="structnome__interno_1aa1aa81212930ab4eddc11152877e9fdd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structnome__interno_1aa1aa81212930ab4eddc11152877e9fdd" kindref="member">intVal</ref>;</highlight></codeline>
+<codeline lineno="7" refid="structnome__interno_1a06977681f9d80f144afbbddc9a4f27d2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="structnome__interno_1a06977681f9d80f144afbbddc9a4f27d2" kindref="member">charVal</ref>;</highlight></codeline>
+<codeline lineno="8" refid="structnome__interno_1af7caa00706eba3e4480bfa0c7bea0ed1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structnome__interno_1af7caa00706eba3e4480bfa0c7bea0ed1" kindref="member">boolVal</ref>;</highlight></codeline>
+<codeline lineno="9" refid="structnome__interno_1a3c54dc5d61031173400cfd063996f1f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnome__interno" kindref="compound">nome_interno</ref><sp/>*<ref refid="structnome__interno_1a3c54dc5d61031173400cfd063996f1f0" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">}<ref refid="comp__dict_8h_1a0107a3e78da45cfc020a4a81dc240e33" kindref="member">DICT_NODE</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comp__dict_8h_1a047c7e1b181bcd0caed7d4b66d641626" kindref="member">dict_init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="comp__dict_8h_1a3934f281b4616f7ff8b70c23c03693de" kindref="member">dict_address</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structnome__interno_1a5633b1433389cec21ade3811bbe9ca5b" kindref="member">text</ref>);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><ref refid="structnome__interno" kindref="compound">DICT_NODE</ref><sp/>*<ref refid="comp__dict_8h_1a05f018c1e044836bd2ea47b5f4401add" kindref="member">dict_find</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structnome__interno_1a5633b1433389cec21ade3811bbe9ca5b" kindref="member">text</ref>);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><ref refid="structnome__interno" kindref="compound">DICT_NODE</ref><sp/>*<ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(</highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<ref refid="structnome__interno_1a5633b1433389cec21ade3811bbe9ca5b" kindref="member">text</ref>,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref>);</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comp__dict_8h_1a45cfc9b533034a56272e65a52fb5960a" kindref="member">dict_print</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h"/>
+  </compounddef>
+</doxygen>

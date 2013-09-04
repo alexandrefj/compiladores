@@ -1,0 +1,54 @@
+.TH "include/comp_tree.h" 3 "Wed Sep 4 2013" "Compiladores 2013/2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/comp_tree.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBcomp_tree_t\fP"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBcomp_tree_t\fP \fBTreeNode\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBTreeNode\fP * \fBcreateTree\fP ()"
+.br
+.ti -1c
+.RI "void \fBfreeTree\fP (\fBTreeNode\fP *root)"
+.br
+.ti -1c
+.RI "void \fBinsertTree\fP (\fBTreeNode\fP **root, int data)"
+.br
+.ti -1c
+.RI "void \fBprintTree\fP (\fBTreeNode\fP *root)"
+.br
+.ti -1c
+.RI "\fBTreeNode\fP * \fBsearchNode\fP (\fBTreeNode\fP **root, int data)"
+.br
+.in -1c
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBcomp_tree_t\fP  \fBTreeNode\fP"
+.SH "Function Documentation"
+.PP 
+.SS "\fBTreeNode\fP* \fBcreateTree\fP ()"
+.SS "void \fBfreeTree\fP (\fBTreeNode\fP *root)"
+.SS "void \fBinsertTree\fP (\fBTreeNode\fP **root, intdata)"
+.SS "void \fBprintTree\fP (\fBTreeNode\fP *root)"
+.SS "\fBTreeNode\fP* \fBsearchNode\fP (\fBTreeNode\fP **root, intdata)"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Compiladores 2013/2 from the source code\&.

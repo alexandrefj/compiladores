@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="structcomp__tree__t" kind="struct" prot="public">
+    <compoundname>comp_tree_t</compoundname>
+    <includes refid="comp__tree_8h" local="no">comp_tree.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcomp__tree__t_1a9eab91667db4d35c7231dcddf7b89a76" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int data</definition>
+        <argsstring></argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="10" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcomp__tree__t_1a25d0ee3eb1f37bdf8837332ae210af08" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structcomp__tree__t" kindref="compound">comp_tree_t</ref> *</type>
+        <definition>struct comp_tree_t* left</definition>
+        <argsstring></argsstring>
+        <name>left</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="11" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcomp__tree__t_1a031926068de9698531271ab100d96900" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structcomp__tree__t" kindref="compound">comp_tree_t</ref> *</type>
+        <definition>struct comp_tree_t* right</definition>
+        <argsstring></argsstring>
+        <name>right</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="12" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="5">
+        <label>comp_tree_t</label>
+        <link refid="structcomp__tree__t"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>right</edgelabel>
+          <edgelabel>left</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="9" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" bodystart="9" bodyend="13"/>
+    <listofallmembers>
+      <member refid="structcomp__tree__t_1a9eab91667db4d35c7231dcddf7b89a76" prot="public" virt="non-virtual"><scope>comp_tree_t</scope><name>data</name></member>
+      <member refid="structcomp__tree__t_1a25d0ee3eb1f37bdf8837332ae210af08" prot="public" virt="non-virtual"><scope>comp_tree_t</scope><name>left</name></member>
+      <member refid="structcomp__tree__t_1a031926068de9698531271ab100d96900" prot="public" virt="non-virtual"><scope>comp_tree_t</scope><name>right</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

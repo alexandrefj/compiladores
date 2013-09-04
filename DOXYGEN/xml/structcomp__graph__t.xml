@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="structcomp__graph__t" kind="struct" prot="public">
+    <compoundname>comp_graph_t</compoundname>
+    <includes refid="comp__graph_8h" local="no">comp_graph.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structcomp__graph__t_1a6b7983ccd32c86cbbc3d4d9cda4cac17" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int nodes</definition>
+        <argsstring></argsstring>
+        <name>nodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_graph.h" line="5" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_graph.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structcomp__graph__t_1ac29a4fcfe6e2fb5a94cb5350ac977ce4" prot="public" static="no" mutable="no">
+        <type>int **</type>
+        <definition>int** matrix</definition>
+        <argsstring></argsstring>
+        <name>matrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_graph.h" line="6" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_graph.h" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_graph.h" line="4" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_graph.h" bodystart="4" bodyend="7"/>
+    <listofallmembers>
+      <member refid="structcomp__graph__t_1ac29a4fcfe6e2fb5a94cb5350ac977ce4" prot="public" virt="non-virtual"><scope>comp_graph_t</scope><name>matrix</name></member>
+      <member refid="structcomp__graph__t_1a6b7983ccd32c86cbbc3d4d9cda4cac17" prot="public" virt="non-virtual"><scope>comp_graph_t</scope><name>nodes</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

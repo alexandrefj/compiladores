@@ -1,0 +1,362 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="tokens_8h" kind="file">
+    <compoundname>tokens.h</compoundname>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" prot="public" static="no">
+        <name>TK_PR_INT</name>
+        <initializer>256   /* int       */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="14" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a4f0143d552c3c033ff35b6cfc895f6d2" prot="public" static="no">
+        <name>TK_PR_FLOAT</name>
+        <initializer>257   /* float     */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="15" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a3404d32cdfcc2a34785f375310f7edb4" prot="public" static="no">
+        <name>TK_PR_BOOL</name>
+        <initializer>258   /* bool      */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="16" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a7a9067becba5ffdeaadd68de2cc8f439" prot="public" static="no">
+        <name>TK_PR_CHAR</name>
+        <initializer>259   /* char      */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="17" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a0dfe95088f446a76d553ab5b96628384" prot="public" static="no">
+        <name>TK_PR_STRING</name>
+        <initializer>260   /* string    */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="18" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1aabde2c75cb7fe45aed4fa0bc9c916f2b" prot="public" static="no">
+        <name>TK_PR_IF</name>
+        <initializer>261   /* if        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="19" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1afe99133c50e2948bbe65a8943388dff8" prot="public" static="no">
+        <name>TK_PR_THEN</name>
+        <initializer>262   /* then      */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="20" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a466cdc4c453ec4b6e0d0c0cea739fc66" prot="public" static="no">
+        <name>TK_PR_ELSE</name>
+        <initializer>263   /* else      */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="21" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a145a364906765d1bafef8e94bd818294" prot="public" static="no">
+        <name>TK_PR_WHILE</name>
+        <initializer>264   /* while     */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="22" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a1ffb12c2657f96a473cfa9a5e53b504e" prot="public" static="no">
+        <name>TK_PR_DO</name>
+        <initializer>265   /* do        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="23" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1ae8b85e695fe3ed46768328c8c861deae" prot="public" static="no">
+        <name>TK_PR_INPUT</name>
+        <initializer>266   /* input     */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="24" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a875e8fb1517a241cc52e38883beb9d9b" prot="public" static="no">
+        <name>TK_PR_OUTPUT</name>
+        <initializer>267   /* <ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref>    */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="25" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1ae6a4324f5ad9ac5164376649ef926a4c" prot="public" static="no">
+        <name>TK_PR_RETURN</name>
+        <initializer>268   /* <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref>    */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="26" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a9e91217db5b34a182702d67a5f319ebc" prot="public" static="no">
+        <name>TK_OC_LE</name>
+        <initializer>270   /* &lt;=        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="29" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a0b733dd4c24a1037d59b3410054f4f15" prot="public" static="no">
+        <name>TK_OC_GE</name>
+        <initializer>271   /* &gt;=        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="30" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1ae60e2e439177e6662272838e89f378ed" prot="public" static="no">
+        <name>TK_OC_EQ</name>
+        <initializer>272   /* ==        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="31" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1adb12e27dba8a9d38ba9358573e560874" prot="public" static="no">
+        <name>TK_OC_NE</name>
+        <initializer>273   /* !=        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="32" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1ae3b7d3e05c1854a69b894a4534c2fdd0" prot="public" static="no">
+        <name>TK_OC_AND</name>
+        <initializer>274   /* &amp;&amp;        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="33" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1aca39580880902e3ee18d535fd4348205" prot="public" static="no">
+        <name>TK_OC_OR</name>
+        <initializer>275   /* ||        */</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="34" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" prot="public" static="no">
+        <name>TK_LIT_INT</name>
+        <initializer>281</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="37" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a28fa3d1354a21b85ba571797959be5df" prot="public" static="no">
+        <name>TK_LIT_FLOAT</name>
+        <initializer>282</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="38" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a07504d793877ebb719decd0c38547b80" prot="public" static="no">
+        <name>TK_LIT_FALSE</name>
+        <initializer>283</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="39" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" prot="public" static="no">
+        <name>TK_LIT_TRUE</name>
+        <initializer>284</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="40" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1ac1974086f469c95f549368d75bcf39f7" prot="public" static="no">
+        <name>TK_LIT_CHAR</name>
+        <initializer>285</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="41" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1afb92b7de778adbc28a03626bc477af4a" prot="public" static="no">
+        <name>TK_LIT_STRING</name>
+        <initializer>286</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="42" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1ab6a016d33bcc8c43ad667c5500e1c494" prot="public" static="no">
+        <name>TK_IDENTIFICADOR</name>
+        <initializer>290</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="45" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="tokens_8h_1a52afa3742170f1dda1c5b1c849a92ec8" prot="public" static="no">
+        <name>TOKEN_ERRO</name>
+        <initializer>291</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" line="48" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>tokens.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/>Lista<sp/>dos<sp/>tokens,<sp/>com<sp/>valores<sp/>constantes<sp/>associados.<sp/><sp/>Este<sp/>arquivo</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>será<sp/>posterioremente<sp/>substituído<sp/>automaticamente.<sp/>Portanto,<sp/>não</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/><sp/>acrescente<sp/>nada<sp/>a<sp/>ele,<sp/>caso<sp/>contrário<sp/>seu<sp/>analisador<sp/>léxico<sp/>não</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>funcionará.<sp/>Os<sp/>valores<sp/>das<sp/>constantes<sp/>são<sp/>arbitrários,<sp/>mas<sp/>não<sp/>podem</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/><sp/>ser<sp/>alterados.<sp/>Cada<sp/>valor<sp/>deve<sp/>ser<sp/>distinto<sp/>e<sp/>fora<sp/>da<sp/>escala<sp/>ASCII.</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/><sp/>Assim,<sp/>eles<sp/>não<sp/>entram<sp/>em<sp/>conflito<sp/>entre<sp/>si<sp/>e<sp/>com<sp/>os<sp/>tokens</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/><sp/>representados<sp/>pelo<sp/>próprio<sp/>valor<sp/>ASCII<sp/>de<sp/>caracteres<sp/>isolados.</highlight></codeline>
+<codeline lineno="11"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Palavras<sp/>Reservadas<sp/>(PR)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>256<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>int<sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="tokens_8h_1a4f0143d552c3c033ff35b6cfc895f6d2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_FLOAT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>257<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>float<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="tokens_8h_1a3404d32cdfcc2a34785f375310f7edb4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_BOOL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>258<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>bool<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="tokens_8h_1a7a9067becba5ffdeaadd68de2cc8f439" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_CHAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>259<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>char<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="tokens_8h_1a0dfe95088f446a76d553ab5b96628384" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_STRING<sp/><sp/><sp/><sp/><sp/><sp/>260<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>string<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="tokens_8h_1aabde2c75cb7fe45aed4fa0bc9c916f2b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_IF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>261<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>if<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="tokens_8h_1afe99133c50e2948bbe65a8943388dff8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_THEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>262<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>then<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="tokens_8h_1a466cdc4c453ec4b6e0d0c0cea739fc66" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_ELSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>263<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>else<sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="tokens_8h_1a145a364906765d1bafef8e94bd818294" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_WHILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>264<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>while<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="tokens_8h_1a1ffb12c2657f96a473cfa9a5e53b504e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_DO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>265<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>do<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="tokens_8h_1ae8b85e695fe3ed46768328c8c861deae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_INPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>266<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>input<sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="tokens_8h_1a875e8fb1517a241cc52e38883beb9d9b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/>267<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>output<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="tokens_8h_1ae6a4324f5ad9ac5164376649ef926a4c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_PR_RETURN<sp/><sp/><sp/><sp/><sp/><sp/>268<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>return<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Operadores<sp/>Compostos<sp/>(OC)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="tokens_8h_1a9e91217db5b34a182702d67a5f319ebc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_OC_LE<sp/><sp/><sp/><sp/>270<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>&lt;=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="tokens_8h_1a0b733dd4c24a1037d59b3410054f4f15" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_OC_GE<sp/><sp/><sp/><sp/>271<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>&gt;=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="tokens_8h_1ae60e2e439177e6662272838e89f378ed" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_OC_EQ<sp/><sp/><sp/><sp/>272<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>==<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="tokens_8h_1adb12e27dba8a9d38ba9358573e560874" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_OC_NE<sp/><sp/><sp/><sp/>273<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>!=<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33" refid="tokens_8h_1ae3b7d3e05c1854a69b894a4534c2fdd0" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_OC_AND<sp/><sp/><sp/>274<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>&amp;&amp;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="tokens_8h_1aca39580880902e3ee18d535fd4348205" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_OC_OR<sp/><sp/><sp/><sp/>275<sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>||<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Literais<sp/>(LIT)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_LIT_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>281</highlight></codeline>
+<codeline lineno="38" refid="tokens_8h_1a28fa3d1354a21b85ba571797959be5df" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TK_LIT_FLOAT<sp/><sp/><sp/><sp/><sp/><sp/>282</highlight></codeline>
+<codeline lineno="39" refid="tokens_8h_1a07504d793877ebb719decd0c38547b80" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TK_LIT_FALSE<sp/><sp/><sp/><sp/><sp/><sp/>283</highlight></codeline>
+<codeline lineno="40" refid="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TK_LIT_TRUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>284</highlight></codeline>
+<codeline lineno="41" refid="tokens_8h_1ac1974086f469c95f549368d75bcf39f7" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TK_LIT_CHAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>285</highlight></codeline>
+<codeline lineno="42" refid="tokens_8h_1afb92b7de778adbc28a03626bc477af4a" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>TK_LIT_STRING<sp/><sp/><sp/><sp/><sp/>286</highlight></codeline>
+<codeline lineno="43"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Indentificador<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="tokens_8h_1ab6a016d33bcc8c43ad667c5500e1c494" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TK_IDENTIFICADOR<sp/><sp/>290</highlight></codeline>
+<codeline lineno="46"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Erro<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="tokens_8h_1a52afa3742170f1dda1c5b1c849a92ec8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>TOKEN_ERRO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>291</highlight></codeline>
+<codeline lineno="49"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Fim<sp/>de<sp/>tokens.h<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/tokens.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="dir_fc43e9fcbb7dace9ce2a3dd6e7a2b5f8" kind="dir">
+    <compoundname>include/</compoundname>
+    <innerfile refid="comp__dict_8h">comp_dict.h</innerfile>
+    <innerfile refid="comp__graph_8h">comp_graph.h</innerfile>
+    <innerfile refid="comp__list_8h">comp_list.h</innerfile>
+    <innerfile refid="comp__tree_8h">comp_tree.h</innerfile>
+    <innerfile refid="main_8h">main.h</innerfile>
+    <innerfile refid="tokens_8h">tokens.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/"/>
+  </compounddef>
+</doxygen>

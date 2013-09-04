@@ -1,0 +1,64 @@
+.TH "include/comp_dict.h" 3 "Wed Sep 4 2013" "Compiladores 2013/2" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+include/comp_dict.h \- 
+.SH SYNOPSIS
+.br
+.PP
+.SS "Data Structures"
+
+.in +1c
+.ti -1c
+.RI "struct \fBnome_interno\fP"
+.br
+.in -1c
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBDICT_SIZE\fP   997"
+.br
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBnome_interno\fP \fBDICT_NODE\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBdict_init\fP (void)"
+.br
+.ti -1c
+.RI "int \fBdict_address\fP (char *text)"
+.br
+.ti -1c
+.RI "\fBDICT_NODE\fP * \fBdict_find\fP (char *text)"
+.br
+.ti -1c
+.RI "\fBDICT_NODE\fP * \fBdict_insert\fP (char *text, int \fBtype\fP)"
+.br
+.ti -1c
+.RI "void \fBdict_print\fP (void)"
+.br
+.in -1c
+.SH "Define Documentation"
+.PP 
+.SS "#define \fBDICT_SIZE\fP   997"
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef struct \fBnome_interno\fP \fBDICT_NODE\fP"
+.SH "Function Documentation"
+.PP 
+.SS "int \fBdict_address\fP (char *text)"
+.SS "\fBDICT_NODE\fP* \fBdict_find\fP (char *text)"
+.SS "void \fBdict_init\fP (void)"
+.SS "\fBDICT_NODE\fP* \fBdict_insert\fP (char *text, inttype)"
+.SS "void \fBdict_print\fP (void)"
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Compiladores 2013/2 from the source code\&.

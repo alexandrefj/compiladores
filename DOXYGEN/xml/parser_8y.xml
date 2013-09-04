@@ -1,0 +1,533 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="parser_8y" kind="file">
+    <compoundname>parser.y</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes refid="comp__dict_8h" local="yes">comp_dict.h</includes>
+    <incdepgraph>
+      <node id="32">
+        <label>stdlib.h</label>
+      </node>
+      <node id="33">
+        <label>comp_dict.h</label>
+        <link refid="comp__dict_8h"/>
+      </node>
+      <node id="30">
+        <label>parser.y</label>
+        <link refid="parser.y"/>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="parser_8y_1aca36b68c12b6c6204e5f925a7ab3233d" prot="public" static="no" mutable="no">
+        <type>function</type>
+        <definition>function __pad0__</definition>
+        <argsstring></argsstring>
+        <name>__pad0__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="75" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1ac82244ac88d197ad4a4356c801b8959d" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1a4b51f736a34356910f3b556818375870" kindref="member">local_var_decl</ref></type>
+        <definition>local_var_decl __pad1__</definition>
+        <argsstring></argsstring>
+        <name>__pad1__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="78" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1af724e69941a257517d8c2db53780242a" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref></type>
+        <definition>type __pad2__</definition>
+        <argsstring></argsstring>
+        <name>__pad2__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="79" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a4b51f736a34356910f3b556818375870" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>local_var_decl</definition>
+        <argsstring></argsstring>
+        <name>local_var_decl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="81" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1ae16c2c1e1cc7f9f8a1ba564dd3414364" prot="public" static="no" mutable="no">
+        <type>block</type>
+        <definition>block __pad3__</definition>
+        <argsstring></argsstring>
+        <name>__pad3__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="87" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a3bad37d372b881dc5bb2d6c6aa83ac21" prot="public" static="no" mutable="no">
+        <type>flow_block</type>
+        <definition>flow_block __pad4__</definition>
+        <argsstring></argsstring>
+        <name>__pad4__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="90" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a1fbe2a20bee3dcbed727e751041e6b31" prot="public" static="no" mutable="no">
+        <type>simple_command_function</type>
+        <definition>simple_command_function __pad5__</definition>
+        <argsstring></argsstring>
+        <name>__pad5__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="94" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>TK_IDENTIFICADOR[&apos;exp&apos;]</definition>
+        <argsstring></argsstring>
+        <name>TK_IDENTIFICADOR</name>
+        <initializer>&apos; exp&apos;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="95" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" prot="public" static="no" mutable="no">
+        <type><ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref></type>
+        <definition>output output</definition>
+        <argsstring></argsstring>
+        <name>output</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="97" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" prot="public" static="no" mutable="no">
+        <type><ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref></type>
+        <definition>TK_PR_RETURN return</definition>
+        <argsstring></argsstring>
+        <name>return</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="98" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1ab0c03ff1848fe86f587c537c07998bce" prot="public" static="no" mutable="no">
+        <type>global_var_decl</type>
+        <definition>global_var_decl __pad6__</definition>
+        <argsstring></argsstring>
+        <name>__pad6__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="107" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a1ce7624726e60404f888918f5a55e80c" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref></type>
+        <definition>type __pad7__</definition>
+        <argsstring></argsstring>
+        <name>__pad7__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="108" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a962281f6f40cba0458cd6894b42877d5" prot="public" static="no" mutable="no">
+        <type>simple_command</type>
+        <definition>simple_command __pad8__</definition>
+        <argsstring></argsstring>
+        <name>__pad8__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="112" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1ae7356d7e5581e94a7cf65f5c8ede015f" prot="public" static="no" mutable="no">
+        <type>control_flow_command</type>
+        <definition>control_flow_command __pad9__</definition>
+        <argsstring></argsstring>
+        <name>__pad9__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="125" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1aded5e77f6d18847e8ab15d8a777765db" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>return __pad10__</definition>
+        <argsstring></argsstring>
+        <name>__pad10__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="128" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a42e7e27270054e9351802191443369d4" prot="public" static="no" mutable="no">
+        <type>param_list</type>
+        <definition>param_list __pad11__</definition>
+        <argsstring></argsstring>
+        <name>__pad11__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="132" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a529440f9a2e39940733758baedce98b3" prot="public" static="no" mutable="no">
+        <type>param_list</type>
+        <definition>param_list type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="134" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a7880287d3839abfc978d7c5dbae4f626" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></type>
+        <definition>call_param_list __pad12__</definition>
+        <argsstring></argsstring>
+        <name>__pad12__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="138" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref> constant</type>
+        <definition>call_param_list constant TK_IDENTIFICADOR [&apos;exp&apos;] call_param_list</definition>
+        <argsstring></argsstring>
+        <name>call_param_list</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="139" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1ac66502e6213b8f3d1ef5bb19763c12d4" prot="public" static="no" mutable="no">
+        <type>exp</type>
+        <definition>exp __pad13__</definition>
+        <argsstring></argsstring>
+        <name>__pad13__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="162" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="162" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1ad5db6fb21c36f2349758fd60be1c05bf" prot="public" static="no" mutable="no">
+        <type>constant</type>
+        <definition>constant __pad14__</definition>
+        <argsstring></argsstring>
+        <name>__pad14__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="169" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1abc90534ce4ec7a5a00cbd54a3271e258" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref></type>
+        <definition>output __pad15__</definition>
+        <argsstring></argsstring>
+        <name>__pad15__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="180" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a9c211346d83f9cbbedbedba460d1d632" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref></type>
+        <definition>type __pad16__</definition>
+        <argsstring></argsstring>
+        <name>__pad16__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="189" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="189" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">%{</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comp__dict_8h" kindref="compound">comp_dict.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal">%}</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal">%</highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnome__interno" kindref="compound">nome_interno</ref><sp/>*symbol;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" kindref="member">TK_PR_INT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>256</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a202341a72043fae43d263788dfbf057a" kindref="member">TK_PR_FLOAT</ref><sp/><sp/><sp/><sp/><sp/><sp/>257</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1afd48cc960d1695529c103cca4464eb48" kindref="member">TK_PR_BOOL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>258</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" kindref="member">TK_PR_CHAR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>259</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a6f7b846b26a5d434038f1f5e9f524d46" kindref="member">TK_PR_STRING</ref><sp/><sp/><sp/><sp/><sp/>260</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" kindref="member">TK_PR_IF</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>261</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>262</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" kindref="member">TK_PR_ELSE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>263</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" kindref="member">TK_PR_WHILE</ref><sp/><sp/><sp/><sp/><sp/><sp/>264</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" kindref="member">TK_PR_DO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>265</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" kindref="member">TK_PR_INPUT</ref><sp/><sp/><sp/><sp/><sp/><sp/>266</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref><sp/><sp/><sp/><sp/><sp/>267</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref><sp/><sp/><sp/><sp/><sp/>268</highlight></codeline>
+<codeline lineno="27"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a9e91217db5b34a182702d67a5f319ebc" kindref="member">TK_OC_LE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>270</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a0b733dd4c24a1037d59b3410054f4f15" kindref="member">TK_OC_GE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>271</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1ae60e2e439177e6662272838e89f378ed" kindref="member">TK_OC_EQ</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>272</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1adb12e27dba8a9d38ba9358573e560874" kindref="member">TK_OC_NE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>273</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1ae3b7d3e05c1854a69b894a4534c2fdd0" kindref="member">TK_OC_AND</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>274</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1aca39580880902e3ee18d535fd4348205" kindref="member">TK_OC_OR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>275</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>281</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a28fa3d1354a21b85ba571797959be5df" kindref="member">TK_LIT_FLOAT</ref><sp/><sp/><sp/><sp/><sp/>282</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a07504d793877ebb719decd0c38547b80" kindref="member">TK_LIT_FALSE</ref><sp/><sp/><sp/><sp/><sp/>283</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" kindref="member">TK_LIT_TRUE</ref><sp/><sp/><sp/><sp/><sp/><sp/>284</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1ac1974086f469c95f549368d75bcf39f7" kindref="member">TK_LIT_CHAR</ref><sp/><sp/><sp/><sp/><sp/><sp/>285</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1afb92b7de778adbc28a03626bc477af4a" kindref="member">TK_LIT_STRING</ref><sp/><sp/><sp/><sp/>286</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">%token<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/>290</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a52afa3742170f1dda1c5b1c849a92ec8" kindref="member">TOKEN_ERRO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>291</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal">%type&lt;type&gt;<sp/>constant</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="48"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight></codeline>
+<codeline lineno="49"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_FLOAT<sp/><sp/><sp/><sp/><sp/>2</highlight></codeline>
+<codeline lineno="50"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_CHAR<sp/><sp/><sp/><sp/><sp/><sp/>3</highlight></codeline>
+<codeline lineno="51"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_STRING<sp/><sp/><sp/><sp/>4</highlight></codeline>
+<codeline lineno="52"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_BOOL<sp/><sp/><sp/><sp/><sp/><sp/>5</highlight></codeline>
+<codeline lineno="53"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_IDENTIFICADOR<sp/>6</highlight></codeline>
+<codeline lineno="54"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal">%left<sp/><ref refid="tokens_8h_1a9e91217db5b34a182702d67a5f319ebc" kindref="member">TK_OC_LE</ref><sp/><ref refid="tokens_8h_1a0b733dd4c24a1037d59b3410054f4f15" kindref="member">TK_OC_GE</ref><sp/><ref refid="tokens_8h_1ae60e2e439177e6662272838e89f378ed" kindref="member">TK_OC_EQ</ref><sp/><ref refid="tokens_8h_1adb12e27dba8a9d38ba9358573e560874" kindref="member">TK_OC_NE</ref><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal">%left<sp/><ref refid="tokens_8h_1ae3b7d3e05c1854a69b894a4534c2fdd0" kindref="member">TK_OC_AND</ref><sp/><ref refid="tokens_8h_1aca39580880902e3ee18d535fd4348205" kindref="member">TK_OC_OR</ref></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">%left<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal">%left<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal">%nonassoc<sp/><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref></highlight></codeline>
+<codeline lineno="62"><highlight class="normal">%nonassoc<sp/><ref refid="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" kindref="member">TK_PR_ELSE</ref></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal">%%</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************************</highlight></codeline>
+<codeline lineno="67"><highlight class="comment">----------------------REGRAS<sp/>DA<sp/>LINGUAGEM<sp/>IKS---------------------------------------------**</highlight></codeline>
+<codeline lineno="68"><highlight class="comment">*******************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">program<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:global_var_decl<sp/>program</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>program</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">param_list</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a4b51f736a34356910f3b556818375870" kindref="member">local_var_decl</ref><sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal"><sp/>block</highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="parser_8y_1a4b51f736a34356910f3b556818375870" kindref="member">local_var_decl</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a4b51f736a34356910f3b556818375870" kindref="member">local_var_decl</ref></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">block<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>simple_command<sp/>block</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>control_flow_command<sp/>block</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal">simple_command<sp/>block</highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal">flow_block<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>simple_command_function</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal"><sp/>simple_command<sp/>flow_block<sp/></highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal">simple_command_function:<sp/><ref refid="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" kindref="member">TK_PR_INPUT</ref><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref><sp/><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref><sp/><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">global_var_decl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal"><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">simple_command<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" kindref="member">TK_PR_INPUT</ref><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref><sp/><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal">control_flow_command<sp/><sp/><sp/><sp/>:<ref refid="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" kindref="member">TK_PR_IF</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref><sp/>flow_block<sp/></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" kindref="member">TK_PR_IF</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref><sp/>flow_block<sp/><ref refid="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" kindref="member">TK_PR_ELSE</ref><sp/>flow_block<sp/></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" kindref="member">TK_PR_WHILE</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><ref refid="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" kindref="member">TK_PR_DO</ref><sp/>flow_block<sp/></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" kindref="member">TK_PR_DO</ref><sp/>flow_block<sp/><ref refid="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" kindref="member">TK_PR_WHILE</ref></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>exp</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref>;</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">param_list<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/>param_list</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/>param_list</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>constant<sp/><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref><sp/></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>constant<sp/><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">exp<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>constant</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>exp<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;&amp;&apos;</highlight><highlight class="normal">exp</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal">exp</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"><sp/>exp<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>exp<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1a9e91217db5b34a182702d67a5f319ebc" kindref="member">TK_OC_LE</ref><sp/>exp</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1a0b733dd4c24a1037d59b3410054f4f15" kindref="member">TK_OC_GE</ref><sp/>exp</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1ae60e2e439177e6662272838e89f378ed" kindref="member">TK_OC_EQ</ref><sp/>exp</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1adb12e27dba8a9d38ba9358573e560874" kindref="member">TK_OC_NE</ref><sp/>exp</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1ae3b7d3e05c1854a69b894a4534c2fdd0" kindref="member">TK_OC_AND</ref><sp/>exp</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1aca39580880902e3ee18d535fd4348205" kindref="member">TK_OC_OR</ref><sp/>exp</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal"><sp/>exp<sp/></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/>Tentei<sp/>definir<sp/>os<sp/>tipos,<sp/>porém<sp/>não</highlight></codeline>
+<codeline lineno="165"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sei<sp/>ao<sp/>certo<sp/>se<sp/>foi<sp/>isso<sp/>que<sp/>foi<sp/></highlight></codeline>
+<codeline lineno="166"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pedido<sp/>na<sp/>especificação<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">constant<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>1;}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>1;}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1a28fa3d1354a21b85ba571797959be5df" kindref="member">TK_LIT_FLOAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>2;}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><ref refid="tokens_8h_1a28fa3d1354a21b85ba571797959be5df" kindref="member">TK_LIT_FLOAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>2;}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1afb92b7de778adbc28a03626bc477af4a" kindref="member">TK_LIT_STRING</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>3;}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1ac1974086f469c95f549368d75bcf39f7" kindref="member">TK_LIT_CHAR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>4;}</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" kindref="member">TK_LIT_TRUE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>5;}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1a07504d793877ebb719decd0c38547b80" kindref="member">TK_LIT_FALSE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>5;}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:exp</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|exp<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" kindref="member">TK_PR_INT</ref></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a202341a72043fae43d263788dfbf057a" kindref="member">TK_PR_FLOAT</ref></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1afd48cc960d1695529c103cca4464eb48" kindref="member">TK_PR_BOOL</ref></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a6f7b846b26a5d434038f1f5e9f524d46" kindref="member">TK_PR_STRING</ref></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" kindref="member">TK_PR_CHAR</ref></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal">%%</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y"/>
+  </compounddef>
+</doxygen>

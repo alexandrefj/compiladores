@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="main_8h" kind="file">
+    <compoundname>main.h</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes refid="comp__dict_8h" local="yes">comp_dict.h</includes>
+    <includes refid="comp__list_8h" local="yes">comp_list.h</includes>
+    <includes refid="comp__tree_8h" local="yes">comp_tree.h</includes>
+    <includes refid="comp__graph_8h" local="yes">comp_graph.h</includes>
+    <includedby refid="scanner_8l" local="yes">scanner.l</includedby>
+    <incdepgraph>
+      <node id="19">
+        <label>include/main.h</label>
+        <link refid="main.h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>stdlib.h</label>
+      </node>
+      <node id="21">
+        <label>comp_dict.h</label>
+        <link refid="comp__dict_8h"/>
+      </node>
+      <node id="22">
+        <label>comp_list.h</label>
+        <link refid="comp__list_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>comp_tree.h</label>
+        <link refid="comp__tree_8h"/>
+      </node>
+      <node id="25">
+        <label>comp_graph.h</label>
+        <link refid="comp__graph_8h"/>
+      </node>
+      <node id="20">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="26">
+        <label>include/main.h</label>
+        <link refid="main.h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>scanner.l</label>
+        <link refid="scanner_8l"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="main_8h_1aa2e83304934225b4433241fbf139e14f" prot="public" static="no">
+        <name>IKS_SYNTAX_SUCESSO</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="19" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8h_1af272c2cc706a974960ce198fd9c238b4" prot="public" static="no">
+        <name>IKS_SYNTAX_ERRO</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="20" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8h_1ad3e2e21fca1e68569e583d1340290526" prot="public" static="no">
+        <name>IKS_SIMBOLO_INDEFINIDO</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="26" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8h_1a25a7443cdeabca76f4c7526041a69933" prot="public" static="no">
+        <name>IKS_SIMBOLO_LITERAL_INT</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="27" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8h_1a3cc56aba35d5c415d90b19f41dc5ec4f" prot="public" static="no">
+        <name>IKS_SIMBOLO_LITERAL_FLOAT</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="28" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8h_1ad93951012ae2a818ba07539efffbf444" prot="public" static="no">
+        <name>IKS_SIMBOLO_LITERAL_CHAR</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="29" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8h_1a895f1647b277c562c8a1e3270109cf97" prot="public" static="no">
+        <name>IKS_SIMBOLO_LITERAL_STRING</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="30" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8h_1aa4f468b05c912ff12ec7c73e2e95dbda" prot="public" static="no">
+        <name>IKS_SIMBOLO_LITERAL_BOOL</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="31" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="main_8h_1ae12bced70d7ab3294fff8db97d062daf" prot="public" static="no">
+        <name>IKS_SIMBOLO_IDENTIFICADOR</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" line="32" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/main.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>main.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/>Cabeçalho<sp/>principal<sp/>do<sp/>analisador<sp/>sintático</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__MAIN_H</highlight></codeline>
+<codeline lineno="7"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__MAIN_H</highlight></codeline>
+<codeline lineno="8"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comp__dict_8h" kindref="compound">comp_dict.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comp__list_8h" kindref="compound">comp_list.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comp__tree_8h" kindref="compound">comp_tree.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comp__graph_8h" kindref="compound">comp_graph.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/><sp/>Constantes<sp/>a<sp/>serem<sp/>utilizadas<sp/>como<sp/>valor<sp/>de<sp/>retorno<sp/>no<sp/>caso<sp/>de</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/><sp/>sucesso<sp/>(IKS_SYNTAX_SUCESS)<sp/>e<sp/>erro<sp/>(IKS_SYNTAX_ERRO)<sp/>do<sp/>analisador</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/><sp/>sintático.</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="main_8h_1aa2e83304934225b4433241fbf139e14f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IKS_SYNTAX_SUCESSO<sp/>0</highlight></codeline>
+<codeline lineno="20" refid="main_8h_1af272c2cc706a974960ce198fd9c238b4" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_SYNTAX_ERRO<sp/><sp/><sp/><sp/>1</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/><sp/>Constantes<sp/>a<sp/>serem<sp/>utilizadas<sp/>para<sp/>diferenciar<sp/>os<sp/>lexemas<sp/>que<sp/>estão</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/><sp/>registrados<sp/>na<sp/>tabela<sp/>de<sp/>símbolos.</highlight></codeline>
+<codeline lineno="25"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="main_8h_1ad3e2e21fca1e68569e583d1340290526" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>IKS_SIMBOLO_INDEFINIDO<sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="27" refid="main_8h_1a25a7443cdeabca76f4c7526041a69933" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_SIMBOLO_LITERAL_INT<sp/><sp/><sp/><sp/>1</highlight></codeline>
+<codeline lineno="28" refid="main_8h_1a3cc56aba35d5c415d90b19f41dc5ec4f" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_SIMBOLO_LITERAL_FLOAT<sp/><sp/>2</highlight></codeline>
+<codeline lineno="29" refid="main_8h_1ad93951012ae2a818ba07539efffbf444" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_SIMBOLO_LITERAL_CHAR<sp/><sp/><sp/>3</highlight></codeline>
+<codeline lineno="30" refid="main_8h_1a895f1647b277c562c8a1e3270109cf97" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_SIMBOLO_LITERAL_STRING<sp/>4</highlight></codeline>
+<codeline lineno="31" refid="main_8h_1aa4f468b05c912ff12ec7c73e2e95dbda" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_SIMBOLO_LITERAL_BOOL<sp/><sp/><sp/>5</highlight></codeline>
+<codeline lineno="32" refid="main_8h_1ae12bced70d7ab3294fff8db97d062daf" refkind="member"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_SIMBOLO_IDENTIFICADOR<sp/><sp/>6</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/main.h"/>
+  </compounddef>
+</doxygen>

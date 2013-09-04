@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="scanner_8l" kind="file">
+    <compoundname>scanner.l</compoundname>
+    <includes local="yes">string.h</includes>
+    <includes local="yes">stdlib.h</includes>
+    <includes local="yes">parser.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <incdepgraph>
+      <node id="39">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>stdlib.h</label>
+      </node>
+      <node id="41">
+        <label>comp_dict.h</label>
+        <link refid="comp__dict_8h"/>
+      </node>
+      <node id="42">
+        <label>comp_list.h</label>
+        <link refid="comp__list_8h"/>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>comp_tree.h</label>
+        <link refid="comp__tree_8h"/>
+      </node>
+      <node id="36">
+        <label>string.h</label>
+      </node>
+      <node id="35">
+        <label>scanner.l</label>
+        <link refid="scanner.l"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>comp_graph.h</label>
+        <link refid="comp__graph_8h"/>
+      </node>
+      <node id="38">
+        <label>parser.h</label>
+      </node>
+      <node id="40">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="scanner_8l_1ae830dc71903bb3bb4c1535d4717132f8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>__pad17__</definition>
+        <argsstring></argsstring>
+        <name>__pad17__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="25" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a202341a72043fae43d263788dfbf057a" prot="public" static="no" mutable="no">
+        <type>float <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>float return TK_PR_FLOAT</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_FLOAT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="26" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1afd48cc960d1695529c103cca4464eb48" prot="public" static="no" mutable="no">
+        <type>bool <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>bool return TK_PR_BOOL</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_BOOL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="27" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" prot="public" static="no" mutable="no">
+        <type>char <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>char return TK_PR_CHAR</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_CHAR</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="28" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a6f7b846b26a5d434038f1f5e9f524d46" prot="public" static="no" mutable="no">
+        <type>string <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>string return TK_PR_STRING</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_STRING</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="29" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" prot="public" static="no" mutable="no">
+        <type>if <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>if return TK_PR_IF</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_IF</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="30" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" prot="public" static="no" mutable="no">
+        <type>then <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>then return TK_PR_THEN</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_THEN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="31" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" prot="public" static="no" mutable="no">
+        <type>else <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>else return TK_PR_ELSE</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_ELSE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="32" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" prot="public" static="no" mutable="no">
+        <type>while <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>while return TK_PR_WHILE</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_WHILE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="33" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" prot="public" static="no" mutable="no">
+        <type>do <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>do return TK_PR_DO</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_DO</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="34" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" prot="public" static="no" mutable="no">
+        <type>input <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>input return TK_PR_INPUT</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_INPUT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="35" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref> <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>output return TK_PR_OUTPUT</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_OUTPUT</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="36" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" prot="public" static="no" mutable="no">
+        <type><ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref> <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <definition>return return TK_PR_RETURN</definition>
+        <argsstring></argsstring>
+        <name>TK_PR_RETURN</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="37" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">%{</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;string.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdlib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;parser.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numerodelinhas<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getLineNumber(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>numerodelinhas;}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initMe(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{<sp/><ref refid="comp__dict_8h_1a047c7e1b181bcd0caed7d4b66d641626" kindref="member">dict_init</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">%}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">INTEGER<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[0-9]</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">HEXA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[a-fA-F]</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">CHAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[a-zA-Z_]</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">SPECIAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[,;:(){}\[\]{}\+\-\*&lt;&gt;=!&amp;$\/]</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">%x<sp/>comment</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">%%</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" kindref="member">TK_PR_INT</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a202341a72043fae43d263788dfbf057a" kindref="member">TK_PR_FLOAT</ref>;<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;bool&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1afd48cc960d1695529c103cca4464eb48" kindref="member">TK_PR_BOOL</ref>;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;char&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" kindref="member">TK_PR_CHAR</ref>;<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;string&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a6f7b846b26a5d434038f1f5e9f524d46" kindref="member">TK_PR_STRING</ref>;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;if&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" kindref="member">TK_PR_IF</ref>;<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;then&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref>;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;else&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" kindref="member">TK_PR_ELSE</ref>;<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;while&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" kindref="member">TK_PR_WHILE</ref>;<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;do&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" kindref="member">TK_PR_DO</ref>;<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;input&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" kindref="member">TK_PR_INPUT</ref>;<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;output&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref>;<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;return&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref>;<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/><ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(yytext,<ref refid="main_8h_1aa4f468b05c912ff12ec7c73e2e95dbda" kindref="member">IKS_SIMBOLO_LITERAL_BOOL</ref>);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" kindref="member">TK_LIT_TRUE</ref>;}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/><ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(yytext,<ref refid="main_8h_1aa4f468b05c912ff12ec7c73e2e95dbda" kindref="member">IKS_SIMBOLO_LITERAL_BOOL</ref>);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="tokens_8h_1a07504d793877ebb719decd0c38547b80" kindref="member">TK_LIT_FALSE</ref>;}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{CHAR}({CHAR}|{INTEGER})*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/><ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(yytext,<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref>);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref>;}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">[0-9]+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/><ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(yytext,<ref refid="main_8h_1a25a7443cdeabca76f4c7526041a69933" kindref="member">IKS_SIMBOLO_LITERAL_INT</ref>);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref>;}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;(\\.|[^\\&apos;</highlight><highlight class="normal">])+</highlight><highlight class="stringliteral">&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_LITERAL_CHAR);<sp/>return<sp/>TK_LIT_CHAR;}</highlight></codeline>
+<codeline lineno="47"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral">\&quot;(\\.|[^\\&quot;])*\&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_LITERAL_STRING);<sp/>return<sp/>TK_LIT_STRING;}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral">[0-9]*\.[0-9]+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_LITERAL_FLOAT);<sp/>return<sp/>TK_LIT_FLOAT;}</highlight></codeline>
+<codeline lineno="51"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="52"><highlight class="stringliteral">\s<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="55"><highlight class="stringliteral">{SPECIAL}<sp/><sp/>return<sp/>yytext[0];</highlight></codeline>
+<codeline lineno="56"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="57"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="58"><highlight class="stringliteral">&quot;&lt;=&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>TK_OC_LE;</highlight></codeline>
+<codeline lineno="59"><highlight class="stringliteral">&quot;&gt;=&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>TK_OC_GE;</highlight></codeline>
+<codeline lineno="60"><highlight class="stringliteral">&quot;==&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>TK_OC_EQ;</highlight></codeline>
+<codeline lineno="61"><highlight class="stringliteral">&quot;!=&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>TK_OC_NE;</highlight></codeline>
+<codeline lineno="62"><highlight class="stringliteral">&quot;&amp;&amp;&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>TK_OC_AND;</highlight></codeline>
+<codeline lineno="63"><highlight class="stringliteral">&quot;||&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>TK_OC_OR;</highlight></codeline>
+<codeline lineno="64"><highlight class="stringliteral">\n<sp/>{<sp/>++numerodelinhas;}</highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral">[<sp/>\t\v\f]<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>Ignorar<sp/>caracteres<sp/>inuteis<sp/>*/</highlight></codeline>
+<codeline lineno="68"><highlight class="stringliteral">\/\/.*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>/*<sp/>Ignorar<sp/>comentarios<sp/>*/</highlight></codeline>
+<codeline lineno="69"><highlight class="stringliteral">&quot;/*&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BEGIN<sp/>comment;<sp/><sp/></highlight></codeline>
+<codeline lineno="70"><highlight class="stringliteral">&lt;comment&gt;&quot;\n&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++numerodelinhas;</highlight></codeline>
+<codeline lineno="71"><highlight class="stringliteral">&lt;comment&gt;.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="72"><highlight class="stringliteral">&lt;comment&gt;&quot;*/&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>BEGIN(INITIAL);</highlight></codeline>
+<codeline lineno="73"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="74"><highlight class="stringliteral">.<sp/>{return<sp/>TOKEN_ERRO;<sp/>exit(IKS_SYNTAX_ERRO);}</highlight></codeline>
+<codeline lineno="75"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="76"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="77"><highlight class="stringliteral">%%</highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l"/>
+  </compounddef>
+</doxygen>
