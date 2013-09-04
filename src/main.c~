@@ -14,7 +14,7 @@ int main (int argc, char **argv)
 {
   int resultado = yyparse();
   printf("resultado = %d\n", resultado);
-	dict_print(get_dict());
+	dict_print();
   return resultado;
 }
 

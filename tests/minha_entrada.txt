@@ -1,6 +1,3 @@
-int var[50];
-float var[50];
-
 int:func()
 	int: var1;
 	float: var2;
@@ -23,8 +20,10 @@ string:func3(int:var1,float:var2,bool:var3){
 	if((10)) then 
 		vtor5[10] = 6.87;
 
+	v[a - 35] = 8;
+
 	if(9<8 && 10>8) then
-		vector6[(5 - 20)] = 98.6666;
+		vector6[35-a] = 98.6666;
 	else
 		var_aux = 20;
 
