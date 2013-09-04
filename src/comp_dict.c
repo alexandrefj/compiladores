@@ -1,11 +1,3 @@
-/*
-UFRGS - Compiladores B - Marcelo Johann - 2013/1 - Etapa 2
-
-Alunos: Jorge Ximendes Silva Junior e Breno Augusto Almeida Scheffer.
-
-Matrícula: 194916 e 208109.
-*/
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

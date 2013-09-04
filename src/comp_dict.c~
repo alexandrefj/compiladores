@@ -89,17 +89,16 @@ DICT_NODE *dict_insert(char *text, int type)
 	address = dict_address(text);
 	node = (DICT_NODE*) calloc (1,sizeof(DICT_NODE));
 
-	if (type != IKS_SIMBOLO_LITERAL_CHAR && type != IKS_SIMBOLO_LITERAL_STRING)
-	{
+	if (type != IKS_SIMBOLO_LITERAL_CHAR && type != IKS_SIMBOLO_LITERAL_STRING){
         	node->text = malloc(len + 1);
         	strcpy(node->text, text);
     	}
-	else
-	{
+	else{
         	node->text = malloc(len - 2 + 1);
         	strncpy(node->text , text + 1, len - 2);
 		removeBarra(node->text);
     	}
+
     	node->type = type;
     
     	node->intVal = 0;
@@ -109,18 +108,18 @@ DICT_NODE *dict_insert(char *text, int type)
     	switch (type) 
 	{
         	case IKS_SIMBOLO_LITERAL_INT:
-            	    node->intVal = atoi(text);
-            	    break;
+            	    				node->intVal = atoi(text);
+            	    				break;
 		case IKS_SIMBOLO_LITERAL_CHAR:
-		    node->charVal = text[1];
-		    break;
+		    				node->charVal = text[1];
+		    				break;
 		case IKS_SIMBOLO_LITERAL_BOOL:
-			printf("%d\n",strcmp(text,"false"));
-		     if(strcmp(text,"false")==0) node->boolVal = 0;
-		     else node->boolVal = 1;
-		    break;
+		    				if(strcmp(text,"false")==0) node->boolVal = 0;
+	     				        else node->boolVal = 1;
+
+		    				break;
 		default:
-		    break;
+		    				break;
     	}
 	
 	node->next = Table[address];
