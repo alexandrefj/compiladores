@@ -1,43 +1,25 @@
 #ifndef COMP_TREE_H
 #define COMP_TREE_H
 
-/*
-TreeNode: Representa cada nodo da arvore. Contem um
-valor inteiro, um filho a esquerda, e um filho a
-direita.
-*/
-typedef struct comp_tree_t {
-	int data;
-	struct comp_tree_t* left;
-	struct comp_tree_t* right;
-} TreeNode;
 
-/*
-createTree: Inicializa uma arvore com um nodo vazio.
-*/
-TreeNode* createTree();
+#define MAX_NODE 	   4
 
-/*
-freeTree: Libera o espaco alocado por uma arvore.
-*/
-void freeTree(TreeNode* root);
+#include <stdio.h>
+#include <stdlib.h>
+#include "comp_dict.h"
 
-/*
-insertTree: Insere um valor inteiro em uma arvore.
-*/
-void insertTree(TreeNode** root, int data);
+typedef struct astreenode
+{
+	int type;
+	DICT_NODE *symbol;
+	struct astreenode *scc[MAX_NODE];
+	//int impresso;
+}ASTREE; 
 
-/*
-printTree: Imprime todos os valores da arvore em
-ordem crescente.
-*/
-void printTree(TreeNode* root);
-
-/*
-searchNode: Procura um valor na arvore. Retorna o
-nodo que contem o valor, ou NULL caso o valor nao
-pertenca a arvore.
-*/
-TreeNode* searchNode(TreeNode** root, int data);
+ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s2, ASTREE *s3);
+//void *astPrintTree(ASTREE *root);
+//void *astPrintNode(ASTREE *node);
 
 #endif
+
+

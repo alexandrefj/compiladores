@@ -35,19 +35,19 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 "input"    return TK_PR_INPUT; 
 "output"   return TK_PR_OUTPUT; 
 "return"   return TK_PR_RETURN; 
-"true"     {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_LITERAL_BOOL); return TK_LIT_TRUE;}
-"false"    {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_LITERAL_BOOL); return TK_LIT_FALSE;}
+"true"     {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL); return TK_LIT_TRUE;}
+"false"    {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL); return TK_LIT_FALSE;}
 
 
 {CHAR}({CHAR}|{INTEGER})*      	{yylval.symbol = dict_insert(yytext,TK_IDENTIFICADOR); return TK_IDENTIFICADOR;}
 
-[0-9]+                	        {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_LITERAL_INT); return TK_LIT_INT;}
+[0-9]+                	        {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_INT); return TK_LIT_INT;}
 
-'(\\.|[^\\'])+'                 {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_LITERAL_CHAR); return TK_LIT_CHAR;}
+'(\\.|[^\\'])+'                 {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_CHAR); return TK_LIT_CHAR;}
 
-\"(\\.|[^\\"])*\"              	{yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_LITERAL_STRING); return TK_LIT_STRING;}                         
+\"(\\.|[^\\"])*\"              	{yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_STRING); return TK_LIT_STRING;}                         
     
-[0-9]*\.[0-9]+	                {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_LITERAL_FLOAT); return TK_LIT_FLOAT;}
+[0-9]*\.[0-9]+	                {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_FLOAT); return TK_LIT_FLOAT;}
 
 \s     
                  
