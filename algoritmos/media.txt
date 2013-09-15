@@ -1,0 +1,33 @@
+/*
+	Calcula a soma e a média para um determinado número de valores digitados.
+*/
+
+float: entrada;
+
+int: main()
+int: qtd;
+int: i;
+float: soma;
+float: media;
+{
+	output "Digite a quantidade de valores que serao calculados: ";
+	input qtd;
+	i = 0;
+	soma = 0;
+	media = 0;
+
+	while(i < qtd) do {
+		output "Valor ", i + 1, ":";
+		input entrada;
+		soma = soma + entrada;
+		i = i + 1;
+	}
+
+	output "Soma: ", soma;
+
+	media = soma / qtd;
+
+	output "Media: ", media;
+
+	return 0;
+}
