@@ -1,15 +1,39 @@
 %{
 #include <stdio.h>
-#include<stdlib.h>
-#include "comp_dict.h"
+#include <stdlib.h>
+#include "main.h"
+
+struct astreenode *root;
 %}
 
 %union
 {
 struct nome_interno *symbol;
 int type;
+struct astreenode *ast;
 }
 
+/*
+%type<ast> program
+%type<ast> function
+%type<ast> local_var_decl
+%type<ast> block
+%type<ast> flow_block
+%type<ast> simple_command_function
+%type<ast> global_var_decl
+%type<ast> simple_command
+%type<ast> control_flow_command
+
+%type<ast> return
+
+%type<ast> param_list
+%type<ast> call_param_list
+%type<ast> exp
+%type<ast> constant
+%type<ast> output	
+%type<ast> type 
+
+*/
 %token TK_PR_INT	256
 %token TK_PR_FLOAT	257
 %token TK_PR_BOOL	258
@@ -42,7 +66,7 @@ int type;
 %token TOKEN_ERRO	291
 
 
-%type<type> constant
+
 
 /*
 %token<symbol> TK_LIT_INT   	1
@@ -57,6 +81,10 @@ int type;
 %left TK_OC_AND TK_OC_OR
 %left '-' '+'
 %left '*' '/'
+%left ')'
+%left ']'
+
+
 
 %nonassoc TK_PR_THEN
 %nonassoc TK_PR_ELSE
@@ -67,126 +95,148 @@ int type;
 ----------------------REGRAS DA LINGUAGEM IKS---------------------------------------------**
 *******************************************************************************************/
 
-program 		:global_var_decl program
-			|function program
+
+programa:   funcao programa
+	   |declaracao_var_globais programa
+	   |
+	   ;
+
+funcao:    tipo ':' TK_IDENTIFICADOR '('parametros_funcao')' declaracao_var_locais '{' bloco '}' ;
+
+parametros_funcao: 	tipo ':' TK_IDENTIFICADOR 
+			| tipo ':'TK_IDENTIFICADOR ',' tipo ':' TK_IDENTIFICADOR parametros_funcao
 			|
 			;
 
-function		:type ':' TK_IDENTIFICADOR '('param_list')' local_var_decl '{' block'}' ;
-
-
-local_var_decl		:type ':' TK_IDENTIFICADOR';'
-			|type ':' TK_IDENTIFICADOR';' local_var_decl
+declaracao_var_locais:  tipo ':' TK_IDENTIFICADOR';' declaracao_var_locais
 			|
 			;
 
-block			: simple_command block
-			| control_flow_command block
-			| '{'simple_command block'}'
-			|
-			;
-
-flow_block		: simple_command_function
-			| '{' simple_command flow_block '}' ';'
-			|
-			;
-
-simple_command_function: TK_PR_INPUT TK_IDENTIFICADOR ';'
-			|TK_IDENTIFICADOR '=' exp';'	
-			|TK_IDENTIFICADOR'['exp']' '=' exp';' 	
-			|TK_PR_OUTPUT output ';' 
-			|TK_PR_RETURN return ';'
-			|TK_IDENTIFICADOR '=' exp	
-			|TK_IDENTIFICADOR'['exp']' '=' exp
-			|TK_PR_OUTPUT output 
-			|TK_PR_RETURN return
-			|';'
+declaracao_var_globais: tipo ':' TK_IDENTIFICADOR';' 		
+			| tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'';'
 			;
 
 
-global_var_decl		: type ':' TK_IDENTIFICADOR';'		
-			| type ':' TK_IDENTIFICADOR '['TK_LIT_INT']'';'
-			;
-
-
-simple_command		:TK_PR_INPUT TK_IDENTIFICADOR ';'
-			|TK_IDENTIFICADOR '=' exp';'	
-			|TK_IDENTIFICADOR'['exp']' '=' exp';' 	
-			|TK_PR_OUTPUT output ';' 
-			|TK_PR_RETURN return ';'
-			|';'
-			|
-			;
-
-control_flow_command	:TK_PR_IF '('exp')'TK_PR_THEN flow_block 
-			|TK_PR_IF '('exp')'TK_PR_THEN flow_block TK_PR_ELSE flow_block 
-			|TK_PR_WHILE '('exp')'TK_PR_DO flow_block 
-			|TK_PR_DO flow_block TK_PR_WHILE'('exp')'
-			;
-
-return			: exp
-			| TK_IDENTIFICADOR;
-
-
-param_list		:type ':'TK_IDENTIFICADOR param_list
-			|',' type ':'TK_IDENTIFICADOR param_list
-			|
-			;
-
-call_param_list		: constant call_param_list
-			| TK_IDENTIFICADOR'['exp']' call_param_list 
-			| ',' constant call_param_list
-			| ',' TK_IDENTIFICADOR'['exp']' call_param_list
-			|
-			;
-
-exp			: constant
-			| TK_IDENTIFICADOR
-			| '(' exp ')'
-        		| '&'exp
-        		| '*'exp
-			| exp '*' exp
-			| exp '/' exp
-			| exp '+' exp	
-			| exp '-' exp	
-			| exp TK_OC_LE exp
-			| exp TK_OC_GE exp
-			| exp TK_OC_EQ exp
-			| exp TK_OC_NE exp
-			| exp '>' exp
-			| exp '<' exp
-			| exp TK_OC_AND exp
-			| exp TK_OC_OR exp
-			| TK_IDENTIFICADOR '[' exp ']'
-			| TK_IDENTIFICADOR '('call_param_list')'
-        		;
-
-/* 	Tentei definir os tipos, porém não
-	sei ao certo se foi isso que foi 
-	pedido na especificação		*/
-
-
-constant		: TK_LIT_INT		{$$ = 1;}
-			| '-'TK_LIT_INT 	{$$ = 1;}
-			| TK_LIT_FLOAT		{$$ = 2;}
-			| '-'TK_LIT_FLOAT	{$$ = 2;}
-			| TK_LIT_STRING		{$$ = 3;}
-			| TK_LIT_CHAR		{$$ = 4;}
-			| TK_LIT_TRUE		{$$ = 5;}
-			| TK_LIT_FALSE		{$$ = 5;}
-			;
-
-output			:exp
-			|exp ',' output
-			|
-			;
- 
-type			:TK_PR_INT
+tipo:                   TK_PR_INT
 			|TK_PR_FLOAT
 			|TK_PR_BOOL
 			|TK_PR_STRING
 			|TK_PR_CHAR
 			;
+
+comando:    TK_PR_IF '('condicao')'TK_PR_THEN comando
+	   |TK_PR_IF '('condicao')'TK_PR_THEN comando TK_PR_ELSE comando
+	   |TK_PR_WHILE '('condicao')'TK_PR_DO comando 
+	   |TK_PR_DO comando TK_PR_WHILE'('condicao')' 
+	   |TK_PR_INPUT TK_IDENTIFICADOR ';'
+	   |atribuicao 	
+	   |TK_PR_OUTPUT output ';' 
+	   |TK_PR_RETURN expressao ';'
+	   //|bloco
+	   |chamada_funcao
+	   |';'
+	   ;
+
+output:      saida
+	   | saida ',' output
+	   |
+	   ;
+
+bloco:         comando bloco
+	      | '{' comando bloco '}' 
+	      |
+	      ;
+
+  
+atribuicao:   TK_IDENTIFICADOR '=' expressao';' 
+	      |TK_IDENTIFICADOR'['expressao']' '=' expressao';'
+	      ;
+
+expressao:	TK_IDENTIFICADOR
+		|literal
+		| '(' expressao')'
+        	//| '&' expressao 
+        	| '*' expressao
+		| expressao '+' expressao
+		| expressao '*' expressao
+		| expressao '/' expressao
+		| expressao '-' expressao
+		| '-' expressao
+		| expressao TK_OC_LE expressao
+		| expressao TK_OC_GE expressao
+		| expressao TK_OC_EQ expressao
+		| expressao TK_OC_NE expressao
+		| expressao '>' expressao
+		| expressao '<' expressao
+		| expressao TK_OC_AND expressao
+		| expressao TK_OC_OR expressao
+		| TK_IDENTIFICADOR '[' expressao ']'
+		| chamada_funcao
+		;
+
+chamada_funcao: TK_IDENTIFICADOR '(' chamada_recursao ')';
+
+chamada_recursao:  expressao
+		  | ',' chamada_recursao
+		  |
+		  ;
+		
+
+
+literal:                  TK_LIT_INT		
+			//| '-'TK_LIT_INT 	
+			| TK_LIT_FLOAT		
+			//| '-'TK_LIT_FLOAT	
+			| TK_LIT_STRING		
+			| TK_LIT_CHAR		
+			| TK_LIT_TRUE		
+			| TK_LIT_FALSE		
+			;
+
+condicao:	TK_IDENTIFICADOR
+		|literal
+		| '(' condicao')'
+        	//| '&' condicao 
+        	| '*' condicao
+		| condicao '+' condicao
+		| condicao '*' condicao
+		| condicao '/' condicao
+		| condicao '-' condicao
+		| '-' condicao
+		| condicao TK_OC_LE condicao
+		| condicao TK_OC_GE condicao
+		| condicao TK_OC_EQ condicao
+		| condicao TK_OC_NE condicao
+		| condicao '>' condicao
+		| condicao '<' condicao
+		| condicao TK_OC_AND condicao
+		| condicao TK_OC_OR condicao
+		| TK_IDENTIFICADOR '['condicao']'
+		| chamada_funcao
+		;
+		
+
+saida:     	TK_IDENTIFICADOR
+		|TK_LIT_STRING
+		| '(' saida')'
+        	//| '&' saida 
+        	| '*' saida	
+		| saida '+' saida
+		| saida '*' saida
+		| saida '/' saida
+		| saida '-' saida
+		| '-' saida
+		| saida TK_OC_LE saida
+		| saida TK_OC_GE saida
+		| saida TK_OC_EQ saida
+		| saida TK_OC_NE saida
+		| saida '>' saida
+		| saida '<' saida
+		| saida TK_OC_AND saida
+		| saida TK_OC_OR saida
+		| TK_IDENTIFICADOR '['saida ']'
+		| chamada_funcao
+		;	 
 
 %%
 
