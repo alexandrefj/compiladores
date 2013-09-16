@@ -29,7 +29,8 @@ ADD_EXECUTABLE(dict_test
 
 ADD_EXECUTABLE(tree_test
 	tests/tree_test.c
-	src/comp_tree.c)
+	src/comp_tree.c
+	src/gv.c)
 
 ADD_EXECUTABLE(graph_test
 	tests/graph_test.c

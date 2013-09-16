@@ -21,15 +21,34 @@ int main (int argc, char **argv)
   
   //AST* testando1,*testando2;
 
-  //gv_init("saida2.dot");
+  
   int resultado = yyparse();
 
-  //gv_declare (const int tipo, const void *pointer, char *name)
+	/*printf("type:%d\n",root->type);
+	root=root->scc[0];
+	printf("type:%d\n",root->type);
+	root=root->scc[0];
+	printf("type:%d\n",root->type);
+	root=root->scc[0];
+	printf("type:%d ",root->type); printf("%s\n", root->symbol->text);
+	root=root->scc[0];
+	printf("type:%d\n",root->type);
+*/
+
+
+gv_init("saida.dot");astReadTree(root);gv_close();
+//gv_init("saida.dot");
+ // astReadTree(root);
+ // gv_close();
+
+	//printf("%d\n"root->scc[0])
+
+ // gv_declare (const int tipo, const void *pointer, char *name)
   //gv_declare (IKS_AST_IDENTIFICADOR,testando1, "var");
-  //gv_declare (IKS_AST_IDENTIFICADOR,testando2, "variable");
+ // gv_declare (IKS_AST_IDENTIFICADOR,testando2, "variable");
   //void gv_connect (const void *p1, const void *p2)
   //gv_connect (testando1, testando2);
-  //gv_close();
+
   return resultado;
 }
 

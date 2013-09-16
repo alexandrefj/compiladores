@@ -14,6 +14,10 @@
 #include "iks_ast.h"
 #include "gv.h"
 
+
+ASTREE *root;
+
+
 /*
   Constantes a serem utilizadas como valor de retorno no caso de
   sucesso (IKS_SYNTAX_SUCESS) e erro (IKS_SYNTAX_ERRO) do analisador

@@ -146,7 +146,7 @@ void gv_declare (const int tipo, const void *pointer, char *name)
 
   switch (tipo){
   case IKS_AST_FUNCAO:
-  case IKS_AST_IDENTIFICADOR:
+  case IKS_AST_IDENTIFICADOR: 
   case IKS_AST_LITERAL:
     if (!name){
       fprintf (stderr, "%s: name should be not NULL\n", __FUNCTION__);
