@@ -2,9 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "main.h"
-
-struct astreenode *aux;
-int aux1;
 %}
 
 %union
@@ -14,32 +11,23 @@ int type;
 struct astreenode *ast;
 }
 
-
-
-
-//%type<ast> output_param	
 %type<ast> chamada_com_param
 %type<ast> nome_variavel
 %type<ast> vetor
 %type<ast> inicio
 %type<ast> programa
-//%type<ast> funcao
 %type<ast> comando_condicao
-//%type<ast> comando_de_condicao_composto
-//%type<ast> comando_de_condicao
 %type<ast> comando_composto
 %type<ast> comando_simples
 %type<ast> comando
-//%type<ast> output
 %type<ast> expressao
 %type<ast> chamada_recursao
 %type<ast> literal
 %type<ast> condicao
 %type<ast> bloco
 %type<ast> bloco_c
-//%type<ast> bloco_condicao
-
 %type<ast> exp2
+%type<symbol> exp1
 
 
 %token TK_PR_INT	256
@@ -70,8 +58,6 @@ struct astreenode *ast;
 %token<symbol> TK_LIT_CHAR	285
 %token<symbol> TK_LIT_STRING	286
 %token<symbol> TK_IDENTIFICADOR	290
-%type<symbol> exp1
-
 %token TOKEN_ERRO	291
 
 %left TK_OC_LE TK_OC_GE TK_OC_EQ TK_OC_NE '=' '<' '>'
@@ -85,9 +71,6 @@ struct astreenode *ast;
 %left ']'
 
 %start inicio
-
-//%right TK_PR_DO
-
 %nonassoc TK_PR_THEN
 %nonassoc TK_PR_ELSE
 
@@ -95,8 +78,8 @@ struct astreenode *ast;
 %%
 
 			/******************************************************************************************************************************
-					---------------------------------REGRAS DA LINGUAGEM IKS----------------------------------**
-					*******************************************************************************************/
+			**-----------------------------------------------REGRAS DA LINGUAGEM IKS-----------------------------------------------------**
+			******************************************************************************************************************************/
 
 
 inicio:			programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $1, NULL, NULL, NULL);};
