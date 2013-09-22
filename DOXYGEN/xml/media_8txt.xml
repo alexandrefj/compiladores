@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="media_8txt" kind="file">
+    <compoundname>media.txt</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="media_8txt_1a932ead34f378ec32fdd579cbdaa2bf82" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float __pad2__</definition>
+        <argsstring></argsstring>
+        <name>__pad2__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" line="5" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="media_8txt_1ad1d030d3d54f1cb06c637be8c12c0c31" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int __pad3__</definition>
+        <argsstring></argsstring>
+        <name>__pad3__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" line="8" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="media_8txt_1a595989d44ab84fe16447a2aae22177f8" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int __pad4__</definition>
+        <argsstring></argsstring>
+        <name>__pad4__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" line="9" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="media_8txt_1aa7f451dc7f39f38cf72bbf618e366e33" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float __pad5__</definition>
+        <argsstring></argsstring>
+        <name>__pad5__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" line="10" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="media_8txt_1ab3df3d3625046a987df3e0e9d0b309fe" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float __pad6__</definition>
+        <argsstring></argsstring>
+        <name>__pad6__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" line="11" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Calcula<sp/>a<sp/>soma<sp/>e<sp/>a<sp/>média<sp/>para<sp/>um<sp/>determinado<sp/>número<sp/>de<sp/>valores<sp/>digitados.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">:<sp/>entrada;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>main()</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">int:<sp/>qtd;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>i;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">:<sp/>soma;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">float</highlight><highlight class="normal">:<sp/>media;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/></highlight><highlight class="stringliteral">&quot;Digite<sp/>a<sp/>quantidade<sp/>de<sp/>valores<sp/>que<sp/>serao<sp/>calculados:<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input<sp/>qtd;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>soma<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>media<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(i<sp/>&lt;<sp/>qtd)<sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/></highlight><highlight class="stringliteral">&quot;Valor<sp/>&quot;</highlight><highlight class="normal">,<sp/>i<sp/>+<sp/>1,<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input<sp/>entrada;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>soma<sp/>=<sp/>soma<sp/>+<sp/>entrada;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>i<sp/>+<sp/>1;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/></highlight><highlight class="stringliteral">&quot;Soma:<sp/>&quot;</highlight><highlight class="normal">,<sp/>soma;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>media<sp/>=<sp/>soma<sp/>/<sp/>qtd;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/></highlight><highlight class="stringliteral">&quot;Media:<sp/>&quot;</highlight><highlight class="normal">,<sp/>media;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/media.txt"/>
+  </compounddef>
+</doxygen>

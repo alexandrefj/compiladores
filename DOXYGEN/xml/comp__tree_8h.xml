@@ -2,84 +2,118 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
   <compounddef id="comp__tree_8h" kind="file">
     <compoundname>comp_tree.h</compoundname>
-    <includedby refid="main_8h" local="yes">include/main.h</includedby>
-    <invincdepgraph>
-      <node id="17">
-        <label>include/main.h</label>
-        <link refid="main_8h"/>
-        <childnode refid="18" relation="include">
-        </childnode>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includes refid="comp__dict_8h" local="yes">comp_dict.h</includes>
+    <includes refid="iks__ast_8h" local="yes">iks_ast.h</includes>
+    <includes refid="gv_8h" local="yes">gv.h</includes>
+    <includedby refid="tree__test_8c" local="yes">/home/alexandre/Desktop/comp/compiladores/tests/tree_test.c</includedby>
+    <includedby refid="comp__tree_8c" local="yes">/home/alexandre/Desktop/comp/compiladores/src/comp_tree.c</includedby>
+    <includedby refid="main_8h" local="yes">/home/alexandre/Desktop/comp/compiladores/include/main.h</includedby>
+    <incdepgraph>
+      <node id="25">
+        <label>comp_dict.h</label>
+        <link refid="comp__dict_8h_source"/>
       </node>
-      <node id="16">
-        <label>include/comp_tree.h</label>
+      <node id="24">
+        <label>stdlib.h</label>
+      </node>
+      <node id="27">
+        <label>gv.h</label>
+        <link refid="gv_8h_source"/>
+      </node>
+      <node id="22">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h</label>
         <link refid="comp_tree.h"/>
-        <childnode refid="17" relation="include">
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
         </childnode>
       </node>
-      <node id="18">
-        <label>scanner.l</label>
-        <link refid="scanner_8l"/>
+      <node id="26">
+        <label>iks_ast.h</label>
+        <link refid="iks__ast_8h_source"/>
+      </node>
+      <node id="23">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="28">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h</label>
+        <link refid="comp_tree.h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/main.h</label>
+        <link refid="main_8h_source"/>
       </node>
     </invincdepgraph>
-    <innerclass refid="structcomp__tree__t" prot="public">comp_tree_t</innerclass>
-      <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" prot="public" static="no">
-        <type>struct <ref refid="structcomp__tree__t" kindref="compound">comp_tree_t</ref></type>
-        <definition>typedef struct comp_tree_t  TreeNode</definition>
-        <argsstring></argsstring>
-        <name>TreeNode</name>
+    <innerclass refid="structastreenode" prot="public">astreenode</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="comp__tree_8h_1a456b0bf8fc3799e25c3ee34d62c68824" prot="public" static="no">
+        <name>MAX_NODE</name>
+        <initializer>4</initializer>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="13"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="5" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="comp__tree_8h_1a4838c66d4029d42af5eaeefae17220e8" prot="public" static="no">
+        <type>struct <ref refid="structastreenode" kindref="compound">astreenode</ref></type>
+        <definition>typedef struct astreenode ASTREE</definition>
+        <argsstring></argsstring>
+        <name>ASTREE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="19"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="comp__tree_8h_1ad8c121a804dfc6f22af94134264c613c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" kindref="member">TreeNode</ref> *</type>
-        <definition>TreeNode* createTree</definition>
-        <argsstring>()</argsstring>
-        <name>createTree</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="18"/>
-      </memberdef>
-      <memberdef kind="function" id="comp__tree_8h_1af9c8e6687905b200d52e36c5d55abbf2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void freeTree</definition>
-        <argsstring>(TreeNode *root)</argsstring>
-        <name>freeTree</name>
-        <param>
-          <type><ref refid="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" kindref="member">TreeNode</ref> *</type>
-          <declname>root</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="23"/>
-      </memberdef>
-      <memberdef kind="function" id="comp__tree_8h_1aaaf6cae312f43eea124c45eec5ce7826" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void insertTree</definition>
-        <argsstring>(TreeNode **root, int data)</argsstring>
-        <name>insertTree</name>
-        <param>
-          <type><ref refid="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" kindref="member">TreeNode</ref> **</type>
-          <declname>root</declname>
-        </param>
+      <memberdef kind="function" id="comp__tree_8h_1af33f294a8dabdb3ff6aa242e2e7978d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="structastreenode" kindref="compound">ASTREE</ref> *</type>
+        <definition>ASTREE* astCreate</definition>
+        <argsstring>(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s2, ASTREE *s3)</argsstring>
+        <name>astCreate</name>
         <param>
           <type>int</type>
-          <declname>data</declname>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="structnome__interno" kindref="compound">DICT_NODE</ref> *</type>
+          <declname>symbol</declname>
+        </param>
+        <param>
+          <type><ref refid="structastreenode" kindref="compound">ASTREE</ref> *</type>
+          <declname>s0</declname>
+        </param>
+        <param>
+          <type><ref refid="structastreenode" kindref="compound">ASTREE</ref> *</type>
+          <declname>s1</declname>
+        </param>
+        <param>
+          <type><ref refid="structastreenode" kindref="compound">ASTREE</ref> *</type>
+          <declname>s2</declname>
+        </param>
+        <param>
+          <type><ref refid="structastreenode" kindref="compound">ASTREE</ref> *</type>
+          <declname>s3</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -87,15 +121,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="28"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="21" bodyfile="/home/alexandre/Desktop/comp/compiladores/src/comp_tree.c" bodystart="5" bodyend="18"/>
       </memberdef>
-      <memberdef kind="function" id="comp__tree_8h_1a83637c8f27c268971cdcada624701075" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void printTree</definition>
-        <argsstring>(TreeNode *root)</argsstring>
-        <name>printTree</name>
+      <memberdef kind="function" id="comp__tree_8h_1ab38cd0c9c2c49c48905ffe97b1ee8754" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* astReadTree</definition>
+        <argsstring>(ASTREE *root)</argsstring>
+        <name>astReadTree</name>
         <param>
-          <type><ref refid="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" kindref="member">TreeNode</ref> *</type>
+          <type><ref refid="structastreenode" kindref="compound">ASTREE</ref> *</type>
           <declname>root</declname>
         </param>
         <briefdescription>
@@ -104,20 +138,16 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="34"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="22" bodyfile="/home/alexandre/Desktop/comp/compiladores/src/comp_tree.c" bodystart="21" bodyend="28"/>
       </memberdef>
-      <memberdef kind="function" id="comp__tree_8h_1a84c9ad14a59e020d2f4270642f038d19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" kindref="member">TreeNode</ref> *</type>
-        <definition>TreeNode* searchNode</definition>
-        <argsstring>(TreeNode **root, int data)</argsstring>
-        <name>searchNode</name>
+      <memberdef kind="function" id="comp__tree_8h_1ad18b27e68cc70585772ff7c47c22d067" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void *</type>
+        <definition>void* astReadNode</definition>
+        <argsstring>(ASTREE *node)</argsstring>
+        <name>astReadNode</name>
         <param>
-          <type><ref refid="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" kindref="member">TreeNode</ref> **</type>
-          <declname>root</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>data</declname>
+          <type><ref refid="structastreenode" kindref="compound">ASTREE</ref> *</type>
+          <declname>node</declname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -125,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h" line="41"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="23" bodyfile="/home/alexandre/Desktop/comp/compiladores/src/comp_tree.c" bodystart="30" bodyend="56"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -136,47 +166,30 @@
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>COMP_TREE_H</highlight></codeline>
 <codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>COMP_TREE_H</highlight></codeline>
 <codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="5"><highlight class="comment">TreeNode:<sp/>Representa<sp/>cada<sp/>nodo<sp/>da<sp/>arvore.<sp/>Contem<sp/>um</highlight></codeline>
-<codeline lineno="6"><highlight class="comment">valor<sp/>inteiro,<sp/>um<sp/>filho<sp/>a<sp/>esquerda,<sp/>e<sp/>um<sp/>filho<sp/>a</highlight></codeline>
-<codeline lineno="7"><highlight class="comment">direita.</highlight></codeline>
-<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="9" refid="structcomp__tree__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcomp__tree__t" kindref="compound">comp_tree_t</ref><sp/>{</highlight></codeline>
-<codeline lineno="10" refid="structcomp__tree__t_1a9eab91667db4d35c7231dcddf7b89a76" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structcomp__tree__t_1a9eab91667db4d35c7231dcddf7b89a76" kindref="member">data</ref>;</highlight></codeline>
-<codeline lineno="11" refid="structcomp__tree__t_1a25d0ee3eb1f37bdf8837332ae210af08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcomp__tree__t" kindref="compound">comp_tree_t</ref>*<sp/><ref refid="structcomp__tree__t_1a25d0ee3eb1f37bdf8837332ae210af08" kindref="member">left</ref>;</highlight></codeline>
-<codeline lineno="12" refid="structcomp__tree__t_1a031926068de9698531271ab100d96900" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structcomp__tree__t" kindref="compound">comp_tree_t</ref>*<sp/><ref refid="structcomp__tree__t_1a031926068de9698531271ab100d96900" kindref="member">right</ref>;</highlight></codeline>
-<codeline lineno="13"><highlight class="normal">}<sp/><ref refid="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" kindref="member">TreeNode</ref>;</highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="16"><highlight class="comment">createTree:<sp/>Inicializa<sp/>uma<sp/>arvore<sp/>com<sp/>um<sp/>nodo<sp/>vazio.</highlight></codeline>
-<codeline lineno="17"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"><ref refid="structcomp__tree__t" kindref="compound">TreeNode</ref>*<sp/><ref refid="comp__tree_8h_1ad8c121a804dfc6f22af94134264c613c" kindref="member">createTree</ref>();</highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="21"><highlight class="comment">freeTree:<sp/>Libera<sp/>o<sp/>espaco<sp/>alocado<sp/>por<sp/>uma<sp/>arvore.</highlight></codeline>
-<codeline lineno="22"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comp__tree_8h_1af9c8e6687905b200d52e36c5d55abbf2" kindref="member">freeTree</ref>(<ref refid="structcomp__tree__t" kindref="compound">TreeNode</ref>*<sp/>root);</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_NODE<sp/><sp/>4</highlight></codeline>
+<codeline lineno="6"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;comp_dict.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;iks_ast.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;gv.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="structastreenode" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structastreenode" kindref="compound">astreenode</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structnome__interno" kindref="compound">DICT_NODE</ref><sp/>*symbol;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structastreenode" kindref="compound">astreenode</ref><sp/>*scc[MAX_NODE];</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>read;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}<ref refid="structastreenode" kindref="compound">ASTREE</ref>;<sp/></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><ref refid="structastreenode" kindref="compound">ASTREE</ref><sp/>*astCreate(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type,<sp/><ref refid="structnome__interno" kindref="compound">DICT_NODE</ref><sp/>*symbol,<sp/><ref refid="structastreenode" kindref="compound">ASTREE</ref><sp/>*s0,<sp/><ref refid="structastreenode" kindref="compound">ASTREE</ref><sp/>*s1,<sp/><ref refid="structastreenode" kindref="compound">ASTREE</ref><sp/>*s2,<sp/><ref refid="structastreenode" kindref="compound">ASTREE</ref><sp/>*s3);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*astReadTree(<ref refid="structastreenode" kindref="compound">ASTREE</ref><sp/>*root);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*astReadNode(<ref refid="structastreenode" kindref="compound">ASTREE</ref><sp/>*node);</highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="26"><highlight class="comment">insertTree:<sp/>Insere<sp/>um<sp/>valor<sp/>inteiro<sp/>em<sp/>uma<sp/>arvore.</highlight></codeline>
-<codeline lineno="27"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comp__tree_8h_1aaaf6cae312f43eea124c45eec5ce7826" kindref="member">insertTree</ref>(<ref refid="structcomp__tree__t" kindref="compound">TreeNode</ref>**<sp/>root,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structcomp__tree__t_1a9eab91667db4d35c7231dcddf7b89a76" kindref="member">data</ref>);</highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="31"><highlight class="comment">printTree:<sp/>Imprime<sp/>todos<sp/>os<sp/>valores<sp/>da<sp/>arvore<sp/>em</highlight></codeline>
-<codeline lineno="32"><highlight class="comment">ordem<sp/>crescente.</highlight></codeline>
-<codeline lineno="33"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="comp__tree_8h_1a83637c8f27c268971cdcada624701075" kindref="member">printTree</ref>(<ref refid="structcomp__tree__t" kindref="compound">TreeNode</ref>*<sp/>root);</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="37"><highlight class="comment">searchNode:<sp/>Procura<sp/>um<sp/>valor<sp/>na<sp/>arvore.<sp/>Retorna<sp/>o</highlight></codeline>
-<codeline lineno="38"><highlight class="comment">nodo<sp/>que<sp/>contem<sp/>o<sp/>valor,<sp/>ou<sp/>NULL<sp/>caso<sp/>o<sp/>valor<sp/>nao</highlight></codeline>
-<codeline lineno="39"><highlight class="comment">pertenca<sp/>a<sp/>arvore.</highlight></codeline>
-<codeline lineno="40"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"><ref refid="structcomp__tree__t" kindref="compound">TreeNode</ref>*<sp/><ref refid="comp__tree_8h_1a84c9ad14a59e020d2f4270642f038d19" kindref="member">searchNode</ref>(<ref refid="structcomp__tree__t" kindref="compound">TreeNode</ref>**<sp/>root,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="structcomp__tree__t_1a9eab91667db4d35c7231dcddf7b89a76" kindref="member">data</ref>);</highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_tree.h"/>
+    <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h"/>
   </compounddef>
 </doxygen>

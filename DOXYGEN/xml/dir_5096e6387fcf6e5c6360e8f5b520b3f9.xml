@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="dir_5096e6387fcf6e5c6360e8f5b520b3f9" kind="dir">
+    <compoundname>/home/alexandre/Desktop/comp/compiladores/tests/</compoundname>
+    <innerfile refid="dict__test_8c">dict_test.c</innerfile>
+    <innerfile refid="graph__test_8c">graph_test.c</innerfile>
+    <innerfile refid="lists__test_8c">lists_test.c</innerfile>
+    <innerfile refid="tree__test_8c">tree_test.c</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alexandre/Desktop/comp/compiladores/tests/"/>
+  </compounddef>
+</doxygen>

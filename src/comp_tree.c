@@ -40,7 +40,7 @@ void *astReadNode(ASTREE *node)
 		case IKS_AST_LITERAL:
 		gv_declare(node->type,node, node->symbol->text);
 		break;
-		default:printf("\nFILHOS de %d\n",node->type);
+		default:
 		gv_declare(node->type,node, NULL);
 		break;
 	}
@@ -49,7 +49,7 @@ void *astReadNode(ASTREE *node)
 	int i;
 	for(i=0;i<MAX_NODE;i++){
 		if(node->scc[i]!=NULL)
-			gv_connect(node,node->scc[i]);//printf()
+			gv_connect(node,node->scc[i]);
 
 	}
 

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="dir_d09bd587be0ef17599bb08d6f24c8143" kind="dir">
+    <compoundname>/home/alexandre/Desktop/comp/compiladores/algoritmos/</compoundname>
+    <innerfile refid="fatorial_8png">fatorial.png</innerfile>
+    <innerfile refid="media_8png">media.png</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/"/>
+  </compounddef>
+</doxygen>

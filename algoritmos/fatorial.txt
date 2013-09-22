@@ -17,7 +17,7 @@ int: main() {
 }
 
 int: fatorial(int: num)
-int i;
+int: i;
 {
 	i = num - 1;
 	while(i > 1) do {

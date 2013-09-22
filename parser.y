@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include "main.h"
 
-//struct astreenode *root;
+struct astreenode *aux;
+int aux1;
 %}
 
 %union
@@ -14,18 +15,31 @@ struct astreenode *ast;
 }
 
 
+
+
+//%type<ast> output_param	
+%type<ast> chamada_com_param
+%type<ast> nome_variavel
+%type<ast> vetor
+%type<ast> inicio
 %type<ast> programa
-%type<ast> funcao
+//%type<ast> funcao
+%type<ast> comando_condicao
+//%type<ast> comando_de_condicao_composto
+//%type<ast> comando_de_condicao
+%type<ast> comando_composto
+%type<ast> comando_simples
 %type<ast> comando
-%type<ast> output
-%type<ast> bloco
-%type<ast> atribuicao
+//%type<ast> output
 %type<ast> expressao
-%type<ast> chamada_funcao
 %type<ast> chamada_recursao
 %type<ast> literal
 %type<ast> condicao
-%type<ast> saida
+%type<ast> bloco
+%type<ast> bloco_c
+//%type<ast> bloco_condicao
+
+%type<ast> exp2
 
 
 %token TK_PR_INT	256
@@ -56,37 +70,198 @@ struct astreenode *ast;
 %token<symbol> TK_LIT_CHAR	285
 %token<symbol> TK_LIT_STRING	286
 %token<symbol> TK_IDENTIFICADOR	290
+%type<symbol> exp1
 
 %token TOKEN_ERRO	291
 
 %left TK_OC_LE TK_OC_GE TK_OC_EQ TK_OC_NE '=' '<' '>'
-%left TK_OC_AND TK_OC_OR
-%left '-' '+'
+%left TK_OC_OR 
+%right TK_OC_AND
+%left '-' '+' 
+%right ','
+%right '!'
 %left '*' '/'
 %left ')'
 %left ']'
 
-//%start funcao
+%start inicio
+
+//%right TK_PR_DO
 
 %nonassoc TK_PR_THEN
 %nonassoc TK_PR_ELSE
 
+
 %%
 
-/*******************************************************************************************
-----------------------REGRAS DA LINGUAGEM IKS---------------------------------------------**
-*******************************************************************************************/
+			/******************************************************************************************************************************
+					---------------------------------REGRAS DA LINGUAGEM IKS----------------------------------**
+					*******************************************************************************************/
 
-programa:   funcao programa			{root = astCreate(IKS_AST_PROGRAMA, NULL, $1, $2, NULL, NULL);}
-	   |declaracao_var_globais programa	{$$=astCreate(IKS_AST_PROGRAMA, NULL, $2,NULL, NULL, NULL);}//{root= $2;}
-	   |{$$=NULL;}
-	   ;
 
-funcao:    tipo ':' TK_IDENTIFICADOR '('parametros_funcao')' declaracao_var_locais '{' bloco '}'{$$ = astCreate(IKS_AST_FUNCAO, $3, $9, 0, NULL, NULL);};
+inicio:			programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $1, NULL, NULL, NULL);};
 
-parametros_funcao: 	tipo ':' TK_IDENTIFICADOR 
-			| tipo ':'TK_IDENTIFICADOR ',' tipo ':' TK_IDENTIFICADOR parametros_funcao
+programa:  		tipo ':' TK_IDENTIFICADOR '('parametros_funcao')' declaracao_var_locais '{'comando'}' programa 	{$$ = astCreate(IKS_AST_FUNCAO, $3, $9, $11, NULL, NULL);}		
+	   		|declaracao_var_globais programa								{$$=$2;}
+	   		|												{$$=NULL;}				
+	   		;
+
+
+comando: 		comando_composto 
+			|comando_simples
+			|bloco												{$$=astCreate(IKS_AST_BLOCO,NULL,$1,NULL, NULL, NULL);}
+			|bloco ';' comando										{$$=astCreate(IKS_AST_BLOCO,NULL,$1,$3, NULL, NULL);}
+			|comando_condicao
+			|												{$$=NULL;}
+			;
+
+comando_simples:	TK_PR_INPUT nome_variavel 									{$$ = astCreate(IKS_AST_INPUT, NULL, $2,NULL, NULL, NULL);}
+			|nome_variavel '=' expressao									{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL, NULL);}
+			|vetor '=' expressao										{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL,NULL);}
+			|TK_PR_RETURN expressao 									{$$ = astCreate(IKS_AST_RETURN,NULL,$2,NULL, NULL, NULL);}
+			|nome_variavel '(' chamada_recursao ')' 							{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,NULL, NULL);}
+			|TK_PR_OUTPUT chamada_com_param									{$$ = astCreate(IKS_AST_OUTPUT,NULL,$2,NULL, NULL, NULL);}
+			;
+
+comando_composto:	TK_PR_INPUT nome_variavel ';' 	comando 							{$$ = astCreate(IKS_AST_INPUT, NULL, $2, $4, NULL, NULL);}
+			|nome_variavel '=' expressao';'  comando							{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5, NULL);}
+			|vetor '=' expressao';'  comando 								{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5,NULL);}
+			|TK_PR_RETURN expressao ';' comando								{$$ = astCreate(IKS_AST_RETURN,NULL,$2,$4, NULL, NULL);}
+			|nome_variavel '(' chamada_recursao ')' ';' comando						{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,$6, NULL);}
+			|TK_PR_OUTPUT chamada_com_param ';' comando							{$$ = astCreate(IKS_AST_OUTPUT,NULL,$2,$4, NULL, NULL);}
+			|';' comando											{$$= $2;}
+			;
+
+
+bloco:			'{'comando'}' {$$ = $2;} ;
+
+bloco_c:		'{'comando'}' {$$=astCreate(IKS_AST_BLOCO,NULL,$2,NULL, NULL, NULL);};
+
+
+
+comando_condicao: 	TK_PR_IF '('condicao')'TK_PR_THEN bloco_c comando						{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $7, NULL);}
+			|TK_PR_IF '('condicao')'TK_PR_THEN comando_simples ';' comando					{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, NULL);}
+			|TK_PR_IF '('condicao')'TK_PR_THEN comando_simples TK_PR_ELSE comando_simples ';' comando	{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, NULL);}
+			|TK_PR_IF '('condicao')'TK_PR_THEN bloco_c TK_PR_ELSE bloco_c comando 				{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, $9);}
+			|TK_PR_WHILE '('condicao')' TK_PR_DO bloco_c comando						{$$ = astCreate(IKS_AST_WHILE_DO, NULL, $3, $6, $7, NULL);}
+			|TK_PR_WHILE '('condicao')' TK_PR_DO comando_simples ';' comando				{$$ = astCreate(IKS_AST_WHILE_DO, NULL, $3, $6, $8, NULL);}
+			|TK_PR_DO bloco_c TK_PR_WHILE'('condicao')' comando						{$$ = astCreate(IKS_AST_DO_WHILE, NULL, $2, $5, $7, NULL);}
+			|TK_PR_DO comando_simples TK_PR_WHILE'('condicao')' comando 					{$$ = astCreate(IKS_AST_DO_WHILE, NULL, $2, $5, $7, NULL);}
+			;
+
+
+nome_variavel:		TK_IDENTIFICADOR										{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);};
+
+vetor:			nome_variavel'['expressao']' 									{$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, NULL, NULL);};
+
+
+
+
+chamada_recursao: 	chamada_com_param										{$$=$1;}
+			|												{$$=NULL;}		
+		  	;
+
+
+chamada_com_param: 	exp2												{$$ =$1;}
+			| nome_variavel '(' chamada_recursao ')'							{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);}
+			| nome_variavel '[' expressao ']'								{$$ = astCreate(IKS_AST_VETOR_INDEXADO,NULL,$1,$3,NULL,NULL);}	
+			|  exp2 '+'  exp2							  			{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL,$1, $3,NULL, NULL); }
+			|  exp2 '-' exp2							  			{$$ = astCreate(IKS_AST_ARIM_SUBTRACAO,NULL,$1, $3,NULL, NULL); }
+			|  exp2 '*' exp2							  			{$$ = astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL,$1, $3,NULL, NULL); }
+			|  exp2 '/' exp2							  			{$$ = astCreate(IKS_AST_ARIM_DIVISAO,NULL,$1, $3,NULL, NULL); }	
+			| exp1','chamada_com_param									{$$ = astCreate(IKS_AST_LITERAL, $1, $3, NULL, NULL, NULL); }
+			| nome_variavel '(' chamada_recursao ')' ',' chamada_com_param					{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, $6, NULL);}
+			| nome_variavel '[' expressao ']' ',' chamada_com_param						{$$ = astCreate(IKS_AST_VETOR_INDEXADO,NULL,$1,$3,$6,NULL);}	
+			|  exp2 '+'  exp2 ',' chamada_com_param					  			{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL,$1, $3,$5, NULL); }
+			|  exp2 '-' exp2 ',' chamada_com_param					  			{$$ = astCreate(IKS_AST_ARIM_SUBTRACAO,NULL,$1, $3,$5, NULL); }
+			|  exp2 '*' exp2 ',' chamada_com_param					  			{$$ = astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL,$1, $3,$5, NULL); }
+			|  exp2 '/' exp2 ',' chamada_com_param					  			{$$ = astCreate(IKS_AST_ARIM_DIVISAO,NULL,$1, $3,$5,NULL); }		
+			;		
+
+
+
+
+exp1:		 	TK_LIT_INT											{$$ = $1;}		
+			| TK_LIT_FLOAT											{$$ = $1;}
+			| TK_LIT_STRING											{$$ = $1;}	
+			| TK_LIT_CHAR											{$$ = $1;}
+			| TK_LIT_TRUE											{$$ = $1;}	
+			| TK_LIT_FALSE											{$$ = $1;}
+			| TK_IDENTIFICADOR										{$$ = $1;}
+			;
+
+
+exp2:			 TK_LIT_INT											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL); }		
+			| TK_LIT_FLOAT											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}
+			| TK_LIT_STRING											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}	
+			| TK_LIT_CHAR											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}
+			| TK_LIT_TRUE											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}	
+			| TK_LIT_FALSE											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}
+			| TK_IDENTIFICADOR										{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);}
+			;
+
+
+expressao:		TK_IDENTIFICADOR										{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);}
+			|literal 											{$$ = $1;}
+			| '(' expressao')'										{$$ = $2;}
+        		| '*' expressao											{$$ = $2;}
+			| '!' expressao							                                {$$=astCreate(IKS_AST_LOGICO_COMP_NEGACAO,NULL,$2,NULL,NULL, NULL);}
+			| expressao '+' expressao									{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL, $1, $3, NULL, NULL);}
+			| expressao '*' expressao									{$$ = astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL, $1, $3, NULL, NULL);}
+			| expressao '/' expressao									{$$ = astCreate(IKS_AST_ARIM_DIVISAO,NULL, $1, $3, NULL, NULL);}
+			| expressao '-' expressao									{$$ = astCreate(IKS_AST_ARIM_SUBTRACAO,NULL, $1, $3, NULL, NULL);}
+			| '-' expressao											{$$ = astCreate(IKS_AST_ARIM_INVERSAO,NULL, $2, NULL, NULL, NULL);}
+			| expressao TK_OC_LE expressao									{$$ = astCreate(IKS_AST_LOGICO_COMP_LE,NULL, $1, $3, NULL, NULL);}
+			| expressao TK_OC_GE expressao									{$$ = astCreate(IKS_AST_LOGICO_COMP_GE,NULL, $1, $3, NULL, NULL);}
+			| expressao TK_OC_EQ expressao									{$$ = astCreate(IKS_AST_LOGICO_COMP_IGUAL,NULL, $1, $3, NULL, NULL);}
+			| expressao TK_OC_NE expressao									{$$ = astCreate(IKS_AST_LOGICO_COMP_DIF,NULL, $1, $3, NULL, NULL);}
+			| expressao '>' expressao									{$$ = astCreate(IKS_AST_LOGICO_COMP_G,NULL, $1, $3, NULL, NULL);}
+			| expressao '<' expressao									{$$ = astCreate(IKS_AST_LOGICO_COMP_L,NULL, $1, $3, NULL, NULL);}
+			| expressao TK_OC_AND expressao									{$$ = astCreate(IKS_AST_LOGICO_E,NULL, $1, $3, NULL, NULL);}
+			| expressao TK_OC_OR expressao									{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);}
+			| nome_variavel '[' expressao ']'								{$$ = astCreate(IKS_AST_VETOR_INDEXADO,NULL, $1, $3, NULL, NULL);}
+			| nome_variavel '(' chamada_recursao ')' 							{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);}	
+			;
+
+condicao:		TK_IDENTIFICADOR										{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);}
+			|literal											{$$=$1;}
+			| '(' condicao')'										{$$=$2;}
+        		| '*' condicao											{$$=$2;}
+			| '!' condicao											{$$ = astCreate(IKS_AST_LOGICO_COMP_NEGACAO,NULL, $2, NULL, NULL, NULL);}
+			| condicao '+' condicao										{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL, $1, $3, NULL, NULL);}
+			| condicao '*' condicao										{$$ = astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL, $1, $3, NULL, NULL);}
+			| condicao '/' condicao										{$$ = astCreate(IKS_AST_ARIM_DIVISAO,NULL, $1, $3, NULL, NULL);}
+			| condicao '-' condicao										{$$ = astCreate(IKS_AST_ARIM_SUBTRACAO,NULL, $1, $3, NULL, NULL);}
+			| '-' condicao											{$$ = astCreate(IKS_AST_ARIM_INVERSAO,NULL, $2, NULL, NULL, NULL);}
+			| condicao TK_OC_LE condicao									{$$ = astCreate(IKS_AST_LOGICO_COMP_LE,NULL, $1, $3, NULL, NULL);}
+			| condicao TK_OC_GE condicao									{$$ = astCreate(IKS_AST_LOGICO_COMP_GE,NULL, $1, $3, NULL, NULL);}
+			| condicao TK_OC_EQ condicao									{$$ = astCreate(IKS_AST_LOGICO_COMP_IGUAL,NULL, $1, $3, NULL, NULL);}
+			| condicao TK_OC_NE condicao									{$$ = astCreate(IKS_AST_LOGICO_COMP_DIF,NULL, $1, $3, NULL, NULL);}
+			| condicao '>' condicao										{$$ = astCreate(IKS_AST_LOGICO_COMP_G,NULL, $1, $3, NULL, NULL);}
+			| condicao '<' condicao										{$$ = astCreate(IKS_AST_LOGICO_COMP_L,NULL, $1, $3, NULL, NULL);}
+			| condicao TK_OC_AND condicao									{$$ = astCreate(IKS_AST_LOGICO_E,NULL, $1, $3, NULL, NULL);}
+			| condicao TK_OC_OR condicao									{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);}
+			| nome_variavel '[' condicao ']'								{$$ = astCreate(IKS_AST_VETOR_INDEXADO,NULL, $1, $3, NULL, NULL);}
+			| nome_variavel '(' chamada_recursao ')' 							{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);}	
+			;
+		
+
+literal:         	TK_LIT_INT											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL); }		
+			| TK_LIT_FLOAT											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}
+			| TK_LIT_STRING											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}	
+			| TK_LIT_CHAR											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}
+			| TK_LIT_TRUE											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}	
+			| TK_LIT_FALSE											{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}	
+			;
+
+
+parametros_funcao: 	parametros_funcao_c_param
 			|
+			;
+
+parametros_funcao_c_param:
+			tipo ':' TK_IDENTIFICADOR 
+			| tipo ':'TK_IDENTIFICADOR ',' parametros_funcao_c_param
 			;
 
 declaracao_var_locais:  tipo ':' TK_IDENTIFICADOR';' declaracao_var_locais
@@ -94,7 +269,7 @@ declaracao_var_locais:  tipo ':' TK_IDENTIFICADOR';' declaracao_var_locais
 			;
 
 declaracao_var_globais: tipo ':' TK_IDENTIFICADOR';' 		
-			| tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'';'
+			|tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'';'
 			;
 
 
@@ -104,114 +279,7 @@ tipo:                   TK_PR_INT
 			|TK_PR_STRING
 			|TK_PR_CHAR
 			;
-
-comando:    TK_PR_IF '('condicao')'TK_PR_THEN comando	{$$ = $6;}
-	   |TK_PR_IF '('condicao')'TK_PR_THEN comando TK_PR_ELSE comando {$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $8, NULL, NULL);}
-	   |TK_PR_WHILE '('condicao')'TK_PR_DO comando 	{$$ = astCreate(IKS_AST_WHILE_DO, NULL, $3, $6, NULL, NULL);}
-	   |TK_PR_DO comando TK_PR_WHILE'('condicao')' 	{$$ = astCreate(IKS_AST_DO_WHILE, NULL, $2, $5, NULL, NULL);}
-	   |TK_PR_INPUT TK_IDENTIFICADOR ';'	       	{$$ = astCreate(IKS_AST_INPUT, $2, NULL, NULL, NULL, NULL);}
-	   |atribuicao 				       	{$$=$1;}
-	   |TK_PR_OUTPUT output ';' 		       	{$$=$2;}
-	   |TK_PR_RETURN expressao ';'			{$$ = astCreate(IKS_AST_RETURN, NULL, $2, NULL, NULL, NULL);}
-	   |chamada_funcao				{$$ = $1;}
-	   |';'						{$$ = NULL;}
-	   ;
-
-output:      saida					{$$ = astCreate(IKS_AST_OUTPUT, NULL, $1, NULL, NULL, NULL);}
-	   | saida ',' output				{$$ = astCreate(IKS_AST_OUTPUT, NULL, $1, $3, NULL, NULL);}
-	   |{$$=NULL;}
-	   ;
-
-bloco:         comando bloco		{$$ = astCreate(IKS_AST_BLOCO, NULL, $1, $2, NULL, NULL);}	
-	      | '{' comando bloco '}' 	{$$ = astCreate(IKS_AST_BLOCO, NULL, $2, $3, NULL, NULL);}
-	      | {$$=NULL;}
-	      ;
-
-  
-atribuicao:   TK_IDENTIFICADOR '=' expressao';' 		{$$ = astCreate(IKS_AST_ATRIBUICAO,$1, $3, NULL, NULL, NULL);}
-	      |TK_IDENTIFICADOR'['expressao']' '=' expressao';'	{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL, $3, $6, NULL, NULL);}
-	      ;
-
-expressao:	TK_IDENTIFICADOR			{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);}
-		|literal				{$$ = $1;}
-		| '(' expressao')'			{$$ = $2;}
-        	| '*' expressao				{$$ = $2;}
-		| expressao '+' expressao		{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL, $1, $3, NULL, NULL);}
-		| expressao '*' expressao		{$$ = astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL, $1, $3, NULL, NULL);}
-		| expressao '/' expressao		{$$ = astCreate(IKS_AST_ARIM_DIVISAO,NULL, $1, $3, NULL, NULL);}
-		| expressao '-' expressao		{$$ = astCreate(IKS_AST_ARIM_SUBTRACAO,NULL, $1, $3, NULL, NULL);}
-		| '-' expressao				{$$ = astCreate(IKS_AST_ARIM_INVERSAO,NULL, $2, NULL, NULL, NULL);}
-		| expressao TK_OC_LE expressao		{$$ = astCreate(IKS_AST_LOGICO_COMP_LE,NULL, $1, $3, NULL, NULL);}
-		| expressao TK_OC_GE expressao		{$$ = astCreate(IKS_AST_LOGICO_COMP_GE,NULL, $1, $3, NULL, NULL);}
-		| expressao TK_OC_EQ expressao		{$$ = astCreate(IKS_AST_LOGICO_COMP_IGUAL,NULL, $1, $3, NULL, NULL);}
-		| expressao TK_OC_NE expressao		{$$ = astCreate(IKS_AST_LOGICO_COMP_DIF,NULL, $1, $3, NULL, NULL);}
-		| expressao '>' expressao		{$$ = astCreate(IKS_AST_LOGICO_COMP_G,NULL, $1, $3, NULL, NULL);}
-		| expressao '<' expressao		{$$ = astCreate(IKS_AST_LOGICO_COMP_L,NULL, $1, $3, NULL, NULL);}
-		| expressao TK_OC_AND expressao		{$$ = astCreate(IKS_AST_LOGICO_E,NULL, $1, $3, NULL, NULL);}
-		| expressao TK_OC_OR expressao		{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);}
-		| TK_IDENTIFICADOR '[' expressao ']'	{$$ = astCreate(IKS_AST_VETOR_INDEXADO,$1, $3, NULL, NULL, NULL);}
-		| chamada_funcao			{$$ = $1;}
-		;
-
-chamada_funcao: TK_IDENTIFICADOR '(' chamada_recursao ')' {$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, $1, $3, NULL, NULL, NULL);};
-
-chamada_recursao:  expressao			{$$=$1;}
-		  | ',' chamada_recursao	{$$=$2;}
-		  |{$$=NULL;}
-		  ;
-		
-
-
-literal:                  TK_LIT_INT	{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL); }		
-			| TK_LIT_FLOAT	{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}
-			| TK_LIT_STRING	{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}	
-			| TK_LIT_CHAR	{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}
-			| TK_LIT_TRUE	{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}	
-			| TK_LIT_FALSE	{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}	
-			;
-
-condicao:	TK_IDENTIFICADOR		{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);}
-		|literal			{$$=$1;}
-		| '(' condicao')'		{$$=$2;}
-        	| '*' condicao			{$$=$2;}
-		| condicao '+' condicao		{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL, $1, $3, NULL, NULL);}
-		| condicao '*' condicao		{$$ = astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL, $1, $3, NULL, NULL);}
-		| condicao '/' condicao		{$$ = astCreate(IKS_AST_ARIM_DIVISAO,NULL, $1, $3, NULL, NULL);}
-		| condicao '-' condicao		{$$ = astCreate(IKS_AST_ARIM_SUBTRACAO,NULL, $1, $3, NULL, NULL);}
-		| '-' condicao			{$$ = astCreate(IKS_AST_ARIM_INVERSAO,NULL, $2, NULL, NULL, NULL);}
-		| condicao TK_OC_LE condicao	{$$ = astCreate(IKS_AST_LOGICO_COMP_LE,NULL, $1, $3, NULL, NULL);}
-		| condicao TK_OC_GE condicao	{$$ = astCreate(IKS_AST_LOGICO_COMP_GE,NULL, $1, $3, NULL, NULL);}
-		| condicao TK_OC_EQ condicao	{$$ = astCreate(IKS_AST_LOGICO_COMP_IGUAL,NULL, $1, $3, NULL, NULL);}
-		| condicao TK_OC_NE condicao	{$$ = astCreate(IKS_AST_LOGICO_COMP_DIF,NULL, $1, $3, NULL, NULL);}
-		| condicao '>' condicao		{$$ = astCreate(IKS_AST_LOGICO_COMP_G,NULL, $1, $3, NULL, NULL);}
-		| condicao '<' condicao		{$$ = astCreate(IKS_AST_LOGICO_COMP_L,NULL, $1, $3, NULL, NULL);}
-		| condicao TK_OC_AND condicao	{$$ = astCreate(IKS_AST_LOGICO_E,NULL, $1, $3, NULL, NULL);}
-		| condicao TK_OC_OR condicao	{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);}
-		| TK_IDENTIFICADOR '['condicao']'{$$ = astCreate(IKS_AST_VETOR_INDEXADO,$1, $3, NULL, NULL, NULL);}
-		| chamada_funcao		{$$ = $1;}
-		;
-		
-
-saida:     	TK_IDENTIFICADOR		{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);}
-		|TK_LIT_STRING			{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);}
-		| '(' saida')'			{$$=$2;}
-        	| '*' saida			{$$=$2;}
-		| saida '+' saida		{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL, $1, $3, NULL, NULL);}
-		| saida '*' saida		{$$ = astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL, $1, $3, NULL, NULL);}
-		| saida '/' saida		{$$ = astCreate(IKS_AST_ARIM_DIVISAO,NULL, $1, $3, NULL, NULL);}
-		| saida '-' saida		{$$ = astCreate(IKS_AST_ARIM_SUBTRACAO,NULL, $1, $3, NULL, NULL);}
-		| '-' saida			{$$ = astCreate(IKS_AST_ARIM_INVERSAO,NULL, $2, NULL, NULL, NULL);}
-		| saida TK_OC_LE saida		{$$ = astCreate(IKS_AST_LOGICO_COMP_LE,NULL, $1, $3, NULL, NULL);}
-		| saida TK_OC_GE saida		{$$ = astCreate(IKS_AST_LOGICO_COMP_GE,NULL, $1, $3, NULL, NULL);}
-		| saida TK_OC_EQ saida		{$$ = astCreate(IKS_AST_LOGICO_COMP_IGUAL,NULL, $1, $3, NULL, NULL);}
-		| saida TK_OC_NE saida		{$$ = astCreate(IKS_AST_LOGICO_COMP_DIF,NULL, $1, $3, NULL, NULL);}
-		| saida '>' saida		{$$ = astCreate(IKS_AST_LOGICO_COMP_G,NULL, $1, $3, NULL, NULL);}
-		| saida '<' saida		{$$ = astCreate(IKS_AST_LOGICO_COMP_L,NULL, $1, $3, NULL, NULL);}
-		| saida TK_OC_AND saida		{$$ = astCreate(IKS_AST_LOGICO_E,NULL, $1, $3, NULL, NULL);}
-		| saida TK_OC_OR saida		{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);}
-		| TK_IDENTIFICADOR '['saida ']'	{$$ = astCreate(IKS_AST_VETOR_INDEXADO,$1, $3, NULL, NULL, NULL);}
-		| chamada_funcao		{$$ = $1;}
-		;	 
+	
 
 %%
 

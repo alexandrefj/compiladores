@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="structastreenode" kind="struct" prot="public">
+    <compoundname>astreenode</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structastreenode_1aea69c5d0314e2ed85ec63f3c413f8c17" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int astreenode::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="15" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structastreenode_1a20c2c042a7a1638dbb4295a7503a4472" prot="public" static="no" mutable="no">
+        <type><ref refid="structnome__interno" kindref="compound">DICT_NODE</ref> *</type>
+        <definition>DICT_NODE* astreenode::symbol</definition>
+        <argsstring></argsstring>
+        <name>symbol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="16" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structastreenode_1a34286991324d34f2b9b9c5d2add4d456" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structastreenode" kindref="compound">astreenode</ref> *</type>
+        <definition>struct astreenode* astreenode::scc[MAX_NODE]</definition>
+        <argsstring>[MAX_NODE]</argsstring>
+        <name>scc</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="17" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structastreenode_1a5317d5ee326ffc7eddd54b16fadd7eb7" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int astreenode::read</definition>
+        <argsstring></argsstring>
+        <name>read</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="18" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>nome_interno</label>
+        <link refid="structnome__interno"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>astreenode</label>
+        <link refid="structastreenode"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>scc</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>symbol</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" line="14" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h" bodystart="13" bodyend="19"/>
+    <listofallmembers>
+      <member refid="structastreenode_1a5317d5ee326ffc7eddd54b16fadd7eb7" prot="public" virt="non-virtual"><scope>astreenode</scope><name>read</name></member>
+      <member refid="structastreenode_1a34286991324d34f2b9b9c5d2add4d456" prot="public" virt="non-virtual"><scope>astreenode</scope><name>scc</name></member>
+      <member refid="structastreenode_1a20c2c042a7a1638dbb4295a7503a4472" prot="public" virt="non-virtual"><scope>astreenode</scope><name>symbol</name></member>
+      <member refid="structastreenode_1aea69c5d0314e2ed85ec63f3c413f8c17" prot="public" virt="non-virtual"><scope>astreenode</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

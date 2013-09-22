@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="fatorial_8txt" kind="file">
+    <compoundname>fatorial.txt</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="fatorial_8txt_1afc3f2772f57fbfb2b6e6767e5117e637" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int __pad0__</definition>
+        <argsstring></argsstring>
+        <name>__pad0__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" line="5" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" bodystart="5" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="fatorial_8txt_1a2fbe47fd81e5f3b1b4ed6dc2d63df511" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int __pad1__</definition>
+        <argsstring></argsstring>
+        <name>__pad1__</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" line="8" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="fatorial_8txt_1a76ecdf9c8e5c01126a1b8cde4fd49295" prot="public" static="no" mutable="no">
+        <type>input</type>
+        <definition>output Fatorial num</definition>
+        <argsstring></argsstring>
+        <name>num</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" line="9" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="fatorial_8txt_1a7ce84ac030274eede738d29c5c4c54ce" prot="public" static="no" mutable="no">
+        <type>output Fatorial</type>
+        <definition>output Fatorial de</definition>
+        <argsstring></argsstring>
+        <name>de</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" line="10" bodyfile="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="fatorial_8txt_1a90059d548dc910de61b5fafe17f9be43" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>output Fatorial</type>
+        <definition>output Fatorial fatorial</definition>
+        <argsstring>(num)</argsstring>
+        <name>fatorial</name>
+        <param>
+          <type>num</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt" line="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Testa<sp/>a<sp/>função<sp/>fatorial<sp/>através<sp/>de<sp/>dois<sp/>métodos:<sp/>recursivo<sp/>e<sp/>iterativo.</highlight></codeline>
+<codeline lineno="3"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>num;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>main()<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/></highlight><highlight class="stringliteral">&quot;Digite<sp/>um<sp/>numero<sp/>para<sp/>saber<sp/>o<sp/>fatorial:<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input<sp/>num;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/></highlight><highlight class="stringliteral">&quot;Fatorial<sp/>de<sp/>&quot;</highlight><highlight class="normal">,<sp/>num,<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">,<sp/>fatorial(num);</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/></highlight><highlight class="stringliteral">&quot;Digite<sp/>um<sp/>numero<sp/>para<sp/>saber<sp/>o<sp/>fatorial<sp/>(metodo<sp/>recursivo):<sp/>&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>input<sp/>num;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>output<sp/></highlight><highlight class="stringliteral">&quot;Fatorial<sp/>de<sp/>&quot;</highlight><highlight class="normal">,<sp/>num,<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal">,<sp/>fatorialRecursivo(num);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>fatorial(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>num)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>i;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>num<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(i<sp/>&gt;<sp/>1)<sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>num<sp/>=<sp/>num<sp/>*<sp/>i;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>i<sp/>=<sp/>i<sp/>-<sp/>1;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>num;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>fatorialRecursivo(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">:<sp/>num)<sp/>{</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(num<sp/>==<sp/>1)<sp/>then</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>1;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>num<sp/>*<sp/>fatorialRecursivo(num<sp/>-<sp/>1);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/comp/compiladores/algoritmos/fatorial.txt"/>
+  </compounddef>
+</doxygen>

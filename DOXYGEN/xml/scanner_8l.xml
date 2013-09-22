@@ -7,81 +7,103 @@
     <includes local="yes">parser.h</includes>
     <includes refid="main_8h" local="yes">main.h</includes>
     <incdepgraph>
-      <node id="39">
-        <label>main.h</label>
-        <link refid="main_8h"/>
-        <childnode refid="40" relation="include">
-        </childnode>
-        <childnode refid="41" relation="include">
-        </childnode>
-        <childnode refid="42" relation="include">
-        </childnode>
-        <childnode refid="43" relation="include">
-        </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
+      <node id="67">
+        <label>comp_dict.h</label>
+        <link refid="comp__dict_8h_source"/>
       </node>
-      <node id="37">
+      <node id="63">
         <label>stdlib.h</label>
       </node>
-      <node id="41">
-        <label>comp_dict.h</label>
-        <link refid="comp__dict_8h"/>
+      <node id="72">
+        <label>comp_graph.h</label>
+        <link refid="comp__graph_8h_source"/>
       </node>
-      <node id="42">
-        <label>comp_list.h</label>
-        <link refid="comp__list_8h"/>
-        <childnode refid="40" relation="include">
+      <node id="71">
+        <label>gv.h</label>
+        <link refid="gv_8h_source"/>
+      </node>
+      <node id="61">
+        <label>/home/alexandre/Desktop/comp/compiladores/scanner.l</label>
+        <link refid="scanner.l"/>
+        <childnode refid="62" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="64" relation="include">
+        </childnode>
+        <childnode refid="65" relation="include">
         </childnode>
       </node>
-      <node id="43">
+      <node id="69">
         <label>comp_tree.h</label>
-        <link refid="comp__tree_8h"/>
+        <link refid="comp__tree_8h_source"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+        <childnode refid="67" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
+        </childnode>
       </node>
-      <node id="36">
+      <node id="68">
+        <label>comp_list.h</label>
+        <link refid="comp__list_8h_source"/>
+        <childnode refid="66" relation="include">
+        </childnode>
+        <childnode refid="63" relation="include">
+        </childnode>
+      </node>
+      <node id="62">
         <label>string.h</label>
       </node>
-      <node id="35">
-        <label>scanner.l</label>
-        <link refid="scanner.l"/>
-        <childnode refid="36" relation="include">
+      <node id="65">
+        <label>main.h</label>
+        <link refid="main_8h_source"/>
+        <childnode refid="66" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="67" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="68" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="69" relation="include">
+        </childnode>
+        <childnode refid="72" relation="include">
+        </childnode>
+        <childnode refid="70" relation="include">
+        </childnode>
+        <childnode refid="71" relation="include">
         </childnode>
       </node>
-      <node id="44">
-        <label>comp_graph.h</label>
-        <link refid="comp__graph_8h"/>
+      <node id="70">
+        <label>iks_ast.h</label>
+        <link refid="iks__ast_8h_source"/>
       </node>
-      <node id="38">
+      <node id="64">
         <label>parser.h</label>
       </node>
-      <node id="40">
+      <node id="66">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="scanner_8l_1ae830dc71903bb3bb4c1535d4717132f8" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="scanner_8l_1ab6f3c269fc46c9c1c0f81b3431240138" prot="public" static="no" mutable="no">
         <type></type>
-        <definition>__pad17__</definition>
+        <definition>__pad0__</definition>
         <argsstring></argsstring>
-        <name>__pad17__</name>
+        <name>__pad0__</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="25" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="18" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="25" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="18" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a202341a72043fae43d263788dfbf057a" prot="public" static="no" mutable="no">
-        <type>float <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>float return</type>
         <definition>float return TK_PR_FLOAT</definition>
         <argsstring></argsstring>
         <name>TK_PR_FLOAT</name>
@@ -91,10 +113,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="26" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="26" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="26" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1afd48cc960d1695529c103cca4464eb48" prot="public" static="no" mutable="no">
-        <type>bool <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>bool return</type>
         <definition>bool return TK_PR_BOOL</definition>
         <argsstring></argsstring>
         <name>TK_PR_BOOL</name>
@@ -104,10 +126,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="27" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="27" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="27" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" prot="public" static="no" mutable="no">
-        <type>char <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>char return</type>
         <definition>char return TK_PR_CHAR</definition>
         <argsstring></argsstring>
         <name>TK_PR_CHAR</name>
@@ -117,10 +139,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="28" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="28" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="28" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a6f7b846b26a5d434038f1f5e9f524d46" prot="public" static="no" mutable="no">
-        <type>string <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>string return</type>
         <definition>string return TK_PR_STRING</definition>
         <argsstring></argsstring>
         <name>TK_PR_STRING</name>
@@ -130,10 +152,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="29" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="29" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="29" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" prot="public" static="no" mutable="no">
-        <type>if <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>if return</type>
         <definition>if return TK_PR_IF</definition>
         <argsstring></argsstring>
         <name>TK_PR_IF</name>
@@ -143,10 +165,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="30" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="30" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="30" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="30" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" prot="public" static="no" mutable="no">
-        <type>then <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>then return</type>
         <definition>then return TK_PR_THEN</definition>
         <argsstring></argsstring>
         <name>TK_PR_THEN</name>
@@ -156,10 +178,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="31" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="31" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="31" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="31" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" prot="public" static="no" mutable="no">
-        <type>else <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>else return</type>
         <definition>else return TK_PR_ELSE</definition>
         <argsstring></argsstring>
         <name>TK_PR_ELSE</name>
@@ -169,10 +191,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="32" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="32" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="32" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" prot="public" static="no" mutable="no">
-        <type>while <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>while return</type>
         <definition>while return TK_PR_WHILE</definition>
         <argsstring></argsstring>
         <name>TK_PR_WHILE</name>
@@ -182,10 +204,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="33" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="33" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="33" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="33" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" prot="public" static="no" mutable="no">
-        <type>do <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>do return</type>
         <definition>do return TK_PR_DO</definition>
         <argsstring></argsstring>
         <name>TK_PR_DO</name>
@@ -195,10 +217,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="34" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="34" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="34" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" prot="public" static="no" mutable="no">
-        <type>input <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>input return</type>
         <definition>input return TK_PR_INPUT</definition>
         <argsstring></argsstring>
         <name>TK_PR_INPUT</name>
@@ -208,10 +230,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="35" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="35" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="35" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref> <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>output return</type>
         <definition>output return TK_PR_OUTPUT</definition>
         <argsstring></argsstring>
         <name>TK_PR_OUTPUT</name>
@@ -221,10 +243,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="36" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="36" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="36" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref> <ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
+        <type>return return</type>
         <definition>return return TK_PR_RETURN</definition>
         <argsstring></argsstring>
         <name>TK_PR_RETURN</name>
@@ -234,7 +256,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" line="37" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/scanner.l" bodystart="37" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l" line="37" bodyfile="/home/alexandre/Desktop/comp/compiladores/scanner.l" bodystart="37" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -247,12 +269,12 @@
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;string.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdlib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;parser.h&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;main.h&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="7"><highlight class="normal"></highlight></codeline>
 <codeline lineno="8"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>numerodelinhas<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="9"><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>getLineNumber(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">){<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>numerodelinhas;}</highlight></codeline>
-<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initMe(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{<sp/><ref refid="comp__dict_8h_1a047c7e1b181bcd0caed7d4b66d641626" kindref="member">dict_init</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initMe(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{<sp/>dict_init();<sp/>}</highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal">%}</highlight></codeline>
 <codeline lineno="14"><highlight class="normal"></highlight></codeline>
@@ -266,32 +288,32 @@
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
 <codeline lineno="23"><highlight class="normal"></highlight></codeline>
 <codeline lineno="24"><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" kindref="member">TK_PR_INT</ref>;</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a202341a72043fae43d263788dfbf057a" kindref="member">TK_PR_FLOAT</ref>;<sp/></highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;bool&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1afd48cc960d1695529c103cca4464eb48" kindref="member">TK_PR_BOOL</ref>;<sp/></highlight></codeline>
-<codeline lineno="28"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;char&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" kindref="member">TK_PR_CHAR</ref>;<sp/></highlight></codeline>
-<codeline lineno="29"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;string&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a6f7b846b26a5d434038f1f5e9f524d46" kindref="member">TK_PR_STRING</ref>;<sp/></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;if&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" kindref="member">TK_PR_IF</ref>;<sp/></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;then&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref>;<sp/></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;else&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" kindref="member">TK_PR_ELSE</ref>;<sp/></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;while&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" kindref="member">TK_PR_WHILE</ref>;<sp/></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;do&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" kindref="member">TK_PR_DO</ref>;<sp/></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;input&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" kindref="member">TK_PR_INPUT</ref>;<sp/></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;output&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref>;<sp/></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;return&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref>;<sp/></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/><ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(yytext,<ref refid="main_8h_1aa4f468b05c912ff12ec7c73e2e95dbda" kindref="member">IKS_SIMBOLO_LITERAL_BOOL</ref>);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" kindref="member">TK_LIT_TRUE</ref>;}</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/><ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(yytext,<ref refid="main_8h_1aa4f468b05c912ff12ec7c73e2e95dbda" kindref="member">IKS_SIMBOLO_LITERAL_BOOL</ref>);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="tokens_8h_1a07504d793877ebb719decd0c38547b80" kindref="member">TK_LIT_FALSE</ref>;}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;int&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_INT;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;float&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_FLOAT;<sp/></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;bool&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_BOOL;<sp/></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;char&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_CHAR;<sp/></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;string&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_STRING;<sp/></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;if&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_IF;<sp/></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;then&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_THEN;<sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;else&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_ELSE;<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;while&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_WHILE;<sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;do&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_DO;<sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;input&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_INPUT;<sp/></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;output&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_OUTPUT;<sp/></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;return&quot;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_PR_RETURN;<sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;true&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_BOOL);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_LIT_TRUE;}</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_BOOL);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_LIT_FALSE;}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal">{CHAR}({CHAR}|{INTEGER})*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/><ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(yytext,<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref>);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref>;}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">{CHAR}({CHAR}|{INTEGER})*<sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,TK_IDENTIFICADOR);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_IDENTIFICADOR;}</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal">[0-9]+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/><ref refid="comp__dict_8h_1adb2f8f7914afa558c9728c7bf8eea682" kindref="member">dict_insert</ref>(yytext,<ref refid="main_8h_1a25a7443cdeabca76f4c7526041a69933" kindref="member">IKS_SIMBOLO_LITERAL_INT</ref>);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref>;}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">[0-9]+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_INT);<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>TK_LIT_INT;}</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;(\\.|[^\\&apos;</highlight><highlight class="normal">])+</highlight><highlight class="stringliteral">&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_LITERAL_CHAR);<sp/>return<sp/>TK_LIT_CHAR;}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="stringliteral">&apos;(\\.|[^\\&apos;</highlight><highlight class="normal">])+</highlight><highlight class="stringliteral">&apos;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_CHAR);<sp/>return<sp/>TK_LIT_CHAR;}</highlight></codeline>
 <codeline lineno="47"><highlight class="stringliteral"></highlight></codeline>
-<codeline lineno="48"><highlight class="stringliteral">\&quot;(\\.|[^\\&quot;])*\&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_LITERAL_STRING);<sp/>return<sp/>TK_LIT_STRING;}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="48"><highlight class="stringliteral">\&quot;(\\.|[^\\&quot;])*\&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_STRING);<sp/>return<sp/>TK_LIT_STRING;}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="49"><highlight class="stringliteral"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="50"><highlight class="stringliteral">[0-9]*\.[0-9]+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_LITERAL_FLOAT);<sp/>return<sp/>TK_LIT_FLOAT;}</highlight></codeline>
+<codeline lineno="50"><highlight class="stringliteral">[0-9]*\.[0-9]+<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{yylval.symbol<sp/>=<sp/>dict_insert(yytext,IKS_SIMBOLO_FLOAT);<sp/>return<sp/>TK_LIT_FLOAT;}</highlight></codeline>
 <codeline lineno="51"><highlight class="stringliteral"></highlight></codeline>
 <codeline lineno="52"><highlight class="stringliteral">\s<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="53"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
@@ -320,6 +342,6 @@
 <codeline lineno="76"><highlight class="stringliteral"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="77"><highlight class="stringliteral">%%</highlight></codeline>
     </programlisting>
-    <location file="/home/alexandre/Desktop/etapa3/compiladores/scanner.l"/>
+    <location file="/home/alexandre/Desktop/comp/compiladores/scanner.l"/>
   </compounddef>
 </doxygen>

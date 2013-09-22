@@ -4,46 +4,85 @@
     <compoundname>parser.y</compoundname>
     <includes local="no">stdio.h</includes>
     <includes local="no">stdlib.h</includes>
-    <includes refid="comp__dict_8h" local="yes">comp_dict.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
     <incdepgraph>
-      <node id="32">
+      <node id="50">
+        <label>/home/alexandre/Desktop/comp/compiladores/parser.y</label>
+        <link refid="parser.y"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+        <childnode refid="53" relation="include">
+        </childnode>
+      </node>
+      <node id="54">
+        <label>comp_dict.h</label>
+        <link refid="comp__dict_8h_source"/>
+      </node>
+      <node id="52">
         <label>stdlib.h</label>
       </node>
-      <node id="33">
-        <label>comp_dict.h</label>
-        <link refid="comp__dict_8h"/>
+      <node id="59">
+        <label>comp_graph.h</label>
+        <link refid="comp__graph_8h_source"/>
       </node>
-      <node id="30">
-        <label>parser.y</label>
-        <link refid="parser.y"/>
-        <childnode refid="31" relation="include">
+      <node id="58">
+        <label>gv.h</label>
+        <link refid="gv_8h_source"/>
+      </node>
+      <node id="56">
+        <label>comp_tree.h</label>
+        <link refid="comp__tree_8h_source"/>
+        <childnode refid="51" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="52" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
         </childnode>
       </node>
-      <node id="31">
+      <node id="55">
+        <label>comp_list.h</label>
+        <link refid="comp__list_8h_source"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
+        </childnode>
+      </node>
+      <node id="53">
+        <label>main.h</label>
+        <link refid="main_8h_source"/>
+        <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="54" relation="include">
+        </childnode>
+        <childnode refid="55" relation="include">
+        </childnode>
+        <childnode refid="56" relation="include">
+        </childnode>
+        <childnode refid="59" relation="include">
+        </childnode>
+        <childnode refid="57" relation="include">
+        </childnode>
+        <childnode refid="58" relation="include">
+        </childnode>
+      </node>
+      <node id="57">
+        <label>iks_ast.h</label>
+        <link refid="iks__ast_8h_source"/>
+      </node>
+      <node id="51">
         <label>stdio.h</label>
       </node>
     </incdepgraph>
       <sectiondef kind="var">
-      <memberdef kind="variable" id="parser_8y_1aca36b68c12b6c6204e5f925a7ab3233d" prot="public" static="no" mutable="no">
-        <type>function</type>
-        <definition>function __pad0__</definition>
-        <argsstring></argsstring>
-        <name>__pad0__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="75" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="73" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1ac82244ac88d197ad4a4356c801b8959d" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1a4b51f736a34356910f3b556818375870" kindref="member">local_var_decl</ref></type>
-        <definition>local_var_decl __pad1__</definition>
+      <memberdef kind="variable" id="parser_8y_1aac20c3ba7e833ee7d21854b7d9753104" prot="public" static="no" mutable="no">
+        <type>programa</type>
+        <definition>programa __pad1__</definition>
         <argsstring></argsstring>
         <name>__pad1__</name>
         <briefdescription>
@@ -52,11 +91,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="78" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="78" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="104" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="102" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="parser_8y_1af724e69941a257517d8c2db53780242a" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref></type>
-        <definition>type __pad2__</definition>
+      <memberdef kind="variable" id="parser_8y_1ac0a45a6bb17c58fab90a0baa8be42101" prot="public" static="no" mutable="no">
+        <type>programa</type>
+        <definition>comando_condicao NULL</definition>
+        <argsstring></argsstring>
+        <name>NULL</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="104" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1ac7e53f65bb6397af9663fa396bd92b86" prot="public" static="no" mutable="no">
+        <type>comando</type>
+        <definition>comando __pad2__</definition>
         <argsstring></argsstring>
         <name>__pad2__</name>
         <briefdescription>
@@ -65,24 +117,24 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="79" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="79" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="112" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="107" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a4b51f736a34356910f3b556818375870" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="parser_8y_1aaff1a07e60701252b8f106e34267c6ac" prot="public" static="no" mutable="no">
         <type></type>
-        <definition>local_var_decl</definition>
+        <definition>bloco</definition>
         <argsstring></argsstring>
-        <name>local_var_decl</name>
+        <name>bloco</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="81" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="81" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="113" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="113" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="parser_8y_1ae16c2c1e1cc7f9f8a1ba564dd3414364" prot="public" static="no" mutable="no">
-        <type>block</type>
-        <definition>block __pad3__</definition>
+      <memberdef kind="variable" id="parser_8y_1a8b4a417392718fc30ab2e404dfec2e99" prot="public" static="no" mutable="no">
+        <type>comando_simples</type>
+        <definition>comando_simples __pad3__</definition>
         <argsstring></argsstring>
         <name>__pad3__</name>
         <briefdescription>
@@ -91,11 +143,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="87" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="87" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="118" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="116" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a3bad37d372b881dc5bb2d6c6aa83ac21" prot="public" static="no" mutable="no">
-        <type>flow_block</type>
-        <definition>flow_block __pad4__</definition>
+      <memberdef kind="variable" id="parser_8y_1ae511196ab32a6bc6e83f7ef10b017f6e" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>nome_variavel</definition>
+        <argsstring></argsstring>
+        <name>nome_variavel</name>
+        <initializer>&apos; expressao									{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL, NULL);}
+			|vetor &apos;=&apos; expressao										{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL,NULL);}
+			|TK_PR_RETURN expressao 									{$$ = astCreate(IKS_AST_RETURN,NULL,$2,NULL, NULL, NULL);}
+			|nome_variavel &apos;(&apos; chamada_recursao &apos;)&apos; 							{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,NULL, NULL);}
+			|TK_PR_OUTPUT chamada_com_param									{$$ = astCreate(IKS_AST_OUTPUT,NULL,$2,NULL, NULL, NULL);}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="124" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="parser_8y_1a016a830ac5128837bd876c6109723ba5" prot="public" static="no" mutable="no">
+        <type>comando_composto</type>
+        <definition>comando_composto __pad4__</definition>
         <argsstring></argsstring>
         <name>__pad4__</name>
         <briefdescription>
@@ -104,11 +174,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="90" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="90" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="126" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="126" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a1fbe2a20bee3dcbed727e751041e6b31" prot="public" static="no" mutable="no">
-        <type>simple_command_function</type>
-        <definition>simple_command_function __pad5__</definition>
+      <memberdef kind="variable" id="parser_8y_1ad4d691af5ab1d11ed0d9591c589f3eb4" prot="public" static="no" mutable="no">
+        <type>bloco</type>
+        <definition>bloco __pad5__</definition>
         <argsstring></argsstring>
         <name>__pad5__</name>
         <briefdescription>
@@ -117,51 +187,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="94" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="92" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="136" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="133" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" prot="public" static="no" mutable="no">
-        <type></type>
-        <definition>TK_IDENTIFICADOR[&apos;exp&apos;]</definition>
-        <argsstring></argsstring>
-        <name>TK_IDENTIFICADOR</name>
-        <initializer>&apos; exp&apos;</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="95" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="95" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" prot="public" static="no" mutable="no">
-        <type><ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref></type>
-        <definition>output output</definition>
-        <argsstring></argsstring>
-        <name>output</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="97" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="97" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" prot="public" static="no" mutable="no">
-        <type><ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref></type>
-        <definition>TK_PR_RETURN return</definition>
-        <argsstring></argsstring>
-        <name>return</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="98" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="98" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1ab0c03ff1848fe86f587c537c07998bce" prot="public" static="no" mutable="no">
-        <type>global_var_decl</type>
-        <definition>global_var_decl __pad6__</definition>
+      <memberdef kind="variable" id="parser_8y_1add4ba20c324c61264e636dbc1f35b1bb" prot="public" static="no" mutable="no">
+        <type>bloco_c</type>
+        <definition>bloco_c __pad6__</definition>
         <argsstring></argsstring>
         <name>__pad6__</name>
         <briefdescription>
@@ -170,11 +200,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="107" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="107" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="138" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="136" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a1ce7624726e60404f888918f5a55e80c" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref></type>
-        <definition>type __pad7__</definition>
+      <memberdef kind="variable" id="parser_8y_1a03771d825f4edaf83c6c474ce8f25e70" prot="public" static="no" mutable="no">
+        <type>comando_condicao</type>
+        <definition>comando_condicao __pad7__</definition>
         <argsstring></argsstring>
         <name>__pad7__</name>
         <briefdescription>
@@ -183,150 +213,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="108" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="108" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a962281f6f40cba0458cd6894b42877d5" prot="public" static="no" mutable="no">
-        <type>simple_command</type>
-        <definition>simple_command __pad8__</definition>
-        <argsstring></argsstring>
-        <name>__pad8__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="112" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="109" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1ae7356d7e5581e94a7cf65f5c8ede015f" prot="public" static="no" mutable="no">
-        <type>control_flow_command</type>
-        <definition>control_flow_command __pad9__</definition>
-        <argsstring></argsstring>
-        <name>__pad9__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="125" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="117" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1aded5e77f6d18847e8ab15d8a777765db" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kindref="member">return</ref></type>
-        <definition>return __pad10__</definition>
-        <argsstring></argsstring>
-        <name>__pad10__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="128" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="128" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a42e7e27270054e9351802191443369d4" prot="public" static="no" mutable="no">
-        <type>param_list</type>
-        <definition>param_list __pad11__</definition>
-        <argsstring></argsstring>
-        <name>__pad11__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="132" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="132" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a529440f9a2e39940733758baedce98b3" prot="public" static="no" mutable="no">
-        <type>param_list</type>
-        <definition>param_list type</definition>
-        <argsstring></argsstring>
-        <name>type</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="134" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="132" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a7880287d3839abfc978d7c5dbae4f626" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></type>
-        <definition>call_param_list __pad12__</definition>
-        <argsstring></argsstring>
-        <name>__pad12__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="138" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="138" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref> constant</type>
-        <definition>call_param_list constant TK_IDENTIFICADOR [&apos;exp&apos;] call_param_list</definition>
-        <argsstring></argsstring>
-        <name>call_param_list</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="139" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="138" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1ac66502e6213b8f3d1ef5bb19763c12d4" prot="public" static="no" mutable="no">
-        <type>exp</type>
-        <definition>exp __pad13__</definition>
-        <argsstring></argsstring>
-        <name>__pad13__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="162" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="162" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1ad5db6fb21c36f2349758fd60be1c05bf" prot="public" static="no" mutable="no">
-        <type>constant</type>
-        <definition>constant __pad14__</definition>
-        <argsstring></argsstring>
-        <name>__pad14__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="169" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="169" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1abc90534ce4ec7a5a00cbd54a3271e258" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref></type>
-        <definition>output __pad15__</definition>
-        <argsstring></argsstring>
-        <name>__pad15__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="180" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="177" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="parser_8y_1a9c211346d83f9cbbedbedba460d1d632" prot="public" static="no" mutable="no">
-        <type><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref></type>
-        <definition>type __pad16__</definition>
-        <argsstring></argsstring>
-        <name>__pad16__</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y" line="189" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/parser.y" bodystart="189" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/parser.y" line="142" bodyfile="/home/alexandre/Desktop/comp/compiladores/parser.y" bodystart="138" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -336,198 +223,291 @@
     <programlisting>
 <codeline lineno="1"><highlight class="normal">%{</highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="comp__dict_8h" kindref="compound">comp_dict.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="5"><highlight class="normal">%}</highlight></codeline>
-<codeline lineno="6"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal">%</highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnome__interno" kindref="compound">nome_interno</ref><sp/>*symbol;</highlight></codeline>
-<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref>;</highlight></codeline>
-<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" kindref="member">TK_PR_INT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>256</highlight></codeline>
-<codeline lineno="14"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a202341a72043fae43d263788dfbf057a" kindref="member">TK_PR_FLOAT</ref><sp/><sp/><sp/><sp/><sp/><sp/>257</highlight></codeline>
-<codeline lineno="15"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1afd48cc960d1695529c103cca4464eb48" kindref="member">TK_PR_BOOL</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>258</highlight></codeline>
-<codeline lineno="16"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" kindref="member">TK_PR_CHAR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>259</highlight></codeline>
-<codeline lineno="17"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a6f7b846b26a5d434038f1f5e9f524d46" kindref="member">TK_PR_STRING</ref><sp/><sp/><sp/><sp/><sp/>260</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;main.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structastreenode" kindref="compound">astreenode</ref><sp/>*aux;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>aux1;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">%}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">%</highlight><highlight class="keyword">union</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structnome__interno" kindref="compound">nome_interno</ref><sp/>*symbol;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>type;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structastreenode" kindref="compound">astreenode</ref><sp/>*ast;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" kindref="member">TK_PR_IF</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>261</highlight></codeline>
-<codeline lineno="20"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>262</highlight></codeline>
-<codeline lineno="21"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" kindref="member">TK_PR_ELSE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>263</highlight></codeline>
-<codeline lineno="22"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" kindref="member">TK_PR_WHILE</ref><sp/><sp/><sp/><sp/><sp/><sp/>264</highlight></codeline>
-<codeline lineno="23"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" kindref="member">TK_PR_DO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>265</highlight></codeline>
-<codeline lineno="24"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" kindref="member">TK_PR_INPUT</ref><sp/><sp/><sp/><sp/><sp/><sp/>266</highlight></codeline>
-<codeline lineno="25"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref><sp/><sp/><sp/><sp/><sp/>267</highlight></codeline>
-<codeline lineno="26"><highlight class="normal">%token<sp/><ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref><sp/><sp/><sp/><sp/><sp/>268</highlight></codeline>
-<codeline lineno="27"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a9e91217db5b34a182702d67a5f319ebc" kindref="member">TK_OC_LE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>270</highlight></codeline>
-<codeline lineno="28"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a0b733dd4c24a1037d59b3410054f4f15" kindref="member">TK_OC_GE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>271</highlight></codeline>
-<codeline lineno="29"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1ae60e2e439177e6662272838e89f378ed" kindref="member">TK_OC_EQ</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>272</highlight></codeline>
-<codeline lineno="30"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1adb12e27dba8a9d38ba9358573e560874" kindref="member">TK_OC_NE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>273</highlight></codeline>
-<codeline lineno="31"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1ae3b7d3e05c1854a69b894a4534c2fdd0" kindref="member">TK_OC_AND</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>274</highlight></codeline>
-<codeline lineno="32"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1aca39580880902e3ee18d535fd4348205" kindref="member">TK_OC_OR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>275</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>281</highlight></codeline>
-<codeline lineno="35"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a28fa3d1354a21b85ba571797959be5df" kindref="member">TK_LIT_FLOAT</ref><sp/><sp/><sp/><sp/><sp/>282</highlight></codeline>
-<codeline lineno="36"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a07504d793877ebb719decd0c38547b80" kindref="member">TK_LIT_FALSE</ref><sp/><sp/><sp/><sp/><sp/>283</highlight></codeline>
-<codeline lineno="37"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" kindref="member">TK_LIT_TRUE</ref><sp/><sp/><sp/><sp/><sp/><sp/>284</highlight></codeline>
-<codeline lineno="38"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1ac1974086f469c95f549368d75bcf39f7" kindref="member">TK_LIT_CHAR</ref><sp/><sp/><sp/><sp/><sp/><sp/>285</highlight></codeline>
-<codeline lineno="39"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1afb92b7de778adbc28a03626bc477af4a" kindref="member">TK_LIT_STRING</ref><sp/><sp/><sp/><sp/>286</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">%token<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/>290</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//%type&lt;ast&gt;<sp/>output_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal">%type&lt;ast&gt;<sp/>chamada_com_param</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">%type&lt;ast&gt;<sp/>nome_variavel</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">%type&lt;ast&gt;<sp/>vetor</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">%type&lt;ast&gt;<sp/>inicio</highlight></codeline>
+<codeline lineno="25"><highlight class="normal">%type&lt;ast&gt;<sp/>programa</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">//%type&lt;ast&gt;<sp/>funcao</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">%type&lt;ast&gt;<sp/>comando_condicao</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//%type&lt;ast&gt;<sp/>comando_de_condicao_composto</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//%type&lt;ast&gt;<sp/>comando_de_condicao</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">%type&lt;ast&gt;<sp/>comando_composto</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">%type&lt;ast&gt;<sp/>comando_simples</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">%type&lt;ast&gt;<sp/>comando</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//%type&lt;ast&gt;<sp/>output</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal">%type&lt;ast&gt;<sp/>expressao</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">%type&lt;ast&gt;<sp/>chamada_recursao</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">%type&lt;ast&gt;<sp/>literal</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">%type&lt;ast&gt;<sp/>condicao</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">%type&lt;ast&gt;<sp/>bloco</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">%type&lt;ast&gt;<sp/>bloco_c</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">//%type&lt;ast&gt;<sp/>bloco_condicao</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal">%token<sp/><ref refid="tokens_8h_1a52afa3742170f1dda1c5b1c849a92ec8" kindref="member">TOKEN_ERRO</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>291</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">%type&lt;ast&gt;<sp/>exp2</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal">%type&lt;type&gt;<sp/>constant</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="48"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight></codeline>
-<codeline lineno="49"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_FLOAT<sp/><sp/><sp/><sp/><sp/>2</highlight></codeline>
-<codeline lineno="50"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_CHAR<sp/><sp/><sp/><sp/><sp/><sp/>3</highlight></codeline>
-<codeline lineno="51"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_STRING<sp/><sp/><sp/><sp/>4</highlight></codeline>
-<codeline lineno="52"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_LIT_BOOL<sp/><sp/><sp/><sp/><sp/><sp/>5</highlight></codeline>
-<codeline lineno="53"><highlight class="comment">%token&lt;symbol&gt;<sp/>TK_IDENTIFICADOR<sp/>6</highlight></codeline>
-<codeline lineno="54"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal">%left<sp/><ref refid="tokens_8h_1a9e91217db5b34a182702d67a5f319ebc" kindref="member">TK_OC_LE</ref><sp/><ref refid="tokens_8h_1a0b733dd4c24a1037d59b3410054f4f15" kindref="member">TK_OC_GE</ref><sp/><ref refid="tokens_8h_1ae60e2e439177e6662272838e89f378ed" kindref="member">TK_OC_EQ</ref><sp/><ref refid="tokens_8h_1adb12e27dba8a9d38ba9358573e560874" kindref="member">TK_OC_NE</ref><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal">%left<sp/><ref refid="tokens_8h_1ae3b7d3e05c1854a69b894a4534c2fdd0" kindref="member">TK_OC_AND</ref><sp/><ref refid="tokens_8h_1aca39580880902e3ee18d535fd4348205" kindref="member">TK_OC_OR</ref></highlight></codeline>
-<codeline lineno="58"><highlight class="normal">%left<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal">%left<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal">%nonassoc<sp/><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref></highlight></codeline>
-<codeline lineno="62"><highlight class="normal">%nonassoc<sp/><ref refid="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" kindref="member">TK_PR_ELSE</ref></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal">%%</highlight></codeline>
+<codeline lineno="45"><highlight class="normal">%token<sp/>TK_PR_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>256</highlight></codeline>
+<codeline lineno="46"><highlight class="normal">%token<sp/>TK_PR_FLOAT<sp/><sp/><sp/><sp/><sp/><sp/>257</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">%token<sp/>TK_PR_BOOL<sp/><sp/><sp/><sp/><sp/><sp/><sp/>258</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">%token<sp/>TK_PR_CHAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>259</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">%token<sp/>TK_PR_STRING<sp/><sp/><sp/><sp/><sp/>260</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">%token<sp/>TK_PR_IF<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>261</highlight></codeline>
+<codeline lineno="52"><highlight class="normal">%token<sp/>TK_PR_THEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/>262</highlight></codeline>
+<codeline lineno="53"><highlight class="normal">%token<sp/>TK_PR_ELSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/>263</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">%token<sp/>TK_PR_WHILE<sp/><sp/><sp/><sp/><sp/><sp/>264</highlight></codeline>
+<codeline lineno="55"><highlight class="normal">%token<sp/>TK_PR_DO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>265</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">%token<sp/>TK_PR_INPUT<sp/><sp/><sp/><sp/><sp/><sp/>266</highlight></codeline>
+<codeline lineno="57"><highlight class="normal">%token<sp/>TK_PR_OUTPUT<sp/><sp/><sp/><sp/><sp/>267</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">%token<sp/>TK_PR_RETURN<sp/><sp/><sp/><sp/><sp/>268</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">%token<sp/>TK_OC_LE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>270</highlight></codeline>
+<codeline lineno="60"><highlight class="normal">%token<sp/>TK_OC_GE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>271</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">%token<sp/>TK_OC_EQ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>272</highlight></codeline>
+<codeline lineno="62"><highlight class="normal">%token<sp/>TK_OC_NE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>273</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">%token<sp/>TK_OC_AND<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>274</highlight></codeline>
+<codeline lineno="64"><highlight class="normal">%token<sp/>TK_OC_OR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>275</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/*******************************************************************************************</highlight></codeline>
-<codeline lineno="67"><highlight class="comment">----------------------REGRAS<sp/>DA<sp/>LINGUAGEM<sp/>IKS---------------------------------------------**</highlight></codeline>
-<codeline lineno="68"><highlight class="comment">*******************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal">program<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:global_var_decl<sp/>program</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/>program</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">%token&lt;symbol&gt;<sp/>TK_LIT_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/>281</highlight></codeline>
+<codeline lineno="67"><highlight class="normal">%token&lt;symbol&gt;<sp/>TK_LIT_FLOAT<sp/><sp/><sp/><sp/><sp/>282</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">%token&lt;symbol&gt;<sp/>TK_LIT_FALSE<sp/><sp/><sp/><sp/><sp/>283</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">%token&lt;symbol&gt;<sp/>TK_LIT_TRUE<sp/><sp/><sp/><sp/><sp/><sp/>284</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">%token&lt;symbol&gt;<sp/>TK_LIT_CHAR<sp/><sp/><sp/><sp/><sp/><sp/>285</highlight></codeline>
+<codeline lineno="71"><highlight class="normal">%token&lt;symbol&gt;<sp/>TK_LIT_STRING<sp/><sp/><sp/><sp/>286</highlight></codeline>
+<codeline lineno="72"><highlight class="normal">%token&lt;symbol&gt;<sp/>TK_IDENTIFICADOR<sp/>290</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">%type&lt;symbol&gt;<sp/>exp1</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keyword">function</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">param_list</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a4b51f736a34356910f3b556818375870" kindref="member">local_var_decl</ref><sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal"><sp/>block</highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"><sp/>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal">%token<sp/>TOKEN_ERRO<sp/><sp/><sp/><sp/><sp/><sp/><sp/>291</highlight></codeline>
 <codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><ref refid="parser_8y_1a4b51f736a34356910f3b556818375870" kindref="member">local_var_decl</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a4b51f736a34356910f3b556818375870" kindref="member">local_var_decl</ref></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal">block<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>simple_command<sp/>block</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>control_flow_command<sp/>block</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal">simple_command<sp/>block</highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">%left<sp/>TK_OC_LE<sp/>TK_OC_GE<sp/>TK_OC_EQ<sp/>TK_OC_NE<sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal">%left<sp/>TK_OC_OR<sp/></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">%right<sp/>TK_OC_AND</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">%left<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="81"><highlight class="normal">%right<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">%right<sp/></highlight><highlight class="charliteral">&apos;!&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal">%left<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal">%left<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">%left<sp/></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">%start<sp/>inicio</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal">flow_block<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>simple_command_function</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal"><sp/>simple_command<sp/>flow_block<sp/></highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">//%right<sp/>TK_PR_DO</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">%nonassoc<sp/>TK_PR_THEN</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">%nonassoc<sp/>TK_PR_ELSE</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal">simple_command_function:<sp/><ref refid="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" kindref="member">TK_PR_INPUT</ref><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref><sp/><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref><sp/><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref><sp/></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal">global_var_decl<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal"><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"></highlight></codeline>
-<codeline lineno="112"><highlight class="normal">simple_command<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="scanner_8l_1a41ffbfe3915551402a4903dce33e33c2" kindref="member">TK_PR_INPUT</ref><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>exp</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kindref="member">TK_PR_OUTPUT</ref><sp/><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kindref="member">TK_PR_RETURN</ref><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal">control_flow_command<sp/><sp/><sp/><sp/>:<ref refid="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" kindref="member">TK_PR_IF</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref><sp/>flow_block<sp/></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a780cb4eb2351df390f623d47e692c6bb" kindref="member">TK_PR_IF</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><ref refid="scanner_8l_1a6fb754d2e021beca8d9d416d85705341" kindref="member">TK_PR_THEN</ref><sp/>flow_block<sp/><ref refid="scanner_8l_1a3007c5092dd314880ffe7164bdf93c48" kindref="member">TK_PR_ELSE</ref><sp/>flow_block<sp/></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" kindref="member">TK_PR_WHILE</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><ref refid="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" kindref="member">TK_PR_DO</ref><sp/>flow_block<sp/></highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a20b5aa95758c289a7e7047521a79b714" kindref="member">TK_PR_DO</ref><sp/>flow_block<sp/><ref refid="scanner_8l_1abbf2d34387bc97a5d44dd2801326b26b" kindref="member">TK_PR_WHILE</ref></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>exp</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref>;</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal">param_list<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/>param_list</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/>param_list</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">%%</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/******************************************************************************************************************************</highlight></codeline>
+<codeline lineno="98"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>---------------------------------REGRAS<sp/>DA<sp/>LINGUAGEM<sp/>IKS----------------------------------**</highlight></codeline>
+<codeline lineno="99"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*******************************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">inicio:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>programa<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{root<sp/>=<sp/>astCreate(IKS_AST_PROGRAMA,<sp/>NULL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL);};</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal">programa:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tipo<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/>TK_IDENTIFICADOR<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">parametros_funcao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>declaracao_var_locais<sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal">comando</highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"><sp/>programa<sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_FUNCAO,<sp/>$3,<sp/>$9,<sp/>$11,<sp/>NULL,<sp/>NULL);}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|declaracao_var_globais<sp/>programa<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=$2;}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=NULL;}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">comando:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>comando_composto<sp/></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|comando_simples</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|bloco<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=astCreate(IKS_AST_BLOCO,NULL,$1,NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|bloco<sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=astCreate(IKS_AST_BLOCO,NULL,$1,$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|comando_condicao</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=NULL;}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">comando_simples:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_PR_INPUT<sp/>nome_variavel<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_INPUT,<sp/>NULL,<sp/>$2,NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|nome_variavel<sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|vetor<sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL,NULL);}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_RETURN<sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_RETURN,NULL,$2,NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|nome_variavel<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>chamada_recursao<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_OUTPUT<sp/>chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_OUTPUT,NULL,$2,NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">comando_composto:<sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_PR_INPUT<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_INPUT,<sp/>NULL,<sp/>$2,<sp/>$4,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|nome_variavel<sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>expressao</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|vetor<sp/></highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal"><sp/>expressao</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5,NULL);}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_RETURN<sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_RETURN,NULL,$2,$4,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|nome_variavel<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>chamada_recursao<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,$6,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_OUTPUT<sp/>chamada_com_param<sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_OUTPUT,NULL,$2,$4,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=<sp/>$2;}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
 <codeline lineno="135"><highlight class="normal"></highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>constant<sp/><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref><sp/></highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>constant<sp/><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">exp</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"></highlight></codeline>
-<codeline lineno="143"><highlight class="normal">exp<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>constant</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref></highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>exp<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;&amp;&apos;</highlight><highlight class="normal">exp</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal">exp</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"><sp/>exp<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>exp<sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1a9e91217db5b34a182702d67a5f319ebc" kindref="member">TK_OC_LE</ref><sp/>exp</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1a0b733dd4c24a1037d59b3410054f4f15" kindref="member">TK_OC_GE</ref><sp/>exp</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1ae60e2e439177e6662272838e89f378ed" kindref="member">TK_OC_EQ</ref><sp/>exp</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1adb12e27dba8a9d38ba9358573e560874" kindref="member">TK_OC_NE</ref><sp/>exp</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal"><sp/>exp</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1ae3b7d3e05c1854a69b894a4534c2fdd0" kindref="member">TK_OC_AND</ref><sp/>exp</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp<sp/><ref refid="tokens_8h_1aca39580880902e3ee18d535fd4348205" kindref="member">TK_OC_OR</ref><sp/>exp</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal"><sp/>exp<sp/></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kindref="member">TK_IDENTIFICADOR</ref><sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><ref refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kindref="member">call_param_list</ref></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal">bloco:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal">comando</highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"><sp/>{$$<sp/>=<sp/>$2;}<sp/>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">bloco_c:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="charliteral">&apos;{&apos;</highlight><highlight class="normal">comando</highlight><highlight class="charliteral">&apos;}&apos;</highlight><highlight class="normal"><sp/>{$$=astCreate(IKS_AST_BLOCO,NULL,$2,NULL,<sp/>NULL,<sp/>NULL);};</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal">comando_condicao:<sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_PR_IF<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">TK_PR_THEN<sp/>bloco_c<sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_IF_ELSE,<sp/>NULL,<sp/>$3,<sp/>$6,<sp/>$7,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_IF<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">TK_PR_THEN<sp/>comando_simples<sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_IF_ELSE,<sp/>NULL,<sp/>$3,<sp/>$6,<sp/>$8,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_IF<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">TK_PR_THEN<sp/>comando_simples<sp/>TK_PR_ELSE<sp/>comando_simples<sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_IF_ELSE,<sp/>NULL,<sp/>$3,<sp/>$6,<sp/>$8,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_IF<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal">TK_PR_THEN<sp/>bloco_c<sp/>TK_PR_ELSE<sp/>bloco_c<sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_IF_ELSE,<sp/>NULL,<sp/>$3,<sp/>$6,<sp/>$8,<sp/>$9);}</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_WHILE<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>TK_PR_DO<sp/>bloco_c<sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_WHILE_DO,<sp/>NULL,<sp/>$3,<sp/>$6,<sp/>$7,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_WHILE<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>TK_PR_DO<sp/>comando_simples<sp/></highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_WHILE_DO,<sp/>NULL,<sp/>$3,<sp/>$6,<sp/>$8,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_DO<sp/>bloco_c<sp/>TK_PR_WHILE</highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_DO_WHILE,<sp/>NULL,<sp/>$2,<sp/>$5,<sp/>$7,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_DO<sp/>comando_simples<sp/>TK_PR_WHILE</highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal">condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/>comando<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_DO_WHILE,<sp/>NULL,<sp/>$2,<sp/>$5,<sp/>$7,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal">nome_variavel:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_IDENTIFICADOR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_IDENTIFICADOR,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);};</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">vetor:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>nome_variavel</highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">expressao</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_VETOR_INDEXADO,<sp/>NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);};</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal">chamada_recursao:<sp/><sp/><sp/><sp/><sp/><sp/><sp/>chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=$1;}</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=NULL;}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
 <codeline lineno="163"><highlight class="normal"></highlight></codeline>
-<codeline lineno="164"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/>Tentei<sp/>definir<sp/>os<sp/>tipos,<sp/>porém<sp/>não</highlight></codeline>
-<codeline lineno="165"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sei<sp/>ao<sp/>certo<sp/>se<sp/>foi<sp/>isso<sp/>que<sp/>foi<sp/></highlight></codeline>
-<codeline lineno="166"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pedido<sp/>na<sp/>especificação<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="167"><highlight class="normal"></highlight></codeline>
-<codeline lineno="168"><highlight class="normal"></highlight></codeline>
-<codeline lineno="169"><highlight class="normal">constant<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>1;}</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><ref refid="tokens_8h_1a217e5079835f13d13d85ef3b22ee2714" kindref="member">TK_LIT_INT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>1;}</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1a28fa3d1354a21b85ba571797959be5df" kindref="member">TK_LIT_FLOAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>2;}</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><ref refid="tokens_8h_1a28fa3d1354a21b85ba571797959be5df" kindref="member">TK_LIT_FLOAT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>2;}</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1afb92b7de778adbc28a03626bc477af4a" kindref="member">TK_LIT_STRING</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>3;}</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1ac1974086f469c95f549368d75bcf39f7" kindref="member">TK_LIT_CHAR</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>4;}</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" kindref="member">TK_LIT_TRUE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>5;}</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><ref refid="tokens_8h_1a07504d793877ebb719decd0c38547b80" kindref="member">TK_LIT_FALSE</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>5;}</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"></highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:exp</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|exp<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/><ref refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kindref="member">output</ref></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><ref refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kindref="member">type</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<ref refid="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" kindref="member">TK_PR_INT</ref></highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a202341a72043fae43d263788dfbf057a" kindref="member">TK_PR_FLOAT</ref></highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1afd48cc960d1695529c103cca4464eb48" kindref="member">TK_PR_BOOL</ref></highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1a6f7b846b26a5d434038f1f5e9f524d46" kindref="member">TK_PR_STRING</ref></highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<ref refid="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" kindref="member">TK_PR_CHAR</ref></highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"></highlight></codeline>
-<codeline lineno="191"><highlight class="normal">%%</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal">chamada_com_param:<sp/><sp/><sp/><sp/><sp/><sp/>exp2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=$1;}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>chamada_recursao<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_CHAMADA_DE_FUNCAO,<sp/>NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal"><sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_VETOR_INDEXADO,NULL,$1,$3,NULL,NULL);}<sp/><sp/></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"><sp/><sp/>exp2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_SOMA,NULL,$1,<sp/>$3,NULL,<sp/>NULL);<sp/>}</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>exp2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_SUBTRACAO,NULL,$1,<sp/>$3,NULL,<sp/>NULL);<sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/>exp2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL,$1,<sp/>$3,NULL,<sp/>NULL);<sp/>}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>exp2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_DIVISAO,NULL,$1,<sp/>$3,NULL,<sp/>NULL);<sp/>}<sp/></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>exp1</highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal">chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL,<sp/>NULL);<sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>chamada_recursao<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_CHAMADA_DE_FUNCAO,<sp/>NULL,<sp/>$1,<sp/>$3,<sp/>$6,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal"><sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_VETOR_INDEXADO,NULL,$1,$3,$6,NULL);}<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"><sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_SOMA,NULL,$1,<sp/>$3,$5,<sp/>NULL);<sp/>}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_SUBTRACAO,NULL,$1,<sp/>$3,$5,<sp/>NULL);<sp/>}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL,$1,<sp/>$3,$5,<sp/>NULL);<sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>exp2<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>chamada_com_param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_DIVISAO,NULL,$1,<sp/>$3,$5,NULL);<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal">exp1:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_LIT_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$1;}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_FLOAT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$1;}</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_STRING<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$1;}<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_CHAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$1;}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_TRUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$1;}<sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_FALSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$1;}</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_IDENTIFICADOR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$1;}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
 <codeline lineno="192"><highlight class="normal"></highlight></codeline>
 <codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">exp2:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_LIT_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_FLOAT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_STRING<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}<sp/><sp/></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_CHAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_TRUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}<sp/><sp/></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_FALSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_IDENTIFICADOR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_IDENTIFICADOR,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">expressao:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_IDENTIFICADOR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_IDENTIFICADOR,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|literal<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$1;}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>expressao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$2;}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>$2;}</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;!&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=astCreate(IKS_AST_LOGICO_COMP_NEGACAO,NULL,$2,NULL,NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_SOMA,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_DIVISAO,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_SUBTRACAO,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_INVERSAO,NULL,<sp/>$2,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/>TK_OC_LE<sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_LE,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/>TK_OC_GE<sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_GE,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/>TK_OC_EQ<sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_IGUAL,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/>TK_OC_NE<sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_DIF,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_G,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal"><sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_L,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/>TK_OC_AND<sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_E,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>expressao<sp/>TK_OC_OR<sp/>expressao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_OU,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal"><sp/>expressao<sp/></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_VETOR_INDEXADO,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>chamada_recursao<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_CHAMADA_DE_FUNCAO,<sp/>NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}<sp/><sp/></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal">condicao:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_IDENTIFICADOR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_IDENTIFICADOR,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|literal<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=$1;}</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>condicao</highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=$2;}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$=$2;}</highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;!&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_NEGACAO,NULL,<sp/>$2,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/></highlight><highlight class="charliteral">&apos;+&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_SOMA,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/></highlight><highlight class="charliteral">&apos;*&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_MULTIPLICACAO,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/></highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_DIVISAO,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_SUBTRACAO,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_ARIM_INVERSAO,NULL,<sp/>$2,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/>TK_OC_LE<sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_LE,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/>TK_OC_GE<sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_GE,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/>TK_OC_EQ<sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_IGUAL,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/>TK_OC_NE<sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_DIF,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/></highlight><highlight class="charliteral">&apos;&gt;&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_G,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/></highlight><highlight class="charliteral">&apos;&lt;&apos;</highlight><highlight class="normal"><sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_COMP_L,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/>TK_OC_AND<sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_E,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>condicao<sp/>TK_OC_OR<sp/>condicao<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LOGICO_OU,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal"><sp/>condicao<sp/></highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_VETOR_INDEXADO,NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>nome_variavel<sp/></highlight><highlight class="charliteral">&apos;(&apos;</highlight><highlight class="normal"><sp/>chamada_recursao<sp/></highlight><highlight class="charliteral">&apos;)&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_CHAMADA_DE_FUNCAO,<sp/>NULL,<sp/>$1,<sp/>$3,<sp/>NULL,<sp/>NULL);}<sp/><sp/></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal">literal:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_LIT_INT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);<sp/>}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_FLOAT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_STRING<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}<sp/><sp/></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_CHAR<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_TRUE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}<sp/><sp/></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>TK_LIT_FALSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{$$<sp/>=<sp/>astCreate(IKS_AST_LITERAL,<sp/>$1,<sp/>NULL,<sp/>NULL,<sp/>NULL,<sp/>NULL);}<sp/><sp/></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal">parametros_funcao:<sp/><sp/><sp/><sp/><sp/><sp/>parametros_funcao_c_param</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal">parametros_funcao_c_param:</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tipo<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/>TK_IDENTIFICADOR<sp/></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>tipo<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">TK_IDENTIFICADOR<sp/></highlight><highlight class="charliteral">&apos;,&apos;</highlight><highlight class="normal"><sp/>parametros_funcao_c_param</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal">declaracao_var_locais:<sp/><sp/>tipo<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/>TK_IDENTIFICADOR</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/>declaracao_var_locais</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal">declaracao_var_globais:<sp/>tipo<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/>TK_IDENTIFICADOR</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|tipo<sp/></highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal"><sp/>TK_IDENTIFICADOR<sp/></highlight><highlight class="charliteral">&apos;[&apos;</highlight><highlight class="normal">TK_LIT_INT</highlight><highlight class="charliteral">&apos;]&apos;</highlight><highlight class="charliteral">&apos;;&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal">tipo:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>TK_PR_INT</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_FLOAT</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_BOOL</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_STRING</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|TK_PR_CHAR</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal">%%</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="/home/alexandre/Desktop/etapa3/compiladores/parser.y"/>
+    <location file="/home/alexandre/Desktop/comp/compiladores/parser.y"/>
   </compounddef>
 </doxygen>

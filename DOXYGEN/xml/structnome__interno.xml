@@ -2,11 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
   <compounddef id="structnome__interno" kind="struct" prot="public">
     <compoundname>nome_interno</compoundname>
-    <includes refid="comp__dict_8h" local="no">comp_dict.h</includes>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structnome__interno_1a5633b1433389cec21ade3811bbe9ca5b" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structnome__interno_1a98156a716dc4914a26b3864d28570627" prot="public" static="no" mutable="no">
         <type>char *</type>
-        <definition>char* text</definition>
+        <definition>char* nome_interno::text</definition>
         <argsstring></argsstring>
         <name>text</name>
         <briefdescription>
@@ -15,11 +14,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="4" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" bodystart="4" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" line="7" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" bodystart="7" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structnome__interno_1ac765329451135abec74c45e1897abf26" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structnome__interno_1aa9fac8abac145009157ab81d7d7fe4d7" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int type</definition>
+        <definition>int nome_interno::type</definition>
         <argsstring></argsstring>
         <name>type</name>
         <briefdescription>
@@ -28,11 +27,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="5" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" bodystart="5" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" line="8" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" bodystart="8" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structnome__interno_1aa1aa81212930ab4eddc11152877e9fdd" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structnome__interno_1a7968d732b540bda4679fe1cddf728e58" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int intVal</definition>
+        <definition>int nome_interno::intVal</definition>
         <argsstring></argsstring>
         <name>intVal</name>
         <briefdescription>
@@ -41,11 +40,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="6" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" bodystart="6" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" line="9" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" bodystart="9" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structnome__interno_1a06977681f9d80f144afbbddc9a4f27d2" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structnome__interno_1ab8c854326310e7463fef195310f4b3d1" prot="public" static="no" mutable="no">
         <type>char</type>
-        <definition>char charVal</definition>
+        <definition>char nome_interno::charVal</definition>
         <argsstring></argsstring>
         <name>charVal</name>
         <briefdescription>
@@ -54,11 +53,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="7" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" bodystart="7" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" line="10" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" bodystart="10" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structnome__interno_1af7caa00706eba3e4480bfa0c7bea0ed1" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structnome__interno_1a1e8704f95622bf4c1ea98426380c309f" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int boolVal</definition>
+        <definition>int nome_interno::boolVal</definition>
         <argsstring></argsstring>
         <name>boolVal</name>
         <briefdescription>
@@ -67,11 +66,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="8" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" bodystart="8" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" line="11" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" bodystart="11" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structnome__interno_1a3c54dc5d61031173400cfd063996f1f0" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structnome__interno_1aecc76e413ece66e3aabe3da5f3765894" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structnome__interno" kindref="compound">nome_interno</ref> *</type>
-        <definition>struct nome_interno* next</definition>
+        <definition>struct nome_interno* nome_interno::next</definition>
         <argsstring></argsstring>
         <name>next</name>
         <briefdescription>
@@ -80,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="9" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" bodystart="9" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" line="12" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" bodystart="12" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -88,22 +87,22 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="7">
+      <node id="8">
         <label>nome_interno</label>
         <link refid="structnome__interno"/>
-        <childnode refid="7" relation="usage">
+        <childnode refid="8" relation="usage">
           <edgelabel>next</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" line="3" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_dict.h" bodystart="3" bodyend="10"/>
+    <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" line="6" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_dict.h" bodystart="6" bodyend="13"/>
     <listofallmembers>
-      <member refid="structnome__interno_1af7caa00706eba3e4480bfa0c7bea0ed1" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>boolVal</name></member>
-      <member refid="structnome__interno_1a06977681f9d80f144afbbddc9a4f27d2" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>charVal</name></member>
-      <member refid="structnome__interno_1aa1aa81212930ab4eddc11152877e9fdd" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>intVal</name></member>
-      <member refid="structnome__interno_1a3c54dc5d61031173400cfd063996f1f0" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>next</name></member>
-      <member refid="structnome__interno_1a5633b1433389cec21ade3811bbe9ca5b" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>text</name></member>
-      <member refid="structnome__interno_1ac765329451135abec74c45e1897abf26" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>type</name></member>
+      <member refid="structnome__interno_1a1e8704f95622bf4c1ea98426380c309f" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>boolVal</name></member>
+      <member refid="structnome__interno_1ab8c854326310e7463fef195310f4b3d1" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>charVal</name></member>
+      <member refid="structnome__interno_1a7968d732b540bda4679fe1cddf728e58" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>intVal</name></member>
+      <member refid="structnome__interno_1aecc76e413ece66e3aabe3da5f3765894" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>next</name></member>
+      <member refid="structnome__interno_1a98156a716dc4914a26b3864d28570627" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>text</name></member>
+      <member refid="structnome__interno_1aa9fac8abac145009157ab81d7d7fe4d7" prot="public" virt="non-virtual"><scope>nome_interno</scope><name>type</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,25 +1,51 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.7.6.1">
+  <compound refid="structastreenode" kind="struct"><name>astreenode</name>
+    <member refid="structastreenode_1aea69c5d0314e2ed85ec63f3c413f8c17" kind="variable"><name>type</name></member>
+    <member refid="structastreenode_1a20c2c042a7a1638dbb4295a7503a4472" kind="variable"><name>symbol</name></member>
+    <member refid="structastreenode_1a34286991324d34f2b9b9c5d2add4d456" kind="variable"><name>scc</name></member>
+    <member refid="structastreenode_1a5317d5ee326ffc7eddd54b16fadd7eb7" kind="variable"><name>read</name></member>
+  </compound>
   <compound refid="structcomp__graph__t" kind="struct"><name>comp_graph_t</name>
-    <member refid="structcomp__graph__t_1a6b7983ccd32c86cbbc3d4d9cda4cac17" kind="variable"><name>nodes</name></member>
-    <member refid="structcomp__graph__t_1ac29a4fcfe6e2fb5a94cb5350ac977ce4" kind="variable"><name>matrix</name></member>
+    <member refid="structcomp__graph__t_1aa6b46ec02fa6ab88243f0271e62d5d8c" kind="variable"><name>nodes</name></member>
+    <member refid="structcomp__graph__t_1aa05be388ccc1fd93f322a0a54a9913c9" kind="variable"><name>matrix</name></member>
   </compound>
   <compound refid="structcomp__list__t" kind="struct"><name>comp_list_t</name>
-    <member refid="structcomp__list__t_1af3fd9d829538e36331bf4a6fe7e6b7bc" kind="variable"><name>node</name></member>
-    <member refid="structcomp__list__t_1adc2d7801f96b6cfcbb7bb32c293fa76a" kind="variable"><name>next</name></member>
-  </compound>
-  <compound refid="structcomp__tree__t" kind="struct"><name>comp_tree_t</name>
-    <member refid="structcomp__tree__t_1a9eab91667db4d35c7231dcddf7b89a76" kind="variable"><name>data</name></member>
-    <member refid="structcomp__tree__t_1a25d0ee3eb1f37bdf8837332ae210af08" kind="variable"><name>left</name></member>
-    <member refid="structcomp__tree__t_1a031926068de9698531271ab100d96900" kind="variable"><name>right</name></member>
+    <member refid="structcomp__list__t_1a1735b90c406683eedcbf4dd07447f6b2" kind="variable"><name>node</name></member>
+    <member refid="structcomp__list__t_1a9ba4fa33be8b303515bc38ab6840a477" kind="variable"><name>next</name></member>
   </compound>
   <compound refid="structnome__interno" kind="struct"><name>nome_interno</name>
-    <member refid="structnome__interno_1a5633b1433389cec21ade3811bbe9ca5b" kind="variable"><name>text</name></member>
-    <member refid="structnome__interno_1ac765329451135abec74c45e1897abf26" kind="variable"><name>type</name></member>
-    <member refid="structnome__interno_1aa1aa81212930ab4eddc11152877e9fdd" kind="variable"><name>intVal</name></member>
-    <member refid="structnome__interno_1a06977681f9d80f144afbbddc9a4f27d2" kind="variable"><name>charVal</name></member>
-    <member refid="structnome__interno_1af7caa00706eba3e4480bfa0c7bea0ed1" kind="variable"><name>boolVal</name></member>
-    <member refid="structnome__interno_1a3c54dc5d61031173400cfd063996f1f0" kind="variable"><name>next</name></member>
+    <member refid="structnome__interno_1a98156a716dc4914a26b3864d28570627" kind="variable"><name>text</name></member>
+    <member refid="structnome__interno_1aa9fac8abac145009157ab81d7d7fe4d7" kind="variable"><name>type</name></member>
+    <member refid="structnome__interno_1a7968d732b540bda4679fe1cddf728e58" kind="variable"><name>intVal</name></member>
+    <member refid="structnome__interno_1ab8c854326310e7463fef195310f4b3d1" kind="variable"><name>charVal</name></member>
+    <member refid="structnome__interno_1a1e8704f95622bf4c1ea98426380c309f" kind="variable"><name>boolVal</name></member>
+    <member refid="structnome__interno_1aecc76e413ece66e3aabe3da5f3765894" kind="variable"><name>next</name></member>
+  </compound>
+  <compound refid="fatorial_8png" kind="file"><name>fatorial.png</name>
+    <member refid="fatorial_8png_1ad7cb9d77cc25b49ebb3f8b0a3e37f4d2" kind="variable"><name> </name></member>
+    <member refid="fatorial_8png_1a0c4b38d3320c25ea2ff7ae84b873d3ec" kind="variable"><name>”…</name></member>
+    <member refid="fatorial_8png_1a6767167e25f06c61f0c5ebf20399d0e9" kind="variable"><name>ÑÖÖîÕ«×¬Y³</name></member>
+    <member refid="fatorial_8png_1a2a9f9e770296d5c0276a77f95bf1281e" kind="function"><name>€ÑI</name></member>
+  </compound>
+  <compound refid="fatorial_8txt" kind="file"><name>fatorial.txt</name>
+    <member refid="fatorial_8txt_1afc3f2772f57fbfb2b6e6767e5117e637" kind="variable"><name>__pad0__</name></member>
+    <member refid="fatorial_8txt_1a2fbe47fd81e5f3b1b4ed6dc2d63df511" kind="variable"><name>__pad1__</name></member>
+    <member refid="fatorial_8txt_1a76ecdf9c8e5c01126a1b8cde4fd49295" kind="variable"><name>num</name></member>
+    <member refid="fatorial_8txt_1a7ce84ac030274eede738d29c5c4c54ce" kind="variable"><name>de</name></member>
+    <member refid="fatorial_8txt_1a90059d548dc910de61b5fafe17f9be43" kind="function"><name>fatorial</name></member>
+  </compound>
+  <compound refid="media_8png" kind="file"><name>media.png</name>
+    <member refid="media_8png_1aa8890dca8cb2bc1590bf1ace3a444d11" kind="function"><name>”W¢ÿñg</name></member>
+  </compound>
+  <compound refid="media_8txt" kind="file"><name>media.txt</name>
+    <member refid="media_8txt_1a932ead34f378ec32fdd579cbdaa2bf82" kind="variable"><name>__pad2__</name></member>
+    <member refid="media_8txt_1ad1d030d3d54f1cb06c637be8c12c0c31" kind="variable"><name>__pad3__</name></member>
+    <member refid="media_8txt_1a595989d44ab84fe16447a2aae22177f8" kind="variable"><name>__pad4__</name></member>
+    <member refid="media_8txt_1aa7f451dc7f39f38cf72bbf618e366e33" kind="variable"><name>__pad5__</name></member>
+    <member refid="media_8txt_1ab3df3d3625046a987df3e0e9d0b309fe" kind="variable"><name>__pad6__</name></member>
+  </compound>
+  <compound refid="_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
   </compound>
   <compound refid="comp__dict_8h" kind="file"><name>comp_dict.h</name>
     <member refid="comp__dict_8h_1ac348236d656b195cf77833516032bbd0" kind="define"><name>DICT_SIZE</name></member>
@@ -46,23 +72,57 @@
     <member refid="comp__list_8h_1a34f5f12e3457fbb204a44ac231cf9a1c" kind="function"><name>list_remove</name></member>
   </compound>
   <compound refid="comp__tree_8h" kind="file"><name>comp_tree.h</name>
-    <member refid="comp__tree_8h_1a2260a455a5ba63919cd9a17b4b84903f" kind="typedef"><name>TreeNode</name></member>
-    <member refid="comp__tree_8h_1ad8c121a804dfc6f22af94134264c613c" kind="function"><name>createTree</name></member>
-    <member refid="comp__tree_8h_1af9c8e6687905b200d52e36c5d55abbf2" kind="function"><name>freeTree</name></member>
-    <member refid="comp__tree_8h_1aaaf6cae312f43eea124c45eec5ce7826" kind="function"><name>insertTree</name></member>
-    <member refid="comp__tree_8h_1a83637c8f27c268971cdcada624701075" kind="function"><name>printTree</name></member>
-    <member refid="comp__tree_8h_1a84c9ad14a59e020d2f4270642f038d19" kind="function"><name>searchNode</name></member>
+    <member refid="comp__tree_8h_1a456b0bf8fc3799e25c3ee34d62c68824" kind="define"><name>MAX_NODE</name></member>
+    <member refid="comp__tree_8h_1a4838c66d4029d42af5eaeefae17220e8" kind="typedef"><name>ASTREE</name></member>
+    <member refid="comp__tree_8h_1af33f294a8dabdb3ff6aa242e2e7978d7" kind="function"><name>astCreate</name></member>
+    <member refid="comp__tree_8h_1ab38cd0c9c2c49c48905ffe97b1ee8754" kind="function"><name>astReadTree</name></member>
+    <member refid="comp__tree_8h_1ad18b27e68cc70585772ff7c47c22d067" kind="function"><name>astReadNode</name></member>
+  </compound>
+  <compound refid="gv_8h" kind="file"><name>gv.h</name>
+    <member refid="gv_8h_1a93b2805bfe8f8a6367330ffc72b0b2e2" kind="function"><name>gv_init</name></member>
+    <member refid="gv_8h_1a968b05ac409ae707c0a23eadaf73cf3a" kind="function"><name>gv_close</name></member>
+    <member refid="gv_8h_1a57e3cb593ab94dd78335b3e6bec61944" kind="function"><name>gv_declare</name></member>
+    <member refid="gv_8h_1a620f493bc6bec666fe0efbeddd59d13b" kind="function"><name>gv_connect</name></member>
+  </compound>
+  <compound refid="iks__ast_8h" kind="file"><name>iks_ast.h</name>
+    <member refid="iks__ast_8h_1a39e1a5611b951b3fdccc6e38b46bf127" kind="define"><name>IKS_AST_PROGRAMA</name></member>
+    <member refid="iks__ast_8h_1a60767da1b48a370dee0a93bc6413f643" kind="define"><name>IKS_AST_FUNCAO</name></member>
+    <member refid="iks__ast_8h_1ac5c2dcd28d02ac46b3ebfe694e90b641" kind="define"><name>IKS_AST_IF_ELSE</name></member>
+    <member refid="iks__ast_8h_1a81c2ba65e3a532da5af5137a96226850" kind="define"><name>IKS_AST_DO_WHILE</name></member>
+    <member refid="iks__ast_8h_1a9e915ec8378c4d45a16b3224f43d1fcd" kind="define"><name>IKS_AST_WHILE_DO</name></member>
+    <member refid="iks__ast_8h_1a26da62ec43dc4744ed5634ec055cdb60" kind="define"><name>IKS_AST_INPUT</name></member>
+    <member refid="iks__ast_8h_1a9648fb7b503cad363ee3cba6f66f6123" kind="define"><name>IKS_AST_OUTPUT</name></member>
+    <member refid="iks__ast_8h_1a7b249a975ea79ce5489e608a407858cd" kind="define"><name>IKS_AST_ATRIBUICAO</name></member>
+    <member refid="iks__ast_8h_1a82cff69e7440f164f1d2e1bd9e4d04b7" kind="define"><name>IKS_AST_RETURN</name></member>
+    <member refid="iks__ast_8h_1a56cf7208b2a792155c762a6eac050761" kind="define"><name>IKS_AST_BLOCO</name></member>
+    <member refid="iks__ast_8h_1a352870e2315ae4c668a11433a30398ed" kind="define"><name>IKS_AST_IDENTIFICADOR</name></member>
+    <member refid="iks__ast_8h_1aa773e355ca10618e419f9eef0fdcc175" kind="define"><name>IKS_AST_LITERAL</name></member>
+    <member refid="iks__ast_8h_1a603d8774ae80ae3cd02e0c51b309110c" kind="define"><name>IKS_AST_ARIM_SOMA</name></member>
+    <member refid="iks__ast_8h_1a35a207f3d21583b1b8afc5f37962ca4c" kind="define"><name>IKS_AST_ARIM_SUBTRACAO</name></member>
+    <member refid="iks__ast_8h_1a1b686a4f5f56c3eb9076529bc41d57d7" kind="define"><name>IKS_AST_ARIM_MULTIPLICACAO</name></member>
+    <member refid="iks__ast_8h_1ac276feb05464042133c1e4ed56538fbc" kind="define"><name>IKS_AST_ARIM_DIVISAO</name></member>
+    <member refid="iks__ast_8h_1a0811b76b19c3ed9762d5d71bce721e14" kind="define"><name>IKS_AST_ARIM_INVERSAO</name></member>
+    <member refid="iks__ast_8h_1a71b9331975b2ca00eeb3a33b8c9057fb" kind="define"><name>IKS_AST_LOGICO_E</name></member>
+    <member refid="iks__ast_8h_1a0b64c33fa1ad8fd7b3f3ef4bd4cd97a6" kind="define"><name>IKS_AST_LOGICO_OU</name></member>
+    <member refid="iks__ast_8h_1acff7045b2490184ab19183fa940253e8" kind="define"><name>IKS_AST_LOGICO_COMP_DIF</name></member>
+    <member refid="iks__ast_8h_1a8ddc5a8416743e07914d81fb6953c132" kind="define"><name>IKS_AST_LOGICO_COMP_IGUAL</name></member>
+    <member refid="iks__ast_8h_1a45f0460b8965f9fd905c3390976c8de0" kind="define"><name>IKS_AST_LOGICO_COMP_LE</name></member>
+    <member refid="iks__ast_8h_1ab1629c27159efc288a15a1016b39629a" kind="define"><name>IKS_AST_LOGICO_COMP_GE</name></member>
+    <member refid="iks__ast_8h_1ae247f074527377356c53b7a86624f3ab" kind="define"><name>IKS_AST_LOGICO_COMP_L</name></member>
+    <member refid="iks__ast_8h_1ae03bcf33a44591336e1b64fc1697bb2e" kind="define"><name>IKS_AST_LOGICO_COMP_G</name></member>
+    <member refid="iks__ast_8h_1a73129a728807da6836731bf6bf219be9" kind="define"><name>IKS_AST_LOGICO_COMP_NEGACAO</name></member>
+    <member refid="iks__ast_8h_1ab1e16a1bf1656966ced0ce0aaf8b3b74" kind="define"><name>IKS_AST_VETOR_INDEXADO</name></member>
+    <member refid="iks__ast_8h_1a17590f0001da268593f3bf8ed38c120e" kind="define"><name>IKS_AST_CHAMADA_DE_FUNCAO</name></member>
   </compound>
   <compound refid="main_8h" kind="file"><name>main.h</name>
     <member refid="main_8h_1aa2e83304934225b4433241fbf139e14f" kind="define"><name>IKS_SYNTAX_SUCESSO</name></member>
     <member refid="main_8h_1af272c2cc706a974960ce198fd9c238b4" kind="define"><name>IKS_SYNTAX_ERRO</name></member>
-    <member refid="main_8h_1ad3e2e21fca1e68569e583d1340290526" kind="define"><name>IKS_SIMBOLO_INDEFINIDO</name></member>
-    <member refid="main_8h_1a25a7443cdeabca76f4c7526041a69933" kind="define"><name>IKS_SIMBOLO_LITERAL_INT</name></member>
-    <member refid="main_8h_1a3cc56aba35d5c415d90b19f41dc5ec4f" kind="define"><name>IKS_SIMBOLO_LITERAL_FLOAT</name></member>
-    <member refid="main_8h_1ad93951012ae2a818ba07539efffbf444" kind="define"><name>IKS_SIMBOLO_LITERAL_CHAR</name></member>
-    <member refid="main_8h_1a895f1647b277c562c8a1e3270109cf97" kind="define"><name>IKS_SIMBOLO_LITERAL_STRING</name></member>
-    <member refid="main_8h_1aa4f468b05c912ff12ec7c73e2e95dbda" kind="define"><name>IKS_SIMBOLO_LITERAL_BOOL</name></member>
-    <member refid="main_8h_1ae12bced70d7ab3294fff8db97d062daf" kind="define"><name>IKS_SIMBOLO_IDENTIFICADOR</name></member>
+    <member refid="main_8h_1af21f9e7bcb054f24e0982bcb1eee7fcc" kind="define"><name>IKS_SIMBOLO_INT</name></member>
+    <member refid="main_8h_1a9934c03c556aa1662b3f12288a41cccf" kind="define"><name>IKS_SIMBOLO_FLOAT</name></member>
+    <member refid="main_8h_1a4df42556ec4ff6aeaaf942ce34fb60d4" kind="define"><name>IKS_SIMBOLO_CHAR</name></member>
+    <member refid="main_8h_1a9e4bd30cca9b4643bfe558be96460ea7" kind="define"><name>IKS_SIMBOLO_STRING</name></member>
+    <member refid="main_8h_1aebfd86e13ef7ee0000672d92032af14d" kind="define"><name>IKS_SIMBOLO_BOOL</name></member>
+    <member refid="main_8h_1aa10d9ed889549514e9fc087d1d0196e5" kind="variable"><name>root</name></member>
   </compound>
   <compound refid="tokens_8h" kind="file"><name>tokens.h</name>
     <member refid="tokens_8h_1ac04e968a827c4b0c3151b57b43977c97" kind="define"><name>TK_PR_INT</name></member>
@@ -90,36 +150,23 @@
     <member refid="tokens_8h_1a8a5398cb0652f8a5f55b6de1fa9fa3cf" kind="define"><name>TK_LIT_TRUE</name></member>
     <member refid="tokens_8h_1ac1974086f469c95f549368d75bcf39f7" kind="define"><name>TK_LIT_CHAR</name></member>
     <member refid="tokens_8h_1afb92b7de778adbc28a03626bc477af4a" kind="define"><name>TK_LIT_STRING</name></member>
-    <member refid="tokens_8h_1ab6a016d33bcc8c43ad667c5500e1c494" kind="define"><name>TK_IDENTIFICADOR</name></member>
+    <member refid="tokens_8h_1add39d1f923ee58cbc2d9d436c704e000" kind="define"><name>TK_IDENTIFICADOR</name></member>
     <member refid="tokens_8h_1a52afa3742170f1dda1c5b1c849a92ec8" kind="define"><name>TOKEN_ERRO</name></member>
   </compound>
   <compound refid="parser_8y" kind="file"><name>parser.y</name>
-    <member refid="parser_8y_1aca36b68c12b6c6204e5f925a7ab3233d" kind="variable"><name>__pad0__</name></member>
-    <member refid="parser_8y_1ac82244ac88d197ad4a4356c801b8959d" kind="variable"><name>__pad1__</name></member>
-    <member refid="parser_8y_1af724e69941a257517d8c2db53780242a" kind="variable"><name>__pad2__</name></member>
-    <member refid="parser_8y_1a4b51f736a34356910f3b556818375870" kind="variable"><name>local_var_decl</name></member>
-    <member refid="parser_8y_1ae16c2c1e1cc7f9f8a1ba564dd3414364" kind="variable"><name>__pad3__</name></member>
-    <member refid="parser_8y_1a3bad37d372b881dc5bb2d6c6aa83ac21" kind="variable"><name>__pad4__</name></member>
-    <member refid="parser_8y_1a1fbe2a20bee3dcbed727e751041e6b31" kind="variable"><name>__pad5__</name></member>
-    <member refid="parser_8y_1a91f04d28c21a4505b11f14cc4a9cb10b" kind="variable"><name>TK_IDENTIFICADOR</name></member>
-    <member refid="parser_8y_1abdef7ffdf0d6bca3e1000c9673b2906a" kind="variable"><name>output</name></member>
-    <member refid="parser_8y_1a2b48775ca200e0d8f6b8f0d496d566db" kind="variable"><name>return</name></member>
-    <member refid="parser_8y_1ab0c03ff1848fe86f587c537c07998bce" kind="variable"><name>__pad6__</name></member>
-    <member refid="parser_8y_1a1ce7624726e60404f888918f5a55e80c" kind="variable"><name>__pad7__</name></member>
-    <member refid="parser_8y_1a962281f6f40cba0458cd6894b42877d5" kind="variable"><name>__pad8__</name></member>
-    <member refid="parser_8y_1ae7356d7e5581e94a7cf65f5c8ede015f" kind="variable"><name>__pad9__</name></member>
-    <member refid="parser_8y_1aded5e77f6d18847e8ab15d8a777765db" kind="variable"><name>__pad10__</name></member>
-    <member refid="parser_8y_1a42e7e27270054e9351802191443369d4" kind="variable"><name>__pad11__</name></member>
-    <member refid="parser_8y_1a529440f9a2e39940733758baedce98b3" kind="variable"><name>type</name></member>
-    <member refid="parser_8y_1a7880287d3839abfc978d7c5dbae4f626" kind="variable"><name>__pad12__</name></member>
-    <member refid="parser_8y_1a2b800bdfe9e83d4f2e956148a4656433" kind="variable"><name>call_param_list</name></member>
-    <member refid="parser_8y_1ac66502e6213b8f3d1ef5bb19763c12d4" kind="variable"><name>__pad13__</name></member>
-    <member refid="parser_8y_1ad5db6fb21c36f2349758fd60be1c05bf" kind="variable"><name>__pad14__</name></member>
-    <member refid="parser_8y_1abc90534ce4ec7a5a00cbd54a3271e258" kind="variable"><name>__pad15__</name></member>
-    <member refid="parser_8y_1a9c211346d83f9cbbedbedba460d1d632" kind="variable"><name>__pad16__</name></member>
+    <member refid="parser_8y_1aac20c3ba7e833ee7d21854b7d9753104" kind="variable"><name>__pad1__</name></member>
+    <member refid="parser_8y_1ac0a45a6bb17c58fab90a0baa8be42101" kind="variable"><name>NULL</name></member>
+    <member refid="parser_8y_1ac7e53f65bb6397af9663fa396bd92b86" kind="variable"><name>__pad2__</name></member>
+    <member refid="parser_8y_1aaff1a07e60701252b8f106e34267c6ac" kind="variable"><name>bloco</name></member>
+    <member refid="parser_8y_1a8b4a417392718fc30ab2e404dfec2e99" kind="variable"><name>__pad3__</name></member>
+    <member refid="parser_8y_1ae511196ab32a6bc6e83f7ef10b017f6e" kind="variable"><name>nome_variavel</name></member>
+    <member refid="parser_8y_1a016a830ac5128837bd876c6109723ba5" kind="variable"><name>__pad4__</name></member>
+    <member refid="parser_8y_1ad4d691af5ab1d11ed0d9591c589f3eb4" kind="variable"><name>__pad5__</name></member>
+    <member refid="parser_8y_1add4ba20c324c61264e636dbc1f35b1bb" kind="variable"><name>__pad6__</name></member>
+    <member refid="parser_8y_1a03771d825f4edaf83c6c474ce8f25e70" kind="variable"><name>__pad7__</name></member>
   </compound>
   <compound refid="scanner_8l" kind="file"><name>scanner.l</name>
-    <member refid="scanner_8l_1ae830dc71903bb3bb4c1535d4717132f8" kind="variable"><name>__pad17__</name></member>
+    <member refid="scanner_8l_1ab6f3c269fc46c9c1c0f81b3431240138" kind="variable"><name>__pad0__</name></member>
     <member refid="scanner_8l_1a202341a72043fae43d263788dfbf057a" kind="variable"><name>TK_PR_FLOAT</name></member>
     <member refid="scanner_8l_1afd48cc960d1695529c103cca4464eb48" kind="variable"><name>TK_PR_BOOL</name></member>
     <member refid="scanner_8l_1afd99294536a4c2c03617c8a854fd2f33" kind="variable"><name>TK_PR_CHAR</name></member>
@@ -133,6 +180,78 @@
     <member refid="scanner_8l_1a27a64a52db02f19deee96d934ad9c76e" kind="variable"><name>TK_PR_OUTPUT</name></member>
     <member refid="scanner_8l_1a60673b52665520ddf5f6d898cf68fc24" kind="variable"><name>TK_PR_RETURN</name></member>
   </compound>
-  <compound refid="dir_fc43e9fcbb7dace9ce2a3dd6e7a2b5f8" kind="dir"><name>include/</name>
+  <compound refid="comp__dict_8c" kind="file"><name>comp_dict.c</name>
+    <member refid="comp__dict_8c_1ad3e2e21fca1e68569e583d1340290526" kind="define"><name>IKS_SIMBOLO_INDEFINIDO</name></member>
+    <member refid="comp__dict_8c_1a25a7443cdeabca76f4c7526041a69933" kind="define"><name>IKS_SIMBOLO_LITERAL_INT</name></member>
+    <member refid="comp__dict_8c_1a3cc56aba35d5c415d90b19f41dc5ec4f" kind="define"><name>IKS_SIMBOLO_LITERAL_FLOAT</name></member>
+    <member refid="comp__dict_8c_1ad93951012ae2a818ba07539efffbf444" kind="define"><name>IKS_SIMBOLO_LITERAL_CHAR</name></member>
+    <member refid="comp__dict_8c_1a895f1647b277c562c8a1e3270109cf97" kind="define"><name>IKS_SIMBOLO_LITERAL_STRING</name></member>
+    <member refid="comp__dict_8c_1aa4f468b05c912ff12ec7c73e2e95dbda" kind="define"><name>IKS_SIMBOLO_LITERAL_BOOL</name></member>
+    <member refid="comp__dict_8c_1ae12bced70d7ab3294fff8db97d062daf" kind="define"><name>IKS_SIMBOLO_IDENTIFICADOR</name></member>
+    <member refid="comp__dict_8c_1a8fff1c3acb42af50d8eafdf644457889" kind="variable"><name>Table</name></member>
+    <member refid="comp__dict_8c_1a60c686b362013d6fc3596d1ffc37c97b" kind="function"><name>removeBarra</name></member>
+    <member refid="comp__dict_8c_1a047c7e1b181bcd0caed7d4b66d641626" kind="function"><name>dict_init</name></member>
+    <member refid="comp__dict_8c_1a3934f281b4616f7ff8b70c23c03693de" kind="function"><name>dict_address</name></member>
+    <member refid="comp__dict_8c_1a05f018c1e044836bd2ea47b5f4401add" kind="function"><name>dict_find</name></member>
+    <member refid="comp__dict_8c_1adb2f8f7914afa558c9728c7bf8eea682" kind="function"><name>dict_insert</name></member>
+    <member refid="comp__dict_8c_1a45cfc9b533034a56272e65a52fb5960a" kind="function"><name>dict_print</name></member>
+  </compound>
+  <compound refid="comp__graph_8c" kind="file"><name>comp_graph.c</name>
+    <member refid="comp__graph_8c_1a7596494a1cb60d4dff7eea13c167f49c" kind="function"><name>createGraph</name></member>
+    <member refid="comp__graph_8c_1a37f75376c71b6f8035f3fc31de8034ab" kind="function"><name>destroyGraph</name></member>
+    <member refid="comp__graph_8c_1a2020e463de3e898989e41aafdeabba77" kind="function"><name>addEdge</name></member>
+    <member refid="comp__graph_8c_1af3a9dc73c22d212207f8519389c558bf" kind="function"><name>printGraph</name></member>
+  </compound>
+  <compound refid="comp__list_8c" kind="file"><name>comp_list.c</name>
+    <member refid="comp__list_8c_1a788b75e8618ecbc7470035f5fa07e1a7" kind="function"><name>list_init</name></member>
+    <member refid="comp__list_8c_1af93456b9e64f2612c80ee959263b8c1d" kind="function"><name>list_insert</name></member>
+    <member refid="comp__list_8c_1a5761efe5b5b8b822466b7f831586cb21" kind="function"><name>list_print</name></member>
+    <member refid="comp__list_8c_1a8a17c03469263740f77f0487633c2f9e" kind="function"><name>list_lookup</name></member>
+    <member refid="comp__list_8c_1a34f5f12e3457fbb204a44ac231cf9a1c" kind="function"><name>list_remove</name></member>
+  </compound>
+  <compound refid="comp__tree_8c" kind="file"><name>comp_tree.c</name>
+    <member refid="comp__tree_8c_1af33f294a8dabdb3ff6aa242e2e7978d7" kind="function"><name>astCreate</name></member>
+    <member refid="comp__tree_8c_1ab38cd0c9c2c49c48905ffe97b1ee8754" kind="function"><name>astReadTree</name></member>
+    <member refid="comp__tree_8c_1ad18b27e68cc70585772ff7c47c22d067" kind="function"><name>astReadNode</name></member>
+  </compound>
+  <compound refid="gv_8c" kind="file"><name>gv.c</name>
+    <member refid="gv_8c_1aa065f30aa9f5f9a42132c82c787ee70b" kind="variable"><name>fp</name></member>
+    <member refid="gv_8c_1a26aeea8feb6b1a02a83abedf550e2801" kind="function"><name>__gv_test_valid_fp</name></member>
+    <member refid="gv_8c_1a16d2aa6e8295d55d88670743d15e786b" kind="function"><name>__gv_test_valid_ast_pointer</name></member>
+    <member refid="gv_8c_1a08379613c089458fa5fb304254014d1f" kind="function"><name>__gv_description_from_type</name></member>
+    <member refid="gv_8c_1a93b2805bfe8f8a6367330ffc72b0b2e2" kind="function"><name>gv_init</name></member>
+    <member refid="gv_8c_1a968b05ac409ae707c0a23eadaf73cf3a" kind="function"><name>gv_close</name></member>
+    <member refid="gv_8c_1a7b8c439347a2c3b842aa84ddcd35846e" kind="function"><name>gv_declare</name></member>
+    <member refid="gv_8c_1a620f493bc6bec666fe0efbeddd59d13b" kind="function"><name>gv_connect</name></member>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1a623d15672f6cf2c47ad701a1f40ce587" kind="function"><name>yyerror</name></member>
+    <member refid="main_8c_1a3c04138a5bfe5d72780bb7e82a18e627" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dict__test_8c" kind="file"><name>dict_test.c</name>
+    <member refid="dict__test_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="graph__test_8c" kind="file"><name>graph_test.c</name>
+    <member refid="graph__test_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="lists__test_8c" kind="file"><name>lists_test.c</name>
+    <member refid="lists__test_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="minha__entrada_8txt" kind="file"><name>minha_entrada.txt</name>
+    <member refid="minha__entrada_8txt_1a77a42d94bdfad34e7cd9865511acff3e" kind="variable"><name>__pad8__</name></member>
+    <member refid="minha__entrada_8txt_1aa31c2e97056426edc1ccd4b737f397b5" kind="variable"><name>__pad9__</name></member>
+    <member refid="minha__entrada_8txt_1a70c0cd859a3da922acb2d8e7a890bba2" kind="variable"><name>__pad10__</name></member>
+    <member refid="minha__entrada_8txt_1a8e50fd3b859a28562a0546abe7b3385b" kind="variable"><name>__pad11__</name></member>
+  </compound>
+  <compound refid="tree__test_8c" kind="file"><name>tree_test.c</name>
+    <member refid="tree__test_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="dir_d09bd587be0ef17599bb08d6f24c8143" kind="dir"><name>/home/alexandre/Desktop/comp/compiladores/algoritmos/</name>
+  </compound>
+  <compound refid="dir_c2611e49359e15ca3806e00be00a3cf2" kind="dir"><name>/home/alexandre/Desktop/comp/compiladores/include/</name>
+  </compound>
+  <compound refid="dir_2b37e8f0ed859fe6599c14cdd483c536" kind="dir"><name>/home/alexandre/Desktop/comp/compiladores/src/</name>
+  </compound>
+  <compound refid="dir_5096e6387fcf6e5c6360e8f5b520b3f9" kind="dir"><name>/home/alexandre/Desktop/comp/compiladores/tests/</name>
   </compound>
 </doxygenindex>

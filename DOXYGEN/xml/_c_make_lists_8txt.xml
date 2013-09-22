@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="_c_make_lists_8txt" kind="file">
+    <compoundname>CMakeLists.txt</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">CMAKE_MINIMUM_REQUIRED<sp/>(VERSION<sp/>2.6)</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">PROJECT(compilador)</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">FIND_PACKAGE(FLEX<sp/>REQUIRED)</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">FIND_PACKAGE(BISON<sp/>REQUIRED)</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">FLEX_TARGET(scanner<sp/>scanner.l<sp/>${CMAKE_CURRENT_BINARY_DIR}/lexer.c)</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">BISON_TARGET(parser<sp/>parser.y<sp/>${CMAKE_CURRENT_BINARY_DIR}/parser.c<sp/>VERBOSE<sp/>parser.output)</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">INCLUDE_DIRECTORIES(${CMAKE_CURRENT_BINARY_DIR})</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">INCLUDE_DIRECTORIES(${compilador_SOURCE_DIR}/include/)</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">INCLUDE_DIRECTORIES(${compilador_SOURCE_DIR}/src/)</highlight></codeline>
+<codeline lineno="10"><highlight class="normal">ADD_EXECUTABLE(main</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>${FLEX_scanner_OUTPUTS}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/>${BISON_parser_OUTPUTS}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/>src/main.c</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/>src/gv.c</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/>src/comp_dict.c</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/>src/comp_list.c</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>src/comp_tree.c</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>src/comp_graph.c</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">)</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">TARGET_LINK_LIBRARIES(main<sp/>${FLEX_LIBRARIES})</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal">ADD_EXECUTABLE(lists_teste</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tests/lists_test.c</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/comp_list.c)</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal">ADD_EXECUTABLE(dict_test</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tests/dict_test.c</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/comp_dict.c)</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal">ADD_EXECUTABLE(tree_test</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tests/tree_test.c</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/comp_tree.c</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/gv.c)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">ADD_EXECUTABLE(graph_test</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tests/graph_test.c</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>src/comp_graph.c)</highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/comp/compiladores/CMakeLists.txt"/>
+  </compounddef>
+</doxygen>

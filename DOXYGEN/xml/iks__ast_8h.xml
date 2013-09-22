@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="iks__ast_8h" kind="file">
+    <compoundname>iks_ast.h</compoundname>
+    <includedby refid="gv_8c" local="yes">/home/alexandre/Desktop/comp/compiladores/src/gv.c</includedby>
+    <includedby refid="comp__tree_8h" local="yes">/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h</includedby>
+    <includedby refid="main_8h" local="yes">/home/alexandre/Desktop/comp/compiladores/include/main.h</includedby>
+    <invincdepgraph>
+      <node id="36">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h</label>
+        <link refid="comp__tree_8h_source"/>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/main.h</label>
+        <link refid="main_8h_source"/>
+      </node>
+      <node id="35">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h</label>
+        <link refid="iks_ast.h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="iks__ast_8h_1a39e1a5611b951b3fdccc6e38b46bf127" prot="public" static="no">
+        <name>IKS_AST_PROGRAMA</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="8" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="8" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a60767da1b48a370dee0a93bc6413f643" prot="public" static="no">
+        <name>IKS_AST_FUNCAO</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="9" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1ac5c2dcd28d02ac46b3ebfe694e90b641" prot="public" static="no">
+        <name>IKS_AST_IF_ELSE</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="10" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a81c2ba65e3a532da5af5137a96226850" prot="public" static="no">
+        <name>IKS_AST_DO_WHILE</name>
+        <initializer>3</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="11" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a9e915ec8378c4d45a16b3224f43d1fcd" prot="public" static="no">
+        <name>IKS_AST_WHILE_DO</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="12" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a26da62ec43dc4744ed5634ec055cdb60" prot="public" static="no">
+        <name>IKS_AST_INPUT</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="13" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a9648fb7b503cad363ee3cba6f66f6123" prot="public" static="no">
+        <name>IKS_AST_OUTPUT</name>
+        <initializer>6</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="14" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a7b249a975ea79ce5489e608a407858cd" prot="public" static="no">
+        <name>IKS_AST_ATRIBUICAO</name>
+        <initializer>7</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="15" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a82cff69e7440f164f1d2e1bd9e4d04b7" prot="public" static="no">
+        <name>IKS_AST_RETURN</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="16" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a56cf7208b2a792155c762a6eac050761" prot="public" static="no">
+        <name>IKS_AST_BLOCO</name>
+        <initializer>9</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="17" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a352870e2315ae4c668a11433a30398ed" prot="public" static="no">
+        <name>IKS_AST_IDENTIFICADOR</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="18" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1aa773e355ca10618e419f9eef0fdcc175" prot="public" static="no">
+        <name>IKS_AST_LITERAL</name>
+        <initializer>11</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="19" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a603d8774ae80ae3cd02e0c51b309110c" prot="public" static="no">
+        <name>IKS_AST_ARIM_SOMA</name>
+        <initializer>12</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="20" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a35a207f3d21583b1b8afc5f37962ca4c" prot="public" static="no">
+        <name>IKS_AST_ARIM_SUBTRACAO</name>
+        <initializer>13</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="21" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a1b686a4f5f56c3eb9076529bc41d57d7" prot="public" static="no">
+        <name>IKS_AST_ARIM_MULTIPLICACAO</name>
+        <initializer>14</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="22" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1ac276feb05464042133c1e4ed56538fbc" prot="public" static="no">
+        <name>IKS_AST_ARIM_DIVISAO</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="23" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a0811b76b19c3ed9762d5d71bce721e14" prot="public" static="no">
+        <name>IKS_AST_ARIM_INVERSAO</name>
+        <initializer>16</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="24" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a71b9331975b2ca00eeb3a33b8c9057fb" prot="public" static="no">
+        <name>IKS_AST_LOGICO_E</name>
+        <initializer>17</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="25" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a0b64c33fa1ad8fd7b3f3ef4bd4cd97a6" prot="public" static="no">
+        <name>IKS_AST_LOGICO_OU</name>
+        <initializer>18</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="26" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1acff7045b2490184ab19183fa940253e8" prot="public" static="no">
+        <name>IKS_AST_LOGICO_COMP_DIF</name>
+        <initializer>19</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="27" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a8ddc5a8416743e07914d81fb6953c132" prot="public" static="no">
+        <name>IKS_AST_LOGICO_COMP_IGUAL</name>
+        <initializer>20</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="28" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a45f0460b8965f9fd905c3390976c8de0" prot="public" static="no">
+        <name>IKS_AST_LOGICO_COMP_LE</name>
+        <initializer>21</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="29" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1ab1629c27159efc288a15a1016b39629a" prot="public" static="no">
+        <name>IKS_AST_LOGICO_COMP_GE</name>
+        <initializer>22</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="30" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1ae247f074527377356c53b7a86624f3ab" prot="public" static="no">
+        <name>IKS_AST_LOGICO_COMP_L</name>
+        <initializer>23</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="31" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1ae03bcf33a44591336e1b64fc1697bb2e" prot="public" static="no">
+        <name>IKS_AST_LOGICO_COMP_G</name>
+        <initializer>24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="32" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a73129a728807da6836731bf6bf219be9" prot="public" static="no">
+        <name>IKS_AST_LOGICO_COMP_NEGACAO</name>
+        <initializer>25</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="33" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1ab1e16a1bf1656966ced0ce0aaf8b3b74" prot="public" static="no">
+        <name>IKS_AST_VETOR_INDEXADO</name>
+        <initializer>26</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="34" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="iks__ast_8h_1a17590f0001da268593f3bf8ed38c120e" prot="public" static="no">
+        <name>IKS_AST_CHAMADA_DE_FUNCAO</name>
+        <initializer>27</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" line="35" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>iks_ast.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/>Este<sp/>arquivo<sp/>contém<sp/>as<sp/>constantes<sp/>para<sp/>os<sp/>tipos<sp/>dos<sp/>nós<sp/>da<sp/>AST.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__IKS_AST_H</highlight></codeline>
+<codeline lineno="7"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__IKS_AST_H</highlight></codeline>
+<codeline lineno="8"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_PROGRAMA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_FUNCAO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_IF_ELSE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_DO_WHILE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>3</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_WHILE_DO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight></codeline>
+<codeline lineno="13"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_INPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>5</highlight></codeline>
+<codeline lineno="14"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_OUTPUT<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>6</highlight></codeline>
+<codeline lineno="15"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_ATRIBUICAO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>7</highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_RETURN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8</highlight></codeline>
+<codeline lineno="17"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_BLOCO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>9</highlight></codeline>
+<codeline lineno="18"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_IDENTIFICADOR<sp/><sp/><sp/><sp/><sp/><sp/><sp/>10</highlight></codeline>
+<codeline lineno="19"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LITERAL<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>11</highlight></codeline>
+<codeline lineno="20"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_ARIM_SOMA<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12</highlight></codeline>
+<codeline lineno="21"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_ARIM_SUBTRACAO<sp/><sp/><sp/><sp/><sp/><sp/>13</highlight></codeline>
+<codeline lineno="22"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_ARIM_MULTIPLICACAO<sp/><sp/>14</highlight></codeline>
+<codeline lineno="23"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_ARIM_DIVISAO<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>15</highlight></codeline>
+<codeline lineno="24"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_ARIM_INVERSAO<sp/><sp/><sp/><sp/><sp/><sp/><sp/>16<sp/>//<sp/>-<sp/>(operador<sp/>unário<sp/>-)</highlight></codeline>
+<codeline lineno="25"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_E<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>17<sp/>//<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="26"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_OU<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>18<sp/>//<sp/>||</highlight></codeline>
+<codeline lineno="27"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_COMP_DIF<sp/><sp/><sp/><sp/><sp/>19<sp/>//<sp/>!=</highlight></codeline>
+<codeline lineno="28"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_COMP_IGUAL<sp/><sp/><sp/>20<sp/>//<sp/>==</highlight></codeline>
+<codeline lineno="29"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_COMP_LE<sp/><sp/><sp/><sp/><sp/><sp/>21<sp/>//<sp/>&lt;=</highlight></codeline>
+<codeline lineno="30"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_COMP_GE<sp/><sp/><sp/><sp/><sp/><sp/>22<sp/>//<sp/>&gt;=</highlight></codeline>
+<codeline lineno="31"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_COMP_L<sp/><sp/><sp/><sp/><sp/><sp/><sp/>23<sp/>//<sp/>&lt;</highlight></codeline>
+<codeline lineno="32"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_COMP_G<sp/><sp/><sp/><sp/><sp/><sp/><sp/>24<sp/>//<sp/>&gt;</highlight></codeline>
+<codeline lineno="33"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_LOGICO_COMP_NEGACAO<sp/>25<sp/>//<sp/>!</highlight></codeline>
+<codeline lineno="34"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_VETOR_INDEXADO<sp/><sp/><sp/><sp/><sp/><sp/>26<sp/>//<sp/>para<sp/>var[exp]<sp/>quando<sp/>o<sp/>índice<sp/>exp<sp/>é<sp/>acessado<sp/>no<sp/>vetor<sp/>var</highlight></codeline>
+<codeline lineno="35"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>IKS_AST_CHAMADA_DE_FUNCAO<sp/><sp/><sp/>27</highlight></codeline>
+<codeline lineno="36"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/comp/compiladores/include/iks_ast.h"/>
+  </compounddef>
+</doxygen>

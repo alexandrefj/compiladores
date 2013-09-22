@@ -2,11 +2,10 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
   <compounddef id="structcomp__list__t" kind="struct" prot="public">
     <compoundname>comp_list_t</compoundname>
-    <includes refid="comp__list_8h" local="no">comp_list.h</includes>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structcomp__list__t_1af3fd9d829538e36331bf4a6fe7e6b7bc" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structcomp__list__t_1a1735b90c406683eedcbf4dd07447f6b2" prot="public" static="no" mutable="no">
         <type>int</type>
-        <definition>int node</definition>
+        <definition>int comp_list_t::node</definition>
         <argsstring></argsstring>
         <name>node</name>
         <briefdescription>
@@ -15,11 +14,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_list.h" line="10" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_list.h" bodystart="10" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_list.h" line="10" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_list.h" bodystart="10" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structcomp__list__t_1adc2d7801f96b6cfcbb7bb32c293fa76a" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structcomp__list__t_1a9ba4fa33be8b303515bc38ab6840a477" prot="public" static="no" mutable="no">
         <type>struct <ref refid="structcomp__list__t" kindref="compound">comp_list_t</ref> *</type>
-        <definition>struct comp_list_t* next</definition>
+        <definition>struct comp_list_t* comp_list_t::next</definition>
         <argsstring></argsstring>
         <name>next</name>
         <briefdescription>
@@ -28,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_list.h" line="11" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_list.h" bodystart="11" bodyend="-1"/>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_list.h" line="11" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_list.h" bodystart="11" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -36,18 +35,18 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="3">
+      <node id="6">
         <label>comp_list_t</label>
         <link refid="structcomp__list__t"/>
-        <childnode refid="3" relation="usage">
+        <childnode refid="6" relation="usage">
           <edgelabel>next</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/alexandre/Desktop/etapa3/compiladores/include/comp_list.h" line="9" bodyfile="/home/alexandre/Desktop/etapa3/compiladores/include/comp_list.h" bodystart="8" bodyend="12"/>
+    <location file="/home/alexandre/Desktop/comp/compiladores/include/comp_list.h" line="9" bodyfile="/home/alexandre/Desktop/comp/compiladores/include/comp_list.h" bodystart="8" bodyend="12"/>
     <listofallmembers>
-      <member refid="structcomp__list__t_1adc2d7801f96b6cfcbb7bb32c293fa76a" prot="public" virt="non-virtual"><scope>comp_list_t</scope><name>next</name></member>
-      <member refid="structcomp__list__t_1af3fd9d829538e36331bf4a6fe7e6b7bc" prot="public" virt="non-virtual"><scope>comp_list_t</scope><name>node</name></member>
+      <member refid="structcomp__list__t_1a9ba4fa33be8b303515bc38ab6840a477" prot="public" virt="non-virtual"><scope>comp_list_t</scope><name>next</name></member>
+      <member refid="structcomp__list__t_1a1735b90c406683eedcbf4dd07447f6b2" prot="public" virt="non-virtual"><scope>comp_list_t</scope><name>node</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.7.6.1">
+  <compounddef id="gv_8h" kind="file">
+    <compoundname>gv.h</compoundname>
+    <includedby refid="comp__tree_8h" local="yes">/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h</includedby>
+    <includedby refid="main_8h" local="yes">/home/alexandre/Desktop/comp/compiladores/include/main.h</includedby>
+    <invincdepgraph>
+      <node id="31">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/gv.h</label>
+        <link refid="gv.h"/>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/comp_tree.h</label>
+        <link refid="comp__tree_8h_source"/>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>/home/alexandre/Desktop/comp/compiladores/include/main.h</label>
+        <link refid="main_8h_source"/>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="gv_8h_1a93b2805bfe8f8a6367330ffc72b0b2e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gv_init</definition>
+        <argsstring>(const char *filename)</argsstring>
+        <name>gv_init</name>
+        <param>
+          <type>const char *</type>
+          <declname>filename</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>gv_init</para><para>Esta função deve ser chamada para inicializar o arquivo onde o grafo será registrado. Um nome de arquivo, opcional, pode ser passado como argumento para esta função. Caso o parâmetro com o nome do arquivo seja NULL, a saída será impressa na saída de erro. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/gv.h" line="11" bodyfile="/home/alexandre/Desktop/comp/compiladores/src/gv.c" bodystart="87" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="gv_8h_1a968b05ac409ae707c0a23eadaf73cf3a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gv_close</definition>
+        <argsstring>(void)</argsstring>
+        <name>gv_close</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>gv_close</para><para>Esta função deve ser chamada para fechar o arquivo com o grafo registrado. Ela deve ser chamada no final do compilador. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/gv.h" line="12" bodyfile="/home/alexandre/Desktop/comp/compiladores/src/gv.c" bodystart="115" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="gv_8h_1a57e3cb593ab94dd78335b3e6bec61944" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gv_declare</definition>
+        <argsstring>(const int tipo, const void *pointer, const char *name)</argsstring>
+        <name>gv_declare</name>
+        <param>
+          <type>const int</type>
+          <declname>tipo</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>pointer</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/gv.h" line="13"/>
+      </memberdef>
+      <memberdef kind="function" id="gv_8h_1a620f493bc6bec666fe0efbeddd59d13b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gv_connect</definition>
+        <argsstring>(const void *p1, const void *p2)</argsstring>
+        <name>gv_connect</name>
+        <param>
+          <type>const void *</type>
+          <declname>p1</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>p2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>gv_connect</para><para>Esta função deve ser utilizada para conectar dois nós da AST na saída em dot. Ela recebe como parâmetro ponteiros para os dois nós da AST que devem ser conectados. Note que esses ponteiros servem como identificadores únicos dos nós da AST. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/alexandre/Desktop/comp/compiladores/include/gv.h" line="14" bodyfile="/home/alexandre/Desktop/comp/compiladores/src/gv.c" bodystart="206" bodyend="213"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/><sp/>gv.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"></highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/><sp/>Funções<sp/>públicas<sp/>do<sp/>módulo<sp/>gv.<sp/>Verifique<sp/>a<sp/>implementação<sp/>para</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/><sp/>maiores<sp/>detalhes<sp/>de<sp/>como<sp/>utilizar<sp/>cada<sp/>uma.<sp/></highlight></codeline>
+<codeline lineno="6"><highlight class="comment"></highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/><sp/>Atenção:<sp/>não<sp/>altere<sp/>este<sp/>arquivo</highlight></codeline>
+<codeline lineno="8"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__GV_H__</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>__GV_H__</highlight></codeline>
+<codeline lineno="11"><highlight class="preprocessor"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>gv_init<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*filename);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>gv_close<sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>gv_declare<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tipo,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*pointer,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*name);</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>gv_connect<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p1,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*p2);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="/home/alexandre/Desktop/comp/compiladores/include/gv.h"/>
+  </compounddef>
+</doxygen>
