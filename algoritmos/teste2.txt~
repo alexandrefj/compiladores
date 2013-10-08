@@ -1,5 +1,4 @@
 int: var12[10];
-int: num;
 int:var_global;
 int: teste2;
 int: teste;
@@ -8,7 +7,6 @@ int: john;
 
 string: fatorial(int: num, float: num3)
 int: i;
-int: teste;
 int: k;
 {
 
@@ -18,17 +16,13 @@ int: k;
 	return num*john
 }
 
-float: main(int: num, sring: w8, bool: w9)
+float: main(int: num, string: w8, bool: w9)
 int: j;
 int: teste8;
 bool: w1;
-string: w2;
-char: w3;
 {
 
-	input j;
-	john = 5-10;
-	return num+john
+	j = 5;
 }
 
 

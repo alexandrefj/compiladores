@@ -47,8 +47,11 @@ void *astReadNode(ASTREE *node)
 		break;
 	}
 
-	printf("node type = %d  size = %d\n", node->node_type,node->size);
-	
+	printf("node type = %d  size = %d", node->node_type,node->size);
+		if(node->symbol !=NULL)printf("  simbolo= %s ",node->symbol->text);
+		else printf("  tipo do nó =%d", node->type);
+		printf("\n");
+		
 	int i;
 	for(i=0;i<MAX_NODE;i++){
 		if(node->scc[i]!=NULL)

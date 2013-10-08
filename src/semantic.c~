@@ -1,9 +1,9 @@
 #include "semantic.h"
 int flag1 = 0;
-List* FunctionListInsert(List* function_list,DICT_NODE* node, int type){
+List* FunctionListInsert(List* function_list,DICT_NODE* node, int type, int size){
 
 	if(list_lookup(function_list,node->text)==NULL){
-		function_list=list_insert(function_list,type,node->text);
+		function_list=list_insert(function_list,type,size,node->text);
 	} 
 	else{
 		printf("->Redeclaracao da funcao (linha %d)\n", getLineNumber());
@@ -13,12 +13,12 @@ List* FunctionListInsert(List* function_list,DICT_NODE* node, int type){
 	return function_list;
 }
 
-List* GlobalVarListInsert(List* list,DICT_NODE* node,int control,int type){
+List* GlobalVarListInsert(List* list,DICT_NODE* node,int control,int type, int size){
 
 	switch(control){
 
 		case GLOBAL_VAR_DEC_IDENTIFIER_CONTROL:		if(list_lookup(list,node->text)==NULL)
-									list=list_insert(list,type,node->text); 
+									list=list_insert(list,type,size,node->text); 
 								else{
 									printf("-Redeclaracao de variavel global (linha = %d)\n", getLineNumber());
 									exit(IKS_ERROR_DECLARED);
@@ -27,7 +27,7 @@ List* GlobalVarListInsert(List* list,DICT_NODE* node,int control,int type){
 								break;
 
 		case GLOBAL_VET_DEC_IDENTIFIER_CONTROL:		if(list_lookup(list,node->text)==NULL){
-									list=list_insert(list,type,node->text);
+									list=list_insert(list,type,size,node->text);
 								}
 								else{
 									printf("->Redeclaracao de vetor (linha %d)\n", getLineNumber());
@@ -40,10 +40,10 @@ List* GlobalVarListInsert(List* list,DICT_NODE* node,int control,int type){
 }
 
 
-List* LocalVarListInsert(List* local_var,DICT_NODE* node, int type){
+List* LocalVarListInsert(List* local_var,DICT_NODE* node, int type, int size,List* function_list){
 
 	if(list_lookup(local_var,node->text)==NULL){
-		local_var=list_insert(local_var,type,node->text);
+		local_var=list_insert(local_var,type,size,node->text);
 	} 
 	else{
 		printf("->Redeclaracao de variavel local (linha %d)\n", getLineNumber());
@@ -78,8 +78,10 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 			printf("Variaveis vetoriais\n");list_print(global_vet);printf("  \n");
 		puts("------------------------------------------------------------------------");
 
-		int flag = 0;	
+		int flag = 0;
+		int NumVal;	
 		List *GlobalSearch, *LocalSearch, *VectorialSearch, *FunctionSearch;
+		ASTREE* Variable,*RightSon,*LeftSon;
 
 		switch(stack_pointer->disc->type){
 		
@@ -188,6 +190,10 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 		case IKS_AST_VETOR_INDEXADO:	
 						/*O primeiro filho de um vetor indexado será o TK_IDENTIFICADOR referente ao nome da variavel*/ 
 				
+						LeftSon = stack_pointer->disc->scc[0];		/*Variavel do vetor*/
+						RightSon = stack_pointer->disc->scc[1];		/*Quantidade de termos do vetor*/
+
+
 						GlobalSearch = list_lookup(global,stack_pointer->disc->scc[0]->symbol->text);
 						LocalSearch  = list_lookup(local,stack_pointer->disc->scc[0]->symbol->text);
 						VectorialSearch = list_lookup(global_vet,stack_pointer->disc->scc[0]->symbol->text);
@@ -196,8 +202,11 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 					
 						if(VectorialSearch !=NULL){
 							flag = 2;
-							stack_pointer->disc->scc[0]->node_type = VectorialSearch->type;
-							stack_pointer->disc->scc[0]->size = var_size(stack_pointer->disc->scc[0]->node_type);
+							LeftSon->node_type = VectorialSearch->type;
+							stack_pointer->disc->node_type = VectorialSearch->type;		
+							LeftSon->size =VectorialSearch->tam*var_size(LeftSon->node_type);
+							stack_pointer->disc->size = LeftSon->size;
+							
 							break;
 							
 						}
@@ -223,12 +232,13 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 						}
 						break;
 
-		case IKS_AST_ATRIBUICAO: 
+		case IKS_AST_ATRIBUICAO: 	
+						LeftSon = stack_pointer->disc->scc[0];		/*Quando chegarmos no nó atribuição,*/
+						RightSon = stack_pointer->disc->scc[1];	/*Já teremos os nós filhos definidos: leftson e rightson*/
 						
-						ASTREE* Variable;
-
+						
 						if(stack_pointer->disc->scc[0]->type == IKS_AST_VETOR_INDEXADO){
-							 Variable = stack_pointer->disc->scc[0]->scc[0];
+							Variable = stack_pointer->disc->scc[0]->scc[0];
 
 							GlobalSearch = list_lookup(global,Variable->symbol->text);
 							LocalSearch  = list_lookup(local,Variable->symbol->text);
@@ -238,7 +248,7 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 										
 							 if(GlobalSearch !=NULL){
 								printf("-> Identificador de vetor foi declarado como variavel global (linha %d)\n", getLineNumber()-1);
-								exit(IKS_ERROR_VECTOR);
+								exit(IKS_ERROR_VARIABLE);
 							 }
 							 else if(FunctionSearch !=NULL){
 								printf("-> Identificador de vetor foi declarado como funcao (linha %d)\n", getLineNumber()-1);
@@ -246,7 +256,11 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 							 }
 							 else if(LocalSearch !=NULL){
 								printf("-> Identificador de vetor foi declarado como variavel local (linha %d)\n", getLineNumber()-1);
-								exit(IKS_ERROR_FUNCTION);
+								exit(IKS_ERROR_VARIABLE);
+							 }
+							 else{
+								stack_pointer->disc->node_type = inference(RightSon->node_type,LeftSon->node_type);
+								stack_pointer->disc->size= var_size(stack_pointer->disc->node_type);
 							 }
 							 
 						}
@@ -260,11 +274,15 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 							
 							if(VectorialSearch !=NULL){
 								printf("-> Identificador de variavel foi declarado como vetor (linha %d)\n", getLineNumber()-1);
-								exit(IKS_ERROR_VARIABLE);
+								exit(IKS_ERROR_VECTOR);
 							}
 							else if(FunctionSearch !=NULL){
 								printf("-> Identificador de variavel foi declarado como funcao (linha %d)\n", getLineNumber()-1);
-								exit(IKS_ERROR_VARIABLE);
+								exit(IKS_ERROR_FUNCTION);
+							}
+							else{
+								stack_pointer->disc->node_type = inference(RightSon->node_type,LeftSon->node_type);
+								stack_pointer->disc->size= var_size(stack_pointer->disc->node_type);							
 							}
 						}
 
@@ -317,21 +335,24 @@ int inference(int val1, int val2)
 
 	if(val1==IKS_INT && val2==IKS_INT)
 		return IKS_INT;
-
-	if(val1==IKS_FLOAT && val2==IKS_FLOAT)
+	else if(val1==IKS_FLOAT && val2==IKS_FLOAT)
 		return IKS_FLOAT;
-
-	if(val1==IKS_BOOL && val2==IKS_BOOL)
+	else if(val1==IKS_BOOL && val2==IKS_BOOL)
 		return IKS_BOOL;
-
-	if((val1==IKS_INT && val2==IKS_FLOAT) || (val2==IKS_INT && val1==IKS_FLOAT))
+	else if((val1==IKS_INT && val2==IKS_FLOAT) || (val2==IKS_INT && val1==IKS_FLOAT))
 		return IKS_FLOAT;
-
-	if((val1==IKS_INT && val2==IKS_BOOL) || (val2==IKS_INT && val1==IKS_BOOL))
+	else if((val1==IKS_INT && val2==IKS_BOOL) || (val2==IKS_INT && val1==IKS_BOOL))
 		return IKS_INT;
-
-	if((val1==IKS_BOOL && val2==IKS_FLOAT) || (val2==IKS_BOOL && val1==IKS_FLOAT))
+	else if((val1==IKS_BOOL && val2==IKS_FLOAT) || (val2==IKS_BOOL && val1==IKS_FLOAT))
 		return IKS_FLOAT;
+	else if(val1==IKS_STRING || val2==IKS_STRING){
+		printf("Impossivel fazer coerção para o tipo String (linha %d)\n", getLineNumber()-1);
+		exit(IKS_ERROR_STRING_TO_X);	
+	}
+	else if(val1==IKS_CHAR || val2==IKS_CHAR){
+		printf("Impossivel fazer coerção para o tipo Char (linha %d)\n", getLineNumber()-1);
+		exit(IKS_ERROR_CHAR_TO_X);	
+	}
 
 
 
@@ -355,10 +376,8 @@ IKS_AST_CHAMADA_DE_FUNCAO
 #define IKS_AST_WHILE_DO             4
 #define IKS_AST_INPUT                5
 #define IKS_AST_OUTPUT               6
-#define IKS_AST_ATRIBUICAO           7
 #define IKS_AST_RETURN               8
 #define IKS_AST_BLOCO                9
-#define IKS_AST_IDENTIFICADOR       10
 #define IKS_AST_ARIM_INVERSAO       16 // - (operador unário -)
 #define IKS_AST_LOGICO_COMP_NEGACAO 25 // !
 #define      26 // para var[exp] quando o índice exp é acessado no vetor var

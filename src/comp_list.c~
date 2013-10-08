@@ -14,15 +14,16 @@ List* TILL_NULL(List* list){
 
 List* list_copy(List* list1, List* list2)
 {
-	list1 = malloc(sizeof(List*));
+	list1 = List* new  = (List*)calloc(1,sizeof(List*));
 	list1 = NULL;
 
 	List* aux;
 
 	while(list2 != NULL){
 
-		List* new = malloc(sizeof(List*));
+		List* new  = (List*)calloc(1,sizeof(List*));
 		new->type = list2->type;
+		new->tam = list2->tam;
 		new->text = list2->text;
 
 		if(list1==NULL){
@@ -44,15 +45,16 @@ List* list_copy(List* list1, List* list2)
 
 List* list_init(void)
 {
-	List* list = malloc(sizeof(List*));
+	List* list = List* new  = (List*)calloc(1,sizeof(List*));
 	list = NULL;
 	return list;
 }
 
-List* list_insert(List* list, int type, char* text)
+List* list_insert(List* list, int type,int tam, char* text)
 {
 
 	List* new = malloc(sizeof(List*));
+	new->tam = tam;	
 	new->type = type;
 	new->text = text;
 	new->next = NULL;
@@ -82,6 +84,7 @@ void list_print(List* list)
 		while(aux != NULL)
 		{
 			printf("type = %d ", aux->type);
+			printf("tam= %d ", aux->tam);
 			printf("text = %s\n", aux->text);
 			aux = aux->next;
 		}
@@ -102,7 +105,7 @@ List* list_lookup(List* list, char* text)
 		List* aux = list;
 
 		while(aux != NULL)
-		{	//printf("%d", aux->type);
+		{	
 			if(strcmp(aux->text, text) == 0)
 				return aux;
 			else

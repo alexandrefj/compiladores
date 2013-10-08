@@ -7,8 +7,10 @@
 
 int numerodelinhas = 1;
 
+DICT_NODE* Tabela[997];
+
 int getLineNumber(void){ return numerodelinhas;}
-void initMe(void) { dict_init(); }
+void initMe(void) { dict_init(Tabela); }
 
 %}
 
@@ -35,19 +37,19 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 "input"    return TK_PR_INPUT; 
 "output"   return TK_PR_OUTPUT; 
 "return"   return TK_PR_RETURN; 
-"true"     {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL); return TK_LIT_TRUE;}
-"false"    {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL); return TK_LIT_FALSE;}
+"true"     {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL,Tabela); return TK_LIT_TRUE;}
+"false"    {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL,Tabela); return TK_LIT_FALSE;}
 
 
-{CHAR}({CHAR}|{INTEGER})*      	{yylval.symbol = dict_insert(yytext,TK_IDENTIFICADOR); return TK_IDENTIFICADOR;}
+{CHAR}({CHAR}|{INTEGER})*      	{yylval.symbol = dict_insert(yytext,TK_IDENTIFICADOR,Tabela); return TK_IDENTIFICADOR;}
 
-[0-9]+                	        {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_INT); return TK_LIT_INT;}
+[0-9]+                	        {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_INT,Tabela); return TK_LIT_INT;}
 
-'(\\.|[^\\'])+'                 {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_CHAR); return TK_LIT_CHAR;}
+'(\\.|[^\\'])+'                 {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_CHAR,Tabela); return TK_LIT_CHAR;}
 
-\"(\\.|[^\\"])*\"              	{yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_STRING); return TK_LIT_STRING;}                         
+\"(\\.|[^\\"])*\"              	{yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_STRING,Tabela); return TK_LIT_STRING;}                         
     
-[0-9]*\.[0-9]+	                {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_FLOAT); return TK_LIT_FLOAT;}
+[0-9]*\.[0-9]+	                {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_FLOAT,Tabela); return TK_LIT_FLOAT;}
 
 \s     
                  

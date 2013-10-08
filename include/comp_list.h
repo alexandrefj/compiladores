@@ -8,6 +8,7 @@
 typedef struct comp_list_t 
 {
   int type;
+  int tam;
   char* text;
   struct comp_list_t *next;
 } 
@@ -16,7 +17,7 @@ List;
 
 List* TILL_NULL(List* list);
 List* list_init(void);
-List* list_insert(List* list, int type, char* text);
+List* list_insert(List* list, int type,int tam, char* text);
 void list_print(List* list);
 List* list_lookup(List* list, char* text);
 List* list_copy(List* list1, List* list2);

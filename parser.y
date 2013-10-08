@@ -88,12 +88,14 @@ programa:  	tipo ':' TK_IDENTIFICADOR
 
 		{local_var = NULL;
 		func_type = type;
-		function_list=FunctionListInsert(function_list,$3,type);}
+		function_list=FunctionListInsert(function_list,$3,type,0);}
 
 		'('parametros_funcao')' declaracao_var_locais '{'comando'}' 
 
 		{
 		//list_print(function_list);
+		if(function_list!= NULL)
+			function_list->next = local_var;
 		if(stack_pointer!= NULL){
 			stack_pointer=invert_stack(stack_pointer);
 			StackPopCommands(stack_pointer, global_var,global_vet,local_var,function_list);
@@ -289,16 +291,16 @@ parametros_funcao: 	parametros_funcao_c_param
 			;
 
 parametros_funcao_c_param:
-			tipo ':' TK_IDENTIFICADOR  {local_var=LocalVarListInsert(local_var,$3,type);}
-			| tipo ':'TK_IDENTIFICADOR {local_var=LocalVarListInsert(local_var,$3,type);} 	',' parametros_funcao_c_param 	
+			tipo ':' TK_IDENTIFICADOR  {local_var=LocalVarListInsert(local_var,$3,type,0,function_list);}
+			| tipo ':'TK_IDENTIFICADOR {local_var=LocalVarListInsert(local_var,$3,type,0,function_list);}	',' parametros_funcao_c_param 	
 			;
 
-declaracao_var_locais:  tipo ':' TK_IDENTIFICADOR {local_var=LocalVarListInsert(local_var,$3,type);}	';' declaracao_var_locais			
+declaracao_var_locais:  tipo ':' TK_IDENTIFICADOR {local_var=LocalVarListInsert(local_var,$3,type,0,function_list);}	';' declaracao_var_locais			
 			| 
 			;
 
-declaracao_var_globais: tipo ':' TK_IDENTIFICADOR';'					{global_var=GlobalVarListInsert(global_var,$3,GLOBAL_VAR_DEC_IDENTIFIER_CONTROL,type);}
-			|tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'';'			{puts("sasa");global_vet=GlobalVarListInsert(global_vet,$3,GLOBAL_VET_DEC_IDENTIFIER_CONTROL,type);}
+declaracao_var_globais: tipo ':' TK_IDENTIFICADOR';'					{global_var=GlobalVarListInsert(global_var,$3,GLOBAL_VAR_DEC_IDENTIFIER_CONTROL,type,0);}
+			|tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'';'			{global_vet=GlobalVarListInsert(global_vet,$3,GLOBAL_VET_DEC_IDENTIFIER_CONTROL,type,atoi($5->text));}
 			;
 
 

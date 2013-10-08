@@ -4,6 +4,7 @@
 
 int main()
 {
+/*
 	List* list = list_init();
 	List* aux;
 
@@ -33,7 +34,7 @@ int main()
 	list_print(list);
 
 
-	list_print(nova);
+	list_print(nova);*/
 	return 0;
 
 }

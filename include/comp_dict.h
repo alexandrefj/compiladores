@@ -12,11 +12,11 @@ typedef struct nome_interno{
     struct nome_interno *next;
 }DICT_NODE;
 
-void dict_init(void);
+void dict_init(DICT_NODE* tabela[]);
 int dict_address(char *text);
-DICT_NODE *dict_find(char *text);
-DICT_NODE *dict_insert(char *text, int type);
-void dict_print(void);
+DICT_NODE *dict_find(char *text,DICT_NODE* tabela[]);
+DICT_NODE *dict_insert(char *text, int type,DICT_NODE* tabela[]);
+void dict_print(DICT_NODE* tabela[]);
 
 #endif
 
