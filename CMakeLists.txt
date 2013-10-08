@@ -16,6 +16,8 @@ ADD_EXECUTABLE(main
   src/comp_list.c
   src/comp_tree.c
   src/comp_graph.c
+  src/stack.c
+  src/semantic.c
 )
 TARGET_LINK_LIBRARIES(main ${FLEX_LIBRARIES})
 
@@ -35,3 +37,13 @@ ADD_EXECUTABLE(tree_test
 ADD_EXECUTABLE(graph_test
 	tests/graph_test.c
 	src/comp_graph.c)
+
+ADD_EXECUTABLE(stack_test
+	tests/stack_test.c
+	src/stack.c
+	src/comp_tree.c
+	src/gv.c
+	src/comp_list.c)
+
+
+

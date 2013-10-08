@@ -4,6 +4,8 @@
 
 int: num;
 
+int: teste;
+
 int: main() {
 	output "Digite um numero para saber o fatorial: ";
 	input num;

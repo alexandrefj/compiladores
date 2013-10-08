@@ -1,0 +1,36 @@
+int: var12[10];
+int: num;
+int:var_global;
+int: teste2;
+int: teste;
+
+int: john;
+
+string: fatorial(int: num, float: num3)
+int: i;
+int: teste;
+int: k;
+{
+
+	input i;
+	input teste;
+	john = 5+10;
+	return num*john
+}
+
+float: main(int: num, string: w8, bool: w9)
+int: j;
+int: teste8;
+bool: w1;
+string: w2;
+char: w3;
+{
+
+	input j;
+	john = 5-10;
+	return num+john
+}
+
+
+
+

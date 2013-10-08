@@ -18,36 +18,31 @@ void yyerror (char const *mensagem)
 
 int main (int argc, char **argv)
 {
-  
-  //AST* testando1,*testando2;
+   stack_pointer=stack_init();
+   //aux = stack_pointer;
+   global_var = list_init();
+   global_vet = list_init();
+   local_var = list_init();
+   function_list = list_init();
 
   
-  int resultado = yyparse();
+   int resultado = yyparse();
 
-	/*printf("type:%d\n",root->type);
-	root=root->scc[0];
-	printf("type:%d\n",root->type);
-	root=root->scc[0];
-	printf("type:%d\n",root->type);
-	root=root->scc[0];
-	printf("type:%d ",root->type); printf("%s\n", root->symbol->text);
-	root=root->scc[0];
-	printf("type:%d\n",root->type);
+
+  gv_init("saida.dot");
+  astReadTree(root);
+  gv_close();
+/*
+  puts("");
+  list_print(global_var);
+  puts("");
+  list_print(local_var);
+  puts("");
+  list_print(global_vet);
+  puts("");
+  list_print(function_list);
 */
 
-
-gv_init("saida.dot");astReadTree(root);gv_close();
-//gv_init("saida.dot");
- // astReadTree(root);
- // gv_close();
-
-	//printf("%d\n"root->scc[0])
-
- // gv_declare (const int tipo, const void *pointer, char *name)
-  //gv_declare (IKS_AST_IDENTIFICADOR,testando1, "var");
- // gv_declare (IKS_AST_IDENTIFICADOR,testando2, "variable");
-  //void gv_connect (const void *p1, const void *p2)
-  //gv_connect (testando1, testando2);
 
   return resultado;
 }

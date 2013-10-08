@@ -13,8 +13,6 @@
 typedef struct astreenode
 {
 	int type;
-	int node_type;
-	int size;
 	DICT_NODE *symbol;
 	struct astreenode *scc[MAX_NODE];
 	int read;

@@ -9,6 +9,8 @@ ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s
 	newNode = (ASTREE*)calloc(1,sizeof(ASTREE));
 	newNode->type = type;
 	newNode->symbol = symbol;
+	newNode->node_type = 0;
+	newNode->size = 0;
 	newNode->scc[0] = s0;
 	newNode->scc[1] = s1;
 	newNode->scc[2] = s2;
@@ -40,16 +42,17 @@ void *astReadNode(ASTREE *node)
 		case IKS_AST_LITERAL:
 		gv_declare(node->type,node, node->symbol->text);
 		break;
-		default:printf("\nFILHOS de %d\n",node->type);
+		default:
 		gv_declare(node->type,node, NULL);
 		break;
 	}
 
+	printf("node type = %d  size = %d", node->node_type,node->size);
 	
 	int i;
 	for(i=0;i<MAX_NODE;i++){
 		if(node->scc[i]!=NULL)
-			gv_connect(node,node->scc[i]);//printf()
+			gv_connect(node,node->scc[i]);
 
 	}
 

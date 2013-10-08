@@ -102,7 +102,7 @@ List* list_lookup(List* list, char* text)
 		List* aux = list;
 
 		while(aux != NULL)
-		{	
+		{	//printf("%d", aux->type);
 			if(strcmp(aux->text, text) == 0)
 				return aux;
 			else

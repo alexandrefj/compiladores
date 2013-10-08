@@ -1,0 +1,55 @@
+/*
+	Testa a função fatorial através de dois métodos: recursivo e iterativo.
+*/
+int: var12[10];
+int: num;
+int:var_global;
+int: teste;
+
+int: john;
+
+int: fatorial(int: num)
+int: i;
+int: teste;
+{
+
+	input lalalaala;
+	i = num - 1;
+	while(i > 1) do {
+		num = num * i;
+		i = i - 1;
+	}
+
+	return num;
+}
+
+int: fatorialRecursivo(int: num) {
+	if(num == 1) then
+		return 1;
+
+
+
+	var_global = 1;
+
+	return num * fatorialRecursivo(num - 1);
+}
+
+int: main() {
+	output "Digite um numero para saber o fatorial: ";
+	input num;
+
+	output "Fatorial de ", num, ":", fatorial(num);
+
+	output "Digite um numero para saber o fatorial (metodo recursivo): ";
+	input num;
+	output "Fatorial de ", num, ":", fatorialRecursivo(num);
+
+
+
+	return 0;
+}
+
+
+
+
+

@@ -17,7 +17,7 @@ int main()
 	printf("->COPY TEST\n");
 
 	list_print(nova);
-
+/*
 	aux = list_lookup(list, "var2");
 	printf("|LOOKUP TEST\n");
 	printf("type = %d text = %s, value->next = %s\n", aux->type, aux->text, aux->next->text);
@@ -33,7 +33,7 @@ int main()
 	list_print(list);
 
 
-	list_print(nova);
+	*/
 	return 0;
 
 }

@@ -9,6 +9,8 @@ ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s
 	newNode = (ASTREE*)calloc(1,sizeof(ASTREE));
 	newNode->type = type;
 	newNode->symbol = symbol;
+	newNode->node_type = 0;
+	newNode->size = 0;
 	newNode->scc[0] = s0;
 	newNode->scc[1] = s1;
 	newNode->scc[2] = s2;
@@ -45,6 +47,7 @@ void *astReadNode(ASTREE *node)
 		break;
 	}
 
+	printf("node type = %d  size = %d\n", node->node_type,node->size);
 	
 	int i;
 	for(i=0;i<MAX_NODE;i++){

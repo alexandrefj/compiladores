@@ -13,8 +13,6 @@ typedef struct comp_list_t
 } 
 List;
 
-
-List* TILL_NULL(List* list);
 List* list_init(void);
 List* list_insert(List* list, int type, char* text);
 void list_print(List* list);
