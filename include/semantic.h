@@ -28,7 +28,7 @@
 
 
 
-void StackPopCommands(STACK* stack, List* global,List* global_vet, List* local,List* function_list);
+void StackPopCommands(STACK* stack, List* global,List* global_vet, List* local,List* function_list, List* AllParams);
 List* FunctionListInsert(List* function_list,DICT_NODE* node, int type, int size);
 List* LocalVarListInsert(List* local_var,DICT_NODE* node, int type, int size,List* function_list);
 List* GlobalVarListInsert(List* global_var,DICT_NODE* node,int control,int type, int size);

@@ -24,6 +24,9 @@ List *global_var;
 List *global_vet;
 List *local_var;
 List *function_list;
+List* param_list;
+List* aux;
+int func_id;
 int type;
 int func_type;
 

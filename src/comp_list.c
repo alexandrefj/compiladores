@@ -4,6 +4,31 @@
 #include <string.h>
 
 
+List* FunctionParamList(List* AllParams, int function_id){
+
+	int found = 0;
+	List* aux = AllParams;
+	List* resultant = list_init();
+ 
+	if(aux!= NULL){
+
+		while(aux != NULL){
+
+			if(aux->tam == function_id){
+				while(aux != NULL && (aux->tam == function_id)){ printf("%d\n",aux->tam);
+					resultant = list_insert(resultant,aux->type,aux->tam,aux->text);
+					aux = aux->next;
+				}
+				return resultant;
+			}
+			aux = aux->next;
+		}
+	}
+	return NULL;
+
+
+}
+
 List* TILL_NULL(List* list){
 
 	while(list->next != NULL)

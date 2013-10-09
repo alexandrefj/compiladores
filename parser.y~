@@ -100,7 +100,7 @@ programa:  	tipo ':' TK_IDENTIFICADOR
 		//	function_list->next = local_var;
 		if(stack_pointer!= NULL){
 			stack_pointer=invert_stack(stack_pointer);
-			StackPopCommands(stack_pointer, global_var,global_vet,local_var,function_list,param_list);
+			StackPopCommands(stack_pointer, global_var,global_vet,local_var,function_list);
 		}
 		}
 

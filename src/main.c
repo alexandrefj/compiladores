@@ -24,6 +24,7 @@ int main (int argc, char **argv)
    global_vet = list_init();
    local_var = list_init();
    function_list = list_init();
+   param_list = list_init();
 
   
    int resultado = yyparse();

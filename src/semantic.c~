@@ -40,7 +40,7 @@ List* GlobalVarListInsert(List* list,DICT_NODE* node,int control,int type, int s
 }
 
 
-List* LocalVarListInsert(List* local_var,DICT_NODE* node, int type, int size,List* function_list){
+List* LocalVarListInsert(List* local_var,DICT_NODE* node, int type, int size, List* function_list){
 
 	if(list_lookup(local_var,node->text)==NULL){
 		local_var=list_insert(local_var,type,size,node->text);
@@ -54,7 +54,7 @@ List* LocalVarListInsert(List* local_var,DICT_NODE* node, int type, int size,Lis
 }
 
 
-void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List* local,List* function_list)
+void StackPopCommands(STACK* stack_pointer, List* global, List* global_vet, List* local, List* function_list, List* AllParams)
 {
 
 
@@ -65,22 +65,25 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 										cujos comandos serao desempilhados*/
 
 
-		if(stack_pointer->disc->type==11 || stack_pointer->disc->type==10)
-			printf("%s\n", stack_pointer->disc->symbol->text);
-		else
-			printf("%d\n", stack_pointer->disc->type);
+		
 		
 		
 		puts("------------------------------------------------------------------------");//printf("------------  %d \n",local->type);
+		if(stack_pointer->disc->type==11 || stack_pointer->disc->type==10)
+			printf("%s\n", stack_pointer->disc->symbol->text);
+		else
+		/*	printf("%d\n", stack_pointer->disc->type);
+		
 			printf("Funcoes\n");list_print(function_list);printf("Tipo da funcao %d Nome %s \n\n",InUseFunction->type,InUseFunction->text);
 			printf("Variaveis Globais\n");list_print(global);printf("  \n");
 			printf("Variaveis locais\n");list_print(local);printf("  \n");
 			printf("Variaveis vetoriais\n");list_print(global_vet);printf("  \n");
+*/
 		puts("------------------------------------------------------------------------");
 
 		int flag = 0;
 		int NumVal;	
-		List *GlobalSearch, *LocalSearch, *VectorialSearch, *FunctionSearch;
+		List *GlobalSearch, *LocalSearch, *VectorialSearch, *FunctionSearch, *aux;
 		ASTREE* Variable,*RightSon,*LeftSon;
 
 		switch(stack_pointer->disc->type){
@@ -101,6 +104,28 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 						stack_pointer->disc->size = var_size(stack_pointer->disc->node_type);
 						break;
 
+		case IKS_AST_CHAMADA_DE_FUNCAO:
+						/*Primeiramente, teremos de verificar a existencia da função chamada*/
+						
+						LeftSon = stack_pointer->disc->scc[0]; // filho correspondente à função
+
+						FunctionSearch = list_lookup(function_list,LeftSon->symbol->text);
+
+						if(FunctionSearch != NULL){
+					
+							aux = FunctionParamList(AllParams,FunctionSearch->tam); puts("*****");
+							list_print(aux);puts("*****");
+						break;
+						}
+						else{
+							printf("->Funcao nao declarada (linha %d)\n", getLineNumber()-1);
+							exit(IKS_ERROR_UNDECLARED);
+							break;
+						}
+							
+					
+						
+
 		case IKS_AST_IDENTIFICADOR: 	
 						
 						/*A partir da variavel flag, determinaremos se o identificador está na lista de:
@@ -111,7 +136,7 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 
 						GlobalSearch = list_lookup(global,stack_pointer->disc->symbol->text);
 						LocalSearch  = list_lookup(local,stack_pointer->disc->symbol->text);
-						VectorialSearch = list_lookup(global_vet,stack_pointer->disc->symbol->text);
+						VectorialSearch = list_lookup(global_vet,stack_pointer->disc->symbol->text); 
 						FunctionSearch = list_lookup(function_list,stack_pointer->disc->symbol->text);
 
 						if(GlobalSearch !=NULL){
@@ -294,7 +319,7 @@ void StackPopCommands(STACK* stack_pointer,List* global, List* global_vet, List*
 
 		}
 		stack_pointer= stack_pointer->next;
-		return  StackPopCommands(stack_pointer,global,global_vet,local,function_list);
+		return  StackPopCommands(stack_pointer,global,global_vet,local,function_list, AllParams);
 	}
 }
 
@@ -345,11 +370,11 @@ int inference(int val1, int val2)
 		return IKS_INT;
 	else if((val1==IKS_BOOL && val2==IKS_FLOAT) || (val2==IKS_BOOL && val1==IKS_FLOAT))
 		return IKS_FLOAT;
-	else if(val1==IKS_STRING || val2==IKS_STRING){
+	else if((val1==IKS_STRING && val2!=IKS_STRING) || (val2==IKS_STRING && val1!=IKS_STRING)){
 		printf("Impossivel fazer coerção para o tipo String (linha %d)\n", getLineNumber()-1);
 		exit(IKS_ERROR_STRING_TO_X);	
 	}
-	else if(val1==IKS_CHAR || val2==IKS_CHAR){
+	else if((val1==IKS_CHAR && val2!=IKS_CHAR) || (val2==IKS_CHAR && val1!=IKS_CHAR)){
 		printf("Impossivel fazer coerção para o tipo Char (linha %d)\n", getLineNumber()-1);
 		exit(IKS_ERROR_CHAR_TO_X);	
 	}
@@ -368,7 +393,7 @@ int inference(int val1, int val2)
 #define IKS_SIMBOLO_BOOL   5
 
 
-IKS_AST_CHAMADA_DE_FUNCAO
+
 #define IKS_AST_PROGRAMA             0
 #define IKS_AST_FUNCAO               1
 #define IKS_AST_IF_ELSE              2
