@@ -35,6 +35,8 @@ ADD_EXECUTABLE(dict_test
 
 ADD_EXECUTABLE(tree_test
 	tests/tree_test.c
+	src/comp_list.c
+
 	src/comp_tree.c
 	src/gv.c)
 

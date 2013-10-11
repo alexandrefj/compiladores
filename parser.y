@@ -81,23 +81,22 @@ struct astreenode *ast;
 			**-----------------------------------------------REGRAS DA LINGUAGEM IKS-----------------------------------------------------**
 			******************************************************************************************************************************/
 
+			/*-----------------------------------------------ANALISE SINTATICA-----------------------------------------------------------*/
 
-inicio:		programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $1, NULL, NULL, NULL);stack_push(stack_pointer,$$);};
+
+inicio:		{init_lists();} programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $2, NULL, NULL, NULL);stack_push(stack_pointer,$$);exit(IKS_SUCCESS);};
 
 programa:  	tipo ':' TK_IDENTIFICADOR 
 
 		{stack_pointer = stack_init();
-		func_id++; printf("Function id =%d\n",func_id);
+		func_id++;
 		local_var = NULL;
 		func_type = type;
 		function_list=FunctionListInsert(function_list,$3,type,func_id);}
 
 		'('parametros_funcao')'  declaracao_var_locais '{'comando'}' 
 
-		{//puts("Lista de parametros "); aux = FunctionParamList(param_list,func_id); list_print(aux);
-		//puts("Lista de parametros ");list_print(param_list);
-		//if(function_list!= NULL)
-		//	function_list->next = local_var;
+		{
 		if(stack_pointer!= NULL){
 			stack_pointer=invert_stack(stack_pointer);
 			StackPopCommands(stack_pointer, global_var,global_vet,local_var,function_list,param_list);
@@ -121,7 +120,7 @@ comando: 	comando_composto
 			|					{$$=NULL;}
 			;
 
-comando_simples:	TK_PR_INPUT nome_variavel 		{$$ = astCreate(IKS_AST_INPUT, NULL, $2,NULL, NULL, NULL); 	 stack_pointer=stack_push(stack_pointer,$$);}
+comando_simples:	TK_PR_INPUT exp2	 		{$$ = astCreate(IKS_AST_INPUT, NULL, $2,NULL, NULL, NULL); 	 stack_pointer=stack_push(stack_pointer,$$);}
 			|nome_variavel '=' expressao		{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL, NULL);	 stack_pointer=stack_push(stack_pointer,$$);}
 			|vetor '=' expressao			{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL,NULL);	 stack_pointer=stack_push(stack_pointer,$$);}
 			|TK_PR_RETURN expressao 		{$$ = astCreate(IKS_AST_RETURN,NULL,$2,NULL, NULL, NULL);	 stack_pointer=stack_push(stack_pointer,$$);}
@@ -129,7 +128,7 @@ comando_simples:	TK_PR_INPUT nome_variavel 		{$$ = astCreate(IKS_AST_INPUT, NULL
 			|TK_PR_OUTPUT chamada_com_param		{$$ = astCreate(IKS_AST_OUTPUT,NULL,$2,NULL, NULL, NULL);	 stack_pointer=stack_push(stack_pointer,$$);}
 			;
 
-comando_composto:	TK_PR_INPUT nome_variavel ';' 	comando {$$ = astCreate(IKS_AST_INPUT, NULL, $2, $4, NULL, NULL); stack_pointer=stack_push(stack_pointer,$$);}
+comando_composto:	TK_PR_INPUT exp2 ';' 	comando {$$ = astCreate(IKS_AST_INPUT, NULL, $2, $4, NULL, NULL); stack_pointer=stack_push(stack_pointer,$$);}
 			|nome_variavel '=' expressao';'  comando{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5, NULL); stack_pointer=stack_push(stack_pointer,$$);}
 			|vetor '=' expressao';'  comando 	{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5,NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			|TK_PR_RETURN expressao ';' comando	{$$ = astCreate(IKS_AST_RETURN,NULL,$2,$4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
@@ -224,7 +223,7 @@ exp1:		 	TK_LIT_INT		{$$ = $1;}
 			;
 
 
-exp2:			 TK_LIT_INT							{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$); }		
+exp2:			 TK_LIT_INT						{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$); }		
 			| TK_LIT_FLOAT							{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			| TK_LIT_STRING							{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}	
 			| TK_LIT_CHAR							{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
@@ -318,4 +317,15 @@ tipo:        		TK_PR_INT	{type = 1;}
 	
 
 %%
+
+init_lists(){
+
+ stack_pointer=stack_init();
+   global_var = list_init();
+   global_vet = list_init();
+   local_var = list_init();
+   function_list = list_init();
+   param_list = list_init();
+
+}
 

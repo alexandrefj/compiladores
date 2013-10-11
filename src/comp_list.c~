@@ -15,7 +15,7 @@ List* FunctionParamList(List* AllParams, int function_id){
 		while(aux != NULL){
 
 			if(aux->tam == function_id){
-				while(aux != NULL || aux->tam != function_id){ printf("%d\n",aux->tam);
+				while(aux != NULL && (aux->tam == function_id)){ printf("%d\n",aux->tam);
 					resultant = list_insert(resultant,aux->type,aux->tam,aux->text);
 					aux = aux->next;
 				}

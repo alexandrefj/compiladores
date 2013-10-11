@@ -1,7 +1,5 @@
 #include "comp_tree.h"
 
-
-
 ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s2, ASTREE *s3)
 {
 	ASTREE *newNode;
@@ -46,12 +44,12 @@ void *astReadNode(ASTREE *node)
 		gv_declare(node->type,node, NULL);
 		break;
 	}
-
+/*
 	printf("node type = %d  size = %d", node->node_type,node->size);
 		if(node->symbol !=NULL)printf("  simbolo= %s ",node->symbol->text);
-		else printf("  tipo do nó =%d", node->node);
+		else printf("  tipo do nó =%d", node->type);
 		printf("\n");
-		
+*/		
 	int i;
 	for(i=0;i<MAX_NODE;i++){
 		if(node->scc[i]!=NULL)
