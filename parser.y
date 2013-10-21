@@ -14,6 +14,8 @@ struct astreenode *ast;
 %type<ast> chamada_com_param
 %type<ast> nome_variavel
 %type<ast> vetor
+%type<ast> vetor_cham
+%type<ast> vetor_cond
 %type<ast> inicio
 %type<ast> programa
 %type<ast> comando_condicao
@@ -23,6 +25,7 @@ struct astreenode *ast;
 %type<ast> expressao
 %type<ast> chamada_recursao
 %type<ast> literal
+%type<ast> colchetes
 %type<ast> condicao
 %type<ast> bloco
 %type<ast> bloco_c
@@ -84,7 +87,7 @@ struct astreenode *ast;
 			/*-----------------------------------------------ANALISE SINTATICA-----------------------------------------------------------*/
 
 
-inicio:		{init_lists();} programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $2, NULL, NULL, NULL);stack_push(stack_pointer,$$);exit(IKS_SUCCESS);};
+inicio:		{init_lists();} programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $2, NULL, NULL, NULL);stack_push(stack_pointer,$$);/*exit(IKS_SUCCESS);*/};
 
 programa:  	tipo ':' TK_IDENTIFICADOR 
 
@@ -166,8 +169,15 @@ comando_condicao: 	TK_PR_IF '('condicao')'TK_PR_THEN bloco_c comando
 nome_variavel:	
 			TK_IDENTIFICADOR		{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);};
 
-vetor:		
-			nome_variavel'['expressao']' 	{$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);};
+vetor:			nome_variavel '['expressao']' colchetes  {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, NULL);stack_pointer=stack_push(stack_pointer,$$);};
+
+vetor_cham:		nome_variavel '['expressao']' colchetes ',' chamada_com_param	 {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, $7);stack_pointer=stack_push(stack_pointer,$$);};
+
+vetor_cond:		nome_variavel '['condicao']' colchetes  {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, NULL);stack_pointer=stack_push(stack_pointer,$$);};
+
+colchetes:		 '['expressao']' colchetes 	{$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $2, $4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			| 				{$$ = NULL;}
+			;
 
 
 chamada_recursao: 	
@@ -184,8 +194,7 @@ chamada_com_param:
 			{$$ =$1;}
 			| nome_variavel '(' chamada_recursao ')'				
 			{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
-			| nome_variavel '[' expressao ']'					
-			{$$ = astCreate(IKS_AST_VETOR_INDEXADO,NULL,$1,$3,NULL,NULL);stack_pointer=stack_push(stack_pointer,$$);}	
+			|vetor	{$$ = $1;}	
 			| exp2 '+'  exp2						  
 			{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL,$1, $3,NULL, NULL);stack_pointer=stack_push(stack_pointer,$$); }
 			| exp2 '-' exp2							  
@@ -198,8 +207,7 @@ chamada_com_param:
 			{$$ = astCreate(IKS_AST_LITERAL, $1, $3, NULL, NULL, NULL);stack_pointer= stack_push(stack_pointer,$$);}
 			| nome_variavel '(' chamada_recursao ')' ',' chamada_com_param		
 			{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, $6, NULL);stack_pointer=stack_push(stack_pointer,$$);}
-			| nome_variavel '[' expressao ']' ',' chamada_com_param			
-			{$$ = astCreate(IKS_AST_VETOR_INDEXADO,NULL,$1,$3,$6,NULL);stack_pointer=stack_push(stack_pointer,$$);}	
+			| vetor_cham {$$=$1;}
 			| exp2 '+'  exp2 ',' chamada_com_param					 
 			{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL,$1, $3,$5, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			| exp2 '-' exp2 ',' chamada_com_param					 
@@ -251,7 +259,7 @@ expressao:		TK_IDENTIFICADOR				{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL,
 			| expressao '<' expressao			{$$ = astCreate(IKS_AST_LOGICO_COMP_L,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			| expressao TK_OC_AND expressao			{$$ = astCreate(IKS_AST_LOGICO_E,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			| expressao TK_OC_OR expressao			{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
-			| nome_variavel '[' expressao ']'		{$$ = astCreate(IKS_AST_VETOR_INDEXADO,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			| vetor {$$ = $1;}
 			| nome_variavel '(' chamada_recursao ')' 	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}	
 			;
 
@@ -273,7 +281,7 @@ condicao:		TK_IDENTIFICADOR					{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL,
 			| condicao '<' condicao					{$$ = astCreate(IKS_AST_LOGICO_COMP_L,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			| condicao TK_OC_AND condicao				{$$ = astCreate(IKS_AST_LOGICO_E,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			| condicao TK_OC_OR condicao				{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
-			| nome_variavel '[' condicao ']'			{$$ = astCreate(IKS_AST_VETOR_INDEXADO,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			| vetor_cond {$$ = $1;}
 			| nome_variavel '(' chamada_recursao ')' 		{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}	
 			;
 		
@@ -304,7 +312,11 @@ declaracao_var_locais:  tipo ':' TK_IDENTIFICADOR {local_var=LocalVarListInsert(
 			;
 
 declaracao_var_globais: tipo ':' TK_IDENTIFICADOR';'					{global_var=GlobalVarListInsert(global_var,$3,GLOBAL_VAR_DEC_IDENTIFIER_CONTROL,type,0);}
-			|tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'';'			{global_vet=GlobalVarListInsert(global_vet,$3,GLOBAL_VET_DEC_IDENTIFIER_CONTROL,type,atoi($5->text));}
+			|tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'colchete_dec';'	{global_vet=GlobalVarListInsert(global_vet,$3,GLOBAL_VET_DEC_IDENTIFIER_CONTROL,type,atoi($5->text));}
+			;
+
+colchete_dec:		 '['TK_LIT_INT']' colchete_dec 	
+			| 				
 			;
 
 
