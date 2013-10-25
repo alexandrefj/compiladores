@@ -19,6 +19,8 @@ ADD_EXECUTABLE(main
   src/stack.c
   src/semantic.c
   src/CodeGenerator.c
+  src/Registers.c
+  src/Label.c
 )
 TARGET_LINK_LIBRARIES(main ${FLEX_LIBRARIES})
 
@@ -37,7 +39,6 @@ ADD_EXECUTABLE(dict_test
 ADD_EXECUTABLE(tree_test
 	tests/tree_test.c
 	src/comp_list.c
-
 	src/comp_tree.c
 	src/gv.c)
 
@@ -51,5 +52,7 @@ ADD_EXECUTABLE(stack_test
 	src/comp_tree.c
 	src/gv.c
 	src/comp_list.c)
+
+
 
 
