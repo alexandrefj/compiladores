@@ -31,13 +31,12 @@ typedef struct tac{
 	
 }TAC;
 
-
 List* LocalDesloc;
 List* GlobalDesloc;
 int registers;
 int labels;
 
-
+TAC* CodeGenerate_nop(ASTREE* node,TAC* code);
 TAC* CodeGenerate_add   (ASTREE* node,TAC* code);
 TAC* CodeGenerate_sub   (ASTREE* node,TAC* code);
 TAC* CodeGenerate_mult  (ASTREE* node,TAC* code);
@@ -53,23 +52,18 @@ TAC* CodeGenerate_cmp_EQ(ASTREE* node,TAC* code);
 TAC* CodeGenerate_cmp_GE(ASTREE* node,TAC* code);
 TAC* CodeGenerate_cmp_GT(ASTREE* node,TAC* code);
 TAC* CodeGenerate_cmp_NE(ASTREE* node,TAC* code);
-
 TAC* CommandLink (ASTREE* root);
 ASTREE* InvertTree(ASTREE* root);
-//TAC* CODE_Insert_Com1(ASTREE* node);
 TAC* CodeGenerate_cbr(ASTREE* node,TAC* code);
 void IsthereLabel(TAC* code);
 ASTREE* TwoRegOper(ASTREE* node, int opcode);
-ASTREE* RegAndConstOper(ASTREE* node, int opcode);
 void VarDeslocGen(List* list, int id);
 TAC* TAC_init(void);
 void CODE_print(TAC* code);
-
 void InsertLabel(ASTREE* node);
 TAC* CODE_Insert(ASTREE* node);
 TAC* CODE_InsertCommand(ASTREE* node);
 TAC* CODE_Insert_CBR(ASTREE* node);
-
 TAC* TACConcat(TAC* fater,TAC* son);
 void ILOC_GEN(TAC* code);
 TAC* InvertCodeList(TAC* list);
