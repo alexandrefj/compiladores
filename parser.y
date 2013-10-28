@@ -113,7 +113,8 @@ comando_simples:	TK_PR_INPUT exp2	 		{$$ = astCreate(IKS_AST_INPUT, NULL, $2,NUL
 								code=CodeGenerate_store($$,code);}
 			|vetor '=' expressao			{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,NULL,NULL);stack_pointer=stack_push(stack_pointer,$$);
 								code=CodeGenerate_store($$,code);}
-			|TK_PR_RETURN expressao 		{$$ = astCreate(IKS_AST_RETURN,NULL,$2,NULL, NULL, NULL);	 stack_pointer=stack_push(stack_pointer,$$);}
+			|TK_PR_RETURN expressao 		{$$ = astCreate(IKS_AST_RETURN,NULL,$2,NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
+								code=CodeGenerate_nop($$,code);}
 			|nome_variavel '(' chamada_recursao ')' {$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			|TK_PR_OUTPUT chamada_com_param		{$$ = astCreate(IKS_AST_OUTPUT,NULL,$2,NULL, NULL, NULL);	 stack_pointer=stack_push(stack_pointer,$$);}
 			;
@@ -123,7 +124,8 @@ comando_composto:	TK_PR_INPUT exp2 ';' 	comando {$$ = astCreate(IKS_AST_INPUT, N
 								code=CodeGenerate_store($$,code);}
 			|vetor '=' expressao';'  comando 	{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5,NULL);stack_pointer=stack_push(stack_pointer,$$);
 								code=CodeGenerate_store($$,code);}
-			|TK_PR_RETURN expressao ';' comando	{$$ = astCreate(IKS_AST_RETURN,NULL,$2,$4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			|TK_PR_RETURN expressao ';' comando	{$$ = astCreate(IKS_AST_RETURN,NULL,$2,$4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
+								code=CodeGenerate_nop($$,code);}
 			|nome_variavel '(' chamada_recursao ')' ';' comando	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,$6, NULL); stack_pointer=stack_push(stack_pointer,$$);}
 			|TK_PR_OUTPUT chamada_com_param ';' comando		{$$ = astCreate(IKS_AST_OUTPUT,NULL,$2,$4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			|';' comando						{$$= $2;};

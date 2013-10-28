@@ -1,4 +1,5 @@
 #include "CodeGenerator.h"
+
 /*	add	r1, r2	=>	r3	
 	sub	r1, r2	=>	r3	
 	mult	r1, r2	=>	r3	
@@ -18,6 +19,7 @@
 	oper 	r1, r2	=> 	r3
 	r1,  	c2	=> 	r3		
 */	
+
 TAC* CodeGenerate_add(ASTREE* node,TAC* code){	
 	node = TwoRegOper(node, ILOC_ADD);
 	code = CODE_Insert(node);
@@ -127,7 +129,28 @@ TAC* CodeGenerate_cbr(ASTREE* node,TAC* code){
 	node->code->l2 = labels;
 	node->code->next = NULL;
 	node->code->opcode = ILOC_CBR;
-	code = CODE_Insert_CBR(node);
+	if(node->scc[3] == NULL)
+		code = CODE_Insert_CBR_IF(node);
+	else{
+		InsertLabel(node->scc[3]);
+		code = CodeGenerate_jumpI(node->scc[1],code);		
+		code = CODE_Insert_CBR_IF_ELSE(node);
+	}
+	return code;
+}
+
+TAC* CodeGenerate_jumpI(ASTREE* node,TAC* code){
+	node->code = (TAC*)malloc(sizeof(TAC));
+	node->code->r1 = -1;
+	node->code->r2 = -1;
+	node->code->r3 = -1;
+	node->code->l1 = labels;
+	node->code->l2 = -1;
+	node->code->label = -1;
+	node->code->constant = -1;
+	node->code->opcode = ILOC_JUMPI;
+	node->code->next = NULL;
+	code = CODE_Insert(node);
 	return code;
 }
 
@@ -167,25 +190,25 @@ TAC* CodeGenerate_cmp_NE(ASTREE* node,TAC* code){
 	return code;
 }
 
+TAC* CodeGenerate_nop(ASTREE* node,TAC* code){
+	node->code = (TAC*)malloc(sizeof(TAC));
+	node->code->r1 = -1;
+	node->code->r2 = -1;
+	node->code->r3 = -1;
+	node->code->l1 = -1;
+	node->code->l2 = -1;
+	node->code->label = -1;
+	node->code->constant = -1;
+	node->code->opcode = ILOC_NOP;
+	node->code->next = NULL;
+	code = CODE_Insert(node);
+	return code;
+}
+
 ASTREE* TwoRegOper(ASTREE* node, int opcode){
 	node->code = (TAC*)malloc(sizeof(TAC));
 	node->code->r1 = node->scc[0]->code->r3;
 	node->code->r2 = node->scc[1]->code->r3;
-	registers = RegisterGenerate(registers);
-	node->code->r3 = registers;
-	node->code->label = -1;
-	node->code->l1 = -1;
-	node->code->l2 = -1;
-	node->code->constant = -1;
-	node->code->opcode = opcode;
-	node->code->next = NULL;
-	return node;
-}
-
-ASTREE* RegAndConstOper(ASTREE* node, int opcode){
-	node->code = (TAC*)malloc(sizeof(TAC));
-	node->code->r1 = registers;
-	node->code->r2 = -1;
 	registers = RegisterGenerate(registers);
 	node->code->r3 = registers;
 	node->code->label = -1;
@@ -231,12 +254,27 @@ TAC* CODE_InsertCommand(ASTREE* node){
 	return node->code;
 }
 
-TAC* CODE_Insert_CBR(ASTREE* node){
+TAC* CODE_Insert_CBR_IF(ASTREE* node){
 	int i;
 	TAC* aux;
 	ASTREE* aux_node = node;
 	aux = node->code;
-	node->code = aux_node->scc[2]->code;
+	if(aux_node->scc[2] != NULL)
+		node->code = aux_node->scc[2]->code;
+	TACConcat(node->code,aux_node->scc[1]->code);
+	TACConcat(node->code,aux);
+	TACConcat(node->code,aux_node->scc[0]->code);
+	return node->code;
+}
+
+TAC* CODE_Insert_CBR_IF_ELSE(ASTREE* node){
+	int i;
+	TAC* aux;
+	ASTREE* aux_node = node;
+	aux = node->code;
+	
+	node->code = aux_node->scc[3]->code;
+	TACConcat(node->code,aux_node->scc[2]->code);
 	TACConcat(node->code,aux_node->scc[1]->code);
 	TACConcat(node->code,aux);
 	TACConcat(node->code,aux_node->scc[0]->code);
@@ -282,6 +320,8 @@ void ILOC_GEN(TAC* code){
 	char *reg;
 	while(code != NULL){
 		switch(code->opcode){
+		case ILOC_NOP:		IsthereLabel(code);
+					break;
 		case ILOC_ADD:		IsthereLabel(code);
 					printf("\tadd\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
 					break;
@@ -293,7 +333,13 @@ void ILOC_GEN(TAC* code){
 					break;
 		case ILOC_DIV:		IsthereLabel(code);
 					printf("\tdiv\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
+					break;
+		case ILOC_AND:		IsthereLabel(code);
+					printf("\tand\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
 					break;	
+		case ILOC_OR:		IsthereLabel(code);
+					printf("\tor\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
+					break;		
 		case ILOC_LOADI:	IsthereLabel(code);
 					printf("\tloadI\t%d\t\t=> r%d\n",code->constant,code->r3);
 					break;
@@ -307,8 +353,26 @@ void ILOC_GEN(TAC* code){
 		case ILOC_STORE :	IsthereLabel(code);
 					printf("\tstore\tr%d\t\t=> r%d\n",code->r1,code->r3);
 					break;
+		case ILOC_JUMPI:	IsthereLabel(code);
+					printf("\tjumpI\t\t\t=> L%d\n", code->l1);
+					break;
 		case ILOC_CMP_LT:	IsthereLabel(code);
 					printf("\tcmp_LT\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
+					break;
+		case ILOC_CMP_LE:	IsthereLabel(code);
+					printf("\tcmp_LE\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
+					break;
+		case ILOC_CMP_EQ:	IsthereLabel(code);
+					printf("\tcmp_EQ\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
+					break;
+		case ILOC_CMP_GE:	IsthereLabel(code);
+					printf("\tcmp_GE\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
+					break;
+		case ILOC_CMP_GT:	IsthereLabel(code);
+					printf("\tcmp_GT\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
+					break;
+		case ILOC_CMP_NE:	IsthereLabel(code);
+					printf("\tcmp_NE\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
 					break;
 		case ILOC_CBR:		IsthereLabel(code);printf("\tcbr\tr%d\t\t=> L%d, L%d\n",code->r3, code->l1,code->l2);
 					break;
@@ -323,15 +387,11 @@ void IsthereLabel(TAC* code){
 }
 
 void InsertLabel(ASTREE* node){
-	//CODE_print(node->code);
 	TAC* aux = node->code;
-
 	while(aux->next != NULL)
 		aux = aux->next;
-
 	labels = LabelGenerate(labels);
 	aux->label = labels;
-	//CODE_print(aux);
 }
 
 TAC* InvertCodeList(TAC* list){
@@ -361,5 +421,4 @@ TAC* InvertCodeList(TAC* list){
 	}
 	return inverted;
 }
-
 
