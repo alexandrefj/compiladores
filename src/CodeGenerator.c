@@ -1,112 +1,131 @@
 #include "CodeGenerator.h"
 
-/*	add	r1, r2	=>	r3	
-	sub	r1, r2	=>	r3	
-	mult	r1, r2	=>	r3	
-	div	r1, r2	=>	r3	
-	and	r1, r2	=>	r3	
-	or	r1, r2	=>	r3	
-	loadI   c1	=>	r3		
-	loadAI  r1,c2	=>	r3	
-	store	r1	=>	r3		
-	cbr     r3	=>	l1,l2		
-	cmp_LT	r1, r2	=>	r3	
-	cmp_LE	r1, r2	=>	r3	
-	cmp_EQ	r1, r2	=>	r3	
-	cmp_GE	r1, r2	=>	r3	
-	cmp_GT	r1, r2	=>	r3	
-	cmp_NE	r1, r2	=>	r3	
-	oper 	r1, r2	=> 	r3
-	r1,  	c2	=> 	r3		
-*/	
-
 TAC* CodeGenerate_add(ASTREE* node,TAC* code){	
-	node = TwoRegOper(node, ILOC_ADD);
+	code = TwoRegOper(node, ILOC_ADD);
 	code = CODE_Insert(node);
 	return code;
 }
 
 TAC* CodeGenerate_sub(ASTREE* node,TAC* code){
-	node = TwoRegOper(node,ILOC_SUB);
+	code = TwoRegOper(node,ILOC_SUB);
 	code = CODE_Insert(node); 
 	return code;
 }
 
 TAC* CodeGenerate_mult(ASTREE* node,TAC* code){
-	node = TwoRegOper(node, ILOC_MULT);
+	code = TwoRegOper(node, ILOC_MULT);
 	code = CODE_Insert(node);
 	return code;
 }
 
 TAC* CodeGenerate_div(ASTREE* node,TAC* code){
-	node = TwoRegOper(node, ILOC_DIV);
+	code = TwoRegOper(node, ILOC_DIV);
 	code = CODE_Insert(node);
 	return code;
 }
 
 TAC* CodeGenerate_and(ASTREE* node,TAC* code){	
-	node = TwoRegOper(node,ILOC_AND);
+	code = TwoRegOper(node,ILOC_AND);
 	code = CODE_Insert(node);
 	return code;
 }
 
 TAC* CodeGenerate_or(ASTREE* node,TAC* code){	
-	node = TwoRegOper(node,ILOC_OR);
+	code = TwoRegOper(node,ILOC_OR);
+	code = CODE_Insert(node);
+	return code;
+}
+
+TAC* CodeGenerate_cmp_LT(ASTREE* node,TAC* code){	
+	code = TwoRegOper(node, ILOC_CMP_LT);
+	code = CODE_Insert(node);
+	return code;
+}
+
+TAC* CodeGenerate_cmp_LE(ASTREE* node,TAC* code){	
+	code = TwoRegOper(node, ILOC_CMP_LE);
+	code = CODE_Insert(node);
+	return code;
+}
+
+TAC* CodeGenerate_cmp_EQ(ASTREE* node,TAC* code){
+	code = TwoRegOper(node, ILOC_CMP_EQ);
+	code = CODE_Insert(node);
+	return code;
+}
+
+TAC* CodeGenerate_cmp_GE(ASTREE* node,TAC* code){
+	code = TwoRegOper(node, ILOC_CMP_GE);
+	code = CODE_Insert(node); 
+	return code;
+}
+
+TAC* CodeGenerate_cmp_GT(ASTREE* node,TAC* code){
+	code = TwoRegOper(node, ILOC_CMP_GT);
+	code = CODE_Insert(node);
+	return code;
+}
+
+TAC* CodeGenerate_cmp_NE(ASTREE* node,TAC* code){	
+	code = TwoRegOper(node, ILOC_CMP_NE);
+	code = CODE_Insert(node);
+	return code;
+}
+
+TAC* CodeGenerate_jumpI(ASTREE* node,TAC* code){
+	node->code = CodeGenerate_null(); 
+	node->code->l1 = labels;
+	node->code->opcode = ILOC_JUMPI;
+	code = CODE_Insert(node);
+	return code;
+}
+
+TAC* CodeGenerate_nop(ASTREE* node,TAC* code){
+	node->code=CodeGenerate_null();
+	node->code->opcode = ILOC_NOP;
 	code = CODE_Insert(node);
 	return code;
 }
 
 TAC* CodeGenerate_loadI(ASTREE* node, TAC* code){
+	node->code = CodeGenerate_null(); 
 	registers = RegisterGenerate(registers);
-	node->code = (TAC*)malloc(sizeof(TAC));
-	node->code->r1 = -1;
-	node->code->r2 = -1;
 	node->code->r3 = registers;
 	node->code->constant = atoi(node->symbol->text);
-	node->code->label = -1;
-	node->code->l1 = -1;
-	node->code->l2 = -1;
-	node->code->next = NULL;
 	node->code->opcode = ILOC_LOADI;
 	code = CODE_Insert(node);
 	return code;
 }
 
 TAC* CodeGenerate_loadAI(ASTREE* node, TAC* code){
-	int flag;
-	List* aux;
-	aux=list_lookup(GlobalDesloc,node->symbol->text);
-	if( aux !=NULL)
-		flag = BSS;
-	else{
-		aux = list_lookup(LocalDesloc,node->symbol->text);
-		flag = FP;
+	if(node->type == IKS_AST_VETOR_INDEXADO){
+		code = CodeGenerate_nop(node,code);
+		code = code->next;
 	}
-	registers = RegisterGenerate(registers);
-	node->code = (TAC*)malloc(sizeof(TAC));
-	node->code->r1 = flag;
-	node->code->r2 = -1;
-	node->code->r3 = registers;
-	node->code->label = -1;
-	node->code->l1 = -1;
-	node->code->l2 = -1;
-	node->code->constant = aux->tam; 
-	node->code->next = NULL;
-	node->code->opcode = ILOC_LOADAI;
-	code = CODE_Insert(node);
+	else{
+		int flag;
+		List* aux=list_lookup(GlobalDesloc,node->symbol->text);
+		if( aux !=NULL)
+			flag = BSS;
+		else{
+			aux = list_lookup(LocalDesloc,node->symbol->text);
+			flag = FP;
+		}
+		node->code = CodeGenerate_null(); 
+		registers = RegisterGenerate(registers);
+		node->code->r1 = flag;
+		node->code->r3 = registers;
+		node->code->constant = aux->tam; 
+		node->code->opcode = ILOC_LOADAI;
+		code = CODE_Insert(node);
+	}
 	return code;
 }
 
 TAC* CodeGenerate_store(ASTREE* node, TAC* code){
-	node->code = (TAC*)malloc(sizeof(TAC));
+	node->code = CodeGenerate_null();
 	node->code->r1 = node->scc[1]->code->r3;
-	node->code->r2 = -1;
 	node->code->r3 =node->scc[0]->code->r3;
-	node->code->l1 = -1;
-	node->code->l2 = -1;
-	node->code->label = -1;
-	node->code->constant = -1;
-	node->code->next = NULL;
 	node->code->opcode = ILOC_STORE;
 	if(node->scc[2] == NULL)
 		code = CODE_Insert(node);
@@ -115,15 +134,14 @@ TAC* CodeGenerate_store(ASTREE* node, TAC* code){
 	return code;
 }
 
-
 TAC* CodeGenerate_cbr(ASTREE* node,TAC* code){
-	node->code = (TAC*)malloc(sizeof(TAC));
-	node->code->r1 = -1;
-	node->code->r2 = -1;
+	node->code = CodeGenerate_null();
 	node->code->r3 =node->scc[0]->code->r3;
-	node->code->label = -1;
-	node->code->constant = -1; 
 	InsertLabel(node->scc[1]);
+	if(node->scc[2] == NULL){
+		node->scc[2] = (ASTREE*)malloc(sizeof(ASTREE));
+		code=CodeGenerate_nop(node->scc[2],code);
+	}
 	InsertLabel(node->scc[2]);
 	node->code->l1 = labels - 1;
 	node->code->l2 = labels;
@@ -139,85 +157,14 @@ TAC* CodeGenerate_cbr(ASTREE* node,TAC* code){
 	return code;
 }
 
-TAC* CodeGenerate_jumpI(ASTREE* node,TAC* code){
-	node->code = (TAC*)malloc(sizeof(TAC));
-	node->code->r1 = -1;
-	node->code->r2 = -1;
-	node->code->r3 = -1;
-	node->code->l1 = labels;
-	node->code->l2 = -1;
-	node->code->label = -1;
-	node->code->constant = -1;
-	node->code->opcode = ILOC_JUMPI;
-	node->code->next = NULL;
-	code = CODE_Insert(node);
-	return code;
-}
-
-TAC* CodeGenerate_cmp_LT(ASTREE* node,TAC* code){	
-	node = TwoRegOper(node, ILOC_CMP_LT);
-	code = CODE_Insert(node);
-	return code;
-}
-
-TAC* CodeGenerate_cmp_LE(ASTREE* node,TAC* code){	
-	node = TwoRegOper(node, ILOC_CMP_LE);
-	code = CODE_Insert(node);
-	return code;
-}
-
-TAC* CodeGenerate_cmp_EQ(ASTREE* node,TAC* code){
-	node = TwoRegOper(node, ILOC_CMP_EQ);
-	code = CODE_Insert(node);
-	return code;
-}
-
-TAC* CodeGenerate_cmp_GE(ASTREE* node,TAC* code){
-	node = TwoRegOper(node, ILOC_CMP_GE);
-	code = CODE_Insert(node); 
-	return code;
-}
-
-TAC* CodeGenerate_cmp_GT(ASTREE* node,TAC* code){
-	node = TwoRegOper(node, ILOC_CMP_GT);
-	code = CODE_Insert(node);
-	return code;
-}
-
-TAC* CodeGenerate_cmp_NE(ASTREE* node,TAC* code){	
-	node = TwoRegOper(node, ILOC_CMP_NE);
-	code = CODE_Insert(node);
-	return code;
-}
-
-TAC* CodeGenerate_nop(ASTREE* node,TAC* code){
-	node->code = (TAC*)malloc(sizeof(TAC));
-	node->code->r1 = -1;
-	node->code->r2 = -1;
-	node->code->r3 = -1;
-	node->code->l1 = -1;
-	node->code->l2 = -1;
-	node->code->label = -1;
-	node->code->constant = -1;
-	node->code->opcode = ILOC_NOP;
-	node->code->next = NULL;
-	code = CODE_Insert(node);
-	return code;
-}
-
-ASTREE* TwoRegOper(ASTREE* node, int opcode){
-	node->code = (TAC*)malloc(sizeof(TAC));
+TAC* TwoRegOper(ASTREE* node, int opcode){
+	node->code = CodeGenerate_null(); 
 	node->code->r1 = node->scc[0]->code->r3;
 	node->code->r2 = node->scc[1]->code->r3;
 	registers = RegisterGenerate(registers);
 	node->code->r3 = registers;
-	node->code->label = -1;
-	node->code->l1 = -1;
-	node->code->l2 = -1;
-	node->code->constant = -1;
 	node->code->opcode = opcode;
-	node->code->next = NULL;
-	return node;
+	return node->code;
 }
 
 TAC* TAC_init(void){
@@ -236,18 +183,16 @@ TAC* TACConcat(TAC* fater,TAC* son){
 
 TAC* CODE_Insert(ASTREE* node){
 	int i;
-	for(i=3;i>=0;i--){
+	for(i=3;i>=0;i--)
 		if(node->scc[i] != NULL)
 			TACConcat(node->code,node->scc[i]->code);
-	}
 	return node->code;
 }
 
 TAC* CODE_InsertCommand(ASTREE* node){
-	int i;
 	TAC* aux;
-	TACConcat(node->code,node->scc[0]->code);
 	TACConcat(node->code,node->scc[1]->code);
+	TACConcat(node->code,node->scc[0]->code);
 	aux = node->code;
 	node->code = node->scc[2]->code;
 	TACConcat(node->code,aux);
@@ -255,10 +200,9 @@ TAC* CODE_InsertCommand(ASTREE* node){
 }
 
 TAC* CODE_Insert_CBR_IF(ASTREE* node){
-	int i;
 	TAC* aux;
 	ASTREE* aux_node = node;
-	aux = node->code;
+	aux = node->code; 
 	if(aux_node->scc[2] != NULL)
 		node->code = aux_node->scc[2]->code;
 	TACConcat(node->code,aux_node->scc[1]->code);
@@ -268,11 +212,9 @@ TAC* CODE_Insert_CBR_IF(ASTREE* node){
 }
 
 TAC* CODE_Insert_CBR_IF_ELSE(ASTREE* node){
-	int i;
 	TAC* aux;
 	ASTREE* aux_node = node;
 	aux = node->code;
-	
 	node->code = aux_node->scc[3]->code;
 	TACConcat(node->code,aux_node->scc[2]->code);
 	TACConcat(node->code,aux_node->scc[1]->code);
@@ -281,23 +223,8 @@ TAC* CODE_Insert_CBR_IF_ELSE(ASTREE* node){
 	return node->code;
 }
 
-void CODE_print(TAC* code){
-	TAC *aux = code; 
-	while(aux !=NULL){
-		printf("r1 = %d\n",aux->r1);
-		printf("r2 = %d\n",aux->r2);
-		printf("r3 = %d\n",aux->r3);
-		printf("lab = %d\n",aux->label);
-		printf("c2 = %d\n",aux->constant);
-		printf("op = %d\n",aux->opcode);
-		printf("l1 = %d\n",aux->l1);
-		printf("l2 = %d\n",aux->l2);
-		aux = aux->next;
-	}
-}
-
-void VarDeslocGen(List* list, int id){
-	/*Here we shall us the field type to 
+void VarDeslocGen(List* list, int id, List* el_num){
+	/*Here we shall use the field type to 
 	give the variable desloc information*/
 	List* list2 = list_copy(list2,list);
 	List* aux = list2;
@@ -305,12 +232,15 @@ void VarDeslocGen(List* list, int id){
 	if(list != NULL){
 		while(aux != NULL){
 			aux->tam = BeforeSize;
-			BeforeSize = var_size(aux->type) + BeforeSize; 
+			BeforeSize = var_size(aux->type)*(aux->size) + BeforeSize;
 			aux = aux->next;
 		}
 		switch(id){
-			case LOCAL: 	LocalDesloc  = list2;break;
-			case GLOBAL:	GlobalDesloc = list2;break;
+			case LOCAL: 	LocalDesloc  = list2;
+					break;
+			case GLOBAL:	GlobalDesloc = list2;
+					ArrayDimmention = el_num;
+					break;
 		}
 	}
 }
@@ -320,7 +250,7 @@ void ILOC_GEN(TAC* code){
 	char *reg;
 	while(code != NULL){
 		switch(code->opcode){
-		case ILOC_NOP:		IsthereLabel(code);
+		case ILOC_NOP:		IsthereLabel(code);/*puts("\tnop");*/
 					break;
 		case ILOC_ADD:		IsthereLabel(code);
 					printf("\tadd\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
@@ -348,7 +278,7 @@ void ILOC_GEN(TAC* code){
 						strcpy(reg,"fp");
 					else
 						strcpy(reg,"bss");
-					printf("\tloadAI\t%s, %d\t\t=> r%d\n",reg,code->constant,code->r3);
+					printf("\tloadAI\t%s,%d\t\t=> r%d\n",reg,code->constant,code->r3);
 					break;
 		case ILOC_STORE :	IsthereLabel(code);
 					printf("\tstore\tr%d\t\t=> r%d\n",code->r1,code->r3);
@@ -374,11 +304,13 @@ void ILOC_GEN(TAC* code){
 		case ILOC_CMP_NE:	IsthereLabel(code);
 					printf("\tcmp_NE\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
 					break;
-		case ILOC_CBR:		IsthereLabel(code);printf("\tcbr\tr%d\t\t=> L%d, L%d\n",code->r3, code->l1,code->l2);
+		case ILOC_CBR:		IsthereLabel(code);
+					printf("\tcbr\tr%d\t\t=> L%d, L%d\n",code->r3, code->l1,code->l2);
 					break;
 		}
 		code = code->next;
 	}
+	
 }
 
 void IsthereLabel(TAC* code){
@@ -396,8 +328,8 @@ void InsertLabel(ASTREE* node){
 
 TAC* InvertCodeList(TAC* list){
 	TAC* aux =list;
-	TAC* inverted;
 	TAC* inv_aux;
+	TAC* inverted = NULL;
 	while(list!= NULL){
 		TAC* new = malloc(sizeof(TAC));
 		new->r1 = list->r1;
@@ -415,10 +347,81 @@ TAC* InvertCodeList(TAC* list){
 			inv_aux = inverted;
 			inverted = new;
 			inverted->next = inv_aux;
-
 		}
 		list = list->next;
 	}
 	return inverted;
 }
+
+int Dk(int k, int reg, List *array_el){
+	if(k == 1)
+		return reg;
+	else{ 
+		int aux = reg;
+		aux--;
+		k--;	
+		return Dk(k,aux,array_el->next)*array_el->size + reg;
+	}
+}
+
+TAC* AddressCalc(ASTREE* node){
+	List* auxiliar = list_copy(auxiliar,list_lookup(ArrayDimmention,"vetor2"));
+	List* aux = auxiliar;
+	int i=0;
+	//int aux_r;
+	if(aux != NULL){
+		aux = aux->next;
+		while(strcmp(aux->text,"nop") == 0){
+			aux = aux->next;
+			i++;
+		}
+		aux->next = NULL;
+		i++;
+		aux = auxiliar;
+		while(aux->next != NULL)
+			aux = aux->next;
+		auxiliar=list_remove(auxiliar,aux->text);
+		aux = auxiliar;
+		auxiliar=list_remove(auxiliar,aux->text);
+		auxiliar = list_insert(auxiliar,aux->type,aux->tam,aux->text,aux->size);
+	}
+	// aux_r = registers;
+	/*auxiliar stores the array dim lenth*/
+	//printf("%d\n",Dk(i,aux_r,auxiliar)*4);
+	return NULL;
+}
+
+TAC* ArrayCodeGen(int e1,int n2,int e2){
+	registers = RegisterGenerate(registers);
+	TAC* mult =CodeGenerate_null();
+	mult->r1 = e1;
+	mult->r2 = n2;
+	mult->r3 = registers;
+	mult->opcode = ILOC_MULT;
+	registers = RegisterGenerate(registers);
+	TAC* sum = CodeGenerate_null();
+	sum->r1 = mult->r3;
+	sum->r2 = e2;
+	sum->r3 = registers;
+	sum->opcode = ILOC_ADD;
+	sum->next = mult;
+	mult->next = NULL;
+	return sum;
+}
+
+TAC* CodeGenerate_null(){
+	TAC* New =(TAC*)malloc(sizeof(TAC));
+	New->r1=-1;
+	New->r2=-1;
+	New->r3=-1;
+	New->r1=-1;
+	New->l1=-1;
+	New->l2=-1;
+	New->label=-1;
+	New->constant=-1;
+	New->opcode = -1;
+	New->next = NULL;
+	return New;
+}
+
 
