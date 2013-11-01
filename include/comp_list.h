@@ -12,14 +12,13 @@ typedef struct comp_list_t
   int tam;
   int size;
   char* text;
+  struct comp_list_t *dim;
   struct comp_list_t *next;
 } 
 List;
 
-
-
 List* list_init(void);
-List* JoinGlobalVet(List* global,List* vet);
+//List* JoinGlobalVet(List* global,List* vet);
 void list_print(List* list);
 List* TILL_NULL(List* list);
 List* FunctionParamList(List* AllParams, int function_id);

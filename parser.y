@@ -85,7 +85,8 @@ programa:	  	tipo ':' TK_IDENTIFICADOR
 			}
 			'('parametros_funcao')'  declaracao_var_locais 
 			{
-			VarDeslocGen(global_var,GLOBAL);VarDeslocGen(local_var,LOCAL);
+			aux2 = list_insert(aux2,0,0,"end",0);
+			VarDeslocGen(global_code,GLOBAL,aux2);VarDeslocGen(local_var,LOCAL,NULL);
 			}
 			'{'comando'}' 
 			{
@@ -137,29 +138,39 @@ bloco_c:		'{'comando'}' {$$=astCreate(IKS_AST_BLOCO,NULL,$2,NULL, NULL, NULL);st
 					code=CodeGenerate_nop($$,code);};
 
 comando_condicao: 	TK_PR_IF '('condicao')'TK_PR_THEN bloco_c comando			
-			{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $7, NULL);stack_pointer=stack_push(stack_pointer,$$);code = CodeGenerate_cbr($$,code);}
+			{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $7, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = CodeGenerate_cbr($$,code);}
 			|TK_PR_IF '('condicao')'TK_PR_THEN comando_simples ';' comando			
-			{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, NULL);stack_pointer=stack_push(stack_pointer,$$);code = CodeGenerate_cbr($$,code);}
+			{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = CodeGenerate_cbr($$,code);}
 			|TK_PR_IF '('condicao')'TK_PR_THEN comando_simples TK_PR_ELSE comando_simples ';' comando
-			{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, NULL);stack_pointer=stack_push(stack_pointer,$$);code = CodeGenerate_cbr($$,code);}
+			{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = CodeGenerate_cbr($$,code);}
 			|TK_PR_IF '('condicao')'TK_PR_THEN bloco_c TK_PR_ELSE bloco_c comando 			
-			{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, $9);stack_pointer=stack_push(stack_pointer,$$);code = CodeGenerate_cbr($$,code);}
+			{$$ = astCreate(IKS_AST_IF_ELSE, NULL, $3, $6, $8, $9);stack_pointer=stack_push(stack_pointer,$$);
+			code = CodeGenerate_cbr($$,code);}
 			|TK_PR_WHILE '('condicao')' TK_PR_DO bloco_c comando				
-			{$$ = astCreate(IKS_AST_WHILE_DO, NULL, $3, $6, $7, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			{$$ = astCreate(IKS_AST_WHILE_DO, NULL, $3, $6, $7, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = CodeGenerate_cbr_wd($$,code);}
 			|TK_PR_WHILE '('condicao')' TK_PR_DO comando_simples ';' comando		
-			{$$ = astCreate(IKS_AST_WHILE_DO, NULL, $3, $6, $8, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			{$$ = astCreate(IKS_AST_WHILE_DO, NULL, $3, $6, $8, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = CodeGenerate_cbr_wd($$,code);}
 			|TK_PR_DO bloco_c TK_PR_WHILE'('condicao')' comando				
-			{$$ = astCreate(IKS_AST_DO_WHILE, NULL, $2, $5, $7, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			{$$ = astCreate(IKS_AST_DO_WHILE, NULL, $2, $5, $7, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = CodeGenerate_cbr_dw($$,code);}
 			|TK_PR_DO comando_simples TK_PR_WHILE'('condicao')' comando 			
-			{$$ = astCreate(IKS_AST_DO_WHILE, NULL, $2, $5, $7, NULL);stack_pointer=stack_push(stack_pointer,$$);};
+			{$$ = astCreate(IKS_AST_DO_WHILE, NULL, $2, $5, $7, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = CodeGenerate_cbr_dw($$,code);};
 
 nome_variavel:		TK_IDENTIFICADOR		{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
 							code=CodeGenerate_loadAI($$,code);};
-vetor:			nome_variavel '['expressao']' colchetes  {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, NULL);stack_pointer=stack_push(stack_pointer,$$);};
+vetor:			nome_variavel '['expressao']' colchetes  {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, NULL);stack_pointer=stack_push(stack_pointer,$$);
+								code=CodeGenerate_loadAI($$,code);};
 vetor_cham:		nome_variavel '['expressao']' colchetes ',' chamada_com_param	 {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, $7);stack_pointer=stack_push(stack_pointer,$$);};
-vetor_cond:		nome_variavel '['condicao']' colchetes  {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, NULL);stack_pointer=stack_push(stack_pointer,$$);};
-colchetes:		 '['expressao']' colchetes 	{$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $2, $4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
-			| 				{$$ = NULL;};
+vetor_cond:		nome_variavel '['condicao ']' colchetes  {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, NULL);stack_pointer=stack_push(stack_pointer,$$);};
+colchetes:		 '['expressao']' colchetes 		{$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $2, $4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
+								code=CodeGenerate_nop($$,code);code = code->next;}
+			| 					{$$ = NULL;};
 
 chamada_recursao: 	chamada_com_param													
 			{$$=$1;}
@@ -170,7 +181,7 @@ chamada_com_param:	exp2
 			{$$ =$1;}
 			| nome_variavel '(' chamada_recursao ')'				
 			{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
-			|vetor	{$$ = $1;}	
+			|vetor	{$$ = $1;code=CodeGenerate_nop($$,code);}	
 			| exp2 '+'  exp2						  
 			{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL,$1, $3,NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);code=CodeGenerate_add($$,code); }
 			| exp2 '-' exp2							  
@@ -313,13 +324,26 @@ declaracao_var_locais:  tipo ':' TK_IDENTIFICADOR
 declaracao_var_globais: tipo ':' TK_IDENTIFICADOR';'					
 			{
 			global_var=GlobalVarListInsert(global_var,$3,GLOBAL_VAR_DEC_IDENTIFIER_CONTROL,type,0);
+			global_code = list_insert(global_code,type,0,$3->text,1);
 			}
-			|tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'colchete_dec';'{
+
+
+			|tipo ':' TK_IDENTIFICADOR '['TK_LIT_INT']'
+			{
+			aux2 = list_insert(aux2,type,0, $3->text, atoi($5->text));
+			array_el = atoi($5->text);
+			} colchete_dec';'
+			{
 			global_vet=GlobalVarListInsert(global_vet,$3,GLOBAL_VET_DEC_IDENTIFIER_CONTROL,type,atoi($5->text));
+			global_code = list_insert(global_code,type,0,$3->text,array_el);
+			global_code->dim = list_copy(global_code->dim,aux2);
 			};
 
-colchete_dec:		 '['TK_LIT_INT']' colchete_dec 	
-			| 				;
+colchete_dec:		 '['TK_LIT_INT']' colchete_dec 	{array_el = array_el*atoi($2->text);
+							aux2 = list_insert(aux2,type,0,"nop", atoi($2->text));
+							}
+			| 				
+			;
 
 tipo:        		TK_PR_INT	{type = 1;}
 			|TK_PR_FLOAT	{type = 2;}	
@@ -328,13 +352,14 @@ tipo:        		TK_PR_INT	{type = 1;}
 			|TK_PR_CHAR	{type = 3;};
 %%
 init_lists(){
-   code = TAC_init();
-   stack_pointer=stack_init();
-   global_var = list_init();
-   global_vet = list_init();
-   local_var = list_init();
-   function_list = list_init();
-   param_list = list_init();
-
+	global_code = list_init();
+	code = TAC_init();
+	stack_pointer=stack_init();
+	global_var = list_init();
+	global_vet = list_init();
+	local_var = list_init();
+	function_list = list_init();
+	param_list = list_init();
 }
+
 

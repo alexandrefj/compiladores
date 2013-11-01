@@ -15,6 +15,7 @@
 #include "iks_ast.h"
 #include "gv.h"
 #include "stack.h"
+#include "CodeGenerator.h"
 
 
 
@@ -28,9 +29,12 @@ List *local_var;
 List *function_list;
 List* param_list;
 List* aux;
+List* aux2;
+List* global_code;
 int func_id;
 int type;
 int func_type;
+int array_el;
 
 
 /*

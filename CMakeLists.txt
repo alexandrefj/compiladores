@@ -28,10 +28,6 @@ ADD_EXECUTABLE(lists_teste
 	tests/lists_test.c
 	src/comp_list.c)
 
-ADD_EXECUTABLE(function
-	tests/function_test.c
-	src/comp_function.c)
-
 ADD_EXECUTABLE(dict_test
 	tests/dict_test.c
 	src/comp_dict.c)
