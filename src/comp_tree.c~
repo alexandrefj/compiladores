@@ -1,4 +1,5 @@
 #include "comp_tree.h"
+#include "CodeGenerator.h"
 
 ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s2, ASTREE *s3)
 {
@@ -14,6 +15,7 @@ ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s
 	newNode->scc[2] = s2;
 	newNode->scc[3] = s3;
 	newNode->read = 0;
+	newNode->code = NULL;//(TAC*)malloc(sizeof(TAC*));
 	return newNode;
 }
 

@@ -37,8 +37,8 @@ SPECIAL		[,;:(){}\[\]{}\+\-\*<>=!&$\/]
 "input"    return TK_PR_INPUT; 
 "output"   return TK_PR_OUTPUT; 
 "return"   return TK_PR_RETURN; 
-"true"     {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL); return TK_LIT_TRUE;}
-"false"    {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL); return TK_LIT_FALSE;}
+"true"     {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL,Tabela); return TK_LIT_TRUE;}
+"false"    {yylval.symbol = dict_insert(yytext,IKS_SIMBOLO_BOOL,Tabela); return TK_LIT_FALSE;}
 
 
 {CHAR}({CHAR}|{INTEGER})*      	{yylval.symbol = dict_insert(yytext,TK_IDENTIFICADOR,Tabela); return TK_IDENTIFICADOR;}

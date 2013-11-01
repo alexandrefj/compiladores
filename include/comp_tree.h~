@@ -26,6 +26,7 @@ typedef struct astreenode
 	int size;
 	DICT_NODE *symbol;
 	struct astreenode *scc[MAX_NODE];
+	struct tac* code;
 	int read;
 }ASTREE; 
 
