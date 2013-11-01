@@ -1,0 +1,22 @@
+/*Entrada 7*/
+int: teste;
+int: teste2;
+int: main()
+int: i;
+{
+	teste = 20;
+	if(teste == teste2) then{
+		teste =  30;
+		teste2 = 50;
+	}			
+	teste = teste + teste2 - (10/5)*10;
+	teste = 10;
+	return 0;
+}
+
+
+
+
+
+
+

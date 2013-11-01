@@ -1,0 +1,30 @@
+/*Entrada 6*/
+
+int: teste;
+int: teste2;
+
+int: main()
+int: i;
+{
+
+	teste = 20;
+
+	if(teste && teste2) then
+		teste = teste + 10;
+	
+	
+			
+	
+	teste = 10;
+
+	//return 0;
+
+
+}
+
+
+
+
+
+
+

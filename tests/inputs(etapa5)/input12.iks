@@ -1,0 +1,18 @@
+/*Entrada 12*/
+int: teste;
+int: main()
+int: i;
+{
+	while(teste<10) do
+		teste = 10;
+	
+
+	//return 0;
+}
+
+
+
+
+
+
+

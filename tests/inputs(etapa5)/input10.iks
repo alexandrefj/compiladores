@@ -1,0 +1,21 @@
+/*Entrada 9*/
+int: teste;
+float: teste2;
+int: teste3;
+
+int: main()
+int: i;
+{
+	teste = 20;
+	if(teste <= teste2) then{
+		teste =  30;
+		teste2 = 50;
+	}
+}
+
+
+
+
+
+
+

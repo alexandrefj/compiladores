@@ -1,0 +1,21 @@
+/*Entrada 8*/
+int: teste;
+int: teste2;
+int: main()
+int: i;
+{
+	teste = 20;
+		while(i>0) do {
+			teste = 10 + i;
+			i = i + 1;
+		}
+	
+	return 0;
+}
+
+
+
+
+
+
+
