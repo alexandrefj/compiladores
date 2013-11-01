@@ -295,11 +295,11 @@ parametros_funcao: 	parametros_funcao_c_param
 parametros_funcao_c_param:
 			tipo ':' TK_IDENTIFICADOR  
 			{
-			local_var=LocalVarListInsert(local_var,$3,type,0,function_list); param_list =list_insert(param_list,type,func_id,$3->text);
+			local_var=LocalVarListInsert(local_var,$3,type,0,function_list); param_list =list_insert(param_list,type,func_id,$3->text,0);
 			}
 			| tipo ':'TK_IDENTIFICADOR 
 			{
-			local_var=LocalVarListInsert(local_var,$3,type,0,function_list); param_list =list_insert(param_list,type,func_id,$3->text);
+			local_var=LocalVarListInsert(local_var,$3,type,0,function_list); param_list =list_insert(param_list,type,func_id,$3->text,0);
 			}
 			',' parametros_funcao_c_param;
 

@@ -327,7 +327,7 @@ ASTREE* ParamLookup(ASTREE* param_i, List* param_list){
 List* FunctionListInsert(List* function_list,DICT_NODE* node, int type, int size){
 
 	if(list_lookup(function_list,node->text)==NULL){
-		function_list=list_insert(function_list,type,size,node->text);
+		function_list=list_insert(function_list,type,size,node->text,0);
 	} 
 	else{
 		printf("->Redeclaracao de funcao (linha %d)\n", getLineNumber());
@@ -342,7 +342,7 @@ List* GlobalVarListInsert(List* list,DICT_NODE* node,int control,int type, int s
 	switch(control){
 
 		case GLOBAL_VAR_DEC_IDENTIFIER_CONTROL:		if(list_lookup(list,node->text)==NULL)
-									list=list_insert(list,type,size,node->text); 
+									list=list_insert(list,type,size,node->text,0); 
 								else{
 									printf("->Redeclaracao de variavel global (linha = %d)\n", getLineNumber());
 									exit(IKS_ERROR_DECLARED);
@@ -351,7 +351,7 @@ List* GlobalVarListInsert(List* list,DICT_NODE* node,int control,int type, int s
 								break;
 
 		case GLOBAL_VET_DEC_IDENTIFIER_CONTROL:		if(list_lookup(list,node->text)==NULL){
-									list=list_insert(list,type,size,node->text);
+									list=list_insert(list,type,size,node->text,0);
 								}
 								else{
 									printf("->Redeclaracao de vetor (linha %d)\n", getLineNumber());
@@ -367,7 +367,7 @@ List* GlobalVarListInsert(List* list,DICT_NODE* node,int control,int type, int s
 List* LocalVarListInsert(List* local_var,DICT_NODE* node, int type, int size, List* function_list){
 
 	if(list_lookup(local_var,node->text)==NULL){
-		local_var=list_insert(local_var,type,size,node->text);
+		local_var=list_insert(local_var,type,size,node->text,0);
 	} 
 	else{
 		printf("->Redeclaracao de variavel local (linha %d)\n", getLineNumber());

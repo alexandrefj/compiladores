@@ -11,6 +11,7 @@
 #include "comp_list.h"
 #include "comp_tree.h"
 #include "comp_graph.h"
+#include "CodeGenerator.h"
 #include "iks_ast.h"
 #include "gv.h"
 #include "stack.h"
@@ -20,6 +21,7 @@
 ASTREE *root;
 STACK* stack_pointer;
 
+TAC* code;
 List *global_var;
 List *global_vet;
 List *local_var;

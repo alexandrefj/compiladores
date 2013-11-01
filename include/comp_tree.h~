@@ -30,7 +30,6 @@ typedef struct astreenode
 }ASTREE; 
 
 ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s2, ASTREE *s3);
-//ASTREE* ParamLookup(ASTREE* param_i, List* param_list);
 void *astReadTree(ASTREE *root);
 void *astReadNode(ASTREE *node);
 

@@ -287,7 +287,6 @@ ASTREE* ParamLookup(ASTREE* param_i, List* param_list){
 	/*Precisaremos fazer um caminhamento a direita da arvore*/
 
 	List* ListNode;
-	list_print(param_list);
 
 	if(param_i == NULL && param_list==NULL) /*chegou ao fim dos parametros*/
 	{ 
