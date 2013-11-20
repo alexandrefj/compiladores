@@ -2,11 +2,26 @@
 
 List* InvertList(List* list){
 	List* aux =list;
+	List* inv_aux;
+	List* inverted = NULL;
 	while(list!= NULL){
+		List* new  = (List*)calloc(1,sizeof(List));
+		new->type = list->type;
+		new->tam = list->tam;
+		new->size = list->size; 
+		new->dim = list->dim;
+		new->text = list->text;
+		new->next = NULL;
+		if(inverted == NULL)
+			inverted = new;
+		else{
+			inv_aux = inverted;
+			inverted = new;
+			inverted->next = inv_aux;
+		}
 		list = list->next;
-		aux->next = list;
 	}
-	return aux;
+	return inverted;
 }
 
 List* FunctionParamList(List* AllParams, int function_id){
@@ -33,16 +48,6 @@ List* TILL_NULL(List* list){
 	return list;
 }
 
-List* JoinGlobalVet(List* global,List* vet){
-
-	List* aux = TILL_NULL(global);
-	list_print(aux);
-	aux->next = vet;
-	return aux;
-
-}
-
-
 List* list_copy(List* list1, List* list2){
 	list1 = (List*)calloc(1,sizeof(List));
 	list1 = NULL;
@@ -52,6 +57,7 @@ List* list_copy(List* list1, List* list2){
 		new->type = list2->type;
 		new->tam = list2->tam;
 		new->size = list2->size; 
+		new->dim = list2->dim;
 		new->text = list2->text;
 		if(list1==NULL){
 			list1 = new;
@@ -77,6 +83,7 @@ List* list_insert(List* list, int type,int tam, char* text, int size){
 	new->tam = tam;	
 	new->type = type;
 	new->text = text;
+	new->dim = malloc(sizeof(List));
 	new->size = size;
 	new->next = NULL;
 	if(list == NULL)

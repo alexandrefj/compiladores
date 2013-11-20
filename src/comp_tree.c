@@ -1,9 +1,8 @@
 #include "comp_tree.h"
+#include "CodeGenerator.h"
 
-ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s2, ASTREE *s3)
-{
+ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s2, ASTREE *s3){
 	ASTREE *newNode;
-	
 	newNode = (ASTREE*)calloc(1,sizeof(ASTREE));
 	newNode->type = type;
 	newNode->symbol = symbol;
@@ -14,12 +13,11 @@ ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s
 	newNode->scc[2] = s2;
 	newNode->scc[3] = s3;
 	newNode->read = 0;
+	newNode->code = NULL;
 	return newNode;
 }
 
-
-void *astReadTree(ASTREE *root)
-{
+void *astReadTree(ASTREE *root){
 	int i;
 	if(root==NULL) return;
 	astReadNode(root);
@@ -27,34 +25,49 @@ void *astReadTree(ASTREE *root)
 	   astReadTree(root->scc[i]);
 }
 
-void *astReadNode(ASTREE *node)
-{
+void *astReadNode(ASTREE *node){
 	if(node==NULL) return;
 	if(node->read==1)return;
-	node->read = 1;
-	
-		
+	node->read = 1;	
 	switch(node->type){
 		case IKS_AST_FUNCAO:	
 		case IKS_AST_IDENTIFICADOR:
 		case IKS_AST_LITERAL:
-		gv_declare(node->type,node, node->symbol->text);
-		break;
+		gv_declare(node->type,node, node->symbol->text);break;
 		default:
-		gv_declare(node->type,node, NULL);
-		break;
-	}
-/*
-	printf("node type = %d  size = %d", node->node_type,node->size);
-		if(node->symbol !=NULL)printf("  simbolo= %s ",node->symbol->text);
-		else printf("  tipo do nó =%d", node->type);
-		printf("\n");
-*/		
+		gv_declare(node->type,node, NULL);break;
+	}		
 	int i;
-	for(i=0;i<MAX_NODE;i++){
+	for(i=0;i<MAX_NODE;i++)
 		if(node->scc[i]!=NULL)
 			gv_connect(node,node->scc[i]);
-
-	}
-
 }
+
+/*
+void *FP_manager(ASTREE *root){
+	int i;
+	if(root==NULL) return;
+	AstReadNode_FP(root);
+	for(i=0; i<MAX_NODE; i++)
+	   FP_manager(root->scc[i]);
+}
+
+void *AstReadNode_FP(ASTREE *node){
+	if(node==NULL) return;
+	if(node->read==1)return;
+	node->read = 1;	
+	switch(node->type){
+		case IKS_AST_FUNCAO:	
+		case IKS_AST_IDENTIFICADOR:
+		case IKS_AST_LITERAL:
+		gv_declare(node->type,node, node->symbol->text);break;
+		default:
+		gv_declare(node->type,node, NULL);break;
+	}		
+	int i;
+	for(i=0;i<MAX_NODE;i++)
+		if(node->scc[i]!=NULL)
+			gv_connect(node,node->scc[i]);
+}
+
+*/

@@ -26,11 +26,11 @@ typedef struct astreenode
 	int size;
 	DICT_NODE *symbol;
 	struct astreenode *scc[MAX_NODE];
+	struct tac* code;
 	int read;
 }ASTREE; 
 
 ASTREE *astCreate(int type, DICT_NODE *symbol, ASTREE *s0, ASTREE *s1, ASTREE *s2, ASTREE *s3);
-//ASTREE* ParamLookup(ASTREE* param_i, List* param_list);
 void *astReadTree(ASTREE *root);
 void *astReadNode(ASTREE *node);
 

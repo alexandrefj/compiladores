@@ -7,19 +7,20 @@
 
 void yyerror (char const *mensagem)
 {
-  fprintf (stderr, "%s\n", mensagem);
+  	fprintf (stderr, "%s\n", mensagem);
 }
 
 int main (int argc, char **argv)
 {
 
-  int resultado = yyparse();
+  	int resultado = yyparse();
 
-  gv_init("saida.dot");
-  astReadTree(root);
-  gv_close();
+  	gv_init("saida.dot");
+  	astReadTree(root);
+  	gv_close();
 
+	//FP_manager(root);
 
-  return resultado;
+  	return resultado;
 }
 

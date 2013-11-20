@@ -7,25 +7,21 @@
 
 void yyerror (char const *mensagem)
 {
-  fprintf (stderr, "%s\n", mensagem);
+  	fprintf (stderr, "%s\n", mensagem);
 }
 
 int main (int argc, char **argv)
 {
-/*   stack_pointer=stack_init();
-   global_var = list_init();
-   global_vet = list_init();
-   local_var = list_init();
-   function_list = list_init();
-   param_list = list_init();
-*/
-  int resultado = yyparse();
 
-  gv_init("saida.dot");
-  astReadTree(root);
-  gv_close();
+  	int resultado = yyparse();
+
+  	gv_init("saida.dot");
+  	astReadTree(root);
+  	gv_close();
 
 
-  return resultado;
+	//TAC_gen(local_var,global_var,global_vet,root);
+
+  	return resultado;
 }
 
