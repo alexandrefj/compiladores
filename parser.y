@@ -91,7 +91,8 @@ programa:	  	tipo ':' TK_IDENTIFICADOR
 			{
 			
 			aux2 = list_insert(aux2,0,0,"end",0);
-			VarDeslocGen(global_code,GLOBAL,aux2);VarDeslocGen(local_var,LOCAL,NULL);
+			//VarDeslocGen(global_code,GLOBAL,aux2);VarDeslocGen(local_var,LOCAL,NULL);
+			VarDeslocGen(global_code,GLOBAL,aux2);VarDeslocGen(local_code,LOCAL,NULL);
 			}
 			'{'comando '}' 
 			{
@@ -337,6 +338,7 @@ parametros_funcao_c_param:
 declaracao_var_locais:  tipo ':' TK_IDENTIFICADOR 
 			{
 			local_var=LocalVarListInsert(local_var,$3,type,0,function_list);
+			local_code = list_insert(local_code, type, 0, $3->text, 1);
 			}	
 			';' declaracao_var_locais			
 			| ;
@@ -375,6 +377,7 @@ init_lists(){
 	FuncString = (char*)malloc(sizeof(char));
 	FunctionsLabels = list_init();
 	global_code = list_init();
+	local_code = list_init();
 	code = TAC_init();
 	stack_pointer=stack_init();
 	global_var = list_init();

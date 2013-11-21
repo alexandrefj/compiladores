@@ -284,6 +284,7 @@ void VarDeslocGen(List* list, int id, List* el_num){
 	List* list2 = list_copy(list2,list);
 	List* aux = list2;
 	int BeforeSize = 0;
+
 	if(list != NULL){
 		while(aux != NULL){
 			aux->tam = BeforeSize;
@@ -642,7 +643,7 @@ void ILOC_GEN(TAC* code){
 						else
 							strcpy(reg,"bss");
 						printf("\tloadAI\t%s,%d\t\t=> r%d\n",reg,code->constant,code->r3);*/
-						if(code->r3 == FP)
+						if(code->r1 == FP)
 							printf("\tloadAI\tfp,%d\t\t=> r%d\n",code->constant,code->r3);
 						else
 							printf("\tloadAI\tbss,%d\t\t=> r%d\n",code->constant,code->r3);

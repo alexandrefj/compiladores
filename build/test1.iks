@@ -1,0 +1,18 @@
+int: globalVar;
+
+int: soma(int: arg1, int: arg2)
+int: result;
+{
+	result = arg1 + arg2;
+	return result;
+}
+
+int: main()
+int: localVar;
+int: result;
+{
+	globalVar = 1;
+	localVar = 2;
+
+	result = soma(globalVar, localVar);
+}
