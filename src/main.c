@@ -21,6 +21,8 @@ int main (int argc, char **argv)
 
 	//FP_manager(root);
 
+	generateCode(root); // gera o código em uma segunda passagem
+
   	return resultado;
 }
 

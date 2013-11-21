@@ -39,6 +39,7 @@ int registers;
 int labels;
 int main_label;
 
+void generateCode(ASTREE* program);
 
 TAC* EndFuncCode(TAC* code);
 

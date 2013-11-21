@@ -1,5 +1,18 @@
 #include "CodeGenerator.h"
 
+/**
+ * generateCode:
+ * Função chamada em uma segunda passagem,
+ * quando temos o código-fonte completo do programa.
+ */
+void generateCode(ASTREE* program)
+{
+	TAC* code = program->scc[0]->code;
+
+	printf("\n\nILOC:\n\n");
+	ILOC_GEN(code);
+	printf("\n\nEND\n\n");
+}
 
 TAC* EndFuncCode(TAC* code){
 	TAC* aux;
@@ -624,11 +637,15 @@ void ILOC_GEN(TAC* code){
 					if(code->constant==FP_RETURN_ADDRESS)
 						printf("\tloadAI\tfp,%d\t\t=> r%d\n",FP_RETURN_ADDRESS,code->r3);
 					else{
-						if(code->r3 == FP)
+						/*if(code->r3 == FP)
 							strcpy(reg,"fp");
 						else
 							strcpy(reg,"bss");
-						printf("\tloadAI\t%s,%d\t\t=> r%d\n",reg,code->constant,code->r3);
+						printf("\tloadAI\t%s,%d\t\t=> r%d\n",reg,code->constant,code->r3);*/
+						if(code->r3 == FP)
+							printf("\tloadAI\tfp,%d\t\t=> r%d\n",code->constant,code->r3);
+						else
+							printf("\tloadAI\tbss,%d\t\t=> r%d\n",code->constant,code->r3);
 					}
 					break;
 		case ILOC_LOADAO:	IsthereLabel(code);
@@ -667,7 +684,6 @@ void ILOC_GEN(TAC* code){
 		}
 		code = code->next;
 	}
-	puts("\tEND");
 }
 
 

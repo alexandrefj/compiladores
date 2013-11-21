@@ -74,7 +74,7 @@ struct astreenode *ast;
 			/*-----------------------------------------------ANALISE SINTATICA-----------------------------------------------------------*/
 
 inicio:			{init_lists();} programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $2, NULL, NULL, NULL);
-							stack_push(stack_pointer,$$);code = FramePointerInit(code);ILOC_GEN(code);
+							stack_push(stack_pointer,$$);code = FramePointerInit(code);/*ILOC_GEN(code)*/;
 							/*exit(IKS_SUCCESS);*/;};
 
 programa:	  	tipo ':' TK_IDENTIFICADOR 
@@ -103,7 +103,7 @@ programa:	  	tipo ':' TK_IDENTIFICADOR
 			}
 			programa 
 			{$$ = astCreate(IKS_AST_FUNCAO, $3, $11, $14, NULL, NULL);stack_push(stack_pointer,$$);
-			code = Function_link($$,code);  }	
+			code = Function_link($$,code); }	
 		   	|declaracao_var_globais programa		{$$=$2;}
 		   	|						{$$=NULL;}				
 		   	;
