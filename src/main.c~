@@ -14,6 +14,7 @@ int main (int argc, char **argv)
 {
 
   	int resultado = yyparse();
+
   	gv_init("saida.dot");
   	astReadTree(root);
   	gv_close();

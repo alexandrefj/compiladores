@@ -262,9 +262,9 @@ ASTREE* ParamLookup(ASTREE* param_i, List* param_list){
 	}
 }
 
-List* FunctionListInsert(List* function_list,DICT_NODE* node, int type, int size){
+List* FunctionListInsert(List* function_list,DICT_NODE* node, int type, int size, int label){
 	if(list_lookup(function_list,node->text)==NULL){
-		function_list=list_insert(function_list,type,size,node->text,0);
+		function_list=list_insert(function_list,type,size,node->text,label);
 	} 
 	else{
 		printf("->Redeclaracao de funcao (linha %d)\n", getLineNumber());

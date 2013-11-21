@@ -15,7 +15,7 @@ TAC* EndFuncCode(TAC* code){
 TAC* FunctionCall(ASTREE* node,TAC* code){
 	TAC* aux = code;
 
-	list_print(FunctionsLabels);
+	//list_print(FunctionsLabels); printf("%d\n", labels);
 
 	code = CodeGenerate_nop(node,code);
 

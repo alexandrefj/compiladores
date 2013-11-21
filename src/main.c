@@ -19,8 +19,7 @@ int main (int argc, char **argv)
   	astReadTree(root);
   	gv_close();
 
-
-	//TAC_gen(local_var,global_var,global_vet,root);
+	//FP_manager(root);
 
   	return resultado;
 }

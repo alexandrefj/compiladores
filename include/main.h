@@ -16,6 +16,7 @@
 #include "gv.h"
 #include "stack.h"
 #include "CodeGenerator.h"
+//#include "CodeGenerator.h"
 
 
 
@@ -35,6 +36,7 @@ int func_id;
 int type;
 int func_type;
 int array_el;
+char* FuncString;
 
 
 /*

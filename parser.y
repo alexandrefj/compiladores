@@ -73,30 +73,37 @@ struct astreenode *ast;
 			******************************************************************************************************************************/
 			/*-----------------------------------------------ANALISE SINTATICA-----------------------------------------------------------*/
 
-inicio:			{init_lists();} programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $2, NULL, NULL, NULL);stack_push(stack_pointer,$$);ILOC_GEN(code);/*exit(IKS_SUCCESS);*/;};
+inicio:			{init_lists();} programa	{root = astCreate(IKS_AST_PROGRAMA, NULL, $2, NULL, NULL, NULL);
+							stack_push(stack_pointer,$$);code = FramePointerInit(code);ILOC_GEN(code);
+							/*exit(IKS_SUCCESS);*/;};
 
 programa:	  	tipo ':' TK_IDENTIFICADOR 
 			{
+			strcpy(FuncString,$3->text);
 			stack_pointer = stack_init();
 			func_id++;
 			local_var = NULL;
 			func_type = type;
-			function_list=FunctionListInsert(function_list,$3,type,func_id);
+			function_list=FunctionListInsert(function_list,$3,type,func_id,0);//puts($3->text);
+						
 			}
 			'('parametros_funcao')'  declaracao_var_locais 
 			{
+			
 			aux2 = list_insert(aux2,0,0,"end",0);
 			VarDeslocGen(global_code,GLOBAL,aux2);VarDeslocGen(local_var,LOCAL,NULL);
 			}
-			'{'comando'}' 
+			'{'comando '}' 
 			{
+			FunctionsLabels = list_insert(FunctionsLabels,labels,labels,$3->text,labels);
 			if(stack_pointer!= NULL){
 				stack_pointer=invert_stack(stack_pointer);
-				StackPopCommands(stack_pointer, global_var,global_vet,local_var,function_list,param_list);	
+				StackPopCommands(stack_pointer, global_var,global_vet,local_var,function_list,param_list);
 			}
 			}
 			programa 
-			{$$ = astCreate(IKS_AST_FUNCAO, $3, $11, $14, NULL, NULL);stack_push(stack_pointer,$$);}	
+			{$$ = astCreate(IKS_AST_FUNCAO, $3, $11, $14, NULL, NULL);stack_push(stack_pointer,$$);
+			code = Function_link($$,code);  }	
 		   	|declaracao_var_globais programa		{$$=$2;}
 		   	|						{$$=NULL;}				
 		   	;
@@ -116,7 +123,8 @@ comando_simples:	TK_PR_INPUT exp2	 		{$$ = astCreate(IKS_AST_INPUT, NULL, $2,NUL
 								code=CodeGenerate_store($$,code);}
 			|TK_PR_RETURN expressao 		{$$ = astCreate(IKS_AST_RETURN,NULL,$2,NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
 								code=CodeGenerate_nop($$,code);}
-			|nome_variavel '(' chamada_recursao ')' {$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			|nome_variavel '(' chamada_recursao ')' {$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
+								code = CodeGenerate_nop($$,code);}
 			|TK_PR_OUTPUT chamada_com_param		{$$ = astCreate(IKS_AST_OUTPUT,NULL,$2,NULL, NULL, NULL);	 stack_pointer=stack_push(stack_pointer,$$);}
 			;
 
@@ -126,8 +134,15 @@ comando_composto:	TK_PR_INPUT exp2 ';' 	comando {$$ = astCreate(IKS_AST_INPUT, N
 			|vetor '=' expressao';'  comando 	{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5,NULL);stack_pointer=stack_push(stack_pointer,$$);
 								code=CodeGenerate_store($$,code);}
 			|TK_PR_RETURN expressao ';' comando	{$$ = astCreate(IKS_AST_RETURN,NULL,$2,$4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
-								code=CodeGenerate_nop($$,code);}
-			|nome_variavel '(' chamada_recursao ')' ';' comando	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,$6, NULL); stack_pointer=stack_push(stack_pointer,$$);}
+								/*code=CodeGenerate_nop($$,code);*/
+								//puts(FuncString);
+								if(strcmp(FuncString,"main")==0)
+									code=CodeGenerate_nop($$,code);
+								else
+									code=CodeGenerate_jumpI($$,code);
+								}
+			|nome_variavel '(' chamada_recursao ')' ';' comando	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,$6, NULL); stack_pointer=stack_push(stack_pointer,$$);
+										code = FunctionCall($$,code);}
 			|TK_PR_OUTPUT chamada_com_param ';' comando		{$$ = astCreate(IKS_AST_OUTPUT,NULL,$2,$4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
 			|';' comando						{$$= $2;};
 
@@ -164,6 +179,7 @@ comando_condicao: 	TK_PR_IF '('condicao')'TK_PR_THEN bloco_c comando
 
 nome_variavel:		TK_IDENTIFICADOR		{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
 							code=CodeGenerate_loadAI($$,code);};
+
 vetor:			nome_variavel '['expressao']' colchetes  {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, NULL);stack_pointer=stack_push(stack_pointer,$$);
 								code=CodeGenerate_loadAI($$,code);};
 vetor_cham:		nome_variavel '['expressao']' colchetes ',' chamada_com_param	 {$$ = astCreate(IKS_AST_VETOR_INDEXADO, NULL, $1, $3, $5, $7);stack_pointer=stack_push(stack_pointer,$$);};
@@ -173,14 +189,15 @@ colchetes:		 '['expressao']' colchetes 		{$$ = astCreate(IKS_AST_VETOR_INDEXADO,
 			| 					{$$ = NULL;};
 
 chamada_recursao: 	chamada_com_param													
-			{$$=$1;}
+			{$$=$1;code=CodeGenerate_nop($$,code);}
 			|													
 			{$$=NULL;};
 
 chamada_com_param:	exp2																
 			{$$ =$1;}
 			| nome_variavel '(' chamada_recursao ')'				
-			{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = FunctionCall($$,code);}
 			|vetor	{$$ = $1;code=CodeGenerate_nop($$,code);}	
 			| exp2 '+'  exp2						  
 			{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL,$1, $3,NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);code=CodeGenerate_add($$,code); }
@@ -193,7 +210,8 @@ chamada_com_param:	exp2
 			| exp1','chamada_com_param						
 			{$$ = astCreate(IKS_AST_LITERAL, $1, $3, NULL, NULL, NULL);stack_pointer= stack_push(stack_pointer,$$);}
 			| nome_variavel '(' chamada_recursao ')' ',' chamada_com_param		
-			{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, $6, NULL);stack_pointer=stack_push(stack_pointer,$$);}
+			{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, $6, NULL);stack_pointer=stack_push(stack_pointer,$$);
+			code = FunctionCall($$,code);}
 			| vetor_cham {$$=$1;}
 			| exp2 '+'  exp2 ',' chamada_com_param					 
 			{$$ = astCreate(IKS_AST_ARIM_SOMA,NULL,$1, $3,$5, NULL);stack_pointer=stack_push(stack_pointer,$$);code=CodeGenerate_add($$,code);}
@@ -255,7 +273,8 @@ expressao:		TK_IDENTIFICADOR				{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL,
 			| expressao TK_OC_OR expressao			{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
 									code=CodeGenerate_or($$,code);}
 			| vetor 					{$$ = $1;}
-			| nome_variavel '(' chamada_recursao ')' 	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);};
+			| nome_variavel '(' chamada_recursao ')' 	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
+									code = FunctionCall($$,code);};
 
 condicao:		TK_IDENTIFICADOR				{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
 									code=CodeGenerate_loadAI($$,code);}
@@ -289,7 +308,8 @@ condicao:		TK_IDENTIFICADOR				{$$ = astCreate(IKS_AST_IDENTIFICADOR, $1, NULL, 
 			| condicao TK_OC_OR condicao			{$$ = astCreate(IKS_AST_LOGICO_OU,NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
 									code=CodeGenerate_or($$,code);}
 			| vetor_cond 					{$$ = $1;}
-			| nome_variavel '(' chamada_recursao ')' 	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);};
+			| nome_variavel '(' chamada_recursao ')' 	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO, NULL, $1, $3, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
+									code = FunctionCall($$,code);};
 
 literal:         	TK_LIT_INT					{$$ = astCreate(IKS_AST_LITERAL, $1, NULL, NULL, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$); 
 									code=CodeGenerate_loadI($$,code);}		
@@ -352,6 +372,8 @@ tipo:        		TK_PR_INT	{type = 1;}
 			|TK_PR_CHAR	{type = 3;};
 %%
 init_lists(){
+	FuncString = (char*)malloc(sizeof(char));
+	FunctionsLabels = list_init();
 	global_code = list_init();
 	code = TAC_init();
 	stack_pointer=stack_init();

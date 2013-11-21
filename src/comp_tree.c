@@ -42,3 +42,32 @@ void *astReadNode(ASTREE *node){
 		if(node->scc[i]!=NULL)
 			gv_connect(node,node->scc[i]);
 }
+
+/*
+void *FP_manager(ASTREE *root){
+	int i;
+	if(root==NULL) return;
+	AstReadNode_FP(root);
+	for(i=0; i<MAX_NODE; i++)
+	   FP_manager(root->scc[i]);
+}
+
+void *AstReadNode_FP(ASTREE *node){
+	if(node==NULL) return;
+	if(node->read==1)return;
+	node->read = 1;	
+	switch(node->type){
+		case IKS_AST_FUNCAO:	
+		case IKS_AST_IDENTIFICADOR:
+		case IKS_AST_LITERAL:
+		gv_declare(node->type,node, node->symbol->text);break;
+		default:
+		gv_declare(node->type,node, NULL);break;
+	}		
+	int i;
+	for(i=0;i<MAX_NODE;i++)
+		if(node->scc[i]!=NULL)
+			gv_connect(node,node->scc[i]);
+}
+
+*/
