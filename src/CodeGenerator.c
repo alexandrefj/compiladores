@@ -23,13 +23,26 @@ void generateARCode(TAC* code)
 
 	while(ptCode != NULL)
 	{
-		if(ptCode->opcode == FUNCTION_CALL)
+		// quando o nodo atual for uma chamada de função, ou a própria main:
+		if(ptCode->opcode == FUNCTION_CALL || ptCode->info == "main")
 		{
-			if(searchFunction(functionList, ptCode->info) != NULL)
+			// procura a função na lista de funções:
+			FunctionList* function = searchFunction(functionList, ptCode->info);
+			if(function != NULL)
 			{
 				TAC* newCode = CodeGenerate_null();
+				List* localVars = function->localVars;
 
-				// TODO: incluir operações de gerenciamento do registro de ativação.
+				int lvSize = 0; // vai receber o tamanho necessário na pilha para as variáveis locais da função.
+				while(localVars != NULL)
+				{
+					lvSize = lvSize + var_size(localVars->type);
+					localVars = localVars->next;
+				}
+
+				//TODO: por enquanto, nesse ponto, já temos o tamanho das variáveis locais no registro de ativação.
+				// falta inserir na lista de funções os outros parâmetros necessários e pegá-los aqui.
+				// falta gerar o código necessário para o gerenciamento da pilha, utilizando esses dados.
 
 				ptCodeAnt->next = newCode;
 				newCode->next = ptCode;
@@ -146,13 +159,17 @@ TAC* FramePointerInit(TAC* code){
 }
 
 TAC* Function_link(ASTREE* node,TAC* code){
-	
+
 	node->code = CodeGenerate_null();
 	node->code->opcode=ILOC_NOP;
 	code = CODE_Insert(node);
 	InsertLabel(node);
 	if(strcmp(node->symbol->text,"main")==0)
+	{
 		main_label = labels;
+		char* info = "main";
+		code->info = info;
+	}
 	return code;
 }
 

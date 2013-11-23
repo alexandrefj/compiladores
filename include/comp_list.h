@@ -20,6 +20,7 @@ List;
 typedef struct st_function_list
 {
 	char* name;
+	List* localVars;
 	struct st_function_list* next;
 } FunctionList;
 
@@ -37,6 +38,7 @@ List* InvertList(List* list);
 FunctionList* functionListInit(void);
 FunctionList* searchFunction(FunctionList* functionList, char* name);
 FunctionList* insertFunction(FunctionList* functionList, char* name);
+FunctionList* insertLocalVars(FunctionList* function, List* localVars);
 
 
 #endif

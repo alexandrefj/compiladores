@@ -125,7 +125,7 @@ List* list_lookup(List* list, char* text){
 				aux = aux->next;
 		}
 		return NULL;
-	}	
+	}	FunctionList* insertLocalVars(FunctionList* function, List* localVars);
 }
 
 List* list_remove(List* list, char* text){
@@ -216,4 +216,9 @@ FunctionList* insertFunction(FunctionList* functionList, char* name)
 	}
 
 	return functionList;
+}
+
+FunctionList* insertLocalVars(FunctionList* function, List* localVars)
+{
+	return function;
 }
