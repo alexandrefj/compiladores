@@ -30,7 +30,6 @@ void generateARCode(TAC* code)
 			FunctionList* function = searchFunction(functionList, ptCode->info);
 			if(function != NULL)
 			{
-				TAC* newCode = CodeGenerate_null();
 				List* localVars = function->localVars;
 
 				int lvSize = 0; // vai receber o tamanho necessário na pilha para as variáveis locais da função.
@@ -40,12 +39,40 @@ void generateARCode(TAC* code)
 					localVars = localVars->next;
 				}
 
-				//TODO: por enquanto, nesse ponto, já temos o tamanho das variáveis locais no registro de ativação.
+				// lvSize: nesse ponto, lvSize informa a quantidade de espaço que as variáveis locais (e argumentos) ocupam na pilha.
+
+				// TODO: por enquanto, nesse ponto, já temos o tamanho das variáveis locais no registro de ativação.
 				// falta inserir na lista de funções os outros parâmetros necessários e pegá-los aqui.
 				// falta gerar o código necessário para o gerenciamento da pilha, utilizando esses dados.
 
+				/*
+				// instrução 1 (exemplo):
+				TAC* newCode = CodeGenerate_null();
+				newCode->r1 = FP;
+				newCode->r2 = lvSize;
+				newCode->r3 = FP;
+				newCode->opcode = ILOC_ADD;
+				ptCodeAnt->next = newCode;
+				ptCodeAnt = newCode;
+
+				// instrução 2 (exemplo):
+				newCode = CodeGenerate_null();
+				newCode->r1 = FP;
+				newCode->r2 = lvSize;
+				newCode->r3 = FP;
+				newCode->opcode = ILOC_ADD;
+				ptCodeAnt->next = newCode;
+				ptCodeAnt = newCode;
+
+				// instrução 3 (exemplo):
+				newCode = CodeGenerate_null();
+				newCode->r1 = FP;
+				newCode->r2 = lvSize;
+				newCode->r3 = FP;
+				newCode->opcode = ILOC_ADD;
 				ptCodeAnt->next = newCode;
 				newCode->next = ptCode;
+				*/
 			}
 		}
 		ptCodeAnt = ptCode;
