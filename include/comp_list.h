@@ -17,6 +17,12 @@ typedef struct comp_list_t
 } 
 List;
 
+typedef struct st_function_list
+{
+	char* name;
+	struct st_function_list* next;
+} FunctionList;
+
 List* list_init(void);
 //List* JoinGlobalVet(List* global,List* vet);
 void list_print(List* list);
@@ -27,6 +33,10 @@ List* list_lookup(List* list, char* text);
 List* list_copy(List* list1, List* list2);
 List* list_remove(List* list, char* text);
 List* InvertList(List* list);
+
+FunctionList* functionListInit(void);
+FunctionList* searchFunction(FunctionList* functionList, char* name);
+FunctionList* insertFunction(FunctionList* functionList, char* name);
 
 
 #endif

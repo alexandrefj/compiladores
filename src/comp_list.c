@@ -163,3 +163,57 @@ List* list_remove(List* list, char* text){
 	}	
 	return list;
 }
+
+FunctionList* functionListInit(void)
+{
+	FunctionList* functionList = (FunctionList*) calloc(1, sizeof(FunctionList));
+	functionList = NULL;
+	return functionList;
+}
+
+FunctionList* searchFunction(FunctionList* functionList, char* name)
+{
+	if(functionList == NULL)
+	{
+		return NULL;
+	}
+	else
+	{
+		FunctionList* ptFunctionList = functionList;
+
+		while(ptFunctionList != NULL)
+		{
+			if(strcmp(ptFunctionList->name, name) == 0)
+				return ptFunctionList;
+			else
+				ptFunctionList = ptFunctionList->next;
+		}
+	}
+
+	return NULL;
+}
+
+FunctionList* insertFunction(FunctionList* functionList, char* name)
+{
+	FunctionList* newFunction = malloc(sizeof(FunctionList));
+
+	newFunction->name = name;
+
+	if(functionList == NULL)
+	{
+		functionList = newFunction;
+	}
+	else
+	{
+		FunctionList* ptFunctionList = functionList;
+
+		while(ptFunctionList->next != NULL)
+		{
+			ptFunctionList = ptFunctionList->next;
+		}
+
+		ptFunctionList->next = newFunction;
+	}
+
+	return functionList;
+}

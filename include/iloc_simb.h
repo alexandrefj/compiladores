@@ -48,4 +48,7 @@
 #define ILOC_CMP_GE	44
 #define ILOC_CMP_GT	45
 #define ILOC_CMP_NE	46
+
+#define FUNCTION_CALL	47
+
 #endif

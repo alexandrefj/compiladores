@@ -85,6 +85,8 @@ programa:	  	tipo ':' TK_IDENTIFICADOR
 			local_var = NULL;
 			func_type = type;
 			function_list=FunctionListInsert(function_list,$3,type,func_id,0);//puts($3->text);
+
+			functionList = insertFunction(functionList, $3->text);
 						
 			}
 			'('parametros_funcao')'  declaracao_var_locais 
@@ -385,6 +387,8 @@ init_lists(){
 	local_var = list_init();
 	function_list = list_init();
 	param_list = list_init();
+
+	functionList = functionListInit();
 }
 
 

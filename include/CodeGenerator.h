@@ -26,6 +26,7 @@ typedef struct tac{
 	int label;
 	int constant;
 	int opcode;
+	char* info;
 	struct tac* next;	
 	
 }TAC;
@@ -39,7 +40,9 @@ int registers;
 int labels;
 int main_label;
 
+FunctionList* functionList;
 void generateCode(ASTREE* program);
+void generateARCode(TAC* code);
 
 TAC* EndFuncCode(TAC* code);
 

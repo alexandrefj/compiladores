@@ -1,13 +1,11 @@
-int: globalVar1;
-int: globalVar2;
+int: func()
+{
+	return 1;
+}
 
 int: main()
 int: localVar1;
-int: localVar2;
 {
-	globalVar1 = 1;
-	globalVar2 = 2;
+	localVar1 = func();
 	localVar1 = 3;
-	localVar2 = 4;
-	return 0;
 }

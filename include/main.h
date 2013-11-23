@@ -33,6 +33,7 @@ List* aux;
 List* aux2;
 List* global_code;
 List* local_code;
+FunctionList* functionList;
 int func_id;
 int type;
 int func_type;

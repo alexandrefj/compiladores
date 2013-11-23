@@ -1,20 +1,47 @@
 #include "CodeGenerator.h"
 
-/**
- * generateCode:
- * Função chamada em uma segunda passagem,
- * quando temos o código-fonte completo do programa.
- */
 void generateCode(ASTREE* program)
 {
 	TAC* code = program->scc[0]->code;
+
+	generateARCode(code);
 
 	printf("\n\nILOC:\n\n");
 	ILOC_GEN(code);
 	printf("\n\nEND\n\n");
 }
 
+/**
+ * generateARCode:
+ * Recebe o código gerado na primeira passagem pela árvore,
+ * inclui o código para gerenciamento dos registros de ativação.
+ */
+void generateARCode(TAC* code)
+{
+	TAC* ptCode = code;
+	TAC* ptCodeAnt;
+
+	while(ptCode != NULL)
+	{
+		if(ptCode->opcode == FUNCTION_CALL)
+		{
+			if(searchFunction(functionList, ptCode->info) != NULL)
+			{
+				TAC* newCode = CodeGenerate_null();
+
+				// TODO: incluir operações de gerenciamento do registro de ativação.
+
+				ptCodeAnt->next = newCode;
+				newCode->next = ptCode;
+			}
+		}
+		ptCodeAnt = ptCode;
+		ptCode = ptCode->next;
+	}
+}
+
 TAC* EndFuncCode(TAC* code){
+/*
 	TAC* aux;
 	aux = CodeGenerate_null(); 
 	aux->l1 = main_label;
@@ -23,9 +50,13 @@ TAC* EndFuncCode(TAC* code){
 	code = aux;
 	code->next = aux2;
 	return code;
+*/
+	code = CodeGenerate_null();
+	return code;
 }
 
 TAC* FunctionCall(ASTREE* node,TAC* code){
+/*
 	TAC* aux = code;
 
 	list_print(FunctionsLabels);
@@ -71,10 +102,22 @@ TAC* FunctionCall(ASTREE* node,TAC* code){
 	aux->next->opcode = ILOC_LOADI;
 
 	return code;
+*/
+
+	node->code = CodeGenerate_null();
+	node->code->opcode = FUNCTION_CALL;
+	if(node->scc[0] != NULL)
+		if(node->scc[0]->symbol != NULL)
+			node->code->info = node->scc[0]->symbol->text;
+
+	code = CODE_Insert(node);
+
+	return code;
 }
 
 
 TAC* FramePointerInit(TAC* code){
+/*
 	TAC* aux = code;
 	while(aux->next != NULL)
 		aux = aux->next;
@@ -96,6 +139,9 @@ TAC* FramePointerInit(TAC* code){
 	aux->next->r3 = 1;//registers;
 	aux->next->constant = 600;	// initial value for fp
 	aux->next->opcode = ILOC_LOADI;
+	return code;
+*/
+	code = CodeGenerate_null();
 	return code;
 }
 
@@ -436,6 +482,7 @@ TAC* CodeGenerate_null(){
 	New->constant=-1;
 	New->opcode = -1;
 	New->next = NULL;
+	New->info = NULL;
 	return New;
 }
 

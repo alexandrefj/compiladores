@@ -1,9 +1,9 @@
 int: globalVar;
 
-int: soma(int: arg1, int: arg2)
+int: soma(int: arg1)
 int: result;
 {
-	result = arg1 + arg2;
+	result = 5;
 	return result;
 }
 
@@ -14,5 +14,5 @@ int: result;
 	globalVar = 1;
 	localVar = 2;
 
-	result = soma(globalVar, localVar);
+	result = soma(globalVar);
 }
