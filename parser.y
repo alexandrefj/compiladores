@@ -97,7 +97,7 @@ programa:	  	tipo ':' TK_IDENTIFICADOR
 			}
 			'{'comando '}' 
 			{
-			FunctionsLabels = list_insert(FunctionsLabels,labels,labels,$3->text,labels);
+			//FunctionsLabels = list_insert(FunctionsLabels,labels,labels,$3->text,labels);
 			if(stack_pointer!= NULL){
 				stack_pointer=invert_stack(stack_pointer);
 				StackPopCommands(stack_pointer, global_var,global_vet,local_var,function_list,param_list);
@@ -141,7 +141,7 @@ comando_composto:	TK_PR_INPUT exp2 ';' 	comando {$$ = astCreate(IKS_AST_INPUT, N
 								if(strcmp(FuncString,"main")==0)
 									code=CodeGenerate_nop($$,code);
 								else
-									code=CodeGenerate_jumpI($$,code);
+									code=CodeGenerate_jump($$,code);
 								}
 			|nome_variavel '(' chamada_recursao ')' ';' comando	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,$6, NULL); stack_pointer=stack_push(stack_pointer,$$);
 										code = FunctionCall($$,code);}

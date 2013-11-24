@@ -7,6 +7,7 @@ void generateCode(ASTREE* program)
 	generateARCode(code);
 
 	printf("\n\nILOC:\n\n");
+	printf("\tjumpI\t\t\t-> L0\n");
 	ILOC_GEN(code);
 	printf("\n\nEND\n\n");
 }
@@ -39,41 +40,126 @@ void generateARCode(TAC* code)
 					localVars = localVars->next;
 				}
 
-				// lvSize: nesse ponto, lvSize informa a quantidade de espaço que as variáveis locais (e argumentos) ocupam na pilha.
+				lvSize = lvSize + 8; // espaço reservado para endereço de retorno e valor de retorno da função.
 
-				// TODO: por enquanto, nesse ponto, já temos o tamanho das variáveis locais no registro de ativação.
-				// falta inserir na lista de funções os outros parâmetros necessários e pegá-los aqui.
-				// falta gerar o código necessário para o gerenciamento da pilha, utilizando esses dados.
+				// código para o procedimento principal
+				if(ptCode->info == "main")
+				{
+					// jumpI -> L1
+					TAC* newCode = CodeGenerate_null();
+					newCode->l1 = 1;
+					newCode->opcode = ILOC_JUMPI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
 
-				/*
-				// instrução 1 (exemplo):
-				TAC* newCode = CodeGenerate_null();
-				newCode->r1 = FP;
-				newCode->r2 = lvSize;
-				newCode->r3 = FP;
-				newCode->opcode = ILOC_ADD;
-				ptCodeAnt->next = newCode;
-				ptCodeAnt = newCode;
+					// loadI lvSize -> sp
+					newCode = CodeGenerate_null();
+					newCode->r1 = SP;
+					newCode->constant = lvSize;
+					newCode->opcode = ILOC_LOADI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
 
-				// instrução 2 (exemplo):
-				newCode = CodeGenerate_null();
-				newCode->r1 = FP;
-				newCode->r2 = lvSize;
-				newCode->r3 = FP;
-				newCode->opcode = ILOC_ADD;
-				ptCodeAnt->next = newCode;
-				ptCodeAnt = newCode;
+					// loadI 0 -> fp
+					newCode = CodeGenerate_null();
+					newCode->r1 = FP;
+					newCode->constant = 0;
+					newCode->opcode = ILOC_LOADI;
+					newCode->label = 0;
+					ptCodeAnt->next = newCode;
+					newCode->next = ptCode;
+				}
+				// chamada de procedimento:
+				else
+				{
+					TAC* newCode;
+					List* functionLabel = list_lookup(FunctionsLabels, function->name);
+					labels = LabelGenerate(labels);
 
-				// instrução 3 (exemplo):
-				newCode = CodeGenerate_null();
-				newCode->r1 = FP;
-				newCode->r2 = lvSize;
-				newCode->r3 = FP;
-				newCode->opcode = ILOC_ADD;
-				ptCodeAnt->next = newCode;
-				newCode->next = ptCode;
-				*/
+					// subI fp, lvSize -> fp
+					newCode = CodeGenerate_null();
+					newCode->constant = lvSize;
+					newCode->r3 = FP;
+					newCode->opcode = ILOC_SUBI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// i2i sp -> fp
+					newCode = CodeGenerate_null();
+					newCode->r3 = FP;
+					newCode->opcode = ILOC_I2I;
+					newCode->label = labels;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// jumpI -> L1
+					newCode = CodeGenerate_null();
+					newCode->l1 = functionLabel->size;
+					newCode->opcode = ILOC_JUMPI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// store labels -> sp - 4
+					registers = RegisterGenerate(registers);
+					newCode = CodeGenerate_null();
+					newCode->constant = -4;
+					newCode->r1 = registers;
+					newCode->opcode = ILOC_STOREAI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// loadI labels -> r
+					newCode = CodeGenerate_null();
+					newCode->constant = labels;
+					newCode->r3 = registers;
+					newCode->opcode = ILOC_LOADI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// add sp, lvSize -> sp
+					registers = RegisterGenerate(registers);
+					newCode = CodeGenerate_null();
+					newCode->r2 = registers;
+					newCode->r3 = SP;
+					newCode->opcode = ILOC_ADD;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// loadI lvSize -> r
+					newCode = CodeGenerate_null();
+					newCode->constant = lvSize;
+					newCode->r3 = registers;
+					newCode->opcode = ILOC_LOADI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// i2i sp -> fp
+					newCode = CodeGenerate_null();
+					newCode->r3 = SP;
+					newCode->opcode = ILOC_I2I;
+					ptCodeAnt->next = newCode;
+					newCode->next = ptCode;
+				}
 			}
+		}
+		if(ptCode->info == "jump")
+		{
+			TAC* newCode;
+			TAC* jump = ptCode;
+
+			// jump
+			registers = RegisterGenerate(registers);
+			jump->r1 = registers;
+
+			// loadAI sp,-4 -> r
+			newCode = CodeGenerate_null();
+			newCode->constant = -4;
+			newCode->r1 = SP;
+			newCode->r3 = registers;
+			newCode->opcode = ILOC_LOADAI;
+			newCode->next = ptCode->next;
+			jump->next = newCode;
+			
 		}
 		ptCodeAnt = ptCode;
 		ptCode = ptCode->next;
@@ -191,6 +277,8 @@ TAC* Function_link(ASTREE* node,TAC* code){
 	node->code->opcode=ILOC_NOP;
 	code = CODE_Insert(node);
 	InsertLabel(node);
+	FunctionsLabels = list_insert(FunctionsLabels,labels,labels,node->symbol->text,labels);
+
 	if(strcmp(node->symbol->text,"main")==0)
 	{
 		main_label = labels;
@@ -276,6 +364,16 @@ TAC* CodeGenerate_jumpI(ASTREE* node,TAC* code){
 	node->code = CodeGenerate_null(); 
 	node->code->l1 = labels;
 	node->code->opcode = ILOC_JUMPI;
+	code = CODE_Insert(node);
+	return code;
+}
+
+TAC* CodeGenerate_jump(ASTREE* node,TAC* code){
+	node->code = CodeGenerate_null(); 
+	registers = RegisterGenerate(registers);
+	node->code->r1 = registers;
+	node->code->opcode = ILOC_JUMP;
+	node->code->info = "jump";
 	code = CODE_Insert(node);
 	return code;
 }
@@ -696,11 +794,13 @@ void ILOC_GEN(TAC* code){
 	char *reg;
 	while(code != NULL){
 		switch(code->opcode){
-		case ILOC_NOP:		IsthereLabel(code);puts("NOP");
+		case ILOC_NOP:		IsthereLabel(code);puts("\tNOP");
 					break;
 		case ILOC_ADD:		IsthereLabel(code);
 					if(code->r3 == FP)
 						printf("\tadd\tfp, r%d  \t=> fp\n",code->r2);
+					else if(code->r3 == SP)
+						printf("\tadd\tsp, r%d  \t=> sp\n",code->r2);
 					else
 						printf("\tadd\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
 					break;
@@ -709,6 +809,12 @@ void ILOC_GEN(TAC* code){
 						printf("\tsub\tfp, r%d  \t=> fp\n",code->r2);
 					else
 						printf("\tsub\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
+					break;
+		case ILOC_SUBI:		IsthereLabel(code);
+					if(code->r3 == FP)
+						printf("\tsubI\tfp, %d  \t=> fp\n",code->constant);
+					else if(code->r3 == SP)
+						printf("\tsubI\tsp, %d  \t=> sp\n",code->constant);
 					break;
 		case ILOC_MULT:		IsthereLabel(code);		
 					printf("\tmult\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
@@ -723,19 +829,23 @@ void ILOC_GEN(TAC* code){
 					printf("\tor\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
 					break;		
 		case ILOC_LOADI:	IsthereLabel(code);
-					printf("\tloadI\t%d\t\t=> r%d\n",code->constant,code->r3);
+					if(code->r1 == FP)
+						printf("\tloadI\t%d\t\t=> fp\n",code->constant);
+					else if(code->r1 == SP)
+						printf("\tloadI\t%d\t\t=> sp\n",code->constant);
+					else
+						printf("\tloadI\t%d\t\t=> r%d\n",code->constant, code->r3);
 					break;
 		case ILOC_LOADAI:	IsthereLabel(code);
 					if(code->constant==FP_RETURN_ADDRESS)
 						printf("\tloadAI\tfp,%d\t\t=> r%d\n",FP_RETURN_ADDRESS,code->r3);
 					else{
-						/*if(code->r3 == FP)
-							strcpy(reg,"fp");
-						else
-							strcpy(reg,"bss");
-						printf("\tloadAI\t%s,%d\t\t=> r%d\n",reg,code->constant,code->r3);*/
 						if(code->r1 == FP)
 							printf("\tloadAI\tfp,%d\t\t=> r%d\n",code->constant,code->r3);
+						else if(code->r1 == SP)
+							printf("\tloadAI\tsp,%d\t\t=> r%d\n",code->constant,code->r3);
+						else if(code->r1 == RX)
+							printf("\tloadAI\trx,%d\t\t=> r%d\n",code->constant,code->r3);
 						else
 							printf("\tloadAI\tbss,%d\t\t=> r%d\n",code->constant,code->r3);
 					}
@@ -746,11 +856,21 @@ void ILOC_GEN(TAC* code){
 		case ILOC_STORE :	IsthereLabel(code);
 					if(code->r3 == FP)
 						printf("\tstore\tr%d\t\t=> fp\n",code->r1);
+					else if(code->r3 == SP)
+						printf("\tstore\tr%d\t\t=> sp\n",code->r1);
+					else if(code->r3 == RX)
+						printf("\tstore\tr%d\t\t=> rx\n",code->r1);
 					else
 						printf("\tstore\tr%d\t\t=> r%d\n",code->r1,code->r3);
 					break;
+		case ILOC_STOREAI :	IsthereLabel(code);
+					printf("\tstoreAI\tr%d\t\t=> sp, %d\n",code->r1,code->constant);
+					break;
 		case ILOC_JUMPI:	IsthereLabel(code);
 					printf("\tjumpI\t\t\t-> L%d\n", code->l1);
+					break;
+		case ILOC_JUMP:		IsthereLabel(code);
+					printf("\tjump\t\t\t-> r%d\n", code->r1);
 					break;
 		case ILOC_CMP_LT:	IsthereLabel(code);
 					printf("\tcmp_LT\tr%d, r%d  \t=> r%d\n",code->r1,code->r2,code->r3);
@@ -772,6 +892,12 @@ void ILOC_GEN(TAC* code){
 					break;
 		case ILOC_CBR:		IsthereLabel(code);
 					printf("\tcbr\tr%d\t\t=> L%d, L%d\n",code->r3, code->l1,code->l2);
+					break;
+		case ILOC_I2I:		IsthereLabel(code);
+					if(code->r3 == SP)
+						printf("\ti2i\tsp\t\t=> fp\n");
+					else if(code->r3 == FP)
+						printf("\ti2i\tfp\t\t=> sp\n");
 					break;
 		}
 		code = code->next;

@@ -16,6 +16,8 @@
 #define LOCAL  	 2
 #define	BSS	-20
 #define	FP	-21
+#define SP	-22
+#define RX	-23
 
 typedef struct tac{
 
@@ -61,6 +63,7 @@ TAC* CodeGenerate_and(ASTREE* node,TAC* code);
 TAC* CodeGenerate_cbr(ASTREE* node,TAC* code);
 TAC* CodeGenerate_mult(ASTREE* node,TAC* code);
 TAC* CodeGenerate_jumpI(ASTREE* node,TAC* code);
+TAC* CodeGenerate_jump(ASTREE* node,TAC* code);
 TAC* CodeGenerate_loadI(ASTREE* node,TAC* code);
 TAC* CodeGenerate_loadAI(ASTREE* node,TAC* code);
 TAC* CodeGenerate_store(ASTREE* node, TAC* code);

@@ -15,4 +15,5 @@ int: result;
 	localVar = 2;
 
 	result = soma(globalVar);
+	result = soma(globalVar);
 }
