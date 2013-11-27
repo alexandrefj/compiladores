@@ -21,6 +21,7 @@ typedef struct st_function_list
 {
 	char* name;
 	List* localVars;
+	int returnRegister;
 	struct st_function_list* next;
 } FunctionList;
 

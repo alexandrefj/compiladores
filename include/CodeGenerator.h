@@ -74,6 +74,8 @@ TAC* CodeGenerate_cmp_GE(ASTREE* node,TAC* code);
 TAC* CodeGenerate_cmp_GT(ASTREE* node,TAC* code);
 TAC* CodeGenerate_cmp_NE(ASTREE* node,TAC* code);
 TAC* CodeGenerate_cbr_wd(ASTREE* node,TAC* code);
+TAC* CodeGenerate_storeCall(ASTREE* node, TAC* code);
+TAC* CodeGenerate_storeCall2(ASTREE* node, TAC* code);
 
 TAC* CodeGenerate_cbr_dw(ASTREE* node,TAC* code);
 
@@ -81,6 +83,8 @@ TAC* KD(int k,TAC* CodeList, List*n);
 TAC* CodeGenerate_soma_mult(TAC* list,int r1, int r2, int id);
 TAC* CodeGenerate_loadI_ac(TAC* list,int constant);
 TAC* CodeGenerate_insert(TAC* list, TAC* code);
+
+//TAC* CodeGenerate_valorRetorno(ASTREE* node,TAC* code);
 
 void ILOC_GEN(TAC* code);
 void IsthereLabel(TAC* code);

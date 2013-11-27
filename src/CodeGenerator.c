@@ -1,5 +1,7 @@
 #include "CodeGenerator.h"
 
+int Reg;
+
 void generateCode(ASTREE* program)
 {
 	TAC* code = program->scc[0]->code;
@@ -20,8 +22,12 @@ void generateCode(ASTREE* program)
 void generateARCode(TAC* code)
 {
 	TAC* ptCode = code;
-	TAC* ptCodeAnt;
+	TAC* ptCodeAnt = malloc(sizeof(TAC));
+	ptCodeAnt->next = code;
 
+	int reg;
+
+	int nodo = 0;
 	while(ptCode != NULL)
 	{
 		// quando o nodo atual for uma chamada de função, ou a própria main:
@@ -31,6 +37,7 @@ void generateARCode(TAC* code)
 			FunctionList* function = searchFunction(functionList, ptCode->info);
 			if(function != NULL)
 			{
+				reg = function->returnRegister;
 				List* localVars = function->localVars;
 
 				int lvSize = 0; // vai receber o tamanho necessário na pilha para as variáveis locais da função.
@@ -40,34 +47,87 @@ void generateARCode(TAC* code)
 					localVars = localVars->next;
 				}
 
-				lvSize = lvSize + 8; // espaço reservado para endereço de retorno e valor de retorno da função.
+				lvSize = lvSize + 12;
+				/*
+				SP
+				VALOR DE RETORNO (sp)
+				ENDEREÇO DE RETORNO (sp - 4)
+				VALOR DO FP ANTERIOR (sp - 8)
+				----------------
+				VARIÁVEIS LOCAIS
+				ARGUMENTOS
+				FP
+				*/
 
 				// código para o procedimento principal
 				if(ptCode->info == "main")
 				{
-					// jumpI -> L1
-					TAC* newCode = CodeGenerate_null();
-					newCode->l1 = 1;
-					newCode->opcode = ILOC_JUMPI;
-					ptCodeAnt->next = newCode;
-					ptCodeAnt = newCode;
+					if(nodo == 0)
+					{
+						TAC* aux = ptCode->next;
 
-					// loadI lvSize -> sp
-					newCode = CodeGenerate_null();
-					newCode->r1 = SP;
-					newCode->constant = lvSize;
-					newCode->opcode = ILOC_LOADI;
-					ptCodeAnt->next = newCode;
-					ptCodeAnt = newCode;
+						// jumpI -> L1
+						TAC* newCode = CodeGenerate_null();
+						newCode->l1 = 1;
+						newCode->opcode = ILOC_JUMPI;
+						ptCode->next = newCode;
+						ptCode = newCode;
 
-					// loadI 0 -> fp
-					newCode = CodeGenerate_null();
-					newCode->r1 = FP;
-					newCode->constant = 0;
-					newCode->opcode = ILOC_LOADI;
-					newCode->label = 0;
-					ptCodeAnt->next = newCode;
-					newCode->next = ptCode;
+						// loadI lvSize -> sp
+						newCode = CodeGenerate_null();
+						newCode->r1 = SP;
+						newCode->constant = lvSize;
+						newCode->opcode = ILOC_LOADI;
+						ptCode->next = newCode;
+						ptCode = newCode;
+
+						// loadI 0 -> fp
+						newCode = CodeGenerate_null();
+
+						newCode->r1 = FP;
+						newCode->constant = 0;
+						newCode->opcode = ILOC_LOADI;
+						newCode->label = 0;
+						ptCode->next = newCode;
+						if(aux != NULL)
+							newCode->next = aux;	
+					}
+					else
+					{
+						// jumpI -> L1
+						TAC* newCode = CodeGenerate_null();
+						newCode->l1 = 1;
+						newCode->opcode = ILOC_JUMPI;
+						ptCodeAnt->next = newCode;
+						ptCodeAnt = newCode;
+
+						// storeAI sp -> sp - 8
+						registers = RegisterGenerate(registers);
+						newCode = CodeGenerate_null();
+						newCode->constant = -8;
+						newCode->r1 = registers;
+						newCode->r3 = SP;
+						newCode->opcode = ILOC_STOREAI;
+						ptCodeAnt->next = newCode;
+						ptCodeAnt = newCode;
+
+						// loadI lvSize -> sp
+						newCode = CodeGenerate_null();
+						newCode->r1 = SP;
+						newCode->constant = lvSize;
+						newCode->opcode = ILOC_LOADI;
+						ptCodeAnt->next = newCode;
+						ptCodeAnt = newCode;
+
+						// loadI 0 -> fp
+						newCode = CodeGenerate_null();
+						newCode->r1 = FP;
+						newCode->constant = 0;
+						newCode->opcode = ILOC_LOADI;
+						newCode->label = 0;
+						ptCodeAnt->next = newCode;
+						newCode->next = ptCode;
+					}
 				}
 				// chamada de procedimento:
 				else
@@ -76,11 +136,21 @@ void generateARCode(TAC* code)
 					List* functionLabel = list_lookup(FunctionsLabels, function->name);
 					labels = LabelGenerate(labels);
 
-					// subI fp, lvSize -> fp
+					registers = RegisterGenerate(registers);
+					// sub fp, r -> fp
 					newCode = CodeGenerate_null();
-					newCode->constant = lvSize;
+					newCode->r2 = registers;
 					newCode->r3 = FP;
-					newCode->opcode = ILOC_SUBI;
+					newCode->opcode = ILOC_SUB;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// loadAI fp,-8 -> r
+					newCode = CodeGenerate_null();
+					newCode->constant = -8;
+					newCode->r1 = FP;
+					newCode->r3 = registers;
+					newCode->opcode = ILOC_LOADAI;
 					ptCodeAnt->next = newCode;
 					ptCodeAnt = newCode;
 
@@ -88,6 +158,17 @@ void generateARCode(TAC* code)
 					newCode = CodeGenerate_null();
 					newCode->r3 = FP;
 					newCode->opcode = ILOC_I2I;
+					//newCode->label = labels;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					registers = RegisterGenerate(registers);
+					// store sp -> reg
+					newCode = CodeGenerate_null();
+					newCode->constant = 0;
+					newCode->r1 = Reg;
+					newCode->r3 = SP;
+					newCode->opcode = ILOC_STORE;
 					newCode->label = labels;
 					ptCodeAnt->next = newCode;
 					ptCodeAnt = newCode;
@@ -99,7 +180,24 @@ void generateARCode(TAC* code)
 					ptCodeAnt->next = newCode;
 					ptCodeAnt = newCode;
 
-					// store labels -> sp - 4
+					// storeAI lvSize -> sp - 8
+					registers = RegisterGenerate(registers);
+					newCode = CodeGenerate_null();
+					newCode->constant = -8;
+					newCode->r1 = registers;
+					newCode->opcode = ILOC_STOREAI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// loadI lvSize -> r
+					newCode = CodeGenerate_null();
+					newCode->constant = lvSize;
+					newCode->r3 = registers;
+					newCode->opcode = ILOC_LOADI;
+					ptCodeAnt->next = newCode;
+					ptCodeAnt = newCode;
+
+					// storeAI labels -> sp - 4
 					registers = RegisterGenerate(registers);
 					newCode = CodeGenerate_null();
 					newCode->constant = -4;
@@ -146,10 +244,17 @@ void generateARCode(TAC* code)
 		{
 			TAC* newCode;
 			TAC* jump = ptCode;
+			TAC* store = CodeGenerate_null();
 
 			// jump
 			registers = RegisterGenerate(registers);
 			jump->r1 = registers;
+
+			// store sp -> reg
+			store->r1 = reg;
+			store->r3 = RX;
+			store->opcode = ILOC_STORE;
+			store->next = ptCode->next;
 
 			// loadAI sp,-4 -> r
 			newCode = CodeGenerate_null();
@@ -157,12 +262,13 @@ void generateARCode(TAC* code)
 			newCode->r1 = SP;
 			newCode->r3 = registers;
 			newCode->opcode = ILOC_LOADAI;
-			newCode->next = ptCode->next;
+			newCode->next = store;
 			jump->next = newCode;
 			
 		}
 		ptCodeAnt = ptCode;
 		ptCode = ptCode->next;
+		nodo++;
 	}
 }
 
@@ -187,7 +293,7 @@ TAC* FunctionCall(ASTREE* node,TAC* code){
 
 	list_print(FunctionsLabels);
 
-	code = CodeGenerate_nop(node,code);
+	code = CodeGenerate_nop(node,code);r4
 
 	registers = RegisterGenerate(registers); 
 	aux = code;
@@ -218,7 +324,36 @@ TAC* FunctionCall(ASTREE* node,TAC* code){
 	aux->next->r3 = FP;
 	aux->next->opcode = ILOC_SUB;
 
-	aux = code;
+	aux = code;L2:
+	loadI	1		=> r2
+	loadI	1		=> r3
+	add	r2, r3  	=> r4
+	loadAI	sp,-4		=> r12
+	jump			-> r12
+L1:
+	loadAI	fp,0		=> r6
+	i2i	sp		=> fp
+	loadI	12		=> r11
+	add	sp, r11  	=> sp
+	loadI	3		=> r10
+	storeAI	r10		=> sp, -4
+	loadI	12		=> r9
+	storeAI	r9		=> sp, -8
+	jumpI			-> L2
+L3:
+	i2i	fp		=> sp
+	loadAI	fp,-8		=> r8
+	sub	fp, r8  	=> fp
+	store	r-1		=> r6
+	NOP
+L0:
+	loadI	0		=> fp
+	loadI	16		=> sp
+	storeAI	sp		=> sp, -8
+	jumpI			-> L1
+	NOP
+
+
 	while(aux->next != NULL)
 		aux = aux->next;
 	registers = RegisterGenerate(registers); 
@@ -287,6 +422,22 @@ TAC* Function_link(ASTREE* node,TAC* code){
 	}
 	return code;
 }
+
+/*
+TAC* CodeGenerate_valorRetorno(ASTREE* node,TAC* code)
+{	
+	//store registers -> sp
+	node->code = CodeGenerate_null();
+	node->code->r1 = node->scc[1]->code->r3;
+	node->code->r3 =node->scc[0]->code->r3;
+	node->code->opcode = ILOC_STORE;
+	if(node->scc[2] == NULL)
+		code = CODE_Insert(node);
+	else
+		code = CODE_InsertCommand(node);
+	return code;
+}
+*/
 
 TAC* CodeGenerate_add(ASTREE* node,TAC* code){	
 	code = TwoRegOper(node, ILOC_ADD);
@@ -436,7 +587,36 @@ TAC* CodeGenerate_loadAI(ASTREE* node, TAC* code){
 TAC* CodeGenerate_store(ASTREE* node, TAC* code){
 	node->code = CodeGenerate_null();
 	node->code->r1 = node->scc[1]->code->r3;
-	node->code->r3 =node->scc[0]->code->r3;
+	node->code->r3 = node->scc[0]->code->r3;
+	node->code->opcode = ILOC_STORE;
+	if(node->scc[2] == NULL)
+		code = CODE_Insert(node);
+	else
+		code = CODE_InsertCommand(node);
+	return code;
+}
+
+TAC* CodeGenerate_storeCall(ASTREE* node, TAC* code)
+{
+	Reg = node->scc[0]->code->r3;
+	node->code = CodeGenerate_null();
+	node->code->r1 = registers;
+	node->code->r3 = node->scc[0]->code->r3;
+	node->code->opcode = ILOC_NOP;
+
+	if(node->scc[2] == NULL)
+		code = CODE_Insert(node);
+	else
+		code = CODE_InsertCommand(node);
+
+	return code;
+}
+
+TAC* CodeGenerate_storeCall2(ASTREE* node, TAC* code)
+{
+	node->code = CodeGenerate_null();
+	node->code->r1 = registers;
+	node->code->r3 = node->scc[0]->code->r3;
 	node->code->opcode = ILOC_STORE;
 	if(node->scc[2] == NULL)
 		code = CODE_Insert(node);
@@ -857,14 +1037,19 @@ void ILOC_GEN(TAC* code){
 					if(code->r3 == FP)
 						printf("\tstore\tr%d\t\t=> fp\n",code->r1);
 					else if(code->r3 == SP)
-						printf("\tstore\tr%d\t\t=> sp\n",code->r1);
+						printf("\tstore\tsp\t\t=> r%d\n",code->r1);
 					else if(code->r3 == RX)
-						printf("\tstore\tr%d\t\t=> rx\n",code->r1);
+						printf("\tstore\tr%d\t\t=> sp\n",code->r1);
 					else
 						printf("\tstore\tr%d\t\t=> r%d\n",code->r1,code->r3);
 					break;
 		case ILOC_STOREAI :	IsthereLabel(code);
-					printf("\tstoreAI\tr%d\t\t=> sp, %d\n",code->r1,code->constant);
+					if(code->r3 == SP)
+						printf("\tstoreAI\tsp\t\t=> sp, %d\n", code->constant);
+					else if(code->r3 == FP)
+						printf("\tstoreAI\tfp\t\t=> sp, %d\n", code->constant);
+					else						
+						printf("\tstoreAI\tr%d\t\t=> sp, %d\n",code->r1,code->constant);
 					break;
 		case ILOC_JUMPI:	IsthereLabel(code);
 					printf("\tjumpI\t\t\t-> L%d\n", code->l1);

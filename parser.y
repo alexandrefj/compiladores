@@ -85,7 +85,6 @@ programa:	  	tipo ':' TK_IDENTIFICADOR
 			local_var = NULL;
 			func_type = type;
 			function_list=FunctionListInsert(function_list,$3,type,func_id,0);//puts($3->text);
-
 			functionList = insertFunction(functionList, $3->text);
 			}
 			'('parametros_funcao')'  declaracao_var_locais 
@@ -132,7 +131,13 @@ comando_simples:	TK_PR_INPUT exp2	 		{$$ = astCreate(IKS_AST_INPUT, NULL, $2,NUL
 
 comando_composto:	TK_PR_INPUT exp2 ';' 	comando {$$ = astCreate(IKS_AST_INPUT, NULL, $2, $4, NULL, NULL); stack_pointer=stack_push(stack_pointer,$$);}
 			|nome_variavel '=' expressao';'  comando{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5, NULL); stack_pointer=stack_push(stack_pointer,$$);
-								code=CodeGenerate_store($$,code);}
+								if($3->type == IKS_AST_CHAMADA_DE_FUNCAO)
+								{
+									code=CodeGenerate_storeCall($$,code);
+									//code=CodeGenerate_storeCall2($$,code);
+								}
+								else
+									code=CodeGenerate_store($$,code);}
 			|vetor '=' expressao';'  comando 	{$$ = astCreate(IKS_AST_ATRIBUICAO,NULL,$1,$3,$5,NULL);stack_pointer=stack_push(stack_pointer,$$);
 								code=CodeGenerate_store($$,code);}
 			|TK_PR_RETURN expressao ';' comando	{$$ = astCreate(IKS_AST_RETURN,NULL,$2,$4, NULL, NULL);stack_pointer=stack_push(stack_pointer,$$);
@@ -141,7 +146,18 @@ comando_composto:	TK_PR_INPUT exp2 ';' 	comando {$$ = astCreate(IKS_AST_INPUT, N
 								if(strcmp(FuncString,"main")==0)
 									code=CodeGenerate_nop($$,code);
 								else
-									code=CodeGenerate_jump($$,code);
+								{
+									FunctionList* ptFunctionList = functionList;
+
+									while(ptFunctionList->next != NULL)
+										ptFunctionList = ptFunctionList->next;
+
+									FunctionList* function = searchFunction(functionList, ptFunctionList->name);
+									if(function != NULL)
+										function->returnRegister = registers;
+
+									code = CodeGenerate_jump($$,code);
+								}
 								}
 			|nome_variavel '(' chamada_recursao ')' ';' comando	{$$ = astCreate(IKS_AST_CHAMADA_DE_FUNCAO,NULL,$1,$3,$6, NULL); stack_pointer=stack_push(stack_pointer,$$);
 										code = FunctionCall($$,code);}
